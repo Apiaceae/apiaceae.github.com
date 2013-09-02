@@ -225,3 +225,20 @@ body                        { background: url(/images/body-bg.jpg) repeat 0 0; }
 .article-box .title a:hover { color: #fefefe; text-decoration: none; }
 .article-box .date          { font-family: Georgia; color: #888; font-style: italic; }
 .article-box .desc          { line-height: 20px; color: #e8e8e8; font-family: Georgia; }
+
+/*--------------------------------------------
+                categories
+--------------------------------------------*/
+.page-title                 { font-size:  26px; font-family: Georgia; color: #454545; border-bottom: 1px dashed #a8a8a8; }
+.categories                   { padding: 10px 0; }
+.category-box                { width: 505px; height: 380px; background: #36393e url(/images/bg.png) repeat 0 0; box-shadow: 1px 1px 4px #a8a8a8; border-radius: 5px 5px; }
+/*.category-box:hover          { background: #2b2b2b; box-shadow: 1px 1px 4px #898989; }*/
+.category-box p              { padding: 10px 10px 0 10px; font-size: 12px; color: #e8e8e8; }
+.category-box p a            { border-bottom: 1px dotted #686868; color: #a9a9a9; }
+.category-box p a:hover      { background: #e8e8e8; color: #202020; border-bottom: 1px solid #777; text-decoration: none; }
+.category-box .title         { margin-top: 10px; padding: 4px 4px 4px 0; font-size: 10px; width: 185px; font-family: Georgia; text-transform: uppercase; background: #2f3133; border-radius: 0 8px 8px 0; box-shadow: 1px 1px 3px #121212; }
+.category-box .title a       { color: #e8e8e8; display: block; padding-left: 10px; border-top: 1px dashed #a8a8a8; border-right: 1px dashed #a8a8a8; border-bottom: 1px dashed #a8a8a8; border-radius: 3px 3px; }
+.category-box .title a:hover { color: #fefefe; text-decoration: none; }
+.category-box .date          { font-family: Georgia; color: #888; font-style: italic; }
+.category-box .desc          { line-height: 20px; color: #e8e8e8; font-family: Georgia; }
+.tag_box                     { padding: 3px 6px; margin: 2px; background: #eee; color: #555; border-radius: 3px; text-decoration: none; border: 1px dashed #cccccc; }
