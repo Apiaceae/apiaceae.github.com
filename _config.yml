@@ -4,7 +4,13 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
+markdown: rdiscount
 pygments: true
+pagination: 4
+style: /css/style.css
+blogName: 虎克的博客
+blogDesc: Enthusiasm Biogeography and Biodiversity Informatics
+
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
