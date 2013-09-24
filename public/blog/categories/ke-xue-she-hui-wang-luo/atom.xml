@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 科学社会网络 | 虎克的博客]]></title>
-  <link href="http://apiaceae.github.io/blog/categories/ke-xue-she-hui-wang-luo/atom.xml" rel="self"/>
-  <link href="http://apiaceae.github.io/"/>
-  <updated>2013-09-25T00:15:10+08:00</updated>
-  <id>http://apiaceae.github.io/</id>
+  <link href="http://Apiaceae.github.io/blog/categories/ke-xue-she-hui-wang-luo/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-25T00:42:07+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[有关自然网络体系 Nature network]]></title>
-    <link href="http://apiaceae.github.io/blog/2009/03/25/-nature-network/"/>
+    <link href="http://Apiaceae.github.io/blog/2009/03/25/-nature-network/"/>
     <updated>2009-03-25T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2009/03/25/-nature-network</id>
+    <id>http://Apiaceae.github.io/blog/2009/03/25/-nature-network</id>
     <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme90.jpg" alt="Nature Network" /></p>
 
 <p><strong>Nature network</strong>是一个致力与让世界科学家通过互联网在全球和地区水平上就共同关心和感兴趣问题进行讨论的网站。</p>

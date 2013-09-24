@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[虎克的博客]]></title>
-  <link href="http://apiaceae.github.io/atom.xml" rel="self"/>
-  <link href="http://apiaceae.github.io/"/>
-  <updated>2013-09-25T00:15:10+08:00</updated>
-  <id>http://apiaceae.github.io/</id>
+  <link href="http://Apiaceae.github.io/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-25T00:42:07+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Move to Octopress]]></title>
-    <link href="http://apiaceae.github.io/blog/2013/09/24/move-to-octopress/"/>
+    <link href="http://Apiaceae.github.io/blog/2013/09/24/move-to-octopress/"/>
     <updated>2013-09-24T21:50:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2013/09/24/move-to-octopress</id>
+    <id>http://Apiaceae.github.io/blog/2013/09/24/move-to-octopress</id>
     <content type="html"><![CDATA[<p>This is a test for octopuses blog template.</p>
 
 <p><em>这里仅仅是一个测试页面！</em></p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[Nginx内核参数相关的优化设定说明]]></title>
-    <link href="http://apiaceae.github.io/blog/2013/09/03/nginx/"/>
+    <link href="http://Apiaceae.github.io/blog/2013/09/03/nginx/"/>
     <updated>2013-09-03T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2013/09/03/nginx</id>
+    <id>http://Apiaceae.github.io/blog/2013/09/03/nginx</id>
     <content type="html"><![CDATA[<p>Nginx内核参数在使用的时候有不少问题需要我们解决，其中在优化方面就需要我们格外的注意。在下面就是对Nginx内核参数优化的详细介绍，希望大家有所收获。</p>
 
 <p>关于Nginx内核参数的优化：</p>
@@ -83,9 +83,9 @@
   
   <entry>
     <title type="html"><![CDATA[LAMP系统性能调优]]></title>
-    <link href="http://apiaceae.github.io/blog/2013/09/03/lamp/"/>
+    <link href="http://Apiaceae.github.io/blog/2013/09/03/lamp/"/>
     <updated>2013-09-03T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2013/09/03/lamp</id>
+    <id>http://Apiaceae.github.io/blog/2013/09/03/lamp</id>
     <content type="html"><![CDATA[<p><strong>一、理解LAMP架构</strong></p>
 
 <p>如今，使用 LAMP（Linux®、Apache、MySQL 和 PHP/Perl）架构的应用程序不断被开发和部署。但是，服务器管理员对应用程序本身几乎没有控制能力，因为应用程序是别人编写的。这份共三部分的系列文章将讨论许多服务器配置问题，这些配置会影响应用程序的性能。第一篇文章讨论 LAMP 架构、一些性能度量技术以及一些基本的 Linux 内核、硬盘和文件系统调节。后续的文章将研究 Apache、MySQL 和 PHP 组件的调优。</p>
@@ -644,9 +644,9 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
   
   <entry>
     <title type="html"><![CDATA[Hello jekyll world]]></title>
-    <link href="http://apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/"/>
+    <link href="http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/"/>
     <updated>2013-09-02T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2013/09/02/hello-jekyll-world</id>
+    <id>http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world</id>
     <content type="html"><![CDATA[<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
 
 <p>h1 这里仅仅是一个测试</p>
@@ -655,9 +655,9 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
   
   <entry>
     <title type="html"><![CDATA[使用PRY代替RAILS CONSOLE]]></title>
-    <link href="http://apiaceae.github.io/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/"/>
+    <link href="http://Apiaceae.github.io/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/"/>
     <updated>2013-02-23T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2013/02/23/使用pry代替rails-console</id>
+    <id>http://Apiaceae.github.io/blog/2013/02/23/使用pry代替rails-console</id>
     <content type="html"><![CDATA[<p style="margin: 0px 0px 8px; padding: 0px; color: #333333; font-family: Verdana, Tahoma, 'BitStream vera Sans', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; text-align: left; background-color: #ffffff;">rails默认的调度工具是ruby-debug19，启动时还要加上&rdquo;&ndash;debug&rdquo;参数，或许你觉得用起来也还可以。但如果你用过pry，你会发现原来可以还这么方便，ruby-debug19是那么的简陋。<br style="margin: 0px; padding: 0px;" />以前还整过一堆插件来增强irb的功能，现在有了pry，默认配置就够用了，还有rails console也可以歇歇了。</p>
 <p style="margin: 0px 0px 8px; padding: 0px; color: #333333; font-family: Verdana, Tahoma, 'BitStream vera Sans', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; text-align: left; background-color: #ffffff;">&nbsp;</p>
 <h3 style="margin: 0px; padding: 0px; font-size: 14px; color: #008800; font-family: Verdana, Tahoma, 'BitStream vera Sans', Arial, Helvetica, sans-serif; line-height: 20px; text-align: left; background-color: #ffffff;">安装</h3>
@@ -789,9 +789,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[apt-get commands pausing at 'Waiting for headers']]></title>
-    <link href="http://apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers/"/>
     <updated>2012-11-29T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers</id>
+    <id>http://Apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers</id>
     <content type="html"><![CDATA[<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Try commenting out your multiverse and universe repos in your&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">/etc/apt/sources.list</em></p>
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Then do a:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get clean all</strong></p>
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">then finally an:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get update</strong></p>
@@ -805,9 +805,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[解决git pull时出现的几个问题]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
     <updated>2012-11-28T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/11/28/解决git-pull时出现的几个问题</id>
+    <id>http://Apiaceae.github.io/blog/2012/11/28/解决git-pull时出现的几个问题</id>
     <content type="html"><![CDATA[<p>第1个问题: 解决GIT代码仓库不同步</p>
 <p>今天在执行<a href="http://www.linuxso.com/command/git.html" target="_blank"><span style="text-decoration: underline;">git</span></a> pull时出现:</p>
 <pre>&nbsp;</pre>
@@ -891,10 +891,10 @@ end
   
   <entry>
     <title type="html"><![CDATA[Bupleurum Species, Scientific Evaluation and Clinical Applications]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/"/>
     <updated>2012-11-26T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications</id>
-    <content type="html"><![CDATA[<p><img src="http://apiaceae.github.io/images/2012/11/2012-11-26_180711.png" alt="" /></p>
+    <id>http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications</id>
+    <content type="html"><![CDATA[<p><img src="http://Apiaceae.github.io/images/2012/11/2012-11-26_180711.png" alt="" /></p>
 <p>&nbsp;</p>
 <p>好书！研究植物就应该这样应用才有价值。</p>
 ]]></content>
@@ -902,9 +902,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Vim格式化代码]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/"/>
     <updated>2012-10-23T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/10/23/vim格式化代码</id>
+    <id>http://Apiaceae.github.io/blog/2012/10/23/vim格式化代码</id>
     <content type="html"><![CDATA[<p>(1) 按两下小写g，即gg，定位光标到第一行。</p>
 <p>(2) 按住Shift+v，即大写V，进入可视化编辑的列编辑模式。</p>
 <p>(3) Shift+g，即大写G，选中整个代码。</p>
@@ -914,9 +914,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[如何更新Dell服务器的Bios及Locale问题]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/"/>
     <updated>2012-10-22T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/10/22/如何更新dell服务器的bios</id>
+    <id>http://Apiaceae.github.io/blog/2012/10/22/如何更新dell服务器的bios</id>
     <content type="html"><![CDATA[<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
 <ul>
 <li>Install libsmbios</li>
@@ -986,9 +986,9 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[Ubuntu为drupal7配置Apache Solr详细步骤]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"/>
     <updated>2012-07-18T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/07/18/ubuntu为drupal7配置apache-solr详细步骤</id>
+    <id>http://Apiaceae.github.io/blog/2012/07/18/ubuntu为drupal7配置apache-solr详细步骤</id>
     <content type="html"><![CDATA[<h1>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h1>
 <p>1). 安装Java SDK</p>
 <p><code>yum install java-1.6*</code></p>
@@ -1026,9 +1026,9 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[ ubuntu解压命令全览 ]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/"/>
     <updated>2012-07-17T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/07/17/ubuntu解压命令全览</id>
+    <id>http://Apiaceae.github.io/blog/2012/07/17/ubuntu解压命令全览</id>
     <content type="html"><![CDATA[<p><strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar</span></span></strong><br /> 解包：tar xvf FileName.tar<br /> 打包：tar cvf FileName.tar DirName<br /> <span style="color: #008000;">（注：tar是打包，不是压缩！）</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.gz</span></span></strong><br /> 解压1：gunzip FileName.gz<br /> 解压2：gzip -d FileName.gz<br /> 压缩：gzip FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.gz 和 .tgz</span></span></strong><br /> 解压：tar zxvf FileName.tar.gz<br /> 压缩：tar zcvf FileName.tar.gz DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz2</span></span></strong><br /> 解压1：bzip2 -d FileName.bz2<br /> 解压2：bunzip2 FileName.bz2<br /> 压缩： bzip2 -z FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz2</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz2<br /> 压缩：tar jcvf FileName.tar.bz2 DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz</span></span></strong><br /> 解压1：bzip2 -d FileName.bz<br /> 解压2：bunzip2 FileName.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.Z</span></span></strong><br /> 解压：uncompress FileName.Z<br /> 压缩：compress FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.Z</span></span></strong><br /> 解压：tar Zxvf FileName.tar.Z<br /> 压缩：tar Zcvf FileName.tar.Z DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.zip</span></span></strong><br /> 解压：unzip FileName.zip<br /> 压缩：zip FileName.zip DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rar</span></span></strong><br /> 解压：rar x FileName.rar<br /> 压缩：rar a FileName.rar DirName<br /> <span style="color: #008000;"><br /> rar请到：<a style="color: #003793;" href="http://www.rarsoft.com/download.htm" target="_blank"><span style="color: #003793;">http://www.rarsoft.com/download.htm</span></a> 下载！<br /> 解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp rar_static /usr/bin/rar</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.lha</span></span></strong><br /> 解压：lha -e FileName.lha<br /> 压缩：lha -a FileName.lha FileName<br /> <span style="color: #008000;"><br /> lha请到：<a style="color: #003793;" href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/" target="_blank"><span style="color: #003793;">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/</span></a>下载！<br /> &gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp lha /usr/bin/</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rpm</span></span></strong><br /> 解包：rpm2cpio FileName.rpm | cpio -div<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.deb</span></span></strong><br /> 解包：ar p FileName.deb data.tar.gz | tar zxf -<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</span></span></strong><br /> 解压：sEx x FileName.*<br /> 压缩：sEx a FileName.* FileName</p>
 <p>文章转自：http://blog.csdn.net/zad522/article/details/2770446</p>
 ]]></content>
@@ -1036,9 +1036,9 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[ubuntu12.04配置静态IP及设置DNS]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/"/>
     <updated>2012-07-17T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/07/17/ubuntu1204配置静态ip及设置dns</id>
+    <id>http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204配置静态ip及设置dns</id>
     <content type="html"><![CDATA[<div class="content">
 <h1>静态IP配置方法：</h1>
 <div>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</div>
@@ -1086,12 +1086,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[SublimeText2超强的文本编辑器]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     <updated>2012-07-15T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/07/15/sublimetext2超强的文本编辑器</id>
+    <id>http://Apiaceae.github.io/blog/2012/07/15/sublimetext2超强的文本编辑器</id>
     <content type="html"><![CDATA[<p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><img src="http://apiaceae.github.io/images/2012/7/eol_gbif_maps.module+%e2%80%94+ofc.jpg" alt="" /></p>
+<p><img src="http://Apiaceae.github.io/images/2012/7/eol_gbif_maps.module+%e2%80%94+ofc.jpg" alt="" /></p>
 <p>一些介绍和技巧文章：</p>
 <p>http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html</p>
 <p>http://lucifr.com/139225/sublime-text-2-tricks-and-tips/</p>
@@ -1101,9 +1101,9 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[ubuntu中文输入法Fcitx安装 ]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/"/>
     <updated>2012-04-20T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/04/20/ubuntu中文输入法fcitx安装</id>
+    <id>http://Apiaceae.github.io/blog/2012/04/20/ubuntu中文输入法fcitx安装</id>
     <content type="html"><![CDATA[<p>在ubuntu10.10系统安装成功后,系统默认的中文输入法是ibus,但是这个输入法给我们这些在windows下使用sougou用惯了的 人是很不习惯的.特别是打词组的时侯,不能联想,词库不是很多.后来有了解到还有一款中文输入法Fcitx,所以换成这个之后,发现比较适合我使用,虽然 存在很多不足.</p>
 <p>&nbsp;</p>
 <p>首先来认识下Fcitx,它是Free Chinese Input Toy for&nbsp;X的简称,中文名叫小企鹅输入法,包括拼音和双拼输入法.目前最新版本为4.0.1,相比之前的版本,新增很多功能包括新的皮肤、词库和详细设置界面。<br /> <a href="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95.gif"><img class="size-medium wp-image-1147 alignnone" title="Fcitx中文输入法" src="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95-300x186.gif" alt="" width="300" height="186" /></a><br /> 之前这款输入法是个人所做(不过已经停止开发)，目前官方主页已经转移到google code上: <a href="http://code.google.com/p/fcitx/">http://code.google.com/p/fcitx/<br /> </a>上面有最新的版本下载和皮肤，词库。<br /> 安装方法如下：<br /> sudo add-apt-repository ppa:wengxt/fcitx-nightly &nbsp; &#92;增加ppa源<br /> sudo apt-get update &nbsp; &#92;更新软件库<br /> sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin &nbsp;&#92;安装fcitx和fcitx-sunpinyin输入法<br /> sudo apt-get install fcitx-table-all &nbsp; &#92;安装码表<br /> 到目前为止输入法已经安装完成了.<br /> 接下来输入:im-switch -s fcitx -z default 把fcitx设置为默认输入法<br /> 或者通过:系统&mdash;系统管理&mdash;语言支持,打开语言和文本设置项,在语言分页中的键盘输入方式系统中选择fcitx.<br /> 另外,可以右击输入法进行配置,包括皮肤,快捷键等.</p>
@@ -1113,18 +1113,18 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[植物分类学-比较数据的系统评估第二版]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/"/>
     <updated>2012-03-23T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/03/23/植物分类学-比较数据的系统评估第二版</id>
+    <id>http://Apiaceae.github.io/blog/2012/03/23/植物分类学-比较数据的系统评估第二版</id>
     <content type="html"><![CDATA[<p><a href="http://blog.cnpc.ac.cn/images/20120323173901.jpg"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="20120323173901" border="0" alt="20120323173901" src="http://blog.cnpc.ac.cn/images/20120323173901_thumb.jpg" width="377" height="772" /></a></p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p><font size="4"><strong>Stuessy教授最近又出版了经典分类学著作的第二版。这里有发表在</strong></font><a href="http://sysbio.oxfordjournals.org/content/59/5/608.full" target="_blank"><font size="4"><strong>系统生物学杂志上的书评</strong></font></a><font size="4"><strong>和</strong></font><a href="http://books.google.com.hk/books?id=0bYs8F0Mb9gC&amp;pg=PP31&amp;lpg=PP31&amp;dq=taxonomy+unending+synthesis&amp;source=bl&amp;ots=5PDmIIznED&amp;sig=NDPharGBVmMxVPDDUxnnYxClRrc&amp;hl=zh-CN&amp;sa=X&amp;ei=UxlsT9uuMouQiQe85sjiBQ&amp;ved=0CCwQ6AEwAA#v=onepage&amp;q=taxonomy%20unending%20synthesis&amp;f=false"><font size="4"><strong>Google图书的地址</strong></font></a><font size="4"><strong>。感兴趣的可以看看。顺便再看看下面的这些报道：</strong></font></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/5/218947.html" target="_blank"><font size="4"><strong>动物分类学》：首师大硕士生以“首师大”命名新物种</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2010/8/235565-1.shtm" target="_blank"><font size="4"><strong>中国分类学急剧萎缩 后继乏人成专家心病</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/12/225728.shtm" target="_blank"><font size="4"><strong>分类学研究岌岌可危 中国策划大规模项目拯救濒危学科</strong></font></a></p>  <h3><a href="http://www.sciencemag.org/content/325/5936/31.short" target="_blank"><font size="4">China Searches for an 11th-Hour Lifesaver for a Dying Discipline</font></a></h3>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[MacOS Fink命令]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/"/>
     <updated>2012-03-11T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/03/11/macos-fink命令</id>
+    <id>http://Apiaceae.github.io/blog/2012/03/11/macos-fink命令</id>
     <content type="html"><![CDATA[<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。</p>
 <p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">Fink工程的目的和MacPort一样，通过修改 Unix 软件来port到Mac OS X 上，然后提供某种下载安装机制供大家使用。在Fink里面你可以像Ubuntu中那样用apt这套工具直接安装二进制包，也可以直接使用Fink来通过源代码编译安装。一般直接用Fink比较好，因为里面的东西比较新。</p>
 <p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;"><br />Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：</p>
@@ -1179,9 +1179,9 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[分类学杂七杂八]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
     <updated>2012-03-09T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/03/09/分类学杂七杂八</id>
+    <id>http://Apiaceae.github.io/blog/2012/03/09/分类学杂七杂八</id>
     <content type="html"><![CDATA[<h2>近代的生物分类系统</h2>
 <p>Taxa of Life Tree of Life Life on Earth</p>
 <p>The Green Tree of Life Faunaflora</p>
@@ -1222,18 +1222,18 @@ Update staged sucessfully. BIOS update will occur on next reboot.
   
   <entry>
     <title type="html"><![CDATA[Visual Studio 2010快捷工具配置]]></title>
-    <link href="http://apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/"/>
     <updated>2012-01-24T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae</id>
+    <id>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae</id>
     <content type="html"><![CDATA[<h3>[Visual Studio 2010] Code Rush + PowerCommand + Power Tools 三種套件同時存在的微調修改</h3>  <ul>   <li>2010-08-07</li>    <li>2648</li>    <li>0</li>    <li><a href="http://demo.tc/SeriesArticleList/Visual%20Studio%20%E7%B2%BE%E9%81%B8%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">系列文章</a></li> </ul>  <ul>   <li></li>    <li><a href="http://www.facebook.com/sharer.php?t=[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9-demo%E5%B0%8F%E9%8B%AA&amp;u=http://demo.tc/Post/630">將本文推到Facebook</a></li>    <li><a href="http://twitter.com/?status=http://demo.tc/Post/630%20[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA">將本文推到Twitter</a></li>    <li><a href="http://plurk.com/?status=http://demo.tc/Post/630+([Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA)&amp;qualifier=shares">將本文推到Plurk</a></li>    <li><a href="http://pdfmyurl.com/?url=http://demo.tc/Post/630">下載本文PDF</a></li> </ul>  <p>demo 的 Visual Studio 一直以來都會安裝 Code Rush 和 PowerCommand ，一直也都合作愉快，但最近看了ScottGu&#8217;s 的 Power Tool 介紹文，看到了一個相當棒的功能 Solution Navigator 讓我決定也要安裝 Power Tools ，就因為這樣我的 Visual Studio 擁有了Code Rush + PowerCommand + Power Tools 三套套件，部份功能重複性還滿高的，所以就稍微作了一下調整，記錄下來以免以後忘記。</p>  <p><ins><ins></ins></ins></p>  <ul>   <li>最後更新：2011/7/6 上午 09:12:10</li> </ul>  <p><img title="demo廢言" alt="demo廢言" src="http://demo.tc/images/msn/demosay.gif" />先說明因為 demo 主要功能是 Code Rush &gt; PowerCommand &gt; Power Tools，因此有重複的功能會優先關掉 Power Tool 的，不過考量到 Code Rush 免費版到底有什麼功能我不知道，因此衝突的部份都會寫出來，有需要的朋友再自行調配使用。</p>  <p><img alt="" src="http://lh3.ggpht.com/_PgurvCEASJs/TFz8N-4jlFI/AAAAAAAAGjA/Ocr7cVFvqxo/s800/CPPTools01.gif" />Code Rush （<a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">官網</a>）預設所有功能都是他，不調整</p>  <hr />  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8NyaBirI/AAAAAAAAGjE/nyQLSYxbzps/s800/CPPTools02.gif" />PowerCommand （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8OK_ov6I/AAAAAAAAGjM/swibUMiJ_3w/s800/CPPTools04.gif" /></p>  <ol>   <li>用到機率太小所以關閉。 </li>    <li>內建就有了所以關閉。 </li>    <li>和 Power Tools 重複，所以關閉。</li> </ol>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8N2d1vOI/AAAAAAAAGjI/tE9LSJdYbIU/s800/CPPTools03.gif" />Power Tools （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh4.ggpht.com/_PgurvCEASJs/TFz8OLAP1QI/AAAAAAAAGjQ/D629sgQK1Zg/s800/CPPTools05.gif" /></p>  <ol>   <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>CTRL﹢X 更好用所以關閉。</li> </ol>  <hr />  <p>基於以上的調整後，一些重複的功能就不會出現了，但這三個套件功能繁雜，demo 不可能一一介紹（除非我開三篇文）所以就請各位參考一下官方和其他網友的說明吧。</p>  <p><img title="分隔線" alt="分隔線" src="http://demo.tc/images/msn/linkPage.gif" /></p>  <ul>   <li>Code Rush      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/sam319/archive/2009/12/31/12747.aspx">強力推薦寫程式一定要用的外掛工具 - CodeRush Xpress</a></li>        <li><a href="http://www.minitw.com/archives/633">開啟 CodeRush Xpress 10.1 的選單功能列</a></li>     </ul>   </li>    <li>PowerCommand      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/05/03/visual-studio-2010-extension-manager-and-the-new-vs-2010-powercommands-extension.aspx">Visual Studio 2010 Extension Manager (and the new VS 2010 PowerCommands Extension)</a></li>     </ul>   </li>    <li>Poert Tools      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/larrynung/archive/2010/06/14/15862.aspx">[Visual Studio]Visual Studio 2010 Pro Power Tools</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/08/04/some-nice-code-editor-features-provided-by-the-vs-2010-power-tool-extensions.aspx">Some nice code editor features provided by the VS 2010 Power Tool Extensions</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/07/19/vs-2010-productivity-power-tools-update-with-some-cool-new-features.aspx">VS 2010 Productivity Power Tools Update (with some cool new features)</a></li>     </ul>   </li> </ul>  <p><a href="http://demo.tc/Tag/Visual%20Studio%20%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">Visual Studio 擴充套件</a></p>  <p>原文地址：<a href="http://demo.tc/Post/630">http://demo.tc/Post/630</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu使用Sed命令批量替换文件夹中文件内的字符串]]></title>
-    <link href="http://apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/"/>
+    <link href="http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/"/>
     <updated>2011-12-04T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2</id>
+    <id>http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2</id>
     <content type="html"><![CDATA[<h5>linux sed 批量替换多个文件中的字符串 </h5>  <p>&#160;</p> sed -i &quot;s/oldstring/newstring/g&quot; `grep oldstring -rl yourdir` 例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net sed -i &quot;s/www.admin99.net/admin99.net/g&quot; `grep www.admin99.net -rl /home` 这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;  
 ]]></content>
   </entry>

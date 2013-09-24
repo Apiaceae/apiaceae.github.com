@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 生物多样性信息学 | 虎克的博客]]></title>
-  <link href="http://apiaceae.github.io/blog/categories/sheng-wu-duo-yang-xing-xin-xi-xue/atom.xml" rel="self"/>
-  <link href="http://apiaceae.github.io/"/>
-  <updated>2013-09-25T00:15:10+08:00</updated>
-  <id>http://apiaceae.github.io/</id>
+  <link href="http://Apiaceae.github.io/blog/categories/sheng-wu-duo-yang-xing-xin-xi-xue/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-25T00:42:07+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Geomapping of Life 我们需要它？]]></title>
-    <link href="http://apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/"/>
+    <link href="http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/"/>
     <updated>2009-03-23T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2009/03/23/geomapping-of-life-</id>
+    <id>http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-</id>
     <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme12.jpg" alt="COL首页" /></p>
 
 <ul>
@@ -54,9 +54,9 @@
   
   <entry>
     <title type="html"><![CDATA[美国自然科学基金对数字化标本平台的支持]]></title>
-    <link href="http://apiaceae.github.io/blog/2009/03/20/"/>
+    <link href="http://Apiaceae.github.io/blog/2009/03/20/"/>
     <updated>2009-03-20T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2009/03/</id>
+    <id>http://Apiaceae.github.io/blog/2009/03/</id>
     <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme7.jpg" alt="项目首页" /></p>
 
 <p>The US National Science Foundation has awarded a <strong>Research Coordination Grant</strong> entitled: <strong>Building a National Community of Natural History Collections</strong>.</p>
@@ -92,9 +92,9 @@ systematics) and James B. Woolley (Texas A &amp; M University, invertebrate syst
   
   <entry>
     <title type="html"><![CDATA[21世纪的物种探险 Species exploration]]></title>
-    <link href="http://apiaceae.github.io/blog/2009/03/19/21-species-exploration/"/>
+    <link href="http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration/"/>
     <updated>2009-03-19T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2009/03/19/21-species-exploration</id>
+    <id>http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration</id>
     <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme8.jpg" alt="Species Exploration首页" /></p>
 
 <p><strong>Taxonomists</strong> discover, describe and classify <em>species</em>. Millions of species remain unknown or unidentifiable, inaccessible to science and society.</p>
@@ -113,9 +113,9 @@ systematics) and James B. Woolley (Texas A &amp; M University, invertebrate syst
   
   <entry>
     <title type="html"><![CDATA[Biogeomancer介绍]]></title>
-    <link href="http://apiaceae.github.io/blog/2009/03/18/biogeomancer/"/>
+    <link href="http://Apiaceae.github.io/blog/2009/03/18/biogeomancer/"/>
     <updated>2009-03-18T00:00:00+08:00</updated>
-    <id>http://apiaceae.github.io/blog/2009/03/18/biogeomancer</id>
+    <id>http://Apiaceae.github.io/blog/2009/03/18/biogeomancer</id>
     <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme19.jpg" alt="Biogeomancer首页" /></p>
 
 <p><strong><a href="http://www.biogeomancer.org/">BioGeomancer</a></strong>项目是一个世界范围内的自然历史采集和地理空间信息系统专家合作的项目。</p>
