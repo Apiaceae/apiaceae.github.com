@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Nginx内核参数相关的优化设定说明 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="Nginx网络服务Linux服务器优化参数">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2013/09/03/nginx">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Nginx内核参数相关的优化设定说明</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T00:00:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Nginx内核参数在使用的时候有不少问题需要我们解决，其中在优化方面就需要我们格外的注意。在下面就是对Nginx内核参数优化的详细介绍，希望大家有所收获。</p>
+
+<p>关于Nginx内核参数的优化：</p>
+
+<p><strong>net.ipv4.tcp_max_tw_buckets = 6000</strong>
+<em>timewait的数量，默认是180000</em></p>
+
+<p><strong>net.ipv4.ip_local_port_range = 1024 65000</strong>
+<em>允许系统打开的端口范围。</em></p>
+
+<p><strong>net.ipv4.tcp_tw_recycle = 1</strong>
+<em>启用timewait快速回收。</em></p>
+
+<p><strong>net.ipv4.tcp_tw_reuse = 1</strong>
+<em>开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接。</em></p>
+
+<p><strong>net.ipv4.tcp_syncookies = 1</strong>
+<em>开启SYN Cookies，当出现SYN等待队列溢出时，启用cookies来处理。</em></p>
+
+<p><strong>net.core.somaxconn = 262144</strong>
+<em>web应用中listen函数的backlog默认会给我们内核参数的net.core.somaxconn限制到128，而Nginx内核参数定义的NGX_LISTEN_BACKLOG默认为511，所以有必要调整这个值。</em></p>
+
+<p><strong>net.core.netdev_max_backlog = 262144</strong>
+<em>每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目。</em></p>
+
+<p><strong>net.ipv4.tcp_max_orphans = 262144</strong>
+<em>系统中最多有多少个TCP套接字不被关联到任何一个用户文件句柄上。如果超过这个数字，孤儿连接将即刻被复位并打印出警告信息。这个限制仅仅是为了防止简单的DoS攻击，不能过分依靠它或者人为地减小这个值，更应该增加这个值(如果增加了内存之后)。</em></p>
+
+<p><strong>net.ipv4.tcp_max_syn_backlog = 262144</strong>
+<em>记录的那些尚未收到客户端确认信息的连接请求的最大值。对于有128M内存的系统而言，缺省值是1024，小内存的系统则是128。</em></p>
+
+<p><strong>net.ipv4.tcp_timestamps = 0</strong>
+<em>时间戳可以避免序列号的卷绕。一个1Gbps的链路肯定会遇到以前用过的序列号。时间戳能够让内核接受这种“异常”的数据包。这里需要将其关掉。</em></p>
+
+<p><strong>net.ipv4.tcp_synack_retries = 1</strong>
+<em>为了打开对端的连接，内核需要发送一个SYN并附带一个回应前面一个SYN的ACK。也就是所谓三次握手中的第二次握手。这个设置决定了内核放弃连接之前发送SYN+ACK包的数量。</em></p>
+
+<p><strong>net.ipv4.tcp_syn_retries = 1</strong>
+<em>在内核放弃建立连接之前发送SYN包的数量。</em></p>
+
+<p><strong>net.ipv4.tcp_fin_timeout = 1</strong>
+<em>如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间。对端可以出错并永远不关闭连接，甚至意外当机。缺省值是60秒。2.2 内核的通常值是180秒，你可以按这个设置，但要记住的是，即使你的机器是一个轻载的WEB服务器，也有因为大量的死套接字而内存溢出的风险，FIN- WAIT-2的危险性比FIN-WAIT-1要小，因为它最多只能吃掉1.5K内存，但是它们的生存期长些。</em></p>
+
+<p><strong>net.ipv4.tcp_keepalive_time = 30</strong>
+<em>当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时。以上就是对Nginx内核参数的详细介绍。</em></p>
+
+<p><strong>转载自<a href="http://9ilinux.com/9ilinux/68.html">Linux系统运维</a></strong></p>
+
+<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T00:00:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Apiaceae.github.io/blog/2013/09/03/nginx/" data-via="" data-counturl="http://Apiaceae.github.io/blog/2013/09/03/nginx/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/03/lamp/" title="Previous Post: LAMP系统性能调优">&laquo; LAMP系统性能调优</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/09/24/move-to-octopress/" title="Next Post: Move to Octopress">Move to Octopress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

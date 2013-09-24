@@ -1,0 +1,2124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Lisong wang (IBCAS) -->
+<response xmlns="http://www.eol.org/transfer/content/0.2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:dwc="http://rs.tdwg.org/dwc/dwcore/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eol.org/transfer/content/0.2 http://services.eol.org/schema/content_0_2.xsd">
+	<taxon>
+		<!--示例类群水杉-->
+		<dc:identifier>31919</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/31919</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Pinophyta</dwc:Phylum>
+		<dwc:Class>Pinopsida</dwc:Class>
+		<dwc:Order>Pinales</dwc:Order>
+		<dwc:Family>Cupressaceae</dwc:Family>
+		<dwc:Genus>Metasequoia Miki ex Hu et Cheng</dwc:Genus>
+		<dwc:ScientificName>Metasequoia glyptostroboides Hu et Cheng (1948)</dwc:ScientificName>
+		<commonName xml:lang="zh">水杉</commonName>
+		<commonName xml:lang="en">Dawn redwood</commonName>
+		<commonName xml:lang="en">Chinese redwood</commonName>
+		<commonName xml:lang="en">Water fir</commonName>
+		<commonName xml:lang="en">Shui Shan</commonName>
+		<synonym relationship="synonym">Sequoia glyptostroboides (Hu et W. C. Cheng) Weide (1962)</synonym>
+		<synonym relationship="synonym">Metasequoia glyptostroboides var. caespitosa Y. H. Long et Y. Wu (1984)</synonym>
+		<synonym relationship="synonym">Metasequoia honshuenensis Silba et Callaghan (2000)</synonym>
+		<synonym relationship="synonym">Metasequoia neopangaea Silba (2002)</synonym>
+		<dcterms:created>2010-03-24</dcterms:created>
+		<dcterms:modified>2010-03-24</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">本属有很好的化石记录（Manchester et al. 2009），在中生代白垩纪和新生代有10种之多，广泛分布于北半球中高维度地区，随着第三纪气候变冷和变干，水杉属经历了分布区的收缩（Liu et al. 2007）。现仅存1种，被誉为“活化石”，产四川东部、湖北西部及湖南西北部。落叶乔木，小枝及叶交互对生。水杉的近缘属是特产北美的巨杉和北美红杉，水杉与巨杉杂交可能导致了北美红杉的起源。</dc:description>
+			<reference>1. Liu YJ, Arens NC, Li CS, 2007. Range change in Metasequoia: relationship to palaeoclimate. Botanical Journal of the Linnean Society, 154: 115-127.</reference>
+			<reference>2. Manchester SR, Chen ZD, Lu AM, Uemura K, 2009. Eastern Asian endemic seed plant genera and their paleogeographic history throughout the Northern Hemisphere. Journal of Systermatics and Evolution, 47(1): 1-42.</reference>
+		</dataObject>
+		<dataObject>
+			<!--特征摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">叶子在幼枝上的排列和种鳞的排列均为交互对生。侧枝与叶在秋季一起脱落。种鳞木质，盾形。种子扁，周围有窄翅。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">落叶乔木，高达38米，胸径达6.2米（马金双2008）。树干基部膨大，凹凸不平。树皮灰色、灰褐色或暗灰色，幼树裂成薄片脱落，大树裂成长条状脱落，内皮淡紫褐色。枝斜展；主枝不规则轮生；小枝下垂，对生或近对生。幼树树冠尖塔形，老树树冠广圆形，枝叶稀疏；一年生枝光滑无毛，幼时绿色，后渐变成淡褐色，二、三年生枝淡褐灰色或褐灰色；侧生小枝排成羽状，长4-15厘米，冬季凋落。主枝上的冬芽卵形或椭圆形，顶端钝，长约4毫米，径3毫米，芽鳞膜质，交叉对生，6-8对，宽卵形，先端圆或钝，长宽几相等，2-2.5毫米，边缘薄而色浅，背面有纵脊。叶条形，长0.8-3.5（通常1.3-2）厘米，宽1-2.5（通常1.5-2）扁平，上面淡绿色，下面色淡，上面中脉凹下，下面隆起，沿中脉有两条较边带稍宽的淡黄色七孔带，每带有4-8条气孔线，柔软，在侧生小枝上交互对生，基部扭转，排成2列，羽状，冬季与无芽小枝一同脱落。雌雄同株。雄球花单生于叶腋，有短梗，在枝上组成穗状或圆锥状，秋季发育但直到次年春天才散播花粉；雄蕊15-20枚，交互对生，除了顶端和基部小孢子叶具2个花粉囊外，其余每个小孢子叶具3个花粉囊。雌球花单生枝顶或近枝顶，珠鳞16-28个，交互对生，每珠鳞具5-9个胚珠，授粉时具短梗，梗后来变长。球果当年成熟，下垂，近球形，长1.8-2.5厘米，径1.6-2.5厘米，成熟前绿色，熟时深褐色；具梗，梗长2-4厘米，其上有交互对生的条形叶；种鳞宿存，通常11-12对，木质，盾形，顶部宽，中央有一条横槽，基部楔形，高7-9毫米，中部能育种鳞有5-9个种子；种子扁平，倒卵形，间或圆形或矩圆形，长约5毫米，宽4毫米，扁平，周围有窄翅，先端凹缺；子叶2枚，条形，长1.1-1.3厘米，宽1.5-2毫米，两面中脉微隆起，上面有气孔线，下面无气孔线；初生叶条形，交互对生，长1-1.8厘米，下面有气孔线；出土萌发。染色体2n = 22。花期2月下旬，球果11月成熟。</dc:description>
+			<reference>1. Fu LG, Yu YF, Mill RR, 1999. Taxodiaceae. In: Raven PR, Wu CY eds. Flora of China. St. Louis: Missouri Botanical Garden Press et Beijing: Science Press. </reference>
+			<reference>2. 郑万钧, 付立国, 1978. 中国植物志. 第七卷. 裸子植物门. 北京: 科学出版社. </reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">特产四川东部、湖北西部及湖南西北部。广泛栽培于 安徽,福建,广东,广西,贵州,河北,河南,江苏,江西,辽宁,陕西,山东,山西,云南,浙江各省区
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--命名学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Morphology</subject>
+			<dc:description xml:lang="zh">1941年日本京都大学讲师三木茂博士（1901-1974）基于Metasequoia disticha (Heer) Miki建立水杉的化石属名Metasequoia Miki。三木茂建立属名的时候中国中部活植物还没有被发现。1948年胡先驌正式发表水杉，胡的研究基于现存植物。如果简单套用优先律，那么，Metasequoia Miki是正确名称。但是，法规（Vienna Code）11.8款规定：基于非化石的植物名称优先于基于化石植物的名称（McNeill et al. 2006）。因此，我们现在用的水杉属的名称是一个通过保留模式（Metasequoia glyptostroboides Hu et Cheng）而得以沿用的保留名，是Metasequoia Hu et W. C. Cheng，而不是Metasequoia Miki。
+水杉在正式描述之前曾用过几个名称，如：Metasequoia sinica Hu, Metasequoia viva Hu et W. C. Cheng, Chieniodendron sinense W. C. Cheng, Pingia grandis Hu，后来胡先驌正式描述时确定用Metasequoia glyptostroboides Hu et Cheng，以前使用的名称都成为正式名称的异名。组合名称Sequoia glyptostroboides (Hu et Cheng) Weide (in Repert. Sp. Nov. 66: 185. 1962.)是水杉的一个异名。Flora of China裸子植物部分发表后，美国人Silba及其合作者又发表一新名称，Metasequoia honshuenensis Silba et Callahan （J. Int. Conifer Preserv. Soc. 7(1): 2. 2000.），也是水杉的一个异名。
+Hu et Cheng (1948)在水杉的原始描述中指定了两份标本（C. J. Hsueh 5和C. T. Hwa 2）作为水杉的模式，根据国际植物命名法规第9.4款，这两份标本为水杉的合模式。Ma et al. (2005)指定C. J. Hsueh 5 (NF)为水杉的后选模式。林祁和曹子余（2007）没有注意到Ma et al. (2005)的模式标定工作，又为水杉指定了保存于PE的同号标本（C. J. Hsueh 5，PE）作为水杉的后选模式，该指定显然为无效指定。
+</dc:description>
+			<reference>Ma JS, Barringer K, Clemants S, 2005. A review of the typification of Metasequoia glyptostroboides (Taxodiaceae). Taxon, 54(2): 475-476.</reference>
+			<reference>McNeill J, Barrie FR, Burdet HM, Demoulin V, Hawksworth DL, Marhold K, Nicolson DH, Prado J, Silva PC, Skog JE, Wiersema JH et Turland N J (eds.). 2006. International Code of Botanical Nomenclature (Vienna Code) adopted by the Seventeenth International Botanical Congress Vienna, Austria, July 2005. A. R. G. Gantner Verlag, Ruggell, Liechtenstein.</reference>
+			<reference>林祁, 曹子余, 2007. 中国裸子植物四个植物名称的后选模式指定. 云南植物研究, 29(3): 291-292. </reference>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">海拔750-1500米，气候温和，夏秋多雨，酸性黄壤土地区。在河流两旁，湿润山坡及沟谷中栽培很多，也有少数野生树木，常与杉木、茅栗、锥栗、枫香、漆树、灯台树、响叶杨、利川润楠等树种混生。模式标本采自四川万县（今湖北利川县）磨刀溪。水杉为喜光性强的速生树种，对环境条件的适应性较强。自被发现以来，世界各地普遍引种，在零下34oC和47oC的低温下能在野外越冬生长（郑万钧和付立国1978.）。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--经济价值和利用情况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Uses</subject>
+			<dc:description xml:lang="zh">水杉材质轻软，耐腐力弱，供建筑、板料、家具等用。树姿优美，叶色浓绿，干形通直，可栽培作庭园树。用种子或扦插繁殖（郑万钧和付立国1978）。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--珍稀濒危和保护状况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">濒危等级：EN  A2c;B2ab(ⅱ) （汪松、解炎 2004）。
+居群遗传学知识是就地或迁地保育的基础。对水杉的研究表明，由于冰期以及近来的生境丢失和破碎化的影响，水杉野生居群的遗传变异水平低于裸子植物的平均水平；栽培居群的遗传变异水平更低，且彼此关系较野生居群更为密切，说明全世界栽培居群的种源来源相同或相近，因此，虽然表明上水杉人工林的分布区和量都已经很大，但是由于迁地保育没有考虑到在遗传结构水平上的取样问题，水杉实际上并没有被很好地恢复，建议将来迁地保育时充分考虑水杉的遗传结构（Li et al. 2005）。
+
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--古生物/化石-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">水杉的化石材料丰富，描述20余种，研究比较多且可信的种类有4个种，即三个化石种M. occidentalis Chaney, M. milleri Rothwell et Basinger, M. foxii Stockey et al.和一个现代种M. glyptostroboides Hu et W. C. Cheng，Metasequoia disticha, M. japonica, M. chinensis, M. cuneata, M. papillapollenites, M. miocenica, M. kimurae, M. onukii, M. europaea, M. asiatica, M. nathorstii等11个名称均为M. occidentalis的异名，仅依据叶片表皮特征和叶片着生方式建立的种M. wigginsii, M. neosibirica, M. krysthofovichii, M. spitzbergensis, M. paradoxa以及依据不完全的木材特征建立的种M. sibirica, M. klerkiana等的身份还十分可疑，需要深入的研究（刘艳菊等2003）。
+</dc:description>
+			<reference>刘艳菊, 李承森, 王宇飞, Arens NC, 2003. 中国古植物学研究进展. IV. 活化石植物——水杉. 植物学报, 45(增刊): 59-63. </reference>
+		</dataObject>
+		<dataObject>
+			<!--鉴定特征-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">水杉现存仅一种。与近缘属北美红杉和巨杉的区别主要有三，一在于幼枝上的叶和种鳞的排列方式，水杉为交互对生，北美红杉和巨杉为互生或螺旋状着生，二是水杉为落叶习性，而北美红杉和巨杉为常绿，三是现在分布区，水杉仅在我国中南部湖北、四川和湖南等地，而北美红杉和巨杉则只在北美分布。
+</dc:description>
+			<reference>刘艳菊, 李承森, 王宇飞, Arens NC, 2003. 中国古植物学研究进展. IV. 活化石植物——水杉. 植物学报, 45(增刊): 59-63. </reference>
+		</dataObject>
+		<dataObject>
+			<!--生理和生物化学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">臭氧浓度达到100, and 200 mm3 m–3时，水杉叶长、冠幅（crown width）、净光合速率（net photosynthetic rate）、气孔导度（stomatal conductance）、呼吸速率（transpiration rate）显著减少，气孔导度在臭氧浓度50 mm3 m–3时就显著减少（Feng et al. 2008）。
+</dc:description>
+			<reference>Feng ZZ, Zeng HQ, Wang XK, Zheng QW, Feng ZW, 2008. Sensitivity of Metasequoia glyptostroboides to ozone stress. Photosynthetica, 46(3): 463-465. </reference>
+		</dataObject>
+		<dataObject>
+			<!--染色体数据-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">水杉的染色体为2n = 22（AA型），巨杉的染色数为2n = 22（BB型），而北美红杉的染色体为2n = 66。李林初（1987）根据染色体观察提出关于水杉及其近缘属红杉和巨杉属的关系的一个假设，认为水杉和巨杉杂交形成的异源二倍体加倍成为四倍体（AABB型），四倍体中间类型与水杉的二倍体（AA型）杂交形成三倍体AAB型，然后AAB型染色体加倍形成北美红杉的AAAABB型。李林初(1988)的形态学观察支持其提出的北美红杉杂交起源理论。
+</dc:description>
+			<reference>李林初, 1987. 从核型看北美红杉的起源. 云南植物研究, 9(2): 187-192. </reference>
+			<reference>李林初, 1988. 从形态学看北美红杉的亲本. 云南植物研究, 10(1): 33-37.  </reference>
+		</dataObject>
+		<dataObject>
+			<!--栽培-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/31919" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">水杉原产我国湖北西南部、湖南西北部和四川东部。该植物曾经在北半球广布，现在仅中国特有（Manchester et al. 2009）。水杉的栽培十分广泛，早在水杉1948年5月正式被描述之前的1947年底，水杉的种子就已经走出国门，目前全世界水杉的栽培已经覆盖6大洲50个国家和地区。水杉生长的主要限制因子是温度。而生长的好坏则很大程度上取决于当地的水分和土壤条件。在北美中部，水杉的北界在北纬40o，在东北部则可以达到44o-45o，在西北部沿海一带可以达到北纬45o-49o，在西欧则可栽培到北纬58o-59o，再往北或内陆，由于寒冷只能在室内栽培。水杉的种子在自然条件下萌发力很低，当年的种子在室温条件下萌发率只有5%-8%，而种子在自然条件下过冬后第二年春天萌发率就更低，这也可能是水杉种群在自然条件下变得稀少并濒危的主要原因（马金双2008）。
+</dc:description>
+			<reference>马金双, 2008. 世界栽培水杉的调查(1947-2007年). 武汉植物研究, 26(2): 186-196.</reference>
+			<reference>Manchester SR, Chen ZD, Lu AM, Uemura K, 2009. Eastern Asian endemic seed plant genera and their paleogeographic history throughout the Northern Hemisphere. Journal of Systermatics and Evolution, 47(1): 1-42.</reference>
+		</dataObject>
+		<dataObject>
+			<!--其它参考文献-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<dcterms:description>文献：
+REVIEW:
+1.	Fulling, Edmund H. 1976. Metasequoia - Fossil and Living. Bot. Review 42(3): 215-315 (English). 
+2.	Wang, Chung-Kwei 1981. The Chinese Redwood-Endemic Treasure Tree Species of China - Discovery and World-wide Cultivation. Tunghai Univ. Bull. (Biological Bull. 55) 22: 15-32 (Chinese with English Abstract). [Subtitle in Chinese: Dedicated to the author's teacher - Wang Tsang]
+3.	Silverman, Milton 1990: Search for the Dawn Redwoods. p. 177. (English). 
+4.	Gittlen, William 1998: Discovered Alive - The Story of the Chinese Redwood. Pierside Publications. p. 166. (English). 
+5.	Li, Xiaodong, Jia Yang, Quanfen Shi, et Jianqiang Li 2005: Allozyme analysis of genetic diversity in eight cultivated populations of Metasequoia glyptostroboides. Biodiversity Science 13(2): 97-104 (Chinese with English summary).
+6.	Shao, Guofan, Qijing Liu, Hong Qian, Jiquan Chen, Jinshuang Ma and Zhengxiang Tan 2000: Zhan Wang (1911 - 2000). Taxon 49(3): 593-601 (English).
+7.	Ma, Jinshuang 2003: The Chronology of the "Living Fossil" Metasequoia glyptostroboides (Taxodiaceae): A Review (1943-2003). Harvard Papers in Botany 8(1): 9-18 (English).
+8.	Ma, Jinshuang 2003: On the Unsolved Mystery of Metasequoia. Acta Botanica Yunnanica 25(2): 155-172 (Chinese with detail summary in English).
+9.	Ma, J. S. et G. F. Shao 2003: Rediscovery of the first collection of the "Living Fossil", Metasequoia glyptostroboides. Taxon 52(3): 585-588 (in English).
+10.	Fazio, J. R. 2003: The Library of Trees - Dawn Redwood Metasequoia glyptostroboides. The National Arbor Day Foundation 1-8.
+11.	Yang, J. M., X. Y. Yang et H.Liang 2004: The discovery of Bruied Metasequoia wood in Lichuan, Hubei, China, and its significance. Acta Palaeontologica Sinica 43(1): 124-131 (Chinese, with English abstract).
+12.	Ma, Jinshuang 2004: The history of the discovery and initial seed dissemination of Metasequoia glyptostroboides, a "living fossil". Aliso 21(2): 65-75 (English).
+13.	Ma, Jinshuang, Yunping Huang, Yunhai Pu et Shenhou Fan 2004: Today's hometown of Metasequoia, Thaiszia 14: 23-36 (English).
+14.	Li, Y. Y., X. Y. Chen, X. Zhang, T. Y. Wu, H. P. Lu et Y. W. Cai 2005: Genetic Differences between wild and artificial populations of Metasequoia glyptostroboides: Implications for species recovery. Conservation Biology, 19(1): 224-231.
+15.	LePage, B. A., C. Williams, H. Yang, 2005: The Geobiology and Ecology of Metasequoia, Series: Topics in Geobiology, Vol. 22, XXV, 434 p., ISBN: 1-4020-2631-5, Springer, 129.00 EURO 
+16.	Ma, J. S., K. Barringer et S. Clemants, 2005, A review of the typification of Metasequoia glyptostroboides (Taxodiaceae). Taxon 54(2): 475-476 (English).
+17.	Ma, J. S., K. Barringer, 2005. Dr. Hsen-Hsu Hu (1894?968) ?a founder of modern plant taxonomy in China. Taxon 54(2): 559-566. (English).
+18.	Hu, Z. G. 2005. Hsen-Hsu Hu should not be forgotten. pages 1-200. (Chinese), Changjiang Art Press, Wuhan, China.
+21.	Andrews, Henry N. 1948. Metaseqoia and the Living et. Missouri Bot. Gard. Bull. 36(5): 79-85 (English); Arnoldia: 58(4)-59(1): 33-34, 1999 (excerpted).
+22.	Anliker, J. 1949. Metasequoia glyptostroboides, eine bedeutsame Entdeckung. Schweiz. Beitr. Dendrol. 1(1): 33 (German).
+23.	Bartholomew, Bruce, David E. Boufford and Steven A. Spongberg 1983. Metasequoia glyptostroboides - Its present status in Central China. Journ. Arn. Arb. 64: 105-128 (English); Arnoldia 58(4)-59(1): 47-52, 1999 (excerpted).
+24.	Carpentier, A. 1950. Un fossile viviant, le Metasequoia. Bull. Soc. Bot. France 3:10-13.
+25.	Chaney Ralph W. 1948. Redwoods in China. Nat. Hist. Mag. 47:440-444 (English); "As remarkable as discovering a living dinosaur": Redwoods in China. Arnoldia 58(4)-59(1): 23-27, 1999, (excerpted).
+26.	Chaney, Ralph W. 1948. Redwoods around the Pacific Basin. Pacific Discovery 1(5): 4-14. 
+27.	Chaney, Ralph W. 1948. The bearing of the living metasequoia on problems of Tertiary paleobotany. Proc. Natl. Acad. Sci. USA 34: 503-515.
+28.	Chaney, Ralph W. 1957. The discovery tree of China - The Dawn Redwood. 22(2): 57-60.
+29.	Cheng, Wan-Chun and Chung-Hsiang Chu 1949. Ecological Studies of the Motherland of Metasequoia. Science (China) 31(3): 73-80 (Chinese).
+30.	Chou, Chung-Kuang and Cheng-Huang Yu 1948. Notes on the name of Metasequia. Science (China) 30(9): 273-274 (Chinese). [This is the translated paper of Bot. Bull. Acad. Sci. 2(3): 204-206, 1948, see Teng, Shu-Chun 1948].
+31.	Chu, Kwei-Ling and William S. Cooper 1950. An ecological reconnaissance in the native home of Metasequoia glyptostroboides. Ecology 31(2): 260-278 (English); Arnoldia 58(4)-59(1): 40-46 (Excerpted).
+32.	Dorofeev, Pavel I. 1951. Discovery of fossil fragments of Metasequoia in the Tertiary of the Zei Basin. Dokl. Akad. Nauk SSSR 77(5): 885-887 (Russian).
+33.	Edlin, Herbert L. 1958. The living forest - A history of trees and timbers. 310 pp.
+34.	Edlin, Herbert L. 1964. Wayside and woodland trees - A guide to the trees of Britain and Ireland. 278 pp.
+35.	Florin, Rudolph 1952. On metasequoia, living and fossil. Bot. Not. 1952: 1-29.
+36.	Forham, A. J. 1960. Metasequoia glyptostroboides (Dawn Redwood) and its propagation. Plant Propagator 6(4): 7-8.
+37.	Geng Kwan Hou and Hsueh Chi-Ju, 1948/9/13. On Metasequoia's Problem Again. Central Daily (Nanjing, Newspaper, Chinese)
+38.	Gressitt, Linsley J. 1953. The California Academy - Lingnan Down Redwood Expedition. Proc. Calif. Acad. Sci. 28(3): 25-58 (English); Arnoldia: 58(4)-59(1): 35-39, 1999 (Excerpted).
+39.	Hsueh, Chi-Ju 1947. The Big Tree in China. Science World (China) 16(11): 339. (Chinese)
+40.	Hsueh, Chi-Ju 1985. Reminiscences of Collecting the Type Specimens of Metasequoia glyptostroboides. Arnoldia 45(4): 10-18 (English); Arnoldia 51(4):17-21, 1991 (reprint); Arnoldia 58(4)-59(1): 8-11, 1999 (reprint again).
+41.	Hu, Hsen-Hsu 1946. Notes on a palaeogene species of Metasequoia in China. Bull. Geol. Soc. China 26: 105-107.
+42.	Hu, Hsen-Hsu 1948. How Metasequoia, the "living fossil" was discovered in China. Journ. New York Bot. Gard. 49: 201-207 (English); Arnoldia 58(4)-59(1): 4-7, 1999 (reprint).
+43.	Hu, Hsen-Hsu and Wan-Chun, Cheng 1948. On the new family Metasequoia and on Metasequoia glyptostroboides, a living species of the genus Metasequoia found in Szechuan and Hupeh. Bull. Fan Mem. lnst. Biol. New Ser. 1(2): 153-161 (English, Chinese summary). [This is the original taxonomic description of the living Metasequoia glyptostroboides].
+44.	Hu, Hsen-Hsu 1950. Shui Sa and It's history. Bot. Mag. China 5(2): 9-13 (Chinese).
+45.	Hu, Hsen-Hsu 1966. On Metasequoia. Eastern Horizon (Hong Kong) 5(4): 26-28 (English). [This is his 1960 poem's English translation].
+46.	Hu, Shiu-Ying 1975. The Tour of a Botanist in China. Arnoldia 35(6): 265-295 (English).
+47.	Hu, Shiu-Ying 1980. The Metasequoia Flora and Its Phytogeographic Significance. Journ. Arn. Arb. 61:41-94 (English) [The taxonomic part has been revised by Geng-Guo Tang, see Tang, Geng-Guo 1987].
+48.	Hu, Ta-Wei 1990. The Discovery Course of Metasequoia. Modern Forestry Cultivation 6(1): 20. (Chinese)
+49.	Ingwerson, W. T. Th. 1949. Metasequoia, eine neue Konifer. Deut. Baumsch. 1(8): 168 (German).
+50.	Just, Theodor 1949. 'Shui-Hsa', the dawn redwood, still lives in China. Chicago Nat. Hist. Mus. Bull. 20(7): 3-4.
+51.	Kuser, John E. 1999. Metasequoia glyptostroboides: Fifty Years of Growth in North America. Arnoldia 58(4)-59(1): 76-79 (English).
+52.	Li, Hui-Lin 1957. The discovery and cultivation of Metasequoia. Morris Arb. Bull. 8(4): 49-53.
+53.	Li, Hui-Lin 1963. The origin and cultivation of shade and ornamental trees. 282 pp. p. 179-190.
+54.	Li, Hui-Lin 1964. Metasequoia, a living fossil. Amer. Sci. 52(1): 93-109 (English).
+55.	Li, Jian-hua 1999. Metasequoia: An Overview of Its Phylogency, Reproductive Biology, and Ecotypic Variation. Arnoldia 58(4)-59(1): 54-59 (English).
+56.	Liu, Yong-Chuan, Xin-Tie Zhou and Pi-Lin Su 1978. Shui Sa. Pp. II+144, Hubei People's Press (Chinese).
+57.	Lu, Tung-Tsin 1986. Metasequoia discovered forty years. Modern Forestry Cultivation 1(2): 61-74. (Chinese) [Comprehensive history of the discovery].
+58.	Ma, Jin-Shuang, Hang Sun and Wei Cao 2000. The Notes on the Collectors and Authors as well as location names related to the Dawn Redwood, Metasequoia glyptostroboides, after it's been discovered almost sixty years from Central China (1941-2000). Thaiszia, Journ. Bot. 9(1999): 143-147 (in English).
+59.	Merrill, Elmer D. 1948. A living Metasequoia in China. Science 107:140.
+60.	Merrill, Elmer D. 1948. Metasequoia, Another "Living Fossil". Arnoldia 8(1): 1-8 (English); Arnoldia 51(4): 12-16, 1991 (reprint); Another "living fossil" comes to the Arnold Arboretum. Arnoldia 58(4)-59(1): 17-19, 1999 (excerpted).
+61.	Miki, Shigeru 1941. On the change of flora in eastern Asia since Tertiary Period (I). Jap. Journ. Bot. 11(3): 237-303. 
+62.	Miki, Shigeru 1948. Metasequoia, "a living fossil". Bot. Mag. (Tokyo). 61: 108 (Japanese). 
+63.	Miki, Shigeru 1949. On Metasequoia, with special reference to the discovery of living species. Seibutu 4(4): 146-149 (Japanese). 
+64.	Miki, Shigeru 1953. On Metasequoia, fossil and living. 141 pp. Nippon K鬮utsu Shumi-no, Kyoto (Japanese).
+65.	Nelson, E. C. 1998. Metasequoia glyptostroboides, dawn redwood: some Irish glosses on its discovery and introduction into cultivation. Curtis's botanical magazine 15: 77-80 (English).
+66.	Pearce, Sydney A. 1963. Ornamental trees for garden and roadside planting. 195 pp./p. 178.
+67.	de Philippis, A. 1949. Notizie sulla recente scoperta del genere Metasequoia. Noue Gior. Bot. Ital. II. 55(1-2): 231-232 (Italian).
+68.	Qiu Shan, 1993/7/22. Metasequoia Fifty Years - The 20th Century Great Botanical Discovery. China Scientific Association Newspaper. (Chinese)
+69.	Rogers, David C. D. 1952/10/9. Professors squabble over seeds from China's living fossil tree. Harvard Crimson 129(16): 4.
+70.	Satoh, Keiko 1999. Metasequoia Travels the Globe. Arnoldia 58(4)-59(1): 72-75 (English).
+71.	Stablerr, Harold B. 1959. The Dawn Redwood. Atlantic Nat. 14(1): 33-36.
+72.	Stebbins, E. D. 1948. The chomosomes and relationships of Metasequoia and Sequoia. Science 108: 95-99. (English)
+73.	Sze, Hsiang-Chien 1948. My view on the nomenclature of the genus Metasequoia. Science (China) 30(11): 342-344 (Chinese).
+74.	Sze, Hsiang-Chien 1948/5/28. The Meanings of Metaseqoia on Science. Tai Kon Pao (Shanghai, Newspaper, Chinese).
+75.	Sze, Hsiang-Chien 1948/7/19. Metasequoia and Glyptostrobus. Central Weekly (Nanjing, Chinese).
+76.	Sze, Hsiang-Chien 1948/5/28. The scientific importance of Metsequoia. Tai Kon Pao (Shanghai, Newspaper, Chinese).
+77.	Sze, Hsiang-Chien 1948. More Discussion on Nomenclature of the genus Metasequoia. Science (China) 31(3): 88-90 (Chinese).
+78.	Tang, Geng-Guo 1987. A revision of "The Metasequoia Flora and Its Phytogeographic Significance". Journ. Nanjing For. Univ. 1: 88-104 (English and Chinese).
+79.	Teng, Shu-Chun 1948. Discussing of Nomenclature On Metasequoia. Science (China) 30(9): 273-274 (Chinese).
+80.	Teng, Shu-Chun 1948. Notes on the Metasequoia. Bot. Bull. Acad. Sinica 2(3): 204-206 (Chinese).
+81.	Ting, Hsu 1948/6/20. The importance of the discovery of Metasequoia. The Central Daily (Nanking, Newspaper, Chinese).
+82.	Totten, H. R. 1952. Rapid growth of Metasequoia. Proc. 49th. Ann. Meet. No. Acad. Sci. 5/2/1952. J. Elisha Mitchell Sci. Soc. 68(2): 139-140.
+83.	Wang, Yu-Wen 1/1/2000, The Old Tree Father. China Green Timely (Chinese, Newspaper). [This paper was written by Yu-Wen, Prof. Wang Zhan's daughter]
+84.	Yang, Hong 1999. From et to Molecules: The Metasequoia Tale Continues. Arnoldia 58(4)-59(1): 60-71 (English).
+85.	Yi Shi 1948. Before and after of Metasequoia's Discovery. Forestry Communication 4/5: 5-6 (Chinese).
+86.	Zhang Yu Jun 1997/9/1. Metasequoia - The Famous Star of Plant Kindom. Scientific Daily of China (Beijing, Newspaper, Chinese).
+
+</dcterms:description>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/28/231308.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>叶</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/28/231341.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>叶</dcterms:title>
+			<dcterms:rightsHolder>林秦文</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/linqinwen/001/000141.jpg</mediaURL>
+			<location>中科院植物所，北京，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>球果</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/liubing/02/02003030.jpg</mediaURL>
+			<location>山东，济南，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>施苏珊</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2008/12/128742458125468750a.jpg</mediaURL>
+			<location>凤鸣乡，浙江，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--视频1-->
+			<dataType>http://purl.org/dc/dcmitype/MovingImage</dataType>
+			<mimeType>video/x-flv</mimeType>
+			<agent homepage="http://www.56.com/u27/v_MjY3NDc3MDQ.html" logoURL="http://www.56.com/" role="director">百度利川吧</agent>
+			<dcterms:title>水杉林秋</dcterms:title>
+			<dcterms:rightsHolder>56.com和百度利川吧</dcterms:rightsHolder>
+			<mediaURL>http://player.56.com/v_MjY3NDc3MDQ.swf</mediaURL>
+			<location>不详，中国</location>
+		</dataObject>
+		<dataObject>
+			<!--视频2-->
+			<dataType>http://purl.org/dc/dcmitype/MovingImage</dataType>
+			<mimeType>video/x-flv</mimeType>
+			<agent homepage="http://v.youku.com/v_show/id_XMTA4ODY0MTQ4.html" logoURL="http://static.youku.com/v1.0.0541/index/img/youkulogo.gif" role="source">优酷网</agent>
+			<dcterms:title>水杉林</dcterms:title>
+			<dcterms:rightsHolder>优酷网</dcterms:rightsHolder>
+			<mediaURL>http://player.youku.com/player.php/sid/XMTA4ODY0MTQ4/v.swf</mediaURL>
+			<location>不详，中国</location>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群茴香-->
+		<dc:identifier>28016</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/28016</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Magnoliophyta</dwc:Phylum>
+		<dwc:Class>Magnoliopsida</dwc:Class>
+		<dwc:Order>Apiales</dwc:Order>
+		<dwc:Family>Apiaceae</dwc:Family>
+		<dwc:Genus>Foeniculum</dwc:Genus>
+		<dwc:ScientificName>Foeniculum vulgare P. Mill. (1768)</dwc:ScientificName>
+		<commonName xml:lang="zh">茴香</commonName>
+		<commonName xml:lang="zh">蘹香</commonName>
+		<commonName xml:lang="zh">香丝菜</commonName>
+		<commonName xml:lang="zh">谷香</commonName>
+		<commonName xml:lang="zh">茴香子</commonName>
+		<commonName xml:lang="zh">小茴香</commonName>
+		<commonName xml:lang="en">fennel</commonName>
+		<synonym relationship="synonym">Sequoia glyptostroboides (Hu et W. C. Cheng) Weide (1962)</synonym>
+		<synonym relationship="synonym">Metasequoia glyptostroboides var. caespitosa Y. H. Long et Y. Wu (1984)</synonym>
+		<synonym relationship="synonym">Metasequoia honshuenensis Silba et Callaghan (2000)</synonym>
+		<synonym relationship="synonym">Metasequoia neopangaea Silba (2002)</synonym>
+		<dcterms:created>2010-03-24</dcterms:created>
+		<dcterms:modified>2010-03-24</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">茴香又称怀香、茴香子、谷香(四川、贵州)，为伞形科(Apiaceae/Umbelliferae)茴香属Foeniculum Miller的一种多年生草本植物。它是伞形科植物中非常著名的香料和药用植物之一。该植物原产地中海沿岸及西亚，在我国南北各地广泛栽培。茴香的叶、种子都含有挥发油，具有特殊的香味。我国北方主要把茴香作调味品或馅食。其果实可作香料及药用，有温肝肾、暖胃气、散寒结的作用。该种植物喜冷凉、全日照和排水良好的土壤条件。植株高度约100~200厘米。全株表面有粉霜,具强烈香气。茎直立中空多分支,花分散绽放在分歧的茎上。齐头的伞形花序会在六至八月左右开出花瓣向内弯的数朵小黄花。叶蓝绿纤细,互生,为三至四次的羽状复叶,形状类似红萝卜,呈线状,有细的裂纹。果实是由二分果合成,长五至十米厘,呈长椭圆形,褐色,整个含有特殊香味。耐虫害,易栽培。其药用价值为可治胃胀、帮助消化和改善食欲不振。可做漱口水使口气清新,或蒸脸护肤可深层清洁。对紧肤、毛孔粗大、防皱有帮助。叶片剁碎加入料理中,特别适用于油腻的鱼类菜肴。种子则被当做香料,也可泡成香草茶,可助消化。茎可拿来搭配生菜色拉。</dc:description>
+			<reference>1. Liu YJ, Arens NC, Li CS, 2007. Range change in Metasequoia: relationship to palaeoclimate. Botanical Journal of the Linnean Society, 154: 115-127.</reference>
+			<reference>2. Manchester SR, Chen ZD, Lu AM, Uemura K, 2009. Eastern Asian endemic seed plant genera and their paleogeographic history throughout the Northern Hemisphere. Journal of Systermatics and Evolution, 47(1): 1-42.</reference>
+		</dataObject>
+		<dataObject>
+			<!--特征摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">茴香是一种多年生草本植物。植株直立，光滑，高可达2.5米，茎中空。叶子长可达40厘米，叶子极端细裂成丝状。花序为顶生复合伞形花序。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">多年生草本，高0.4—2米。茎直立，全体无毛，光滑，灰绿色或苍白色，多分枝。茎直立，植株具强烈香气，较下部的茎生叶柄长5—15厘米，中部或上部的叶柄部分或全部成鞘状，叶鞘边缘膜质;叶片轮廓为阔三角形，长4—30厘米，宽5—40厘米，4—5回羽状全裂，末回裂片线形，长1—6厘米，宽约1毫米。复伞形花序顶生与侧生，花序梗长2—25厘米;伞辐6—29,不等长，长1.5—10厘米，小伞形花序有花14—39;花柄纤细，不等长;无萼齿;花瓣黄色，倒卵形或近倒卵圆形，长约1毫米，先端有内折的小舌片，中脉1条;花丝略长于花瓣，花药卵圆形，淡黄色;花柱基圆锥形，花柱极短，向外叉开或贴伏在花柱基上。果实长圆形，长4—6毫米，宽1.5—2.2毫米，主棱5条，尖锐;每棱槽内有油管1，合生面油管2;胚乳腹面近平直或微凹。花期5—6月，果期7—9月。原产地中海地区。我国各省区都有栽培。嫩叶可作蔬菜食用或作调味用。果实入药，有驱风祛痰、散寒、健胃和止痛之效。</dc:description>
+			<reference>1.单人骅，佘孟兰. 1985 《中国植物志》 55卷2  213.</reference>
+			<reference>2.She, M. L., Watson, M. F. 2005 Apiaceae in Wu Z.-Y. and P. H. Raven, eds., Flora of China vol. 14. Science Press, Beijing, and Missouri Botanical Garden Press, St. Louis, MO.</reference>
+			<reference>3.中国科学院植物研究所 主编 《中国高等植物图鉴》第二册 P.1081</reference>
+			<reference>4.	刘守炉 2001. 《中国高等植物》傅立国等主编 第八卷 P.651</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">特产四川东部、湖北西部及湖南西北部。广泛栽培于 安徽,福建,广东,广西,贵州,河北,河南,江苏,江西,辽宁,陕西,山东,山西,云南,浙江各省区
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--命名学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Morphology</subject>
+			<dc:description xml:lang="zh">茴香还包括：Anethum foeniculum Linnaeus, Sp. Pl. 1: 263. 1753; A. pannorium Roxburgh; Foeniculum officinale Allioni; F. pan-norium (Roxburgh) de Candolle; Ligusticum foeniculum (Linnaeus) Crantz; Meum foeniculum (Linnaeus) Sprengel; Selinum foeniculum (Linnaeus) E. H. L. Krause; Seseli foeniculum (Linnaeus) Koso-Poljansky八个异名。范昌发(范昌发, 2001)等根据细胞学、孢粉学、形态学角度，并辅以解剖学和胚胎学的证据研究了茴香和球茎茴香Foeniculum vulgare subsp. copillaceum var. azoricum (Mill.)Thellung的分类地位，并认为中国应该将球茎茴香恢复为一个种的地位，学名为Foeniculum azoricum。但是有趣的是我们所广为认知的球茎茴香是Foeniculum vulgare var. dulce (Mill.)Batt.etTrab.,英文名叫Florence Fennel或Sweet Fennel，别名意大利茴香、甜茴香，原产意大利南部，现主要分布在地中海沿岸地区。1964年球茎茴香引进北京，却一直未受到人们的重视，近些年我国一些大中型城市和沿海城市为满足涉外饭店及大型超市日益增长的市场需求，纷纷引种、栽培。由于茴香植物的利用和栽培历史复杂，因此对于茴香的引种栽培植物的身份和来源还需要更多的研究进行确认。</dc:description>
+			<reference>范昌发 (2001) 中国茴香属的比较研究及分类处理意见. 植物研究, 21</reference>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">海拔750-1500米，气候温和，夏秋多雨，酸性黄壤土地区。在河流两旁，湿润山坡及沟谷中栽培很多，也有少数野生树木，常与杉木、茅栗、锥栗、枫香、漆树、灯台树、响叶杨、利川润楠等树种混生。模式标本采自四川万县（今湖北利川县）磨刀溪。水杉为喜光性强的速生树种，对环境条件的适应性较强。自被发现以来，世界各地普遍引种，在零下34oC和47oC的低温下能在野外越冬生长（郑万钧和付立国1978.）。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--经济价值和利用情况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Uses</subject>
+			<dc:description xml:lang="zh">水杉材质轻软，耐腐力弱，供建筑、板料、家具等用。树姿优美，叶色浓绿，干形通直，可栽培作庭园树。用种子或扦插繁殖（郑万钧和付立国1978）。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--珍稀濒危和保护状况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">濒危等级：EN  A2c;B2ab(ⅱ) （汪松、解炎 2004）。
+居群遗传学知识是就地或迁地保育的基础。对水杉的研究表明，由于冰期以及近来的生境丢失和破碎化的影响，水杉野生居群的遗传变异水平低于裸子植物的平均水平；栽培居群的遗传变异水平更低，且彼此关系较野生居群更为密切，说明全世界栽培居群的种源来源相同或相近，因此，虽然表明上水杉人工林的分布区和量都已经很大，但是由于迁地保育没有考虑到在遗传结构水平上的取样问题，水杉实际上并没有被很好地恢复，建议将来迁地保育时充分考虑水杉的遗传结构（Li et al. 2005）。
+
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--古生物/化石-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">水杉的化石材料丰富，描述20余种，研究比较多且可信的种类有4个种，即三个化石种M. occidentalis Chaney, M. milleri Rothwell et Basinger, M. foxii Stockey et al.和一个现代种M. glyptostroboides Hu et W. C. Cheng，Metasequoia disticha, M. japonica, M. chinensis, M. cuneata, M. papillapollenites, M. miocenica, M. kimurae, M. onukii, M. europaea, M. asiatica, M. nathorstii等11个名称均为M. occidentalis的异名，仅依据叶片表皮特征和叶片着生方式建立的种M. wigginsii, M. neosibirica, M. krysthofovichii, M. spitzbergensis, M. paradoxa以及依据不完全的木材特征建立的种M. sibirica, M. klerkiana等的身份还十分可疑，需要深入的研究（刘艳菊等2003）。
+</dc:description>
+			<reference>刘艳菊, 李承森, 王宇飞, Arens NC, 2003. 中国古植物学研究进展. IV. 活化石植物——水杉. 植物学报, 45(增刊): 59-63. </reference>
+		</dataObject>
+		<dataObject>
+			<!--鉴定特征-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">茴香Foeniculum vulgare最初由南美洲哥伦比亚植物学家Philip Miller1768年发表在Gard. Dic., ed. 8, Foeniculum no. 1.中，茴香的最主要识别特征为植物体具有浓郁的特殊香味，植株具粉霜，花黄色，叶裂片丝状，双悬果果棱尖锐。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生理和生物化学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">茴香植物生长期短，仅150天左右。我国南北方均可种植。在我国南方可宿根越冬，成为多年生革本植物。喜潮湿、凉爽的环境，对土壤要求不严，有耐瘠薄、耐盐碱、耐连作、抗旱等特点，适宜种植在中性或弱酸性的沙壤和轻沙壤土上。南方栽培茴香可分秋播和春播，播种后10一15天出苗。秋播9—10月，花期1-2月，果期3—4月；春播3—4月，花期6—7月，果期8～9月。
+茴香主要含脂肪油、挥发油、街醇及糖昔、氨基酸等。挥发油是茴香药材的主要有效成分。炮制有利于挥发油成分的煎出。它也具有多方面的药理作用，如对胃肠蠕动的促进，抗溃疡，利胆，中枢麻痹，松弛气管，促进肝恢复和性激素样作用，尤其具有提高免疫、抗肿瘤、杀菌、降压等多种作用。大量应用的毒副作用未见报道。临床应用范围较广，药典及部颁标准收载含小茵香的复方中药品种有68个。果实含挥发油约3～6%，主要成分为茴香醚50～60%、小茴香酮18～20%。 尚含:α-蒎烯、α-水芹烯、莰烯、二戊烯、茴香醛、茴香酸、爱草脑。 另含顺式茴香醚，对聚伞花素。 此外，含脂肪油约18%，其脂肪酸组成中，洋芫荽子酸占60%、油酸22%，亚油酸14%、棕榈酸4%。 尚含大于C18的醇和棕榈酸、花生酸、山萮酸等所成的蜡，豆甾醇，7-羟基香豆精等。 苦茴香的果实含茴香醚60%，茴香酮30%；而甜茴香含茴香醚80%，茴香酮10%。 也有的茴香不含茴香醚而含爱草脑。 
+</dc:description>
+			<reference>1.王羽梅 (2002) 小茴香种子发芽特性的研究. 韶关学院学报, 23</reference>
+			<reference>2.帕提曼•阿不都热合曼 (2007) 小茴香嫩茎的组织培养. 北方园艺</reference>
+			<reference>3.聂凌云 (2003) 中药材小茴香质量标准研究</reference>
+			<reference>4.杨红 (2004) 小茴香挥发油提取方法比较. 山西中医, 20</reference>
+			<reference>5.何金明 (2005) 茴香精油及其成分影响因素的研究进展. 中草药, 36</reference>
+		</dataObject>
+		<dataObject>
+			<!--染色体数据-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">茴香的染色体有多个不同的研究者进行了报道。国外学者Goldbatt报道了茴香的染色体数目为2n= 22；1994年国内学者何兴金、汤泽生报道了四川省的茴香的染色体数目为2n= 12；2001年范昌发等报道了成都生物所植物标本馆的茴香的染色体数目为2n =22，Bennici等研究者(Bennici et al., 2004)对法国居群的报道为2n=22，没有发现多倍体或非整倍体的变异。(邓瑞宁, 2006)报道了武汉地区茴香的染色体数目为2n =22，与何兴金和汤泽生报道的染色体数目不同。研究结果还表明，武汉地区茴香的染色体核型与范昌发等报道的成都生物所植物标本馆茴香的核型存在差异。上述的一些研究结果说明不同地区茴香的种质存在差异，具有遗传多样性。另外，在茴香的极少数花粉母细胞减数分裂过程中，观察到后期I有落后染色体出现，说明有个别同源染色体配对、分离行为异常。</dc:description>
+			<reference>1.Goldbatt．Index to plant chromosome numbers(1979～1981) [M]．st Louis：Missouri Botanical Garden，1984：97．</reference>
+			<reference>2.何兴金，汤泽生．四川6种伞形科植物的细胞学研究[J]．西南农业大学学报，1994，16(5)：488—491．</reference>
+		</dataObject>
+		<dataObject>
+			<!--栽培-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/28016" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">茴香生长适应性较强"喜潮湿凉爽的气候"具有耐盐碱、耐瘠薄、抗旱、节水、省肥等特点"对土壤要求不严"全国多数地区均可栽培"，但以疏松、湿润、含腐殖质较多的砂质土壤为佳。由于受历史、经济、土地资源等诸多因素影响"我国北方地区种植较多。目前茴香主产区主要集中在西北地区，具体有甘肃的民勤、玉门、正宁、酒泉和宁夏的海源，内蒙的古托可托、五原、临河以及山西和陕西部分地区。其栽培条件适宜选择通风向阳、排水良好的地块，深翻细耙，精细整地，使土壤细碎、平整，并施足充分腐熟的有机肥，与土壤充分混匀，然后做成宽1．5m的长厢(畦)，两边开沟以利排水。秋播由于气温渐低，播后需8～12天出苗；春播需5～8天出苗。小茴香在整个生育期中都可能受杂草为害，因此，除草是田问管理的关键。小茴香较耐旱，对水分比较敏感，大水漫灌易导致小茴香根系变黑而烂根死苗，故水分管理亦是小茴香整个生长发育期重要的一环。栽培期间会出现各病虫害的情况。苗期主要有金龟子、地老虎等地下害虫危害。黄凤蝶为害茎叶。开花前期，主要有蚜虫为害。黄翅茴香螟为害果实。病害主要有灰斑病和霜霉病。灰斑病危害植株茎叶。</dc:description>
+			<reference>1.何金明 (2006) 我国茴香产业中存在问题及对策. 中国调味品</reference>
+			<reference>2.易思荣 (2009) 小茴香的优质高产栽培. 特种经济动植物, 12</reference>
+		</dataObject>
+		<dataObject>
+			<!--民族植物学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Procedures</subject>
+			<dcterms:description>茴香原名蘹香，始载于唐本草。苏颂说，北人呼为茴香，声相近为蘹香。陶弘景谓：煮臭肉，下少许，无臭气，臭酱入末亦香，故曰茴香。李时珍说，俚俗多怀衿衽咀嚼，恐怀香之名，或以此也。唐代《千金方》和《药谱》中就有小茴香的记录，也在各种古籍中涉及到茴香的食用和药用价值，如《千金•食治》：主蛇咬疮久不瘥，捣敷之。 又治九种瘘。 《唐本草》：主诸瘘、霍乱及蛇伤。 《开宝本草》：主膀胱、肾间冷气及盲肠气，调中止痛，呕吐。 《日华子本草》：治干、湿脚气并肾劳颓疝气，开胃下食，治膀胱痛，阴疼。《伤寒蕴要》：暖丹田。 《玉揪药解》：治水土湿寒，腰痛脚气，固瘕寒疝。 《本草求真》：肝经虚火从左上冲头面者用之。</dcterms:description>
+			<reference>高明乾 2006 植物古汉名图考［G］郑州：大象出版社，1-547</reference>
+		</dataObject>
+		<dataObject>
+			<!--民族植物学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Uses</subject>
+			<dcterms:description>据统计我国茴香每年的种植面积为10万亩左右，年用量近2万吨。大部分用于食用。同时也是餐饮和家庭不可缺少的调味品。医用方面茴香以作为利尿剂和温和的松弛剂著称。也可用于治疗气喘、便秘、消化、肾结石、停经、鼻塞和肥胖问题。在哺乳期间可增加泌乳量"除少量用于中医临床配方外"也用于中成药生产。另外茴香挥发油日益受到人们的青睐广泛用于食品添加剂、医药、化妆品等行业。</dcterms:description>
+			<reference>高明乾 2006 植物古汉名图考［G］郑州：大象出版社，1-547</reference>
+		</dataObject>
+		<dataObject>
+			<!--历史故事-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Associations</subject>
+			<dcterms:description>普罗米修斯为人类从太阳神的二轮车中盗取火苗。人类有了火后,就懂得如何防范野兽的攻击,也利用火苗烹煮食物和保暖御寒。但是有一次,普罗米修斯捉弄了宙斯,让宙斯非常的生气,便将怒气发泄在人类的身上,擅自将给予人类生存的火苗藏了起来。普罗米修斯看到人类因此而过着可怜的生活,就决定为人类再去偷一次火苗。它将火苗藏在茴香的茎中送给人类,让人类恢复了光明的生活,但背叛宙斯的普罗密修斯可就倒霉了,他被锁在高加索山的岩壁上,每天都有神鹰啄他的肝脏,幸好最后被救出。 </dcterms:description>
+			<reference>高明乾 2006 植物古汉名图考［G］郑州：大象出版社，1-547</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>王芸</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2006/10/8/213850.jpg</mediaURL>
+			<location>秦岭，山西，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>花序</dcterms:title>
+			<dcterms:rightsHolder>王芸</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2006/10/8/213959.jpg</mediaURL>
+			<location>秦岭，山西，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>果</dcterms:title>
+			<dcterms:rightsHolder>张敬莉</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2010/1/23/129087314952812500a.jpg</mediaURL>
+			<location>秦岭，山西，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="publisher">科学出版社</agent>
+			<dcterms:title>手绘</dcterms:title>
+			<dcterms:rightsHolder>未知</dcterms:rightsHolder>
+			<mediaURL>http://de.academic.ru/pictures/dewiki/73/Illustration_Foeniculum_vulgare0.jpg</mediaURL>
+			<location>未知</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="composer">张宇澄</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>孔令锋</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2010/2/3/129096802805156250a.jpg</mediaURL>
+			<location>华南植物园，广东，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群油松-->
+		<dc:identifier>32691</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/32691</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Gymnospermae</dwc:Phylum>
+		<dwc:Class>Coniferopsida</dwc:Class>
+		<dwc:Order>Pinales</dwc:Order>
+		<dwc:Family>Pinaceae</dwc:Family>
+		<dwc:Genus>Pinus</dwc:Genus>
+		<dwc:ScientificName>Pinus tabuliformis Carrière, (1867)</dwc:ScientificName>
+		<commonName xml:lang="zh">长白赤松</commonName>
+		<commonName xml:lang="zh">油松</commonName>
+		<commonName xml:lang="zh">美人松</commonName>
+		<commonName xml:lang="zh">长果赤松</commonName>
+		<synonym relationship="synonym">Pinus leucosperma Maxim. (1881)</synonym>
+		<synonym relationship="synonym">Pinus sinensis Mayr (1894)</synonym>
+		<synonym relationship="synonym">Pinus densiflora var. tabuliformis (Carrière) Mast. (1902)</synonym>
+		<synonym relationship="synonym">Pinus tokunagai Nakai (1935)</synonym>
+		<synonym relationship="synonym">Pinus taihangshanensis Hu et T. Y. Yao (1935)</synonym>
+		<synonym relationship="synonym">Pinus tabuliformis var. tokunagai (Nakai) Taken. (1942)</synonym>
+		<synonym relationship="synonym">Pinus tabuliformis var. bracteata Takenouchi (1942)</synonym>
+		<synonym relationship="synonym">Pinus tabuliformis f. jeholensis Liou et Z. Wang (1955)</synonym>
+		<synonym relationship="synonym">Pinus tabuliformis f. purpurea Liou et Z. Wang (1955)</synonym>
+		<dcterms:created>2010-03-31</dcterms:created>
+		<dcterms:modified>2010-03-31</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">油松是中型常绿乔木，20-30米高，幼树树冠呈圆锥形，成年树树冠呈平顶。油松的幼树生长速度很快，当树龄增高后成长速度变缓。树皮灰褐色，开裂成鳞片。宽阔的树冠很显著，部分是由于长水平分枝习性。油松的松针呈有光泽的灰绿色，长10-17厘米，宽1-1.5毫米，叶鞘宿存，通常是一束两针，但在年轻的树的强壮纸条的顶端偶尔会出现一束三针。油松的球果为绿色，授粉约二十个月后成熟变为褐色，宽卵圆形，长4-6厘米，有显著种鳞，鳞盾带小刺。油松的种子长6-7毫米，有15-20毫米的翅，借助风力散播。 </dc:description>
+			<reference>1.http://baike.baidu.com/view/48879.htm?fr=ala0_1_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--特征摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">中型常绿乔木，20-30米高。宽阔的树冠很显著，部分是由于长水平分枝习性。油松的松针呈有光泽的灰绿色，长10-17厘米，宽1-1.5毫米，叶鞘宿存，通常是一束两针，但在年轻的树的强壮纸条的顶端偶尔会出现一束三针。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">乔木，高达25米，胸径可达1米以上；树皮灰褐色或褐灰色，裂成不规则较厚的鳞状块片，裂缝及上部树皮红褐色；枝平展或向下斜展，老树树冠平顶，小枝较粗，褐黄色，无毛，幼时微被白粉；冬芽矩圆形，顶端尖，微具树脂，芽鳞红褐色，边缘有丝状缺裂。针叶2针一束，深绿色，粗硬，长10-15厘米，径约1．5毫米，边缘有细锯齿，两面具气孔线；横切面半圆形，二型层皮下层，在第一层细胞下常有少数细胞形成第二层皮下层，树脂道5-8个或更多，边生，多数生于背面，腹面有1-2个，稀角部有1-2个中生树脂道，叶鞘初呈淡褐色，后呈淡黑褐色。雄球花圆柱形，长1．2-1．8厘米，在新枝下部聚生成穗状。球果卵形或圆卵形；长4-9厘米，有短梗，向下弯垂，成熟前绿色，熟时淡黄色或淡褐黄色，常宿存树上近数年之久；中部种鳞近矩圆状倒卵形，长1．6--2厘米，宽约1．4厘米，鳞盾肥厚、隆起或微隆起，扁菱形或菱状多角形，横脊显著，鳞脐凸起有尖刺；种子卵圆形或长卵圆形，淡褐色有斑纹，长6--8毫米，径4--5毫米，连翅长1．5-1．8厘米；子叶8-12枚，长3．5—5．5厘米；初生叶窄条形，长约4．5厘米，先端尖，边缘有细锯齿。 花期4--5月，球果第二年10月成熟。</dc:description>
+			<reference>刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷  251.</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">甘肃,河北,河南,湖北,湖南,吉林,辽宁,内蒙古,宁夏,青海,陕西,山东,山西,四川</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--命名学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Morphology</subject>
+			<dc:description xml:lang="zh">油松的种群和名称原来很乱，经前人不断整理，现已比较明确。本种分布很广，变异较大。胡先骑、乐天宇于1935年将河南太行山果松岭海拔2500米(?)的一种树干丛生的油松鉴定为太行松Pinus taihangshanensis Hu et Yao，据我们实地调查研究，这种丛生的现象是因幼树顶芽损伤，侧枝代替主干，或因幼树丛生，其后干基彼此愈合的结果，与遗传特性无关，故予归并。中进猛之进(T．Nakai)将河北雾灵山所产的油松定名为Pinus tokunagai Nakai，而竹内亮(M‘Takenouchi)认为是油松的一个变种，改为’var．tokunagai(Nakai)Takenouchi”，我们认为其主要特征(中并猛之进所称的“侧生短枝”，或竹内亮所称的“缩短枝”)是在一定环境条件下大树生长缓慢的表现，而生长旺盛的幼树就不存在这种现象。这种所谓“短枝上的叶密生”的现象，在油松分布区的很多地方可以看到，  不能据此成立新种或新变种，而应并人油松。刘慎谔、王战的大果油松(变型)“f．jeholensis Liouet Wang’
+其主要特征为“球果较大，长达7厘米“。这种较大的球果在河北、山西、陕西等地的油松标本中亦可见到，系属变异性，故予归并。同样紫翅油松(变型)“f．purpureaLiou et Wang”的种翅带暗紫褐色也不是一个稳定的性状，亦予归并。经过整理，本种群保留下列两个变种。</dc:description>
+			<reference>刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷  251</reference>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">
+			山区，海拔100-2600米。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--经济价值和利用情况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Uses</subject>
+			<dc:description xml:lang="zh">心材淡黄红褐色，边材淡黄白色，纹理直，结构较细密，材质较硬，比重o．4-o．54，富树脂，耐久用。可供建筑、电杆、矿柱、造船、器具、家具及木纤维工业等用材。树干可割取树脂，提取松节油；树皮可提取栲胶。松节、松针(即针叶)、花粉均供药用。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--鉴定特征-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">油松的针叶粗长，两针一束，鳞脐背生。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生理和生物化学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">油松是北方地区的主要造林树种。松针为松的针叶部位，药用价值已有2000年的历史。其性味芳香、无毒，功能祛风除湿，杀虫止痒，活血化瘀，安心神。可用于治疗风湿性关节炎，疥疮，跌打损伤，失眠等。《本草纲目》曰：“松柏为百木之长，服之，令人不老，轻身益气，主治风湿疮，生毛发，安五脏，守中，不饥延年。”现代研究松针含挥发抽、黄酮、维生素、树脂等，可用治风湿性关节炎、夜盲症等多种疾病。国外对松针的研究极为重视，如前苏联建有松针叶绿素一胡萝卜紊软膏加工厂，生产药用浸膏，年产量500吨。日本已研究成松针油、松针戒烟糖、松针茶。美国利用雪松针叶提取柏木油，供制药工业和芳香剂生产用，年产
+量约25吨。国内也有利用松针富含多种氨基酸等成分研制成松针油、叶绿素制品、松针营养粉、松针软膏、针叶精油等产品。
+</dc:description>
+			<reference>1. 全国中草药汇编(上册)：北京：人民卫生出版社，1975：495</reference>
+			<reference>2. 中国医学科学院药物研究所中草药有效成分研究．北京：人民卫生出版社，1972：373</reference>
+			<reference>3. 邓卫平. 松针的综合利用．国土与自然资源研究.1991,(1)：63</reference>
+			<reference>4. 邓毅. 甘肃油松针叶氨基酸成分的研究. 中国中医药科技.2003,10(6)</reference>
+		</dataObject>
+		<dataObject>
+			<!--林业病虫害的防治-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">  松落针病是一种世界性病害，分布范围极其广泛，危害油松、白皮松、华山松、马尾松、獐子松等多个松树品种。据调查，2007年此病在河北、河南、江苏、安徽、江西、陕西等地发生较严重。尤其是河北省易县，无论是苗圃还是成林，松落针病发生都非常严重，油松苗圃地发病率100％，有的树木濒临死亡，造成了严重的经济损失。
+1症状与诊断
+松落针病发病部位通常在2年生针叶上，有时也危害1年生针叶。发病初期症状不明显，随着病情发展，病叶的颜色由暗绿色变成灰绿色，逐渐变成黄褐色而干枯，大部分晚秋脱落，少部分不脱落。落地病叶的颜色以后都变成灰褐色，越冬后的病落叶，在第2年春天出现典型的后期症状，落地针叶上出现若干细的黑色横线，将针叶分成若干段，在横线之间的叶段上出现椭圆形黑色小点，即病菌的分生孢子器，小点中间有一肉眼可见的纵裂纹。
+2发病规律与防治
+松落针病的病菌多数以菌丝体或子囊盘在病落叶上越冬，少数在树上的针叶上越冬。第2年3～4月间形成子囊果发育成熟，4～5月间产生子囊孢子，借气流传播。遇雨或潮湿天气，孢子由针叶上气孔侵入，经过2个月的潜伏在夏初前后出现症状。降水量大、湿度高有利于病菌的传播与侵入。一般幼林发病率高于成林，郁闭度大的高于郁闭度小的，迎风面高于背风面。土地瘠薄、病虫害严重、抚育管理不当、地势低洼、林木过密、通风不良的地块发病严重。
+</dc:description>
+			<reference>1. 张文军. 松落针病的发生与防治. 河北农业科技.2008,3</reference>
+		</dataObject>
+		<dataObject>
+			<!--栽培-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32691" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">为喜光、深根性树种，喜干冷气侯，在土层深厚、排水良好的酸性、中性或钙质黄土上均能生长良好。</dc:description>
+			<reference>刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷  251</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/10/40040100200-0001.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>散落种子后的球果</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/29/221435.jpg</mediaURL>
+			<location>南宁，广西，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>雄球花</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2006/5/29/235516.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>枝叶</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2006/5/10/40040100200-0003.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>球果</dcterms:title>
+			<dcterms:rightsHolder>张志翔</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/linqinwen/001/000242.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--音频1-->
+			<dataType>http://purl.org/dc/dcmitype/Sound</dataType>
+			<mimeType>audio/x-ms-wma</mimeType>
+			<agent homepage="http://mp3.baidu.com" logoURL="http://img.baidu.com/img/mp3-jg.gif" role="source">百度mp3</agent>
+			<dcterms:title>歌曲松风</dcterms:title>
+			<dcterms:rightsHolder>歌手</dcterms:rightsHolder>
+			<mediaURL>http://61.146.178.120:69/心灵鸡汤/青松/松风.wma</mediaURL>
+			<location>未知</location>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群墨兰-->
+		<dc:identifier>25912</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/25912</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Angiospermae</dwc:Phylum>
+		<dwc:Class>Monocotyledoneae</dwc:Class>
+		<dwc:Order>Microspermae</dwc:Order>
+		<dwc:Family>Orchidaceae</dwc:Family>
+		<dwc:Genus>Cymbidium</dwc:Genus>
+		<dwc:ScientificName>Cymbidium sinense (Jack. ex Andrews) Willd. (1805)</dwc:ScientificName>
+		<commonName xml:lang="zh">墨兰</commonName>
+		<commonName xml:lang="zh">报岁兰</commonName>
+		<synonym relationship="synonym">Cymbidium chinense Heynh., (1846)</synonym>
+		<synonym relationship="synonym">Cymbidium ensifolium var. (L.) Sw. var. munronianum King et Pantl., (1951)</synonym>
+		<synonym relationship="synonym">Cymbidium fragrans Salisb., (1812)</synonym>
+		<synonym relationship="synonym">Cymbidium hoosai Makino, (1902)</synonym>
+		<synonym relationship="synonym">Cymbidium albojucundissimum Hayata, (1914)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense f. (Jack. ex Andrews) Willd. f. albo-jucundissimum (Hayata) Fukuy. (1932)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense f. (Jack. ex Andrews) Willd. f. aureomarginatum T. K. Yen (1964)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense f. (Jack. ex Andrews) Willd. f. pallidiflorum S. S. Ying (1990)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense f. (Jack. ex Andrews) Willd. f. taiwanianum S. S. Ying (1990)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense f. (Jack. ex Andrews) Willd. f. viridiflorum T. K. Yen (1964)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense var. (Jack. ex Andrews) Willd. var. albo-jucundissimum (Hayata) Masam. (1933)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense var. (Jack. ex Andrews) Willd. var. album T. K. Yen (1964)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense var. (Jack. ex Andrews) Willd. var. autumnale Y. S. Wu (1993)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense var. (Jack. ex Andrews) Willd. var. bellum T. K. Yen (1964)</synonym>
+		<synonym relationship="synonym">Cymbidium sinense var. (Jack. ex Andrews) Willd. var. margicoloratum Hayata (1916)</synonym>
+		<synonym relationship="synonym">Epidendrum sinense Jacks. ex Andrews (1802)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">地生兰。叶4-5枚，丛生于椭圆形的假鳞茎上。叶片剑形，花茎直立、粗壮，通常高出叶面，野生可达80-100厘米，有花7-17朵；苞片小，基部有蜜腺。花瓣短宽，唇瓣三裂不明显，先端下垂反卷。花期1-3月，少数在秋季开花。</dc:description>
+			<reference>http://www.flowersea.net/site.nsf/7de70a5d46d6fa82482570c70055d26a/5e376042080fd84648256fc200293fc4?OpenDocument</reference>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">地生植物；假鳞茎卵球形，长2．5-6厘米，宽1．5-2．5厘米，包藏于叶基之内。叶3-5枚，带形，近薄革质，暗绿色，长45-50(-110)厘米，宽(1．5-)2-3厘米，有光泽，关节位于距基部3．5-7厘米处。花葶从假鳞茎基部发出，直立，较粗壮，长(40-)50-90厘米，一般略长于叶；总状花序具10—20朵或更多的花；花苞片除最下面的1枚长于1厘米外，其余的长4-8毫米；花梗和子房长2-2．5厘米；花的色泽变化较大，较常为暗紫色或紫褐色而具浅色唇瓣，也有黄绿色、桃红色或白色的，一般有较浓的香气；萼片狭长圆形或狭椭圆形，长2．2-3(-3．5)厘米，宽5叫毫米；花瓣近狭卵形，长2-2．7厘米，宽6-10毫米；唇瓣近卵状长圆形，长1．7-2．5(-3)厘米，不明显3裂；侧裂片直立，多少围抱蕊柱，具乳突状短柔毛；中裂片较大，外弯，亦有类似的乳突状短柔毛，边缘略波状；唇盘上2条纵褶片从基部延伸至中裂片基部，上半部向内倾斜并靠合，形成短管；蕊柱长1．2-1．5厘米，稍向前弯曲，两侧有狭翅；花粉团4个，成2对，宽卵形。蒴果狭椭圆形，长6-7厘米，宽1．5-2厘米。花期10月至次年3月。
+</dc:description>
+			<reference>1.陈心启，吉占和，郎楷永，朱光华. 1999 《中国植物志》 18卷  215.</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">印度,缅甸,越南,泰国,日本。中国分布于安徽,江西,福建,台湾,广东,海南,广西,四川,贵州,云南
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">生于林下、灌木林中或溪谷旁湿润但排水良好的隐蔽处，海拔800-2000米。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--经济价值和利用情况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Uses</subject>
+			<dc:description xml:lang="zh">墨兰又称报岁兰，是我国传统观赏的兰花，早在南宋就有品种的记载。目前已有数以百计的品种被栽培。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--栽培-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/25912" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#DiagnosticDescription</subject>
+			<dc:description xml:lang="zh">对半阴凉环境的追求，几乎是所有兰花的共性，墨兰也不例外；25---28摄氏度之间，是墨兰认为最舒服的生长温度。它们异常害怕3摄氏度以下的严寒天气。在生长期时，墨兰需要75--80%之间的空气相对湿度。在人工栽培的情况下，比如泥炭土、石子、花生壳、珍珠岩等材料，腐殖质含量丰富，pH值在5.6--6.5之间。非常适合用来为它们进行无土栽培。但随着科技的日新月异，组织培养作为一门先进的育苗技术，已在兰花种植产业中得到了不断推广。经过组培育苗的兰花，抗性强，病虫害发生较少；因此组织培养也成了目前最适合用于批量生产的育苗方法。
+
+</dc:description>
+			<reference>http://www.ngx.net.cn/yuanjiaomeiti/dianshi/jiemujieshao/t20100202_26051.htm</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/limin/41/88567.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--视频1-->
+			<dataType>http://purl.org/dc/dcmitype/MovingImage</dataType>
+			<mimeType>video/x-flv</mimeType>
+			<agent homepage="http://v.youku.com/v_show/id_XMTYxNDAzMDYw.html" logoURL="http://static.youku.com/v1.0.0541/index/img/youkulogo.gif" role="source">优酷网</agent>
+			<dcterms:title>植物生长</dcterms:title>
+			<dcterms:rightsHolder>未知</dcterms:rightsHolder>
+			<mediaURL>http://player.youku.com/player.php/sid/XMTYxNDAzMDYw/v.swf</mediaURL>
+			<location>未知</location>
+		</dataObject>
+		<dataObject>
+			<!--音频1-->
+			<dataType>http://purl.org/dc/dcmitype/Sound</dataType>
+			<mimeType>audio/x-wav</mimeType>
+			<agent homepage="http://mp3.baidu.com" logoURL="http://img.baidu.com/img/mp3-jg.gif" role="source">百度mp3</agent>
+			<dcterms:title>歌曲兰花草</dcterms:title>
+			<dcterms:rightsHolder>银霞</dcterms:rightsHolder>
+			<mediaURL>http://preciousbloodhv.edu.hk/std/art/03.mp3</mediaURL>
+			<location>未知</location>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="photographer">彭玉德</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>彭玉德</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/yushengxiang/gxy/000311.jpg</mediaURL>
+			<location>南宁，广西，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="photographer">刘冰</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/014/02003118.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="author">张宇澄</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/014/02003133.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="editor">王利松</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/014/02003119.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群小叶兜兰-->
+		<dc:identifier>32679</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/32679</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Angiospermae</dwc:Phylum>
+		<dwc:Class>Monocotyledoneae</dwc:Class>
+		<dwc:Order>Microspermae</dwc:Order>
+		<dwc:Family>Orchidaceae</dwc:Family>
+		<dwc:Genus>Paphiopedilum</dwc:Genus>
+		<dwc:ScientificName>Paphiopedilum barbigerum T. Tang et F. T. Wang (1940) </dwc:ScientificName>
+		<commonName xml:lang="zh">小叶兜兰</commonName>
+		<synonym relationship="synonym">Paphiopedilum insigne var. (Wall. ex Lindl.) Pfitzer var. barbigerum (T. Tang et F. T. Wang) Braem (1888)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32679" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">小叶兜兰的花型娇小,花色黄白为主。
+ 小叶兜兰植株相对较小，花型花色同根茎兜兰。
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32679" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">地生或半附生植物。叶基生，二列，5---6枚；叶片宽线形，长8—19厘米，宽7—18毫米，先端略钝或有时具2小齿，基部收狭成叶柄状并对折而互相套叠，无毛或近基部边缘略有缘毛。花葶直立，长8—16厘米，有紫褐色斑点，密被短柔毛，顶端生1花；花苞片绿色，宽卵形，围抱子房，长1．5—1．9(--2．8)厘米，宽1．1—1．3厘米，背面下半部疏被短柔毛或仅基部有毛；花梗和子房长2．6---5．5厘米，密被短柔毛；花中等大；中萼片中央黄绿色至黄褐色，上端与边缘白色，合萼片与中萼片同色但无白色边缘，花瓣边缘奶油黄色至淡黄绿色，中央有密集的褐色脉纹或整个呈褐色，唇瓣浅红褐色；中萼片近圆形或宽卵形，长2．8—3．2厘米，宽2．2—2．7(--4)厘米，先端钝，基部有短柄，背面被短柔毛；合萼片明显小于中萼片，卵形或卵状椭圆形，长2．3—2．5厘米，宽1．2--1．5厘米，先端钝或浑圆，背面亦被毛；花瓣狭长圆形或略带匙形，长3—4厘米，宽约1厘米，边缘波状，先端钝，基部疏被长柔毛；唇瓣倒盔状，基部具宽阔的、长1．5—2厘米的柄；囊近卵形，长2--2．5厘米，宽1．5--2厘米，囊口极宽阔，两侧各具1个直立的耳，两耳前方的边缘不内折，囊底有毛；退化雄蕊宽倒卵形，长6—7毫米，宽7—8毫米，基部略有耳，上面中央具1个脐状突起。花期10--12月。
+
+</dc:description>
+			<reference>1.陈心启，吉占和，郎楷永，朱光华. 1999 《中国植物志》 17卷  64.</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32679" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+广西，贵州。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32679" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">生于海拔800--1500米的石灰岩山丘荫蔽多石之地或岩隙中。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--珍稀濒危和保护状况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/32679" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">IUCN濒危等级：EN  </dc:description>
+			<reference>龙健,秦樊鑫,周建威,冉景丞,覃龙江.濒危植物小叶兜兰（Paphiopedilum barbigerum）微环境特点.贵州师范大学学报：自然科学版.2009,27(3):15-20.</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="compiler">张宇澄</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>王茂桦</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/luoyb/p/lybp30210005.jpg</mediaURL>
+			<location>云南，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="director">王利松</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>罗毅波</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/luoyb/p/lybp30520001.jpg</mediaURL>
+			<location>云南，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="photographer">罗毅波</agent>
+			<dcterms:title>植株和生境</dcterms:title>
+			<dcterms:rightsHolder>罗毅波</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/luoyb/p/lybp30510010.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>罗毅波</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/luoyb/p/lybp30510022.jpg</mediaURL>
+			<location>北大，北京，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.plantphoto.cn/" logoURL="http://img.plantphoto.cn/images/bg_top.gif" role="project">中国植物图像库</agent>
+			<dcterms:title>初生的叶和小孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/liubing/09/09000822.jpg</mediaURL>
+			<location>九岭山，江西，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群独花兰-->
+		<dc:identifier>24001</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/24001</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Angiospermae</dwc:Phylum>
+		<dwc:Class>Monocotyledoneae</dwc:Class>
+		<dwc:Order>Microspermae</dwc:Order>
+		<dwc:Family>Orchidaceae</dwc:Family>
+		<dwc:Genus>Changnienia</dwc:Genus>
+		<dwc:ScientificName>Changnienia amoena S. S. Chien (1935)</dwc:ScientificName>
+		<commonName xml:lang="zh">独花兰</commonName>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">陆生兰。假鳞茎淡黄白色，顶端生1叶。叶阔卵形或阔椭圆形，下面带紫红色。花葶生于顶端叶腋，花较大，淡紫色或浅粉红色，单朵顶生，直径5.5-7cm。唇瓣3裂，侧裂片斜卵形，中裂片肾形，边缘稍呈皱波状，具紫红色总疣和腺点，距长约2cm，稍弯。
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">
+单种属，仅见于我国亚热带地区			假鳞茎近椭圆形或宽卵球形，长1．5—2．5厘米，宽1--2厘米，肉质，近淡黄白色，有2节，被膜质鞘。叶1枚，宽卵状椭圆形至宽椭圆形，长6．5—11．5厘米，宽5-8．2厘米，先端急尖或短渐尖，基部圆形或近截形，背面紫红色；叶柄长3．5—8厘
+米。花葶长10—17厘米，紫色，具2枚鞘；鞘膜质，下部抱茎，长3--4厘米；花苞片小，凋落；花梗和子房长7—9毫米；花大，白色而带肉红色或淡紫色晕，唇瓣有紫红色斑点；萼片长圆状披针形，长2．7—3．3厘米，宽7--9毫米，先端钝，有5--7脉；侧萼片稍斜歪；花瓣狭倒卵状披针形，略斜歪，长2．5—3厘米，宽1．2—1．4厘米，先端钝，具7脉；唇瓣略短于花瓣，3裂，基部有距；侧裂片直立，斜卵状三角形，较大，宽1—1．3厘米；中裂片平展，宽倒卵状方形，先端和上部边缘具不规则波状缺刻；唇盘上在两枚侧裂片之间具5枚褶片状附属物；距角状，稍弯曲，长2--2．3厘米，基部宽7—10毫米，向末端渐狭，末端钝；蕊柱长1．8--2．1厘米，两侧有宽翅。花期4月。
+
+</dc:description>
+			<reference>1.陈心启，吉占和，郎楷永，朱光华. 1999 《中国植物志》 18卷  171.</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+我国特有，分布于陕西,江苏,安徽,浙江,江西,湖北,湖南,四川。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">生于疏林下腐殖质丰富的土壤上或沿山谷荫蔽的地方；海拔400-1100(-1800)米。模式标本采自江苏。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--珍稀濒危和保护状况-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">珍惜濒危植物 </dc:description>
+			<reference>傅立国.1991.中国植物红皮书—稀有濒危植物(第一卷) [M].北京:科学出版社.</reference>
+		</dataObject>
+		<dataObject>
+			<!--传粉生物学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/24001" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">孙海芹等2002年3～4月,我们对神农架2个移植居群和5个天然居群进行了传粉生物学的定点观察,发现雌性三条熊蜂(Bombus(Diversobombus)trifasciatus Smith)、仿熊蜂(Bombus(Tricornibombus)imitator Pittion)和蜜蜂均访问独花兰,但只有三条熊蜂身体粘有花粉块,是独花兰的有效传粉者.三条熊蜂的访问频率很低,在113 h的观察中只有9次访问,但在一个天然居群(population 3)中曾观察到一天4次的最高访问频率;访问主要在12:00～15:00出现,但在花上停留时间很短,不超过10 s.在未被授粉的情况下,独花兰花朵大约3周后自然枯萎,但受粉后3、4 d内即出现一系列形态和颜色的变化,包括花梗逐渐伸长,子房在花梗逐渐停止伸长后开始膨大等,表明花梗伸长可作为结实(授粉成功)的指标.人工授粉实验表明,自花、异花受粉后花梗均伸长,而套袋隔离花的则花梗不伸长,说明独花?兰是自交亲和的异交种,需要昆虫传粉.根据传粉者的访问频率、居群中果实的分布,尤其是花距内无花蜜等特征,我们认为独花兰是种欺骗性传粉的兰花.相对于其他欺骗性传粉的兰花,独花兰的自然结实率并不很低(26.98%),这与居群规模小会提高欺骗性传粉兰花结实率这一观点吻合.花粉块的输出数远高于结实数,这说明独花兰存在一定的花粉浪费.</dc:description>
+			<reference>孙海芹, 罗毅波, 葛颂.濒危植物独花兰的传粉生物学初步观察. 植物学报.2003,9:1019-1023 </reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国数字植物标本馆</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>高信芬</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/xkzx/xk001/36.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国数字植物标本馆</agent>
+			<dcterms:title>花和叶</dcterms:title>
+			<dcterms:rightsHolder>徐良</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2007/3/30/174534.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国数字植物标本馆</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>喻勋林</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/yuxunlin/2009/356405.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国数字植物标本馆</agent>
+			<dcterms:title>花</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/2008/12/128744004257500000a.jpg</mediaURL>
+			<location>北大，北京，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国数字植物标本馆</agent>
+			<dcterms:title>初生的叶和小孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>罗毅波</dcterms:rightsHolder>
+			<mediaURL>http://pic.plantphoto.cn/gallery/photo/luoyb/c/lybc05320025.jpg</mediaURL>
+			<location>九岭山，江西，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群银杏-->
+		<dc:identifier>29486</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/29486</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Gymnospermae</dwc:Phylum>
+		<dwc:Class>Ginkgopsida</dwc:Class>
+		<dwc:Order>Ginkgoales</dwc:Order>
+		<dwc:Family>Ginkgoaceae</dwc:Family>
+		<dwc:Genus>Ginkgo</dwc:Genus>
+		<dwc:ScientificName>Ginkgo biloba L. (1771)</dwc:ScientificName>
+		<commonName xml:lang="zh">银杏</commonName>
+		<commonName xml:lang="zh">白果</commonName>
+		<commonName xml:lang="zh">公孙树</commonName>
+		<commonName xml:lang="zh">鸭脚子</commonName>
+		<commonName xml:lang="zh">鸭掌树</commonName>
+		<synonym relationship="synonym">Salisburia adiantifolia Sm. (1797)</synonym>
+		<synonym relationship="synonym">Salisburia biloba Hoffmanns. (1824)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">银杏亦称白果树，公孙树。为著名的孑遗植物，属银杏科，残存l目1科1属1种，这在植物界很少见，只有我国才有正宗的银杏树，其它国家的银杏树都是从我国引种过去的。
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">
+乔木，高达40米，胸径可达4米；幼树树皮浅纵裂，大树之皮呈灰褐色，深纵裂，粗糙；幼年及壮年树冠圆锥形，老则广口日形，枝近轮生，斜上伸展(雌株的大枝常较雄株开展)；一年生的长枝淡褐黄色，二年生以上变为灰色，并有细纵裂纹，短枝密被叶痕，黑灰色，短枝上亦可长出长枝；冬芽黄褐色，常为卵圆形，先端钝尖。叶扇形，有长柄，淡绿色，无毛，有多数叉状并列细脉，顶端宽5—8厘米，在短枝上常具波状缺刻，在长枝上常2裂，基部宽楔形，柄长3--10(多为5--8)厘米，幼树及萌生枝上的叶常较大而深裂(叶片长达13厘米，宽15厘米)，有时裂片再分裂(这与较原始的化石种类之叶相似)，叶在一年生长枝上螺旋状散生，在短枝上3--8叶呈簇生状，秋季落叶前变为黄色。球花雌雄异株，单性，生于短枝顶端的鳞片状叶的腋内，呈簇生状；雄球花菜荑花序状，下垂，雄蕊排列疏松，具短梗，花药常2个，长椭圆形，药室纵裂，药隔不发达，雌球花具长梗，梗端常分两叉，稀3--5叉或不分叉，每叉顶生一盘状珠座，胚珠着生其上，通常仅一个叉端的胚珠发育成种子，风媒传粉。种子具长梗，下垂，常为椭圆形、长倒卵形、卵圆形或近圆球形，长2．5--3．5厘米，径约2厘米，外种皮肉质，熟时黄色或橙黄色，外被白粉，有臭味；中种皮白色，骨质，具2--3条纵脊；内种皮膜质，淡红褐色；胚乳肉质，味甘略苦，子叶2枚，稀3枚，发芽时不出土，初生叶2—5片，宽条形，长约5毫米，宽约2毫米，先端微凹，第4或第5片起之后生叶扇形，先端具一深裂及不规则的波状缺刻，叶柄长o．9--2．5厘米；有主根。花期3--4月，种子9--10月成熟。
+</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷  18</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布及栽培-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+银杏为中生代孑遗的稀有树种，系我国特产，仅浙江天目山有野生状态的树木，生于海拔500--1000米、酸性(pH值5--5．5)黄壤、排水良好地带的天然林中，常与柳杉、榧树、蓝果树等针阔叶树种混生，生长旺盛。银杏的栽培区甚广：北自东北沈阳，南达广州，东起华东海拔40--1000米地带，西南至贵州、云南西部(腾冲)海拔2000米以下地带均有栽培，以生产种子为目的，或作园林树种。栽培区常用实生苗、移植苗或根蘖苗进行嫁接，可提前在8--10年生时开花结实(实生苗一般在20年后才开始结种子)。各地栽培的银杏有数百年或千年以上的老树。朝鲜、日本及欧、美各国庭园均有栽培。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">银杏为喜光树种，深根性，对气候、土壤的适应性较宽，能在高温多雨及雨量稀少、冬季寒冷的地区生长，但生长缓慢或不良；能生于酸土壤(pH值4．5)、石灰性土壤(pH值8)及中性土壤上，但不耐盐碱土及过湿的土壤。以生于海拔1000(云南1500--2000)米以下，气候温暖湿润，年降水量700--1500毫米，土层深厚、肥沃湿润、排水良好的地区生长最好；在土壤瘠薄干燥、多石山坡或过度潮湿的地方均不易成活或生长不良。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--林业及农业价值-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">银杏为速生珍贵的用材树种，边材淡黄色，心材淡黄褐色，结构细，质轻软，富弹性，易加工，有光泽，比重o．45--0．4a，不易开裂，不反挠，为优良木材，供建筑、家具、室内装饰、雕刻、绘图版等用。种子供食用(多食易中毒)及药用。叶可作药用和制杀虫剂，亦可作肥料。种子的肉质外种皮含白果酸、白果醇及白果酚，有毒。  树皮含单宁。银杏树形优美，春夏季叶色嫩绿，秋季变成黄色，颇为美观，
+树。
+我国劳动人民在长期栽培银杏的过程中选育出许多种子大、品种，生产干果。</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷  18</reference>
+		</dataObject>
+		<dataObject>
+			<!--药用植物化学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/29486" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">银杏的主要药用成分为银杏黄酮醇甙和银杏内酯，其中限制因子为银杏酸含量．这些成分主要存在于银杏叶中，因此，经常服用银杏叶制品，可以有效增加脑血流量，扩张冠状动脉，降低血清胆固醇，适用于预防和治疗冠状动脉粥样硬化、心绞痛、血清胆固醇过高症、痢疾、肠炎等疾病．</dc:description>
+			<reference>王磊.银杏研究进展.昭通师范高等专科学校学报.2001,3:73-78</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="illustrator">许哲平</agent>
+			<dcterms:title>果</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/10/40020010010-0006.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="illustrator">许哲平</agent>
+			<dcterms:title>全株</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/10/40020010010-0004.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="recorder">张宇澄</agent>
+			<dcterms:title>叶</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/10/40020010010-0010.jpg</mediaURL>
+			<location>中科院植物园，北京，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">刘夙</agent>
+			<dcterms:title>秋天黄叶</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/29/221404.jpg</mediaURL>
+			<location>北大，北京，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">刘夙</agent>
+			<dcterms:title>初生的叶和小孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/29/225532.jpg</mediaURL>
+			<location>九岭山，江西，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片6-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">刘冰</agent>
+			<dcterms:title>大孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/016/03000643.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>33.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片7-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">刘冰</agent>
+			<dcterms:title>小孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/016/03000646.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>22.59</geo:lat>
+				<geo:long>88.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群罗汉松-->
+		<dc:identifier>51329</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/51329</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Gymnospermae</dwc:Phylum>
+		<dwc:Class>Coniferopsida</dwc:Class>
+		<dwc:Order>Podocarpales</dwc:Order>
+		<dwc:Family>Podocarpaceae</dwc:Family>
+		<dwc:Genus>Podocarpus</dwc:Genus>
+		<dwc:ScientificName>Podocarpus macrophyllus (Thunb.) Sweet (1818)</dwc:ScientificName>
+		<commonName xml:lang="zh">罗汉杉</commonName>
+		<commonName xml:lang="zh">罗汉松</commonName>
+		<commonName xml:lang="zh">土杉</commonName>
+		<synonym relationship="synonym">Taxus macrophylla Thunb. (1784)</synonym>
+		<synonym relationship="synonym">Nageia macrophylla (Thunb.) F. Muell. (1881)</synonym>
+		<synonym relationship="synonym">Margbensonia macrophylla (Thunb.) A. V. Bobrov et Melikyan (1998)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">树冠广卵形。叶条状披针形，先端尖，基部楔形，两面中肋隆起，表面暗绿色，背面灰绿色，有时被白粉，排列紧密，螺旋状互生。雌雄异株或偶有同株。种子卵形，有黑色假种皮，着生于肉质而膨大的种托上，种托深红色，味甜可食。花期5月，种熟期10月。常见的栽培品种有狭叶罗汉松，叶较窄，先端渐窄成长尖形；柱冠罗汉松，叶小，先端纯或圆；小叶罗汉松，叶密集于小枝顶端，呈螺旋状着生，较狭窄，先端钝圆；短尖叶罗汉松，叶极短小；斑叶罗汉松，叶面有白色斑点。 
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">
+乔木，高达20米，胸径达60厘米；树皮灰色或灰褐色，浅纵裂，成薄片状脱落；枝开展或斜展，较密。叶螺旋状着生，条状披针形，微弯，长7—12厘米，宽7一lo毫米，先端尖，基部楔形，上面深绿色，有光泽，中脉显著隆起，下面带白色、灰绿色或淡绿色，中脉微隆起。雄球花穗状、腋生，常3—5个簇生于极短的总梗上，长3—5厘米，基部有数枚三角状苞片；雌球花单生叶腋，有梗，基部有少数苞片。种子卵圆形，径约1厘米，先端圆，熟时肉质假种皮紫黑色，有白粉，种托肉质圆柱形，红色或紫红色，柄长1一1．5厘米。  花期4—5月，种子8—9月成熟。
+</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷 412</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+产于江苏、浙江、福建、安徽、江西、湖南、四川、云南、贵州、广西、广东等省区栽培于庭园作观赏树。野生的树木极少。日本也有分布。模式标本采自日本。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--习性-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">半阳性树种。在半阴环境下生长良好。喜温暖湿润和肥沃沙质壤土，在沿海平原也能生长。不耐严寒，故在华北只能盆栽。寿命长。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--栽培及人工繁殖-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">常用播种和扦插繁殖。播种，8月采种后即播，约10天后发芽。扦插，春秋两季进行，春季选休眠枝，秋季选半木质化嫩枝，12～15厘米，插入沙、土各半的苗床，约50～60天生根。
+喜温暖湿润和半阴环境，耐寒性略差，怕水涝和强光直射，要求肥沃、排水良好的沙壤土。移植以春季3～4月最好，小苗需带土，大苗带土球，也可盆栽。栽后应浇透水。生长期保持土壤湿润。盛夏高温季节需放半阴处养护。每2月施肥1次。冬季盆栽注意防寒，盆钵可埋入土内，并减少浇水。</dc:description>
+			<reference>http://baike.baidu.com/view/46147.htm?fr=ala0_1_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--经济用途-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/51329" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">材质细致均匀，易加工。可作家具、器具、文具及农具等用。由于罗汉松树形古雅，种子与种柄组合奇特，惹人喜爱，南方寺庙、宅院多有种植。可门前对植，中庭孤植，或于墙垣一隅与假山、湖石相配。斑叶罗汉松可作花台栽植，亦可布置花坛或盆栽陈于室内欣赏。小叶罗汉松还可作为庭院绿篱栽植。</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷 412</reference>
+			<reference>2.http://baike.baidu.com/view/46147.htm?fr=ala0_1_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">李敏</agent>
+			<dcterms:title>果</dcterms:title>
+			<dcterms:rightsHolder>李敏</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/limin/000225.jpg</mediaURL>
+			<location>绍兴，浙江 ，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="photographer">刘夙</agent>
+			<dcterms:title>植株,花或果</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/8/2/215704.jpg</mediaURL>
+			<location>香山，北京 ，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>植株,花或果</dcterms:title>
+			<dcterms:rightsHolder>于胜翔</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/yushengxiang/000487.jpg</mediaURL>
+			<location>南宁，广西，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>果</dcterms:title>
+			<dcterms:rightsHolder>于胜翔</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2007/4/5/183646.jpg</mediaURL>
+			<location>大理，云南，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title> 千年巨型罗汉松 </dcterms:title>
+			<dcterms:rightsHolder>hanbolijx </dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2007/12/5/194654.jpg</mediaURL>
+			<location>九岭山，江西，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群侧柏-->
+		<dc:identifier>36463</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/36463</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Gymnospermae</dwc:Phylum>
+		<dwc:Class>Coniferopsida</dwc:Class>
+		<dwc:Order>Pinales</dwc:Order>
+		<dwc:Family>Cupressaceae</dwc:Family>
+		<dwc:Genus>Platycladus</dwc:Genus>
+		<dwc:ScientificName> Platycladus orientalis (L.) Franco (1949)</dwc:ScientificName>
+		<commonName xml:lang="zh">侧柏</commonName>
+		<commonName xml:lang="zh">黄柏</commonName>
+		<commonName xml:lang="zh">香柏</commonName>
+		<commonName xml:lang="zh">扁柏</commonName>
+		<commonName xml:lang="zh">扁桧</commonName>
+		<commonName xml:lang="zh">香树</commonName>
+		<commonName xml:lang="zh">香柯树</commonName>
+		<synonym relationship="synonym">Thuja orientalis L. (1753)</synonym>
+		<synonym relationship="synonym">Platycladus stricta Spach (1842)</synonym>
+		<synonym relationship="synonym">Biota orientalis (L.) Endl. (1847)</synonym>
+		<synonym relationship="synonym">Thuja orientalis var. argyi Lemée et H. Lév. (1915)</synonym>
+		<synonym relationship="synonym">Thuja chengii Bordères et Gaussen (1939)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">侧柏为常绿乔木。扁柏、香柏。在中国分布极广，北起内蒙古、吉林，南至广东及广西北部；人工栽培范围几遍全国。是优良的园林绿化树种。木质软硬适中，细致，有香气，耐腐力强，多用于建筑、家具、细木工等；种子、根、叶和树皮可入药；用种子榨油，供制皂、食用或药用。树高一般可达20米。树皮红褐色，纵裂。小枝扁平。叶鳞片状，小形。雌雄同株，球花单生枝顶。球果近卵形。种子长卵形，无翅。侧柏喜光，但幼苗、幼树有一定耐荫能力。较耐寒，抗风力较差。耐干旱，喜湿润，但不耐水淹。耐贫瘠，可在微酸性至微碱性土壤上生长。生长缓慢。寿命极长。播种前种子可用温水处理。育苗方式多用床式或大田式。一般春季播种，播后约10天幼苗出土。主要造林地多选海拔1500米以下的山地阳坡、半阳坡，以及轻盐碱地和砂地。一般整地后植苗造林，有条件的地方也可直播。主要虫害有侧柏毒蛾、双条杉天牛、松梢小卷蛾。
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">
+乔木，高达20余米，胸径1米；树皮薄，浅灰褐色，纵裂成条片；枝条向上伸展或斜展，幼树树冠卵状尖塔形，老树树冠则为广圆形，生鳞叶的小枝细，向上直展或斜展，扁平，排成一平面。叶鳞形，长1—3毫米，先端微钝，小枝中央的叶的露出部分呈倒卵状菱形或斜方形，背面中间有条状腺槽，两侧的叶船形，先端微内曲，背部有钝脊，尖头的下方有腺点。雄球花黄色，卵圆形，长约2毫米，雌球花近球形，径约2毫米，蓝绿色，被白粉。球果近卵圆形，长1．5—2(一2．5)厘米，成熟前近肉质，蓝绿色，被白粉，成熟后木质，开裂，红褐色；中间两对种鳞倒卵形或椭圆形，鳞背顶端的下方有一向外弯曲的尖头，上部1对种鳞窄长，近柱状，顶端有向上的尖头，下部1对种鳞极小，长达3毫，稀退化而不显著；种子卵圆形或近椭圆形，顶端微尖，灰褐色或紫褐色，长6—8毫米，稍有棱脊，无翅或有极窄之翅。 花期3—4月，球果10月成熟。
+</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷 322</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+产于内蒙古南部、吉林、辽宁、河北、山西、山东、江苏、浙江、福建、安徽、江西、河南、陕西、甘肃、四川、云南、贵州、湖北、湖南、广东北部及广西北部等省区。西藏德庆、达孜等地有栽培。</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">喜光，幼时稍耐荫，适应性强，对土壤要求不严，在酸性、中性、石灰性和轻盐碱土壤中均可生长。耐干旱瘠薄，萌芽能力强，耐寒力中等，在山东只分布于海拔900m以下，以海拔400m以下者生长良好。抗风能力较弱。
+在吉林垂直分布达海拔250米，在河北、山东、山西等地达1000—1200米，在河南、陕西等地达1500米，在云南中部及西北部达3300米。河北兴隆、山西太行山区、陕西秦岭以北渭河流域及云南澜沧江流域山谷中有天然森林。淮河以北、华北地区石炭岩山地、阳坡及平原多选用造林。朝鲜也有分布。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--栽培及人工繁殖-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">常用播种和扦插繁殖。播种，8月采种后即播，约10天后发芽。扦插，春秋两季进行，春季选休眠枝，秋季选半木质化嫩枝，12～15厘米，插入沙、土各半的苗床，约50～60天生根。
+喜温暖湿润和半阴环境，耐寒性略差，怕水涝和强光直射，要求肥沃、排水良好的沙壤土。移植以春季3～4月最好，小苗需带土，大苗带土球，也可盆栽。栽后应浇透水。生长期保持土壤湿润。盛夏高温季节需放半阴处养护。每2月施肥1次。冬季盆栽注意防寒，盆钵可埋入土内，并减少浇水。</dc:description>
+			<reference>http://baike.baidu.com/view/46147.htm?fr=ala0_1_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--民族植物学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/36463" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">作中药，性微寒，味枯涩，凉血止血
+　　验方：1、吐血、咯血：侧柏叶、韭菜（均鲜）各适量，捣汁半杯，用头发烧灰三至五钱对服。
+　　2、鼻衄：侧柏叶一两，鸡蛋三个，水煮，服汤食蛋。
+　　3、便血：侧柏叶（鲜）三两，猪大肠半斤，炖汤服。
+　　4、尿血：侧柏叶、枸骨根各五钱至一两，水煎服。
+　　5、百日咳：侧柏叶（鲜）三钱，红枣五枚，水煎服。
+　　6、漆疮、皮炎：侧柏叶、杉皮（均鲜）各适量，水煎外洗</dc:description>
+			<reference>1.http://baike.baidu.com/view/44763.htm?fr=ala0_1_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>枝及叶</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/29/220726.jpg</mediaURL>
+			<location>北京，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>雄球花</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/5/29/230417.jpg</mediaURL>
+			<location>北京，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>未成熟的球果</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/6/8/222412.jpg</mediaURL>
+			<location>北京，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>叶，大孢子叶球，小孢子叶球</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/015/03000293.jpg</mediaURL>
+			<location>济南，山东，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title> 侧柏植被</dcterms:title>
+			<dcterms:rightsHolder>hanbolijx </dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/linqinwen/001/000185.jpg</mediaURL>
+			<location>小龙门，北京，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+	<taxon>
+		<!--示例类群草麻黄-->
+		<dc:identifier>26928</dc:identifier>
+		<dc:source>http://www.cnpc.ac.cn/Profile/Index/26928</dc:source>
+		<dwc:Kingdom>Plantae</dwc:Kingdom>
+		<dwc:Phylum>Gymnospermae</dwc:Phylum>
+		<dwc:Class>Gnetopsida</dwc:Class>
+		<dwc:Order>Ephedrales</dwc:Order>
+		<dwc:Family>Ephedraceae</dwc:Family>
+		<dwc:Genus>Ephedra</dwc:Genus>
+		<dwc:ScientificName>Ephedra sinica Stapf (1927)</dwc:ScientificName>
+		<commonName xml:lang="zh">草麻黄</commonName>
+		<commonName xml:lang="zh">麻黄</commonName>
+		<commonName xml:lang="zh">华麻黄</commonName>
+		<synonym relationship="synonym">Ephedra ma-huang Liu in Chin. (1927)</synonym>
+		<dcterms:created>2010-04-01</dcterms:created>
+		<dcterms:modified>2010-04-01</dcterms:modified>
+		<dataObject>
+			<!--简略摘要-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#GeneralDescription</subject>
+			<dc:description xml:lang="zh">呈细长圆柱形，少分枝，直径1—2mm,有的带少量质茎。表面淡绿至黄绿色，有细的纵棱线，触之微有粗糙感。节明显，节间长2～6cm,节上有膜质鳞叶，鳞叶2，稀3，锐三角形，长3～4mm，先端反曲，基部常连合成筒状。质较脆，易折断，折断时有粉尘飞出，断面略呈纤维性，周边绿黄色，髓部红棕色，近圆形。气微香，味微苦涩。
+ </dc:description>
+		</dataObject>
+		<dataObject>
+			<!--形态描述-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Description</subject>
+			<dc:description xml:lang="zh">
+草本状灌木，高20一40厘米；木质茎短或成匍甸状，小枝直伸或微曲，表面细纵槽纹常不明显，节间长2．5—5．5厘米，多为3—4厘米，径约2毫米。叶2裂，鞘占全长1／3—2／3，裂片锐三角形，先端急尖。雄球花多成复穗状，常具总梗，苞片通常4对，雄蕊7—日，花丝合生，稀先端稍分离；雌球花单生，在幼枝上顶生，在老枝上腋生，常在成熟过程中基部有梗抽出，使雌球花呈侧枝顶生状，卵圆形或矩圆状卵圆形，苞片4对，下部3对合生部分占1／4—1／3，最上一对合生部分达1／2以上，雌花2，胚珠的珠被管长1毫米或稍长，直立或先端微弯，管口隙裂窄长，约占全长的1／4—1／2，裂口边缘不整齐，常被少数毛茸。雌球花成熟时肉质红色，矩圆状卵圆形或近于圆球形，长约8毫米，径6一?毫米；种子通常2粒，包于苞片内，不露出或与苞片等长，黑红色或灰褐色，三角状卵圆形或宽卵圆形，长5—6毫米，径2．5—3．5毫米，表面具细皱纹，种脐明显，半圆形。  花期5—6月，种子8—9月成熟。
+</dc:description>
+			<reference>1.刘玉壶、郑万钧、傅立国、朱政德、赵奇僧. 1978 《中国植物志》 7卷 477</reference>
+		</dataObject>
+		<dataObject>
+			<!--地理分布-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Distribution</subject>
+			<dc:description xml:lang="zh">;  
+蒙古，中国。我国分布于甘肃,河北,黑龙江,吉林,辽宁,内蒙古,宁夏,陕西,山西</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--生境-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Habitat</subject>
+			<dc:description xml:lang="zh">平原、山坡、河床、草原。
+</dc:description>
+		</dataObject>
+		<dataObject>
+			<!--民族植物学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">发汗散寒，宣肺平喘，利水消肿。用于风寒感冒，胸闷喘咳，风水浮肿，支气管哮喘。蜜炙麻黄润肺止咳，多用于表症已解，气喘咳嗽。</dc:description>
+			<reference>http://baike.baidu.com/view/1198756.htm?fr=ala0_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--药理学-->
+			<dataType>http://purl.org/dc/dcmitype/Text</dataType>
+			<mimeType>text/html</mimeType>
+			<agent homepage="http://www.cnpc.ac.cn/Profile/Index/26928" logoURL="http://www.cnpc.ac.cn" role="project">中国高等植物名录数据库</agent>
+			<license>http://creativecommons.org/licenses/by-nc-sa/3.0/</license>
+			<dcterms:rightsHolder>中国科学院植物研究所</dcterms:rightsHolder>
+			<audience>Expert users</audience>
+			<subject>http://rs.tdwg.org/ontology/voc/SPMInfoItems#Conservation</subject>
+			<dc:description xml:lang="zh">该物种为中国植物图谱数据库收录的有毒植物，其毒性为草麻黄全草及种子有毒，服大量中毒后初表现为中枢兴奋、神经过敏、焦虑不安、烦躁、心悸、心动过速、头痛、眩晕、震颤、出汗及发热，有的有恶心、呕吐、上腹胀痛、瞳孔散大，或有排便困唯、心前区疼痛，重度中毒者则视物不清、呼吸困难、惊厥、最后因呼吸衰竭、心室纤颤而死亡。</dc:description>
+			<reference>http://baike.baidu.com/view/1198756.htm?fr=ala0_1</reference>
+		</dataObject>
+		<dataObject>
+			<!--图片1-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>成熟的球果</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/8/17/173001.jpg</mediaURL>
+			<location>张家口，河北，中国</location>
+			<geo:Point>
+				<geo:lat>29.59</geo:lat>
+				<geo:long>120.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片2-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>茎，球果</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/liubing/036/07001407.jpg</mediaURL>
+			<location>张家口，河北，中国</location>
+			<geo:Point>
+				<geo:lat>39.59</geo:lat>
+				<geo:long>75.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片3-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>小枝</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/8/17/173137.jpg</mediaURL>
+			<location>张家口，河北，中国</location>
+			<geo:Point>
+				<geo:lat>55.59</geo:lat>
+				<geo:long>99.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片4-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title>茎节及退化叶</dcterms:title>
+			<dcterms:rightsHolder>刘冰</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/8/17/173019.jpg</mediaURL>
+			<location>张家口，河北，中国</location>
+			<geo:Point>
+				<geo:lat>77.59</geo:lat>
+				<geo:long>66.27</geo:long>
+			</geo:Point>
+		</dataObject>
+		<dataObject>
+			<!--图片5-->
+			<dataType>http://purl.org/dc/dcmitype/StillImage</dataType>
+			<mimeType>image/jpeg</mimeType>
+			<agent homepage="http://www.cvh.org.cn" logoURL="http://www.cvh.org.cn/images/cvh_64_05.jpg" role="project">中国植物图片库</agent>
+			<dcterms:title> 生境及果期的植株形态</dcterms:title>
+			<dcterms:rightsHolder>刘夙</dcterms:rightsHolder>
+			<mediaURL>http://www.cvh.org.cn/gallery/photo/2006/8/17/173053.jpg</mediaURL>
+			<location>张家口，河北，中国</location>
+			<geo:Point>
+				<geo:lat>11.59</geo:lat>
+				<geo:long>22.27</geo:long>
+			</geo:Point>
+		</dataObject>
+	</taxon>
+</response>
