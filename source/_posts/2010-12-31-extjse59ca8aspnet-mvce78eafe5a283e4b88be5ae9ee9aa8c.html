@@ -1,0 +1,566 @@
+---
+layout: default
+title: ExtJs在ASP.NET MVC环境下实验
+---
+<p>先从<a href="http://www.sencha.com/">这里</a>下载ExtJs最新的源码包，将其中的adapter和resource文件夹及几个js脚本添加到新建的mvc项目中，项目文件结构如下图：</p>
+<p><a href="http://blog.cnpc.ac.cn/images/2011-01-01_021427.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="2011-01-01_021427" src="http://blog.cnpc.ac.cn/images/2011-01-01_021427_thumb.png" alt="2011-01-01_021427" width="275" height="484" border="0" /></a></p>
+<p>下图是LINQ实体对象的结构</p>
+<p><a href="http://blog.cnpc.ac.cn/images/2011-01-01_021933.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="2011-01-01_021933" src="http://blog.cnpc.ac.cn/images/2011-01-01_021933_thumb.png" alt="2011-01-01_021933" width="276" height="484" border="0" /></a></p>
+<h3>最重要的是下面的JS脚本,将这个脚本文件引用到需要展示数据的视图页面</h3>
+<pre class="brush: js;">/*!
+* NameData JavaScript Library v1.0.0
+* http://www.cnpc.ac.cn/
+* Date: Mon Jan 25 19:43:33 2010 -0500
+*/
+Ext.BLANK_IMAGE_URL = '../../images/default/s.gif';
+Ext.namespace('myNameSpace');
+myNameSpace.myModule = function () {
+	var ds;
+	var grid;
+	var colModel;
+	var myRecordObj;
+	var myReader;
+	var primaryKey = 'Id';
+	var setupDataSource = function () {
+		myRecordObj = Ext.data.Record.create([
+			{ name: 'Id', type: 'string' },
+			{ name: 'CanonicalString', type: 'string' },
+			{ name: 'NameAuthor', type: 'string' },
+			{ name: 'Reference', type: 'string' },
+			{ name: 'PublishedYear', type: 'string' },
+			{ name: 'ParentId', type: 'string' },
+			{ name: 'Rank', type: 'string' },
+			{ name: 'Group', type: 'string' }
+		]);
+		myReader = new Ext.data.JsonReader(
+		{
+			root: 'results',
+			totalProperty: 'total',
+			id: primaryKey
+		},
+			myRecordObj
+		);
+
+		ds = new Ext.data.GroupingStore({
+			proxy: new Ext.data.HttpProxy({
+				url: '/Name/ListName',
+				method: 'POST'
+			}),
+			reader: myReader,
+			remoteSort: true
+		});
+
+	}; //end setupDataSource
+
+	var getColumnModel = function () {
+		if (!colModel) {
+
+			colModel = new Ext.grid.ColumnModel([
+			{
+				header: '编号',
+				dataIndex: 'Id',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '名称',
+				dataIndex: 'CanonicalString',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '作者',
+				dataIndex: 'NameAuthor',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '文献',
+				dataIndex: 'Reference',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '年代',
+				dataIndex: 'PublishedYear',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: 'ParentId',
+				dataIndex: 'ParentId',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '分类等级',
+				dataIndex: 'Rank',
+				sortable: true,
+				width: 50
+			},
+			{
+				header: '类群',
+				dataIndex: 'Group',
+				sortable: true,
+				width: 50
+			}
+
+			]); //end colModel
+		} //end if colModel
+		return colModel;
+	} //end getColumnModel
+
+	var buildGrid = function () {
+		function addRecord() {
+			var c_Id = new Ext.form.TextField
+			({
+				fieldLabel: '编号',
+				name: 'Id',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_CanonicalString = new Ext.form.TextField
+			({
+				fieldLabel: '名称',
+				name: 'CanonicalString',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_NameAuthor = new Ext.form.TextField
+			({
+				fieldLabel: '作者',
+				name: 'NameAuthor',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_Reference = new Ext.form.TextField
+			({
+				fieldLabel: '文献',
+				name: 'Reference',
+				width: '200',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_PublishedYear = new Ext.form.TextField
+			({
+				fieldLabel: '年代',
+				name: 'PublishedYear',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_ParentId = new Ext.form.TextField
+			({
+				fieldLabel: 'ParentId',
+				name: 'ParentId',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_Rank = new Ext.form.TextField
+			({
+				fieldLabel: 'Rank',
+				name: 'Rank',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var c_Group = new Ext.form.TextField
+			({
+				fieldLabel: 'Group',
+				name: 'Group',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var newForm = new Ext.FormPanel({
+				bodyStyle: 'padding: 8px',
+				url: '/Name/New',
+				items: [
+				c_Id,
+				c_CanonicalString,
+				c_NameAuthor,
+				c_Reference,
+				c_PublishedYear,
+				c_ParentId,
+				c_Rank,
+				c_Group
+			  ]
+			});
+
+			var newWin = new Ext.Window({
+				title: '添加新名字',
+				width: 390,
+				height: 500,
+				minWidth: 300,
+				minHeight: 250,
+				layout: 'fit',
+				plain: true,
+				bodyStyle: 'padding:5px;',
+				buttonAlign: 'center',
+				items: newForm,
+				buttons: [{
+					text: '保存',
+					handler: function () {
+						if (newForm.form.isValid()) {
+							newForm.form.submit({
+								waitMsg: 'In processing',
+								failure: function (form, action) {
+									Ext.MessageBox.alert('Error Message', action.result.errorInfo);
+								},
+								success: function (form, action) {
+									Ext.MessageBox.alert('Success:', action.response.responseText);
+									refreshGrid();
+									newWin.hide();
+								}
+							});
+						}
+						else {
+							Ext.MessageBox.alert('Errors', 'Please fix the errors noted.');
+						}
+					}
+				}, {
+					text: '清除',
+					handler: function () {
+						newForm.getForm().reset();
+					}
+				}]
+			});
+
+			newWin.on('minimize', function () {
+				newWin.toggleCollapse();
+			});
+			newWin.show();
+		}; // end addRecord
+
+		function deleteRecord(btn) {
+			if (btn == 'yes') {
+				var selectedKeys = grid.selModel.selections.keys;
+
+				Ext.Ajax.request({
+					waitMsg: 'Saving changes...',
+					url: '/Name/Delete',
+					params: {
+						data: selectedKeys
+					},
+					callback: function (options, success, response) {
+						if (success) {
+							Ext.MessageBox.alert('OK', response.responseText);
+							var json = Ext.util.JSON.decode(response.responseText);
+							Ext.MessageBox.alert('OK', json.del_count + ' record(s) deleted.');
+						} else {
+							Ext.MessageBox.alert('Sorry, please try again. [Q304]', response.responseText);
+						}
+					},
+					failure: function (response, options) {
+						Ext.MessageBox.alert('Warning', 'Oops...');
+					},
+					success: function (response, options) {
+						refreshGrid();
+					}
+				});
+			}
+		};
+
+		function handleDelete() {
+
+			var selectedKeys = grid.selModel.selections.keys;
+			if (selectedKeys.length &gt; 0) {
+				Ext.MessageBox.confirm('Message', 'Do you really want to delete selection?', deleteRecord);
+			}
+			else {
+				Ext.MessageBox.alert('Message', 'Please select at least one item to delete');
+			}
+		}; // end handleDelete 
+
+		function toggleDetails(btn, pressed) {
+			var view = grid.getView();
+			view.showPreview = pressed;
+			view.refresh();
+		}
+
+		function refreshGrid() {
+			ds.reload(); //
+		};
+
+		grid = new Ext.grid.GridPanel({
+			clicksToEdit: 2,
+			colModel: getColumnModel(),
+			height: 350,
+			iconCls: 'icon-grid',
+			id: 'myGridID',
+			loadMask: true,
+			selModel: new Ext.grid.RowSelectionModel({ singleSelect: false }),
+			store: ds,
+			stripeRows: true,
+			title: '名称列表',
+			width: 900,
+			bbar: new Ext.PagingToolbar({
+				pageSize: myNameSpace.myModule.perPage,
+				store: ds,
+				displayInfo: true,
+				displayMsg: 'Displaying topics {0} - {1} of {2}',
+				emptyMsg: "No data to display",
+				items: [
+					'-', {
+						pressed: true,
+						enableToggle: true,
+						text: 'Show Preview',
+						cls: 'x-btn-text-icon details',
+						toggleHandler: toggleDetails
+					}]
+			}),
+			tbar: [
+				{
+					text: '添加',
+					tooltip: '添加一个新名字',
+					//iconCls: 'add',
+					handler: addRecord
+				}, '-', //add a separator
+				{
+				text: '删除',
+				tooltip: 'Click to Delete selected row(s)',
+
+				//function to call when user clicks on button  
+				//iconCls: 'remove',
+				handler: handleDelete
+
+}, '-',
+				{
+					text: '刷新',
+					tooltip: 'Click to Refresh the table',
+					//iconCls: 'icon-grid',
+					handler: refreshGrid
+
+				}
+							],
+			view: new Ext.grid.GroupingView({
+				forceFit: true,
+				groupTextTpl: '{text} ({[values.rs.length]} {[values.rs.length &gt; 1 ? "Items" : "Item"]})'
+			})
+		}); //end grid
+
+
+		grid.on('rowdblclick', function (grid, rowIndex, e) {
+			var id = ds.data.items[rowIndex].id;
+
+			var u_Id = new Ext.form.TextField
+			({
+				fieldLabel: '编号',
+				name: 'Id',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_CanonicalString = new Ext.form.TextField
+			({
+				fieldLabel: '名称',
+				name: 'CanonicalString',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_NameAuthor = new Ext.form.TextField
+			({
+				fieldLabel: '作者',
+				name: 'NameAuthor',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_Reference = new Ext.form.TextField
+			({
+				fieldLabel: '文献',
+				name: 'Reference',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_PublishedYear = new Ext.form.TextField
+			({
+				fieldLabel: '年代',
+				name: 'PublishedYear',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_ParentId = new Ext.form.TextField
+			({
+				fieldLabel: 'ParentId',
+				name: 'ParentId',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_Rank = new Ext.form.TextField
+			({
+				fieldLabel: '分类等级',
+				name: 'Rank',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+			var u_Group = new Ext.form.TextField
+			({
+				fieldLabel: '类群',
+				name: 'Group',
+				width: '180',
+				maskRe: /([a-zA-Z0-9\s]+)$/
+			});
+
+
+			var updateForm = new Ext.FormPanel({
+
+				bodyStyle: 'padding: 8px',
+				url: '/Name/Edit',
+				reader: new Ext.data.JsonReader(
+				  { root: 'results' },
+				  [
+					{ name: 'Id', type: 'string' },
+					{ name: 'CanonicalString', type: 'string' },
+					{ name: 'NameAuthor', type: 'string' },
+					{ name: 'Reference', type: 'string' },
+					{ name: 'PublishedYear', type: 'string' },
+					{ name: 'ParentId', type: 'string' },
+					{ name: 'Rank', type: 'string' },
+					{ name: 'Group', type: 'string' }
+
+				  ]),
+				items: [
+					u_Id,
+					u_CanonicalString,
+					u_NameAuthor,
+					u_Reference,
+					u_PublishedYear,
+					u_ParentId,
+					u_Rank,
+					u_Group
+				  ]
+			});
+
+			updateForm.form.load({
+				url: '/Name/LoadName',
+				params: { id: id },
+				waitMsg: 'Loading'
+			});
+
+			var window = new Ext.Window({
+				title: 'Edit Existing Name',
+				width: 390,
+				height: 500,
+				minWidth: 300,
+				minHeight: 250,
+				layout: 'fit',
+				plain: true,
+				bodyStyle: 'padding:5px;',
+				buttonAlign: 'center',
+				items: updateForm,
+				buttons: [{
+					text: '保存',
+					handler: function () {
+						if (updateForm.form.isValid()) {
+							updateForm.form.submit({
+								params: { id: id },
+								waitMsg: 'In processing',
+								failure: function (form, action) {
+									Ext.MessageBox.alert('Error Message', action.result.errorInfo);
+								},
+								success: function (form, action) {
+									Ext.MessageBox.alert('Confirm', action.response.responseText);
+									window.hide();
+									ds.load({ params: { start: 0, limit: 10} });
+								}
+							});
+						}
+						else {
+							Ext.MessageBox.alert('Errors', 'Please fix the errors noted.');
+						}
+					}
+				},
+					{
+						text: '取消',
+						handler: function () { window.hide(); }
+					}]
+			});
+			window.show();
+		});
+	} //end function buildGrid
+
+	var renderGrid = function () {
+		grid.render('NamesList');
+	}; //end function renderGrid
+
+	var loadStore = function () {
+		ds.load({
+			params: {
+				start: 0,
+				limit: myNameSpace.myModule.perPage
+			}
+		});
+		grid.getSelectionModel().selectFirstRow();
+	};
+
+	return {
+		perPage: 30,
+		init: function () {
+			this.getMyGrid();
+
+		}, //end of init method
+		getMyGrid: function () {
+
+			Ext.QuickTips.init();
+			setupDataSource();
+			buildGrid();
+			renderGrid();
+			loadStore();
+		},
+		getDataSource: function () {
+			return ds;
+		}
+	}//end of return
+} ();
+
+Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
+<p>&nbsp;</p>
+<h3>NameController的两个重要方法</h3>
+<pre class="brush: c-sharp;">public void LoadName()
+        {
+            string id = Request.Form["id"];
+            string message = string.Empty;
+            cnpcDataContext db = new cnpcDataContext();
+            var query = from n in db.Names
+                        where n.Id.ToString() == id
+                        select new
+                        {
+                            n.Id,
+                            n.CanonicalString,
+                            n.NameAuthor,
+                            n.Reference,
+                            n.PublishedYear,
+                            n.ParentId,
+                            n.Rank,
+                            n.Group
+
+                        };
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            message = "{\"results\":" + serializer.Serialize(query.ToList()) + "}";
+
+            Response.Write(message);
+        }
+
+        public void ListName(int limit, int start, string dir, string sort)
+        {
+            string message = string.Empty;
+            cnpcDataContext db = new cnpcDataContext();
+            var query = from n in db.Names
+                        select new
+                        {
+                            n.Id,
+                            n.CanonicalString,
+                            n.NameAuthor,
+                            n.Reference,
+                            n.PublishedYear,
+                            n.ParentId,
+                            n.Rank,
+                            n.Group
+
+                        };
+            int totalRecords = query.ToList().Count;
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+
+            var list = query.Skip(start).Take(limit);
+            message = "{\"total\": \"" + totalRecords + "\", \"results\":" + serializer.Serialize(list.ToList()) + "}";
+
+            Response.Write(message);
+        }</pre>
+<pre class="brush: c-sharp;">&nbsp;</pre>
+<p>&nbsp;</p>

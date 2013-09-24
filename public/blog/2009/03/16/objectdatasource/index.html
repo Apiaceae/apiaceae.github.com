@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ObjectDataSource控件的分页、排序和筛选 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="ObjectDataSource控件">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://apiaceae.github.io/blog/2009/03/16/objectdatasource">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ObjectDataSource控件的分页、排序和筛选</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-16T00:00:00+08:00" pubdate data-updated="true">Mar 16<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>ObjectDataSource控件提供了两种方法对绑定到控件(比如GridView)的数据进行分页和排序：</p>
+
+<p>通过用户界面进行分页，优点是容易设置，缺点是当数据量大时执行效率较低；
+实现方法：</p>
+
+<p>对GridView控件使用正确的数据源，比如：DataSet, Collection, DataTable或者DataView，但不能使用DataReader
+在页面设置GridView控件分分页属性为True。AllowPaging=&ldquo;True&rdquo;</p>
+
+<p>通过设置ObjectDataSource的分页，优点是数据量大时执行效率较高，特别是如果配合Caching能极大的提高以数据驱动为主的网络应用程序的效率。
+ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL查询中实现，下面以LINQ to SQL,Northwind数据库的Product表为例子来说明用法：</p>
+
+<p>实例网站的文档结构如下图：</p>
+
+<h6>1、新建网页，添加LINQ to SQL Class，命名为Products，在Server Exploer中拖拽Northwind数据库的Product表到设计界面。</h6>
+
+<p>！<a href="/assets/images/2009/3/04.png">图1</a></p>
+
+<h6>2、添加一个新类Class命名为roductsLINQPaging</h6>
+
+<p>！<a href="/assets/images/2009/3/05.png">图2</a>
+！<a href="/assets/images/2009/3/06.png">图3</a>
+！<a href="/assets/images/2009/3/06.png">图3</a></p>
+
+<h6>3、类中实现的方法如下：</h6>
+
+<div>
+  <pre><code class='java'>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data.Linq;
+using System.Web;
+
+/// &lt;summary&gt;
+/// Summary description for ProductsLINQPaging
+/// &lt;/summary&gt;
+public class ProductsLINQPaging
+    {
+      public ProductsLINQPaging()
+        {
+            //
+            // TODO: Add constructor logic here
+            //</code></pre>
+</div>
+
+
+<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-16T00:00:00+08:00" pubdate data-updated="true">Mar 16<span>th</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://apiaceae.github.io/blog/2009/03/16/objectdatasource/" data-via="" data-counturl="http://apiaceae.github.io/blog/2009/03/16/objectdatasource/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/03/15/" title="Previous Post: 创业过程中最大的挑战是如何改变自己">&laquo; 创业过程中最大的挑战是如何改变自己</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/03/17/aspnet/" title="Next Post: ASP.NET应用程序客户端执行的优化小技巧">ASP.NET应用程序客户端执行的优化小技巧 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

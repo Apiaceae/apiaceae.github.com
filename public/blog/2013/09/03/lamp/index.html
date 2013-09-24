@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>LAMP系统性能调优 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="Linux Apache MySQL PHP系统配置和优化">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://apiaceae.github.io/blog/2013/09/03/lamp">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">LAMP系统性能调优</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T00:00:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>一、理解LAMP架构</strong></p>
+
+<p>如今，使用 LAMP（Linux®、Apache、MySQL 和 PHP/Perl）架构的应用程序不断被开发和部署。但是，服务器管理员对应用程序本身几乎没有控制能力，因为应用程序是别人编写的。这份共三部分的系列文章将讨论许多服务器配置问题，这些配置会影响应用程序的性能。第一篇文章讨论 LAMP 架构、一些性能度量技术以及一些基本的 Linux 内核、硬盘和文件系统调节。后续的文章将研究 Apache、MySQL 和 PHP 组件的调优。</p>
+
+<p>Linux、 Apache、MySQL 和 PHP（或 Perl）是许多 Web 应用程序的基础 —— 从 to-do 列表到 blog，再到电子商务站点。WordPress 和 Pligg 是两个支持大容量 Web 站点的常用软件包。这种架构简称为 LAMP。几乎每个 Linux 发布版都包含 Apache、MySQL、PHP 和 Perl，所以安装 LAMP 软件是非常容易的。</p>
+
+<p>安装的简便性使人误以为这些软件会自行顺利地运行，但是实际情况并非如此。最终，应用程序的负载会超出后端服务器自带设置的处理能力，应用程序的性能会降低。LAMP 安装需要不断监控、调优和评估。</p>
+
+<p>系统调优对于不同的人有不同的含义。本系列主要关注 LAMP 组件（Linux、Apache、MySQL 和 PHP）的调优。对应用程序本身进行调优是另一个复杂的问题。应用程序和后端服务器之间存在一种共生关系：未能适当调优的服务器甚至会使最好的应用程序在负载之下崩溃，而借助充分的调优，完全可以避免编写得很糟糕的应用程序使服务器缓慢如牛。幸运的是，正确的系统调优和监视可以指出应用程序中的问题。</p>
+
+<p><em>LAMP架构</em></p>
+
+<p>对任何系统进行调优的第一步都是了解它的工作原理。按照最简单的形式，基于 LAMP 的应用程序是用 PHP 这样的脚本语言编写的，它们作为 Linux 主机上运行的 Apache Web 服务器的一部分运行。</p>
+
+<p>PHP 应用程序通过请求的 URL、所有表单数据和已捕获的任意会话信息从客户机获得信息，从而确定应该执行什么操作。如有必要，服务器会从 MySQL 数据库（也在 Linux 上运行）获得信息，将这些信息与一些 Hypertext Markup Language（HTML）模板组合在一起，并将结果返回给客户机。当用户在应用程序中导航时，这个过程重复进行；当多个用户访问系统时，这个过程会并发进行。但是，数据流不是单向的，因为可以用来自用户的信息更新数据库，包括会话数据、统计数据（包括投票）和用户提交的内容（比如评论或站点更新）。除了动态元素之外，还有静态元素，比如图像、JavaScript 代码和层叠样式表（CSS）。</p>
+
+<p>在研究 LAMP 系统中的请求流之后，就来看看可能出现性能瓶颈的地方。数据库提供许多动态信息，所以数据库对查询的响应延迟都会反映在客户机中。Web 服务器必须能够快速地执行脚本，还要能够处理多个并发请求。最后，底层操作系统必须处于良好的状态才能支持应用程序。通过网络在不同服务器之间共享文件的其他设置也可能成为瓶颈。</p>
+
+<p><em>LAMP的变体</em></p>
+
+<p>LAMP 最初是指 Linux、Apache、MySQL 和 PHP（或 Perl）。但是，如果管理员不擅长 Linux，那么可以在 Microsoft® Windows® 上运行 Apache、MySQL 和 PHP，这并非一种少见的情况。同样，也可以将 Apache 换成别的系统，比如 lighttpd，产生的仍然是 LAMP 风格的系统，但是首字母缩写不再是 LAMP 了。也可以改用另一种开放源码数据库（比如 PostgreSQL 或 SQLite）、商业数据库（比如 IBM® DB2®）或者免费的商业引擎（比如 IBM DB2 Express-C）。</p>
+
+<p>本文主要关注传统的 LAMP 架构，因为这种架构是最常见的，而且它的组件都是开放源码的。</p>
+
+<p>度量性能</p>
+
+<p>持续地对性能进行度量在两个方面有帮助。首先，度量可以帮助了解性能趋势，包括好坏两方面的趋势。作为一个简单的方法，查看一下 Web 服务器上的中央处理单元（CPU）使用率，就可以了解 CPU 是否负载过重。同样，查看过去使用的总带宽并推断未来的变化，可以帮助判断什么时候需要进行网络升级。这些度量最好与其他度量和观测结合考虑。例如，当用户抱怨应用程序太慢时，可以检查磁盘操作是否达到了最大容量。</p>
+
+<p>性能度量的第二个用途是，判断调优是对系统性能有帮助，还是使它更糟糕了。方法是比较修改之前和之后的度量结果。但是，为了进行有效的比较，每次应该只修改一个设置，然后对适当的指标进行比较以判断修改的效果。每次只修改一个设置的原因应该是很明显的：同时做出的两个修改很可能会相互影响。选择用来进行比较的指标比较微妙。</p>
+
+<p>选择的指标必须能够反映应用程序用户感觉到的响应。如果一项修改的目标是减少数据库的内存占用量，那么取消各种缓冲区肯定会有帮助，但是这会牺牲查询速度和应用程序性能。所以，应该选择应用程序响应时间这样的指标，这会使调优向着正确的方向发展，而不仅仅是针对数据库内存使用量。</p>
+
+<p>可以以许多方式度量应用程序响应时间。最简单的方法可能是使用 curl 命令，见清单 1。</p>
+
+<p>清单 1. 使用 cURL 度量 Web 站点的响应时间</p>
+
+<blockquote><ul>
+<li>$ curl -o /dev/null -s -w %{time_connect}:%{time_starttransfer}:{time_total\</li>
+<li> <a href="http://www.canada.com">http://www.canada.com</a></li>
+<li>0.081:0.272:0.779</li>
+</ul>
+</blockquote>
+
+<p>清单 1 给出对一个流行的新闻站点执行 curl 命令的情况。输出通常是 HTML 代码，通过 -o 参数发送到 /dev/null。-s 参数去掉所有状态信息。-w 参数让 curl 写出表 1 列出的计时器的状态信息：</p>
+
+<p>表 1. curl 使用的计时器
+计时器              |    描述
+time_connect       |    建立到服务器的 TCP 连接所用的时间
+time_starttransfer |    在发出请求之后，Web 服务器返回数据的第一个字节所用的时间
+time_total         |    完成请求所用的时间</p>
+
+<p>这些计时器都相对于事务的起始时间，甚至要先于 Domain Name Service（DNS）查询。因此，在发出请求之后，Web服务器处理请求并开始发回数据所用的时间是 0.272 &ndash; 0.081 = 0.191 秒。客户机从服务器下载数据所用的时间是 0.779 -0.272 = 0.507 秒。</p>
+
+<p>通过观察 curl 数据及其随时间变化的趋势，可以很好地了解站点对用户的响应性。</p>
+
+<p>当然，Web 站点不仅仅由页面组成。它还有图像、JavaScript 代码、CSS 和 cookie 要处理。curl 很适合了解单一元素的响应时间，但是有时候需要了解整个页面的装载速度。</p>
+
+<p>用于 Firefox 浏览器的 Tamper Data 扩展可以在日志中记录 Web 浏览器发出的每个请求，并显示每个请求所用的下载时间。使用这个扩展的方法是，选择 Tools > Tamper Data 来打开 Ongoing requests 窗口。装载要考察的页面，然后就会看到浏览器发出的每个请求的状态和装载每个元素所用的时间。图 1 给出装载 developerWorks 主页的结果。</p>
+
+<p>图 1. 用于装载 developerWorks 主页的请求细目</p>
+
+<p>每一行描述一个元素的装载情况。显示的数据包括发出请求的时间、装载所用的时间、大小和结果。Duration 栏列出装载元素本身所用的时间，Total Duration 栏列出所有子元素所用的时间。在图 1 中，装载主要页面所用的时间是 516 毫秒（ms），但是装载所有东西并显示整个页面所用的时间是 5101 ms。</p>
+
+<p>Tamper Data 扩展有一种有用的模式，将页面装载数据的输出绘制成图形。右击 Ongoing requests 窗口上半部分的任何地方，并选择 Graph all。图 2 显示图 1 中数据的图形化视图。</p>
+
+<p>图 2. 用于装载 developerWorks 主页的请求的图形化视图</p>
+
+<p>在图 2 中，每个请求的持续时间显示为深蓝色，并相对于页面装载的启始时间显示。所以，可以看出哪些请求使整个页面的装载变慢了。</p>
+
+<p>尽管关注的重点是页面装载时间和用户体验，但是也不要忽视核心系统指标，比如磁盘、内存和网络。有许多实用程序可以捕获这些信息；其中最有帮助的可能是 sar、vmstat 和 iostat。</p>
+
+<p>基本系统调节</p>
+
+<p>在对系统的 Apache、PHP 和 MySQL 组件进行调优之前，应该花一些时间确保底层 Linux 组件的运行正常。还应该对正在运行的服务进行缩减，只运行需要的那些服务。这不但是一种良好的安全实践，而且可以节省内存和 CPU 时间。</p>
+
+<p>一些快速的内核调优措施</p>
+
+<p>大多数 Linux 发布版都定义了适当的缓冲区和其他 Transmission Control Protocol（TCP）参数。可以修改这些参数来分配更多的内存，从而改进网络性能。设置内核参数的方法是通过 proc 接口，也就是通过读写 /proc 中的值。幸运的是，sysctl 可以读取 /etc/sysctl.conf 中的值并根据需要填充 /proc，这样就能够更轻松地管理这些参数。清单 2 展示在互联网服务器上应用于 Internet 服务器的一些比较激进的网络设置。</p>
+
+<p>清单 2. 包含较为激进的网络设置的 /etc/sysctl.conf</p>
+
+<h1>Use TCP syncookies when needed</h1>
+
+<p>net.ipv4.tcp_syncookies = 1</p>
+
+<h1>Enable TCP window scaling</h1>
+
+<p>net.ipv4.tcp_window_scaling: = 1</p>
+
+<h1>Increase TCP max buffer size</h1>
+
+<p>net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216</p>
+
+<h1>Increase Linux autotuning TCP buffer limits</h1>
+
+<p>net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 65536 16777216</p>
+
+<h1>Increase number of ports available</h1>
+
+<p>net.ipv4.ip_local_port_range = 1024 65000
+复制代码
+将这些设置添加到 /etc/sysctl.conf 的现有内容中。第一个设置启用 TCP SYN cookie。当从客户机发来新的 TCP 连接时，数据包设置了 SYN 位，服务器就为这个半开的连接创建一个条目，并用一个 SYN-ACK 数据包进行响应。在正常操作中，远程客户机用一个 ACK 数据包进行响应，这会使半开的连接转换为全开的。有一种称为 SYN 泛滥（SYN flood） 的网络攻击，它使 ACK 数据包无法返回，导致服务器用光内存空间，无法处理到来的连接。SYN cookie 特性可以识别出这种情况，并使用一种优雅的方法保留队列中的空间（细节参见 参考资料 一节）。大多数系统都默认启用这个特性，但是确保配置这个特性更可靠。</p>
+
+<p>启用 TCP 窗口伸缩使客户机能够以更高的速度下载数据。TCP 允许在未从远程端收到确认的情况下发送多个数据包，默认设置是最多 64 KB，在与延迟比较大的远程客户机进行通信时这个设置可能不够。窗口伸缩会在头中启用更多的位，从而增加窗口大小。</p>
+
+<p>后面四个配置项增加 TCP 发送和接收缓冲区。这使应用程序可以更快地丢掉它的数据，从而为另一个请求服务。还可以强化远程客户机在服务器繁忙时发送数据的能力。</p>
+
+<p>最后一个配置项增加可用的本地端口数量，这样就增加了可以同时服务的最大连接数量。</p>
+
+<p>在下一次引导系统时，或者下一次运行 sysctl -p /etc/sysctl.conf 时，这些设置就会生效。</p>
+
+<p>配置磁盘来提高性能</p>
+
+<p>磁盘在 LAMP 架构中扮演着重要的角色。静态文件、模板和代码都来自磁盘，组成数据库的数据表和索引也来自磁盘。对磁盘的许多调优（尤其是对于数据库）集中于避免磁盘访问，因为磁盘访问的延迟相当高。因此，花一些时间对磁盘硬件进行优化是有意义的。</p>
+
+<p>首先要做的是，确保在文件系统上禁用 atime 日志记录特性。atime 是最近访问文件的时间，每当访问文件时，底层文件系统必须记录这个时间戳。因为系统管理员很少使用 atime，禁用它可以减少磁盘访问时间。禁用这个特性的方法是，在 /etc/fstab 的第四列中添加 noatime 选项。清单 3 给出了一个配置示例。</p>
+
+<p>清单 3. 演示如何启用 noatime 的 fstab 示例
+/dev/VolGroup00/LogVol00 /                      ext3    defaults,noatime        1 1
+LABEL=/boot             /boot                   ext3    defaults,noatime        1 2
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+LABEL=SWAP-hdb2         swap                    swap    defaults        0 0
+LABEL=SWAP-hda3         swap                    swap    defaults        0 0
+复制代码
+在清单 3 中只修改了 ext3 文件系统，因为 noatime 只对驻留在磁盘上的文件系统有帮助。为让这一修改生效，不需要重新引导；只需重新挂装每个文件系统。例如，为了重新挂装根文件系统，运行 mount / -o remount。</p>
+
+<p>有多种磁盘硬件组合，而且 Linux 不一定能够探测出访问磁盘的最佳方式。可以使用 hdparm 命令查明和设置用来访问 IDE 磁盘的方法。hdparm -t /path/to/device 执行速度测试，可以将这个测试结果作为性能基准。为了使结果尽可能准确，在运行这个命令时系统应该是空闲的。清单 4 给出在 hda 上执行速度测试的结果。</p>
+
+<p>清单 4. 在 /dev/hd 上执行的速度测试</p>
+
+<h1>hdparm -t /dev/hda</h1>
+
+<p>/dev/hda:
+Timing buffered disk reads:  182 MB in  3.02 seconds =  60.31 MB/sec
+复制代码
+这一测试说明，在这个磁盘上读取数据的速度是大约每秒 60 MB。</p>
+
+<p>在尝试一些磁盘调优选项之前，必须注意一个问题。错误的设置可能损害文件系统。有时候会出现一个警告，指出这个选项与硬件不兼容；但是，有时候没有警告消息。因此，在将系统投入生产之前，必须对设置进行彻底的测试。在所有服务器上都采用标准的硬件也会有所帮助。</p>
+
+<p>表 2 列出比较常用的一些选项。</p>
+
+<p>表 2. hdparm 的常用选项
+选项  描述
+-vi 向磁盘查询它支持的设置以及它正在使用的设置。
+-c  查询/启用 (E)IDE 32 位 I/O 支持。hdparm -c 1 /dev/hda 启用这个设置。
+-m  查询/设置每中断多扇区模式。如果设置大于零，设置值就是每个中断可以传输的最大扇区数量。
+-d 1 -X 启用直接内存访问（DMA）传输并设置 IDE 传输模式。hdparm 手册页详细说明了在 -X 后面可以设置的数字。只有在 -vi 说明目前并未使用最快速的模式的情况下，才需要进行这个设置。</p>
+
+<p>不幸的是，对于 Fiber Channel and Small Computer Systems Interface（SCSI）系统，调优依赖于具体的驱动器。</p>
+
+<p>必须将有帮助的设置添加到启动脚本中，比如 rc.local。</p>
+
+<p>网络文件系统调优</p>
+
+<p>网络文件系统（NFS）是一种通过网络共享磁盘的方法。NFS 可以帮助确保每个主机具有相同数据的拷贝，并确保修改反映在所有节点上。但是，在默认情况下，NFS 的配置不适合大容量磁盘。</p>
+
+<p>每个客户机应该用 rsize=32768,wsize=32768,intr,noatime 挂装远程文件系统，从而确保：</p>
+
+<pre><code>* 使用大的读/写块（数字指定最大块大小，在这个示例中是 32KB）。
+* 在挂起时 NFS 操作可以被中断。
+* 不持续更新 atime。
+</code></pre>
+
+<p>可以将这些设置放在 /etc/fstab 中，见 清单 3。如果使用自动挂装器，那么应该将这些设置放在适当的 /etc/auto.* 文件中。</p>
+
+<p>在服务器端，一定要确保有足够的 NFS 内核线程来处理所有客户机。在默认情况下，只启动一个线程，但是 Red Hat 和 Fedora 系统会启动 8 个线程。对于繁忙的 NFS 服务器，应该提高这个数字，比如 32 或 64。可以用 nfsstat -rc 命令评估客户机，了解是否有阻塞的现象，这个命令显示客户机远程过程调用（RPC）统计数据。清单 5 显示一个 Web 服务器的客户机统计数据。</p>
+
+<p>清单 5. 显示 NFS 客户机的 RPC 统计数据</p>
+
+<h1>nfsstat -rc</h1>
+
+<p>Client rpc stats:
+calls      retrans    authrefrsh
+1465903813   0          0
+复制代码
+第二列 retrans 是零，这表示从上一次重新引导以来没有出现需要重新传输的情况。如果这个数字比较大，就应该考虑增加 NFS 内核线程。设置方法是将所需的线程数量传递给 rpc.nfsd，比如 rpc.nfsd 128 会启动 128 个线程。任何时候都可以进行这种设置。线程会根据需要启动或销毁。同样，这个设置应该放在启动脚本中，尤其是在系统上启用 NFS 的脚本。</p>
+
+<p>关于 NFS，最后要注意一点：如果可能的话，应该避免使用 NFSv2，因为 NFSv2 的性能比 v3 和 v4 差得多。在现代的 Linux 发行版中这应该不是问题，但是可以在服务器上检查 nfsstat 的输出，了解是否有任何 NFSv2 调用。</p>
+
+<p><strong>二、优化Apache和PHP</strong></p>
+
+<p> 上一篇文章 展示了调优 Linux 系统的方法，还介绍了 LAMP 和性能度量的基础知识。本文重点关注 Web 服务器组件：Apache 和 PHP。</p>
+
+<p>调优 Apache</p>
+
+<p>Apache 是一种高度可配置的软件。它具有大量特性，但每一种都代价高昂。从某种程度上来说，调优 Apache 来说就是以恰当的方式分配资源，还涉及到将配置简化为仅包含必要内容。</p>
+
+<p>配置 MPM</p>
+
+<p>Apache 是模块化的，因为可以轻松添加和移除特性。在 Apache 的核心，多处理模块（Multi-Processing Module，MPM）提供了这种模块化功能性 —— 管理网络连接、调度请求。MPM 使您能够使用线程，甚至能够将 Apache 迁移到另外一个操作系统。</p>
+
+<p>每次只能有一个 MPM 是活动的，必须使用 &mdash;with-mpm=(worker|prefork|event) 静态编译。</p>
+
+<p>每个请求使用一个进程的传统模型称为 prefork。较新的线程化模型称为 worker，它使用多个进程，每个进程又有多个线程，这样就能以较低的开销获得更好的性能。最新的 event MPM 是一种实验性的模型，为不同的任务使用单独的线程池。要确定当前使用的是哪种 MPM，可执行 httpd -l。</p>
+
+<p>选择使用何种 MPM 取决于许多因素。在 event MPM 脱离实验状态之前，不应考虑这种模型，而是在使用线程和不使用线程之间作出选择。表面上看来，如果所有底层模块（包括 PHP 使用的所有库）都是线程安全的，线程要优于分叉（forking）。而 Prefork 是较为安全的选择；如果选择了 worker，则应该谨慎测试。性能收益还取决于您的发布版所附带的库及硬件。</p>
+
+<p>无论选择了哪种 MPM，都必须恰当地配置它。一般而言，配置 MPM 包括告知 Apache 怎样去控制有多少 worker 正在运行，它们是线程还是进程。prefork MPM 的重要配置选项如清单 1 所示。</p>
+
+<p>清单 1. prefork MPM 的配置
+StartServers       50
+MinSpareServers   15
+MaxSpareServers   30
+MaxClients       225
+MaxRequestsPerChild  4000
+复制代码
+prefork 模型会为每个请求创建一个新进程。多余的进程保持空闲，以处理传入的请求，这缩短了启动延迟。只要 Web 服务器出现，预先完成的配置就会立即启动 50 个进程，并尽力保持 10 到 20 个空闲服务器运行。进程数的硬性限制由 MaxClients 指定。尽管一个进程能够处理许多相继的请求，Apache 还是会取消连接数超过 4,000 以后的进程，这降低了内存泄漏的风险。</p>
+
+<p>配置线程化 MPM 与之类似，不同之处只是必须确定使用多少线程和进程。Apache 文档解释了所有必要的参数和计算。</p>
+
+<p>要经过几次尝试和出错之后才能选好要使用的值。最重要的值是 MaxClients。目标在于允许足够多的 workder 进程或线程运行，同时又不会导致服务器进行过度的交换。如果传入的请求超出处理能力，那么至少满足此值的那些请求会得到服务，其他请求被阻塞。</p>
+
+<p>如果 MaxClients 过高，那么所有客户机都将体验到糟糕的服务，因为 Web 服务器会试图换出一个进程，以使另一个进程能够运行。而设得过低意味着可能会不必要地拒绝服务。查看高负载下运行的进程数量和所有 Apache 进程所导致的内存占用情况对设置这个值很有帮助。如果 MaxClients 的值超过 256，必须将 ServerLimit 也设为同样的数值，请仔细阅读 MPM 的文档，了解相关信息。</p>
+
+<p>根据服务器的角色调优要启动和保持空闲的服务器数量。如果服务器仅运行 Apache，那么可以使用适中的值，如 清单 1 所示，因为这样就能充分利用机器。如果系统中还有其他数据库或服务器，那么就应该限制运行中的空闲服务器的数量。</p>
+
+<p>有效地使用选项和重写</p>
+
+<p>Apache 处理的每个请求都要履行一套复杂的规则，这些规则指明了 Web 服务器必须遵循的约束或特殊指令。对文件夹的访问可能按 IP 地址约束为某个特定文件夹，也可配置用户名和密码。这些选项还包含处理特定文件，例如，如果提供了一个目录列表，该如何处理的文件，或输出结果是否应压缩。</p>
+
+<p>这些配置以 httpd.conf 中容器的形式出现，例如 <Directory>，以便指定所用配置引用的是磁盘上的一个位置；再如 <Location>，表示引用是 URL 中的路径。清单 2 展示了一个实际的 Directory 容器。</p>
+
+<p>清单 2. 为根目录应用的一个 Directory 容器
+<Directory /></p>
+
+<pre><code>AllowOverride None
+Options FollowSymLinks
+</code></pre>
+
+<p></Directory>
+复制代码
+在清单 2 中，位于一对 Directory 和 /Directory 标记之间的配置应用于给定目录和该目录下的一切内容 —— 在本例中，这个给定目录是根目录。此处，AllowOverride 标记指出，用户不允许重写任何选项（稍后将进一步介绍）。FollowSymLinks 选项被启用，它允许 Apache 查看之前的符号连接来为请求提供服务，即便文件位于包含 Web 文件的目录之外。这就意味着，如果 Web 目录中的一个文件是 /etc/passwd 的符号连接，Web 服务器将在请求时顺利为该文件提供服务。如果使用了 -FollowSymLinks，该特性就会被禁用，同样的请求将致使为客户机返回错误。</p>
+
+<p>最后这个场景正是导致两方面关注的原因所在。第一个方面与性能有关。如果禁用了 FollowSymLinks，Apache 就必须检查使用该文件名的所有组件（目录和文件本身），以确保它们不是符号连接。这会带来额外的开销（磁盘操作）。另外一个称为 FollowSymLinksIfOwnerMatch 的选项会在文件所有者与连接所有者相同时使用符号连接。为获得最佳性能，请使用 清单 2 中的选项。</p>
+
+<p>至此，有安全意识的读者应该有了警惕的感觉。安全性永远是功能性与风险之间的权衡。在我们的例子中，功能性是速度，而风险是允许对系统上的文件进行未经授权的访问。缓解风险的措施之一是 LAMP 应用服务器通常专注于一种具体功能，用户无法创建危险的符号连接。如果有必要启用符号连接，那么可以将其约束在文件系统的特定区域，如清单 3 所示。</p>
+
+<p>清单 3. 将 FollowSymLinks 约束为一个用户的目录
+<Directory />
+   Options FollowSymLinks
+</Directory></p>
+
+<p><Directory /home/*/public_html>
+   Options -FollowSymLinks
+</Directory>
+复制代码
+在清单 3 中，一个用户的主目录中的任何 public_html 目录及其所有子目录都移除了 FollowSymLinks 选项。</p>
+
+<p>如您所见，通过主服务器配置，可为每个目录单独配置选项。用户可以自行重写这种服务器配置（如果管理员通过 AllowOverrides 语句允许了这种操作），只需将一个 .htaccess 文件放入目录即可。该文件包含额外的服务器指令，每次请求包含 .htaccess 文件的目录时将加载并应用这些指令。尽管之前探讨过系统没有用户的问题，但许多 LAMP 应用程序都利用这种功能性来控制访问、实现 URL 重写，因此有必要理解其工作原理。</p>
+
+<p>即便 AllowOverrides 语句能阻止用户去做您不希望他们做的事，Apache 也必须检查 .htaccess 文件，看看是否有要完成的工作。父目录可以指定由来自子目录的请求处理的指令，这也就表示，Apache 必须搜索所请求文件的目录树的所有组件。可想而知，这会使每次请求都导致大量磁盘操作。</p>
+
+<p>最简单的解决方案是不允许重写，这能消除 Apache 检查 .htaccess 的需求。之后的任何特殊配置都将直接放在 httpd.conf 中。清单 4 显示为对一个用户的项目目录进行密码检查向 httpd.conf 增加的代码，而不是将其放入一个 .htaccess 文件并依赖于 AllowOverrides。</p>
+
+<p>清单 4. 将 .htaccess 配置移入 httpd.conf
+<Directory /home/user/public_html/project/>
+  AuthUserFile /home/user/.htpasswd
+  AuthName &ldquo;uber secret project&rdquo;
+  AuthType basic
+  Require valid-user
+</Directory>
+复制代码
+如果配置转移到 httpd.conf 中，且 AllowOverrides 被禁用，磁盘的使用就能减少。一个用户的项目可能不会吸引许多人来点击，但设想一下，将这项技术应用于一个忙碌的站点时会有多么强大。</p>
+
+<p>有时不可能彻底消除 .htaccess 文件的使用。例如，在清单 5 中，一个选项被约束到文件系统的特定部分，重写也可以是有作用域的。</p>
+
+<p>清单 5. 限定 .htaccess 检查的作用域
+<Directory />
+  AllowOverrides None
+</Directory></p>
+
+<p><Directory /home/*/public_html>
+  AllowOverrides AuthConfig
+</Directory>
+复制代码
+实现清单 5 之后，Apache 会在父目录中查找 .htaccess 文件，但会在 public_html 目录处停止，因为文件系统的其余部分禁用了此功能。例如，如果请求的是一个映射到 /home/user/public_html/project/notes.html 的文件，那么仅有 public_html 和 project 目录被搜索。</p>
+
+<p>关于每目录单独配置的最后一个提示就是：要按顺序依次进行。任何介绍 Apache 调优的的文章都会告诉您，应通过 HostnameLookups off 指令禁用 DNS 查找，因为试图反向解析连接到您的服务器的所有 IP 地址无疑是浪费资源。然而，基于主机名的任何约束都会迫使 Web 服务器对客户机的 IP 地址执行反向查找，对其结果进行正向查找，以验证该名称的真实性。因此，避免使用基于客户主机名的访问控制，在必须使用时限定其作用域，这些都是明智的做法。</p>
+
+<p>持久连接</p>
+
+<p>一个客户机连接到 Web 服务器时，允许客户机通过同一个 TCP 连接发出多个请求，这减少了与多个连接相关的延迟。在一个 Web 页面引用了多幅图片时，这就很有用：客户机可以通过一个连接先请求页面，再请求所有图片。其缺点在于服务器上的 worker 进程必须等待客户机要关闭的会话，之后才能转到下一个请求。</p>
+
+<p>Apache 使您能够配置如何处理持久连接（称为 keepalives）。httpd.conf 全局级的 KeepAlive 5 允许服务器在连接强制关闭之前处理一个连接上的 5 个请求。将此值设置为 0 将禁用持久连接。同样位于全局级上的 KeepAliveTimeout 确定在会话关闭之前，Apache 将等待另外一个连接多久。</p>
+
+<p>持久连接的处理并非 “一刀切” 式的配置。对于某些 Web 站点，禁用 keepalives 更合适（KeepAlive 0）；而对于其他一些站点，启用它会带来巨大的收益。惟一的解决之道就是尝试使用这两种配置，自己观察哪种更合适。但若启用了 keepalives，使用较小的超时时间较为明智，例如 2，即 KeepAliveTimeout 2。这能确保希望发出另外一个请求的客户机有充足的时间，还能确保 worker 进程不会一直空闲，等待可能永远不会出现的下一个请求。</p>
+
+<p>压缩</p>
+
+<p>Web 服务器能够在将输出发回给客户机之前压缩它。这将使通过 Internet 发送的页面更小，代价是 Web 服务器上的 CPU 周期。对于那些负担得起 CPU 开销的服务器来说，这是提高页面下载速度的好办法 —— 页面压缩后大小变为原来的三分之一这种事情并不罕见。</p>
+
+<p>图片通常已经是压缩过的，因此压缩应仅限于文本输出。Apache 通过 mod_deflate 提供压缩。尽管 mod_deflate 可轻松启用，但它涉及到太多的复杂性，很多手册都解释了这些复杂的内容。本文不介绍压缩的配置。</p>
+
+<p>调优 PHP</p>
+
+<p>PHP 是运行应用程序代码的引擎。应该仅安装计划使用的那些模块，并配置您的 Web 服务器，使之仅为脚本文件（通常是以 .php 结尾的那些文件）使用 PHP，而非所有静态文件。</p>
+
+<p>操作码缓存</p>
+
+<p>请求一个 PHP 脚本时，PHP 会读取该脚本，并将其编译为 Zend 操作码，这是要执行的代码的一种二进制表示形式。随后，此操作码由 PHP 执行并丢弃。操作码缓存将保存这个编译后的操作码，并在下一次调用该页面时重用它。这会节省很多时间。有多种缓存可用，我比较常用的是 eAccelerator。</p>
+
+<p>要安装 eAccelerator，您的计算机上需要有 PHP 开发库。由于不同的 Linux 发布版存放文件的位置不同，所以最好直接从 eAccelerator 的 Web 站点获得安装说明（参见 参考资料 部分获得链接）。您的发布版也有可能已经包含了一个操作码缓存，只需安装即可。</p>
+
+<p>无论如何在系统上安装 eAccelerator，都有一些配置选项需要注意。配置文件通常是 /etc/php.d/eaccelerator.ini。eaccelerator.shm_size 定义共享高速缓存的大小，编译后的脚本就存储在这里。该值的单位是兆字节（MB）。根据您的应用程序确定恰当的大小。eAccelerator 提供了一个脚本来显示缓存的状态，其中包含内存占用，64MB 是个不错的选择（eaccelerator.shm_size=&ldquo;64&#8221;）。如果您选择的值未被接受，那么必须修改内核的最大共享内存的大小。向 /etc/sysctl.conf 添加 kernel.shmmax=67108864，运行 sysctl -p 来使设置生效。kernel.shmmax 值的单位是字节。</p>
+
+<p>如果共享内存的分配超出极限，eAccelerator 必须将旧脚本从内存中清除。默认情况下，这是被禁用的；eaccelerator.shm_ttl = &ldquo;60&rdquo; 指定：当 eAccelerator 用完共享内存时，60 秒内未被访问的所有脚本都将被清除。</p>
+
+<p>另一种流行的 eAccelerator 替代工具是 Alternative PHP Cache（APC）。Zend 的厂商也提供了一种商业操作码缓存，包括一个进一步提高效率的优化器。</p>
+
+<p>php.ini</p>
+
+<p>PHP 的配置是在 php.ini 中完成的。四个重要的设置控制 PHP 可使用多少系统资源，如表 1 所列。</p>
+
+<p>表 1. php.ini 中与资源相关的设置
+设置  描述  建议值
+max_execution_time  一个脚本可使用多少 CPU 秒 30
+max_input_time  一个脚本等待输入数据的时间有多长（秒）   60
+memory_limit    在被取消之前，一个脚本可使用多少内存（字节）  32M
+output_buffering    数据发送给客户机之前，有多少数据（字节）需要缓存    4096</p>
+
+<p>具体数字主要取决于您的应用程序。如果要从用户处接收大文件，那么 max_input_time 可能必须增加，可以在 php.ini 中修改，也可以通过代码重写它。与之类似，CPU 或内存占用较多的程序也可能需要更大的设置值。目标就是缓解超标程序的影响，因此不建议全局禁用这些设置。关于 max_execution_time，还有一点需要注意：它表示进程的 CPU 时间，而不是绝对时间。因此一个进行大量 I/O 和少量计算的程序的运行时间可能远远超过 max_execution_time。这也是 max_input_time 可以大于 max_execution_time 的原因所在。</p>
+
+<p>PHP 可执行的日志记录数是可配置的。在生产环境中，禁用除最重要的日志以外的一切日志记录能够减少磁盘写操作。如果需要使用日志来排除问题，那么可以按需启用日志记录。error_reporting = E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR 将启用足够的日志记录，使您发现问题，同时从脚本中消除大量无用的内容。</p>
+
+<p><strong>三、MySQL数据库服务器优化</strong></p>
+
+<p>关于 MySQL 调优</p>
+
+<p>有 3 种方法可以加快 MySQL 服务器的运行速度，效率从低到高依次为：</p>
+
+<ol>
+<li>. 替换有问题的硬件。</li>
+<li>. 对 MySQL 进程的设置进行调优。</li>
+<li>. 对查询进行优化。</li>
+</ol>
+
+
+<p>替换有问题的硬件通常是我们的第一考虑，主要原因是数据库会占用大量资源。不过这种解决方案也就仅限于此了。实际上，您通常可以让中央处理器（CPU）或磁盘速度加倍，也可以让内存增大 4 到 8 倍。</p>
+
+<p>第二种方法是对 MySQL 服务器（也称为 mysqld）进行调优。对这个进程进行调优意味着适当地分配内存，并让 mysqld 了解将会承受何种类型的负载。加快磁盘运行速度不如减少所需的磁盘访问次数。类似地，确保 MySQL 进程正确操作就意味着它花费在服务查询上的时间要多于花费在处理后台任务（如处理临时磁盘表或打开和关闭文件）上的时间。对 mysqld 进行调优是本文的重点。</p>
+
+<p>最好的方法是确保查询已经进行了优化。这意味着对表应用了适当的索引，查询是按照可以充分利用 MySQL 功能的方式来编写的。尽管本文并没有包含查询调优方面的内容（很多著作中已经针对这个主题进行了探讨），不过它会配置 mysqld 来报告可能需要进行调优的查询。</p>
+
+<p>虽然已经为这些任务指派了次序，但是仍然要注意硬件和 mysqld 的设置以利于适当地调优查询。机器速度慢也就罢了，我曾经见过速度很快的机器在运行设计良好的查询时由于负载过重而失败，因为 mysqld 被大量繁忙的工作所占用而不能服务查询。</p>
+
+<p>记录慢速查询</p>
+
+<p>在一个 SQL 服务器中，数据表都是保存在磁盘上的。索引为服务器提供了一种在表中查找特定数据行的方法，而不用搜索整个表。当必须要搜索整个表时，就称为表扫描。通常来说，您可能只希望获得表中数据的一个子集，因此全表扫描会浪费大量的磁盘 I/O，因此也就会浪费大量时间。当必须对数据进行连接时，这个问题就更加复杂了，因为必须要对连接两端的多行数据进行比较。</p>
+
+<p>当然，表扫描并不总是会带来问题；有时读取整个表反而会比从中挑选出一部分数据更加有效（服务器进程中查询规划器用来作出这些决定）。如果索引的使用效率很低，或者根本就不能使用索引，则会减慢查询速度，而且随着服务器上的负载和表大小的增加，这个问题会变得更加显著。执行时间超过给定时间范围的查询就称为慢速查询。</p>
+
+<p>您可以配置 mysqld 将这些慢速查询记录到适当命名的慢速查询日志中。管理员然后会查看这个日志来帮助他们确定应用程序中有哪些部分需要进一步调查。清单 1 给出了要启用慢速查询日志需要在 my.cnf 中所做的配置。</p>
+
+<p>清单 1. 启用 MySQL 慢速查询日志
+[mysqld]
+; enable the slow query log, default 10 seconds
+log-slow-queries
+; log queries taking longer than 5 seconds
+long_query_time = 5
+; log queries that don&rsquo;t use indexes even if they take less than long_query_time
+; MySQL 4.1 and newer only
+log-queries-not-using-indexes
+复制代码
+这三个设置一起使用，可以记录执行时间超过 5 秒和没有使用索引的查询。请注意有关 log-queries-not-using-indexes 的警告：您必须使用 MySQL 4.1 或更高版本。慢速查询日志都保存在 MySQL 数据目录中，名为 hostname-slow.log。如果希望使用一个不同的名字或路径，可以在 my.cnf 中使用 log-slow-queries = /new/path/to/file 实现此目的。</p>
+
+<p>阅读慢速查询日志最好是通过 mysqldumpslow 命令进行。指定日志文件的路径，就可以看到一个慢速查询的排序后的列表，并且还显示了它们在日志文件中出现的次数。一个非常有用的特性是 mysqldumpslow 在比较结果之前，会删除任何用户指定的数据，因此对同一个查询的不同调用被计为一次；这可以帮助找出需要工作量最多的查询。</p>
+
+<p>对查询进行缓存</p>
+
+<p>很多 LAMP 应用程序都严重依赖于数据库，但却会反复执行相同的查询。每次执行查询时，数据库都必须要执行相同的工作 —— 对查询进行分析，确定如何执行查询，从磁盘中加载信息，然后将结果返回给客户机。MySQL 有一个特性称为查询缓存，它将（后面会用到的）查询结果保存在内存中。在很多情况下，这会极大地提高性能。不过，问题是查询缓存在默认情况下是禁用的。</p>
+
+<p>将 query_cache_size = 32M 添加到 /etc/my.conf 中可以启用 32MB 的查询缓存。</p>
+
+<p>监视查询缓存</p>
+
+<p>在启用查询缓存之后，重要的是要理解它是否得到了有效的使用。MySQL 有几个可以查看的变量，可以用来了解缓存中的情况。清单 2 给出了缓存的状态。</p>
+
+<p>清单 2. 显示查询缓存的统计信息
+mysql> SHOW STATUS LIKE &lsquo;qcache%&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| Variable_name           | Value      |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| Qcache_free_blocks      | 5216       |
+| Qcache_free_memory      | 14640664   |
+| Qcache_hits             | 2581646882 |
+| Qcache_inserts          | 360210964  |
+| Qcache_lowmem_prunes    | 281680433  |
+| Qcache_not_cached       | 79740667   |
+| Qcache_queries_in_cache | 16927      |
+| Qcache_total_blocks     | 47042      |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+8 rows in set (0.00 sec)
+复制代码
+这些项的解释如表 1 所示。
+变量名   说明</p>
+
+<pre><code>                    Qcache_free_blocks                      缓存中相邻内存块的个数。数目大说明可能有碎片。FLUSH QUERY CACHE 会对缓存中的碎片进行整理，从而得到一个空闲块。
+                    Qcache_free_memory                      缓存中的空闲内存。
+                    Qcache_hits                     每次查询在缓存中命中时就增大。
+                    Qcache_inserts                      每次插入一个查询时就增大。命中次数除以插入次数就是不中比率；用 1 减去这个值就是命中率。在上面这个例子中，大约有 87% 的查询都在缓存中命中。
+                    Qcache_lowmem_prunes                        缓存出现内存不足并且必须要进行清理以便为更多查询提供空间的次数。这个数字最好长时间来看；如果这个数字在不断增长，就表示可能碎片非常严重，或者内存很少。（上面的 free_blocks 和            free_memory 可以告诉您属于哪种情况）。
+                    Qcache_not_cached                       不适合进行缓存的查询的数量，通常是由于这些查询不是 SELECT 语句。
+                    Qcache_queries_in_cache                     当前缓存的查询（和响应）的数量。
+                    Qcache_total_blocks                     缓存中块的数量。
+</code></pre>
+
+<p>通常，间隔几秒显示这些变量就可以看出区别，这可以帮助确定缓存是否正在有效地使用。运行 FLUSH STATUS 可以重置一些计数器，如果服务器已经运行了一段时间，这会非常有帮助。</p>
+
+<p>使用非常大的查询缓存，期望可以缓存所有东西，这种想法非常诱人。由于 mysqld 必须要对缓存进行维护，例如当内存变得很低时执行剪除，因此服务器可能会在试图管理缓存时而陷入困境。作为一条规则，如果 FLUSH QUERY CACHE 占用了很长时间，那就说明缓存太大了。</p>
+
+<p>强制限制</p>
+
+<p>您可以在 mysqld 中强制一些限制来确保系统负载不会导致资源耗尽的情况出现。清单 3 给出了 my.cnf 中与资源有关的一些重要设置。</p>
+
+<p>清单 3. MySQL 资源设置
+max_connections=500
+wait_timeout=10
+max_connect_errors = 100
+复制代码
+连接最大个数是在第一行中进行管理的。与 Apache 中的 MaxClients 类似，其想法是确保只建立服务允许数目的连接。要确定服务器上目前建立过的最大连接数，请执行 SHOW STATUS LIKE &lsquo;max_used_connections&#8217;。</p>
+
+<p>第 2 行告诉 mysqld 终止所有空闲时间超过 10 秒的连接。在 LAMP 应用程序中，连接数据库的时间通常就是 Web 服务器处理请求所花费的时间。有时候，如果负载过重，连接会挂起，并且会占用连接表空间。如果有多个交互用户或使用了到数据库的持久连接，那么将这个值设低一点并不可取！</p>
+
+<p>最后一行是一个安全的方法。如果一个主机在连接到服务器时有问题，并重试很多次后放弃，那么这个主机就会被锁定，直到 FLUSH HOSTS 之后才能运行。默认情况下，10 次失败就足以导致锁定了。将这个值修改为 100 会给服务器足够的时间来从问题中恢复。如果重试 100 次都无法建立连接，那么使用再高的值也不会有太多帮助，可能它根本就无法连接。</p>
+
+<p>缓冲区和缓存</p>
+
+<p>MySQL 支持超过 100 个的可调节设置；但是幸运的是，掌握少数几个就可以满足大部分需要。查找这些设置的正确值可以通过 SHOW STATUS 命令查看状态变量，从中可以确定 mysqld 的运作情况是否符合我们的预期。给缓冲区和缓存分配的内存不能超过系统中的现有内存，因此调优通常都需要进行一些妥协。</p>
+
+<p>MySQL 可调节设置可以应用于整个 mysqld 进程，也可以应用于单个客户机会话。</p>
+
+<p>服务器端的设置</p>
+
+<p>每个表都可以表示为磁盘上的一个文件，必须先打开，后读取。为了加快从文件中读取数据的过程，mysqld 对这些打开文件进行了缓存，其最大数目由 /etc/mysqld.conf 中的 table_cache 指定。清单 4 给出了显示与打开表有关的活动的方式。</p>
+
+<p>清单 4. 显示打开表的活动
+mysql> SHOW STATUS LIKE &lsquo;open%tables&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+| Variable_name | Value |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+| Open_tables   | 5000  |
+| Opened_tables | 195   |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+2 rows in set (0.00 sec)
+复制代码
+清单 4 说明目前有 5,000 个表是打开的，有 195 个表需要打开，因为现在缓存中已经没有可用文件描述符了（由于统计信息在前面已经清除了，因此可能会存在 5,000 个打开表中只有 195 个打开记录的情况）。如果 Opened_tables 随着重新运行 SHOW STATUS 命令快速增加，就说明缓存命中率不够。如果 Open_tables 比 table_cache 设置小很多，就说明该值太大了（不过有空间可以增长总不是什么坏事）。例如，使用 table_cache = 5000 可以调整表的缓存。</p>
+
+<p>与表的缓存类似，对于线程来说也有一个缓存。 mysqld 在接收连接时会根据需要生成线程。在一个连接变化很快的繁忙服务器上，对线程进行缓存便于以后使用可以加快最初的连接。</p>
+
+<p>清单 5 显示如何确定是否缓存了足够的线程。</p>
+
+<p>清单 5. 显示线程使用统计信息
+mysql> SHOW STATUS LIKE &lsquo;threads%&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+| Variable_name     | Value  |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+| Threads_cached    | 27     |
+| Threads_connected | 15     |
+| Threads_created   | 838610 |
+| Threads_running   | 3      |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+4 rows in set (0.00 sec)
+复制代码
+此处重要的值是 Threads_created，每次 mysqld 需要创建一个新线程时，这个值都会增加。如果这个数字在连续执行 SHOW STATUS 命令时快速增加，就应该尝试增大线程缓存。例如，可以在 my.cnf 中使用 thread_cache = 40 来实现此目的。</p>
+
+<p>关键字缓冲区保存了 MyISAM 表的索引块。理想情况下，对于这些块的请求应该来自于内存，而不是来自于磁盘。清单 6 显示了如何确定有多少块是从磁盘中读取的，以及有多少块是从内存中读取的。</p>
+
+<p>清单 6. 确定关键字效率
+mysql> show status like &lsquo;%key_read%&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Variable_name     | Value     |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Key_read_requests | 163554268 |
+| Key_reads         | 98247     |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+2 rows in set (0.00 sec)
+复制代码
+Key_reads 代表命中磁盘的请求个数， Key_read_requests 是总数。命中磁盘的读请求数除以读请求总数就是不中比率 —— 在本例中每 1,000 个请求，大约有 0.6 个没有命中内存。如果每 1,000 个请求中命中磁盘的数目超过 1 个，就应该考虑增大关键字缓冲区了。例如，key_buffer = 384M 会将缓冲区设置为 384MB。</p>
+
+<p>临时表可以在更高级的查询中使用，其中数据在进一步进行处理（例如 GROUP BY 字句）之前，都必须先保存到临时表中；理想情况下，在内存中创建临时表。但是如果临时表变得太大，就需要写入磁盘中。清单 7 给出了与临时表创建有关的统计信息。</p>
+
+<p>清单 7. 确定临时表的使用
+mysql> SHOW STATUS LIKE &lsquo;created_tmp%&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+| Variable_name           | Value |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+| Created_tmp_disk_tables | 30660 |
+| Created_tmp_files       | 2     |
+| Created_tmp_tables      | 32912 |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&ndash;+
+3 rows in set (0.00 sec)
+复制代码
+每次使用临时表都会增大 Created_tmp_tables；基于磁盘的表也会增大 Created_tmp_disk_tables。对于这个比率，并没有什么严格的规则，因为这依赖于所涉及的查询。长时间观察 Created_tmp_disk_tables 会显示所创建的磁盘表的比率，您可以确定设置的效率。 tmp_table_size 和 max_heap_table_size 都可以控制临时表的最大大小，因此请确保在 my.cnf 中对这两个值都进行了设置。</p>
+
+<p>每个会话的设置</p>
+
+<p>下面这些设置针对于每个会话。在设置这些数字时要十分谨慎，因为它们在乘以可能存在的连接数时候，这些选项表示大量的内存！您可以通过代码修改会话中的这些数字，或者在 my.cnf 中为所有会话修改这些设置。</p>
+
+<p>当 MySQL 必须要进行排序时，就会在从磁盘上读取数据时分配一个排序缓冲区来存放这些数据行。如果要排序的数据太大，那么数据就必须保存到磁盘上的临时文件中，并再次进行排序。如果 sort_merge_passes 状态变量很大，这就指示了磁盘的活动情况。清单 8 给出了一些与排序相关的状态计数器信息。</p>
+
+<p>清单 8. 显示排序统计信息
+mysql> SHOW STATUS LIKE &ldquo;sort%&rdquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Variable_name     | Value   |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Sort_merge_passes | 1       |
+| Sort_range        | 79192   |
+| Sort_rows         | 2066532 |
+| Sort_scan         | 44006   |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+
+4 rows in set (0.00 sec)
+复制代码
+如果 sort_merge_passes 很大，就表示需要注意 sort_buffer_size。例如， sort_buffer_size = 4M 将排序缓冲区设置为 4MB。</p>
+
+<p>MySQL 也会分配一些内存来读取表。理想情况下，索引提供了足够多的信息，可以只读入所需要的行，但是有时候查询（设计不佳或数据本性使然）需要读取表中大量数据。要理解这种行为，需要知道运行了多少个 SELECT 语句，以及需要读取表中的下一行数据的次数（而不是通过索引直接访问）。实现这种功能的命令如清单 9 所示。</p>
+
+<p>清单 9. 确定表扫描比率
+mysql> SHOW STATUS LIKE &ldquo;com_select&rdquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+| Variable_name | Value  |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+| Com_select    | 318243 |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+
+1 row in set (0.00 sec)</p>
+
+<p>mysql> SHOW STATUS LIKE &ldquo;handler_read_rnd_next&rdquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Variable_name         | Value     |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| Handler_read_rnd_next | 165959471 |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+1 row in set (0.00 sec)
+复制代码
+Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中是 521:1。如果该值超过 4000，就应该查看 read_buffer_size，例如 read_buffer_size = 4M。如果这个数字超过了 8M，就应该与开发人员讨论一下对这些查询进行调优了！</p>
+
+<p>3 个必不可少的工具</p>
+
+<p>尽管在了解具体设置时，SHOW STATUS 命令会非常有用，但是您还需要一些工具来解释 mysqld 所提供的大量数据。我发现有 3 个工具是必不可少的；在 参考资料 一节中您可以找到相应的链接。</p>
+
+<p>大部分系统管理员都非常熟悉 top 命令，它为任务所消耗的 CPU 和内存提供了一个不断更新的视图。 mytop 对 top 进行了仿真；它为所有连接上的客户机以及它们正在运行的查询提供了一个视图。mytop 还提供了一个有关关键字缓冲区和查询缓存效率的实时数据和历史数据，以及有关正在运行的查询的统计信息。这是一个很有用的工具，可以查看系统中（比如 10 秒钟之内）的状况，您可以获得有关服务器健康信息的视图，并显示导致问题的任何连接。</p>
+
+<p>mysqlard 是一个连接到 MySQL 服务器上的守护程序，负责每 5 分钟搜集一次数据，并将它们存储到后台的一个 Round Robin Database 中。有一个 Web 页面会显示这些数据，例如表缓存的使用情况、关键字效率、连接上的客户机以及临时表的使用情况。尽管 mytop 提供了服务器健康信息的快照，但是 mysqlard 则提供了长期的健康信息。作为奖励，mysqlard 使用自己搜集到的一些信息针对如何对服务器进行调优给出一些建议。</p>
+
+<p>搜集 SHOW STATUS 信息的另外一个工具是 mysqlreport。其报告要远比 mysqlard 更加复杂，因为需要对服务器的每个方面都进行分析。这是对服务器进行调优的一个非常好的工具，因为它对状态变量进行适当计算来帮助确定需要修正哪些问题。</p>
+
+<p><strong>原文地址: 1、<a href="http://club.topsage.com/thread-221396-1-1.html">架构</a>；2、<a href="http://club.topsage.com/thread-221401-1-1.html">Apache</a>；3、<a href="http://club.topsage.com/thread-221406-1-1.html">MySQL</a></strong></p>
+
+<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-03T00:00:00+08:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://apiaceae.github.io/blog/2013/09/03/lamp/" data-via="" data-counturl="http://apiaceae.github.io/blog/2013/09/03/lamp/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/02/hello-jekyll-world/" title="Previous Post: Hello jekyll world">&laquo; Hello jekyll world</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/09/03/nginx/" title="Next Post: Nginx内核参数相关的优化设定说明">Nginx内核参数相关的优化设定说明 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="http://games.jeuxjeuxjeux.fr/data/1/4/4/14414.swf
+&nbsp;
+jirapatch.rar (295.88 kb)
+atlassian-extras-2.2.2.jar (147.22 kb)
+&nbsp;
+JiraLicenseStoreImpl &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://apiaceae.github.io/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/17/e5a5a5e5b7b4e9a9ace79c8be8a781e4bda0e4ba86e5b08fe6b8b8e6888f/">奥巴马看见你了小游戏</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://games.jeuxjeuxjeux.fr/data/1/4/4/14414.swf">http://games.jeuxjeuxjeux.fr/data/1/4/4/14414.swf</a></p>
+<p>&nbsp;</p>
+<p><a href="/files/2010/12/jirapatch.rar">jirapatch.rar (295.88 kb)</a></p>
+<p><a href="/files/2010/12/atlassian-extras-2.2.2.jar">atlassian-extras-2.2.2.jar (147.22 kb)</a></p>
+<p>&nbsp;</p>
+<p><a href="/files/2010/12/JiraLicenseStoreImpl.class">JiraLicenseStoreImpl.class (3.20 kb)</a></p>
+<p>&nbsp;</p>
+<p><a href="/files/2010/12/language_zh_CN.jar">language_zh_CN.jar (188.31 kb)</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/16/e5a682e4bd95e59ca8aspnet-mvce8a786e59bbee4b8ade4bdbfe794a8datatablee5afb9e8b1a1/">如何在ASP.NET MVC视图中使用DataTable对象</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-16T00:00:00+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>控制器代码</h3>
+<pre class="brush: c-sharp;">public ActionResult Index()
+{    
+  DataTable dt = new DataTable(); 
+    return View(dt);
+
+}</pre>
+<h3>视图代码</h3>
+<pre class="brush: c-sharp;">Inherits="System.Web.Mvc.ViewPage&lt;System.Data.DataTable&gt;"</pre>
+<pre class="brush: c-sharp;"><span style="font-size: medium;">显示数据</span></pre>
+<pre style="font-family: consolas;"><span style="font-size: medium;"><span style="background: yellow;">&lt;%</span>&nbsp;<span style="color: blue;">foreach</span>&nbsp;(System.Data.<span style="color: #2b91af;">DataRow</span>&nbsp;row&nbsp;<span style="color: blue;">in</span>&nbsp;Model.Rows)</span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span><span style="color: blue;">=</span>&nbsp;row["columnName"].ToString()&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span>}<span style="background: yellow;">%&gt;</span></span></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/13/e4bdbfe794a8javascripte8849ae69cace68ea7e588b6e69fa5e8afa2e9a1b5e99da2e5afbce888aae5928ce6b885e999a4e794a8e688b7e8be93e585a5e5ad97e7aca6e4b8b2e79a84e9a696e5b0bee7a9bae6a0bc/">使用JavaScript脚本控制查询页面导航和清除用户输入字符串的首尾空格</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-13T00:00:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对于查询页面来说，经常会在页面上设置查询信息类别的选项，希望根据用户的查询的信息类别导航的不同的结果页面。并且能够去掉用户输入文本的首尾空格(这个在用户从其它地方拷贝查询字符串过来的时候是经常发生的事情)。以下面的为例子：</p>
+<p><a href="http://blog.cnpc.ac.cn/images/image_6.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" src="http://blog.cnpc.ac.cn/images/image_thumb_6.png" border="0" alt="image" width="607" height="89" /></a></p>
+<h3>JavaScript脚本</h3>
+<pre class="brush: js;">function doSearch() {        
+        var category = document.getElementsByName("category");
+        var queryinput = document.getElementById('SearchName').value;
+        var query = queryinput.replace(/^\s+|\s+$/g, "");        
+        document.getElementById('SearchName').value =query;
+        document.getElementById('SearchName').disabled = true;
+        for (var i = 0; i &lt; category.length; i++) {
+            if (category[0].checked) {
+                window.location = "/name/search?category=name&amp;q=" + query + "&amp;page=" + 1;
+            }
+            if (category[1].checked) {
+                window.location = "/vernacular/search?category=vernacular&amp;q=" + query + "&amp;page=" + 1;
+            }
+        }
+    }</pre>
+<p class="brush: js;">处理用户输入文本空格的方法和原理可以参考<a href="http://www.opensourcevarsity.com/javascriptbasics/l5trimmingwhitespaces">这篇文章</a>。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/13/3de6a087e7adbee4ba91e7a4bae4be8b/">3D标签云示例</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-13T00:00:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>示例</h3>
+<p>[video src=&#8221;Video_2010-12-14_014231.wmv&#8221;]</p>
+<h3>页面脚本引用代码：</h3>
+<pre class="brush: js;">swfobject.addDomLoadEvent(function () {
+		swfobject.embedSWF(
+					"../../text_and_image_cloud.swf", "myContent1",
+					"180", "220",
+					"10", "../../expressInstall.swf",
+					{
+						cloud_data: "../../cloud_data.xml",
+						tcolor: "0x999999",
+						tcolor2: "0x666666",
+						hicolor: "0x494949",
+						tspeed: "250",
+						fontFace: "Arial"
+					},
+					{ wmode: "window", menu: "false", quality: "best" }
+					);
+	});</pre>
+<h3>XML标签数据格式：</h3>
+<p>&nbsp;</p>
+<pre class="brush: xml;"><a style="font-size: 80pt;" href="http://www.cnpc.ac.cn/posts/tags?=Biodiversity">
+	生物多样性
+</a>
+
+<a style="font-size: 11pt;" href="http://www.cnpc.ac.cn">
+	物种编目
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	生物多样性信息学
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	标准
+</a>
+
+<a style="font-size: 16pt;" href="http://www.cnpc.ac.cn">
+	数据库
+</a>
+
+<a style="font-size: 18pt;" href="http://www.cnpc.ac.cn">
+	协议
+</a>
+
+<a href="http://www.cnpc.ac.cn">
+	文献
+</a>
+
+<a style="font-size: 17pt;" href="http://www.cnpc.ac.cn">
+	动态
+	</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	新闻
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	IUCN
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	保护
+</a>
+
+<a style="font-size: 11.1111pt;" href="http://www.cnpc.ac.cn">
+	形态
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	鉴定
+</a>
+
+<a style="font-size: 12.6667pt;" href="http://www.cnpc.ac.cn">
+	新种
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	Web
+</a>
+
+</pre>
+<p>相关资源可以从<a href="http://www.artviper.net/website-design/xml-flash-tag-cloud.php">这里</a>下载</p>
+<p>&nbsp;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/12/sqle5a682e4bd95e4bb8ee58d95e4b8aae585b7e69c89e9878de5a48de9a1b9e79a84e8a1a8e4b8ade88eb7e5be97e7bb9fe8aea1e695b0e68dae/">Sql如何从单个具有重复项的表中获得统计数据</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-12T00:00:00+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我们经常遇到需要从一张多个字段具有不唯一重复值的表中统计数据的情况，表结构如下图：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/Lisong_2010-11-08_144758_2.gif"><img style="display: inline; border-width: 0px;" title="Lisong_2010-11-08_144758" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/Lisong_2010-11-08_144758_thumb.gif" border="0" alt="Lisong_2010-11-08_144758" width="644" height="354" /></a></p>
+<p>表中只有一个字符型字段CanonicalString和ID具有唯一值，其它字段都有不同程度的重复。需要的结果是统计每一个不同分类等级(界、门、纲、目、科、属)的下级分类单元有多少。例如：统计出每一个科(TaxonFamily)有多少个属(TaxonGenus),多少个分类群(CanonicalString)；统计每一个门有多纲、目、科、属等等，其它依次类推。</p>
+<h1>1、统计每一个科有多少分类群</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT  TaxonFamily AS Family ,
+
+        COUNT(Id) AS TaxonNumber
+
+FROM    dbo.Taxons
+
+GROUP BY TaxonFamily
+
+ORDER BY TaxonNumber DESC</pre>
+<div id="codeSnippetWrapper">
+<pre id="codeSnippet" class="csharpcode">运行结果：</pre>
+<pre class="csharpcode"><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_2.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb.png" border="0" alt="image" width="203" height="244" /></a> </pre>
+<h1>2、统计类群数目最多的10个科</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT TOP(10)  TaxonFamily AS Family ,
+
+
+
+        COUNT(Id) AS TaxonNumber
+
+
+
+FROM    dbo.Taxons
+
+
+
+GROUP BY TaxonFamily
+
+
+
+ORDER BY TaxonNumber DESC<br /></pre>
+<p>&nbsp;</p>
+</div>
+<h1>3、统计每一个科包括有多少个属</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT  TaxonFamily AS Family ,
+
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber
+
+FROM    dbo.Taxons
+
+GROUP BY TaxonFamily
+
+ORDER BY GenusNumber DESC</pre>
+<p>&nbsp;</p>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_4.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_1.png" border="0" alt="image" width="179" height="244" /></a></p>
+<h1>4、统计每一个科的属和分类群的数目</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">&nbsp;</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">ORDER</span> <span style="color: #0000ff;">BY</span> GenusNumber DESC</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_6.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_2.png" border="0" alt="image" width="244" height="321" /></a></p>
+<h2>5、统计每一个属包括的分类群数目并显示这个属的科名</h2>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span> TaxonFamily <span style="color: #0000ff;">AS</span> Family,  TaxonGenus <span style="color: #0000ff;">AS</span> Genus ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonGenus, TaxonFamily</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">ORDER</span> <span style="color: #0000ff;">BY</span> TaxonNumber DESC</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_8.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_3.png" border="0" alt="image" width="258" height="321" /></a></p>
+<h1>6、统计某一个科的属和分类群数目</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">WHERE</span>   TaxonFamily = <span style="color: #006080;">'Pinaceae'</span></pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_10.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_4.png" border="0" alt="image" width="313" height="89" /></a></p>
+<h1>7、统计物种名字字段(CanonicalString)中空格出现的次数</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  Id ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        CanonicalString ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        LEN(CanonicalString) - LEN(REPLACE(CanonicalString, <span style="color: #006080;">' '</span>, <span style="color: #006080;">''</span>)) <span style="color: #0000ff;">AS</span> 空格出现次数</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果如下：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_12.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_5.png" border="0" alt="image" width="396" height="277" /></a></p>
+<p>上面这个语句的作用是当我们没有有效标记改类群的分类等级，种或者亚种、变种的时候，可以用来作为筛选记录的一个备选方法。</p>
+<h1>8、统计每一个科有多少属和种(不包括种下等级的情况)</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> SpeciesNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">WHERE</span>   LEN(CanonicalString) - LEN(REPLACE(CanonicalString, <span style="color: #006080;">' '</span>, <span style="color: #006080;">''</span>)) = 1</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF--></div>
+</div>
+<h2>9、统计每一个大类群(蕨类、苔藓、双子叶等)有的科、属、种的数目</h2>
+<p><a href="http://blog.cnpc.ac.cn/images/2010-12-12_210829.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="2010-12-12_210829" src="http://blog.cnpc.ac.cn/images/2010-12-12_210829_thumb.png" border="0" alt="2010-12-12_210829" width="244" height="204" /></a></p>
+<p>
+<pre class="brush: sql;">--统计大类群的科、属、类群数目
+SELECT  TaxonGroup ,
+        COUNT(DISTINCT ( TaxonFamily )) AS FamilyNumber ,
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber ,
+        COUNT(Id) AS TaxonNumber
+FROM    dbo.Taxons
+GROUP BY TaxonGroup
+ORDER BY FamilyNumber DESC
+
+--统计大类群的科、属、类群数目
+SELECT  TaxonGroup ,
+        COUNT(DISTINCT ( TaxonFamily )) AS FamilyNumber ,
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber ,
+        COUNT(Id) AS SpeciesNumber
+FROM    dbo.Taxons
+WHERE   [RANK] = 'species'
+GROUP BY TaxonGroup
+ORDER BY FamilyNumber DESC</pre>
+</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/09/e4b8ade59bbde69c89e5a49ae5b091e9ab98e7ad89e6a48de789a9efbc9f/">中国有多少高等植物？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-09T00:00:00+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/images/image_5.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb_5.png" width="483" height="590" /></a> </p>  <p>上面这个图是澳大利亚国家环境保护部发布的信息，从上面这个图看中国特有的维管植物连12000种都不到，实在匪夷所思。无论从哪个文献和著作中也没有发现有这样的数据报道。我在这里给他更新一下。中国高等植物的种数目已经是3万9千余种，特有的是1万6千多种，占几乎一半。澳大利亚的科学家该打屁股了！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/02/e4b8ade59bbde9ab98e7ad89e6a48de789a9e4bfa1e681afe7b3bbe7bb9fe696b0e78988e4b88ae7babfe6b58be8af95/">中国高等植物信息系统新版上线测试</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-02T00:00:00+08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.cnpc.ac.cn" target="_blank">中国高等植物信息系统</a>经过一段时间的开发和调试，现在开发部分功能上线进行测试。欢迎你试用并提出意见。</p>  <p><a href="http://blog.cnpc.ac.cn/images/2010-12-02_022308.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2010-12-02_022308" border="0" alt="2010-12-02_022308" src="http://blog.cnpc.ac.cn/images/2010-12-02_022308_thumb.png" width="579" height="303" /></a></p>  <h3>分类树：AJAX Json异步加载，约4万个节点</h3>  <p><a href="http://blog.cnpc.ac.cn/images/image.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb.png" width="220" height="379" /></a></p>    <h3>动态图表：OpenFlashChart, MSChart</h3>  <p><a href="http://blog.cnpc.ac.cn/images/image_1.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb_1.png" width="397" height="332" /></a></p>  <p><a href="http://blog.cnpc.ac.cn/images/image_2.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb_2.png" width="403" height="353" /></a></p>  <p>&#160;</p>  <h3>全文检索：Lucene.NET</h3>  <p>目前只提供有关物种描述文本信息的全文检索，稍后将实现全站索引检索</p>  <p><a href="http://blog.cnpc.ac.cn/images/image_3.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb_3.png" width="481" height="372" /></a></p>    <h3>新闻-事件-地图</h3>  <p><a href="http://blog.cnpc.ac.cn/images/image_4.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://blog.cnpc.ac.cn/images/image_thumb_4.png" width="487" height="364" /></a></p>  <h3>物种详细信息-用户评论/评分-图片浏览</h3>  <p><a href="http://blog.cnpc.ac.cn/images/2010-12-02_143350_%E5%89%AF%E6%9C%AC.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2010-12-02_143350_副本" border="0" alt="2010-12-02_143350_副本" src="http://blog.cnpc.ac.cn/images/2010-12-02_143350_%E5%89%AF%E6%9C%AC_thumb.jpg" width="522" height="392" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/11/26/e4bdbfe794a8host-trackere69da5e79b91e6b58be7bd91e7ab99/">使用Host-tracker来监测网站</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><a href="http://blog.cnpc.ac.cn/images/2010-11-26_205151.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2010-11-26_205151" border="0" alt="2010-11-26_205151" src="http://blog.cnpc.ac.cn/images/2010-11-26_205151_thumb.png" width="644" height="344" /></a>  <p>网站管理员可以利用<a title="http://host-tracker.com/" href="http://host-tracker.com/">http://host-tracker.com/</a>来监测网站是否允许良好和挂机的情况，如果网站挂机还可以通过电子邮件通知。使用方法非常简单。只需要到host-tracker网站输入自己的网址，然后点击Check now，系统会发生异地请求的想要报告。在Subscribe框填入邮件地址就可以收到网站情况的消息。<img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-openmouthedsmile" alt="大笑" src="http://blog.cnpc.ac.cn/images/wlEmoticon-openmouthedsmile.png" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/16/e5a682e4bd95e59ca8windowse6938de4bd9ce7b3bbe7bb9fe4b88be4b88be8bdbdgithube4b88ae79a84e5bc80e6ba90e4bba3e7a081/">如何在Windows操作系统下下载github上的开源代码</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-16T00:00:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>现在越来越多的开源项目都通过github来进行管理，习惯了使用SVN的朋友可能不熟悉github下载代码方法。比较简单。</p>  <p>1、下载<a href="http://code.google.com/p/msysgit/downloads/list">Git for windows</a>然后安装，主要安装过程的一些选项；</p>  <p>2、进入你希望保存源代码的文件夹，然后在文件夹上点右键弹出git菜单如下图，选择git bash here</p>  <p><a href="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/4075F354/20100916_162309.gif"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-09-16_162309" border="0" alt="2010-09-16_162309" src="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/02E8958B/20100916_162309_thumb.gif" width="635" height="484" /></a> </p>  <p>3、在弹出的unix shell窗口输入需要下载代码的http地址（红色部分），如下图</p>  <p><a href="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/49D1B888/20100916_161757.gif"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-09-16_161757" border="0" alt="2010-09-16_161757" src="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/29B6ABCB/20100916_161757_thumb.gif" width="644" height="328" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/07/e4bc9ee5bda2e7a791e6a48de789a9e588bae88ab9enryngium-foetidume79a84e7949fe6b4bbe79fa5e8af86/">伞形科植物刺芹Enryngium Foetidum的生活知识</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Culantro in Pho – An Herb in a League of Its Own</h3>  <p><abbr>April 18, 2009</abbr></p>  <p>0diggs<a>digg</a></p>  <p><em>Updated 07-14-09</em>. When you order a bowl of <strong>Vietnamese pho</strong> at a restaurant, you will typically be served a plate of garnishing along with your steaming bowl of meat and rice noodles. The only time that plate of garnishing would be absent is when you happened to eat in a restaurant that serves authentic pho bac, the northern Vietnamese version of <strong>pho</strong> that is a lot more austere but in no way less flavorful. A typical plate of garnishing that accompanies a bowl of <strong>Vietnamese pho</strong> would contain lime wedges, chopped Asian chili, fresh Thai basil, bean sprouts and <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is relatively unknown in the United States, and it is often mistaken for its cousin cilantro, another herb often found in a bowl of pho. However, for all their similarities, <strong>culantro</strong> and cilantro are two entirely different herbs.</p>  <p>What is <strong>culantro</strong> and just how different is it from <strong>cilantro</strong>?&#160; How important is <strong>culantro</strong> to a <em>bowl of pho</em>? Let’s dig a little deeper.</p>  <h4><strong>So What Is Culantro?</strong></h4>  <p><strong><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1.jpg"><img title="Culantro" alt="Culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1-300x225.jpg" width="210" height="158" /></a>Culantro</strong> is actually the Spanish name of an herb in the parsley family that bears the scientific name <em>Eryngium foetidum</em> and has long leaves edged with spines. This herb has many other names, such as: fitweed, saw leaf, sawtooth, recao, Mexican coriander, long coriander, serrated coriander and shado beni, among many others. In Vietnam, <strong>culantro</strong> is known as <em>ngo gai</em> (ngò gai) or thorny coriander.</p>  <p>The <strong>culantro</strong> plant often grows as a small plant in roseate formation, and its leaves are elongated, growing from between four to eight inches long. The plant does not thrive in frost or under direct sunlight, although it is possible to find wild <strong>culantro</strong> growing in open, sunlit areas.</p>  <p><strong>Culantro</strong> is actually a native plant of Central America and the Caribbean Islands. Colonization and trading are largely responsible for introducing <strong>culantro</strong> to the rest of the world, particularly to India and Southeast Asia. However, as mentioned above, <strong>culantro</strong> is practically unknown in the United States, where it is often mistaken for cilantro.</p>  <h4><strong>Comparison with Other Corianders</strong></h4>  <p>The reason why <strong>culantro</strong> is often mistaken for cilantro is because they share similar smell and taste to the uninitiated. Just like cilantro, culantro has a pungent odor that can be reminiscent of crushed bedbugs. Some people are fine with such a smell, but some people can barely stand it. In addition to the smell, both culantro and cilantro have a bitter, soapy taste, although this flavor is stronger in culantro.</p>  <p>But that is where the similarities end. Although they both belong to the parsley family, cilantro has smaller leaves than <strong>culantro</strong>. Cilantro leaves are also lacy rather than thorny as in the case of <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is also sometimes compared to the Vietnamese coriander, another popular herb used in Southeast Asian cuisine. Vietnamese coriander also has long leaves, but its stems are knotty and knobby. Also known as laksa leaves, Vietnamese coriander is also more fragrant than <strong>culantro</strong>.</p>  <h4><strong>The Role of Culantro in Pho</strong></h4>  <p><strong><img title="Pho garnishes and condiments" alt="Pho garnishes and condiments" src="http://www.lovingpho.com/wp-content/uploads/2009/04/pho-garnishes-condiments-300x300.jpg" width="210" height="210" />Culantro</strong> is an optional garnish in <strong>Vietnamese pho</strong>, along with the bean sprouts, lime wedges, chopped Asian chili and Thai basil. When you eat a bowl of pho, it is up to you to put <strong>culantro</strong> in your bowl or not. Some people actually choose not to add the herb in their pho because the smell can be too strong and the taste too bitter.</p>  <p>The herb nonetheless helps balances out the flavors in pho. Vietnamese cooking is highly influenced by Chinese cuisine, and among the principles followed in Chinese cuisine that the Vietnamese themselves have adopted is the principle of balance. In this principle, the five flavors of food – salty, sour, sweet, bitter and spicy – should be present in each dish. But these flavors should not compete with one another; instead, they should exist harmoniously and lend to complex layers of taste.</p>  <p><strong>Culantro</strong> literally acts out a bitter role in pho. However, there is already a bitter element in every bowl of pho as provided by the chopped cilantro/scallion mix sprinkled over the noodle-and-meat assembly in the bowl. But because the cilantro and scallion are normally already cooked by the scalding broth by the time the bowl of pho is served at the table, <strong>Culantro</strong> then plays the role of the fresh and raw bitterness as chosen by the diner. It is meant to enhance the bitter layer in the flavor of pho and to give the broth a stronger zing, if that is what the diner wants in his or her pho.</p>  <p>Many people just tear the long culantro leaves into pieces of about one to two inches long and drop them directly into their bowl before taking the first bite (or slurp). This in effect gives them cooked culantro as they finish the meal. Others add them a few pieces at a time as they progress so that they get the maximum bitterness, freshness and crunchiness from the herb in every bite. For maximum effect, many pho connoisseurs like to tear culantro (and basil too) into smaller pieces (maybe 1/2 inch size) and add them as they eat their pho.</p>  <p>We take culantro (ngo gai) so seriously that our point system for rating pho at restaurants and shops gives ngo gai extra points for freshness. See the post “<a href="http://www.lovingpho.com/pho-ingredients-garnishes/importance-garnishes-pho/">The Importance of Garnishes for Pho</a>.”</p>  <h4><strong>Health Facts about Culantro</strong></h4>  <p>Aside from being a garnish or an ingredient in a dish, <strong>culantro</strong> also has medicinal properties. It is sometimes eaten to stimulate appetite in a diner and to help the diner digest his or her food, a trait that <strong>culantro</strong> shares with cilantro. The leaves of the <strong>culantro</strong> can also be boiled and made into tea that can help treat flu, pneumonia, diarrhea, fever and vomiting. Sometimes, the herb is also administered to cure convulsions in children, which is why it is called fitweed in some countries.</p>  <p>The herb is also healthy to eat on its own, even if you are not sick. <strong>Culantro</strong> has a high content of calcium, beta-carotene, riboflavin and iron – nutrients that the body needs to stay fit and to stave off disease.</p>  <h4><strong>Cultivating Culantro</strong></h4>  <p><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg"><img title="Planting culantro" alt="Planting culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg" width="224" height="168" /></a>It is actually easy to cultivate <strong>culantro</strong> in a garden. All you need to do is to have a plot of well-drained soil and protected from direct sunlight. You can also grow <strong>culantro</strong> in pots indoors.</p>  <p>When you grow <strong>culantro</strong> in a garden, the best time to do your planting is during springtime, when the frost of winter has already melted down
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

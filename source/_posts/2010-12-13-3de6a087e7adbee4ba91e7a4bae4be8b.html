@@ -1,0 +1,88 @@
+---
+layout: default
+title: 3D标签云示例
+---
+<h3>示例</h3>
+<p>[video src="Video_2010-12-14_014231.wmv"]</p>
+<h3>页面脚本引用代码：</h3>
+<pre class="brush: js;">swfobject.addDomLoadEvent(function () {
+		swfobject.embedSWF(
+					"../../text_and_image_cloud.swf", "myContent1",
+					"180", "220",
+					"10", "../../expressInstall.swf",
+					{
+						cloud_data: "../../cloud_data.xml",
+						tcolor: "0x999999",
+						tcolor2: "0x666666",
+						hicolor: "0x494949",
+						tspeed: "250",
+						fontFace: "Arial"
+					},
+					{ wmode: "window", menu: "false", quality: "best" }
+					);
+	});</pre>
+<h3>XML标签数据格式：</h3>
+<p>&nbsp;</p>
+<pre class="brush: xml;"><a style="font-size: 80pt;" href="http://www.cnpc.ac.cn/posts/tags?=Biodiversity">
+	生物多样性
+</a>
+
+<a style="font-size: 11pt;" href="http://www.cnpc.ac.cn">
+	物种编目
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	生物多样性信息学
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	标准
+</a>
+
+<a style="font-size: 16pt;" href="http://www.cnpc.ac.cn">
+	数据库
+</a>
+
+<a style="font-size: 18pt;" href="http://www.cnpc.ac.cn">
+	协议
+</a>
+
+<a href="http://www.cnpc.ac.cn">
+	文献
+</a>
+
+<a style="font-size: 17pt;" href="http://www.cnpc.ac.cn">
+	动态
+	</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	新闻
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	IUCN
+</a>
+
+<a style="font-size: 9.55556pt;" href="http://www.cnpc.ac.cn">
+	保护
+</a>
+
+<a style="font-size: 11.1111pt;" href="http://www.cnpc.ac.cn">
+	形态
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	鉴定
+</a>
+
+<a style="font-size: 12.6667pt;" href="http://www.cnpc.ac.cn">
+	新种
+</a>
+
+<a style="font-size: 8pt;" href="http://www.cnpc.ac.cn">
+	Web
+</a>
+
+</pre>
+<p>相关资源可以从<a href="http://www.artviper.net/website-design/xml-flash-tag-cloud.php">这里</a>下载</p>
+<p>&nbsp;</p>

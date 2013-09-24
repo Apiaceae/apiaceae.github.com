@@ -1,0 +1,163 @@
+---
+layout: default
+title: sql如何从单个具有重复项的表中获得统计数据
+---
+<p>我们经常遇到需要从一张多个字段具有不唯一重复值的表中统计数据的情况，表结构如下图：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/Lisong_2010-11-08_144758_2.gif"><img style="display: inline; border-width: 0px;" title="Lisong_2010-11-08_144758" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/Lisong_2010-11-08_144758_thumb.gif" border="0" alt="Lisong_2010-11-08_144758" width="644" height="354" /></a></p>
+<p>表中只有一个字符型字段CanonicalString和ID具有唯一值，其它字段都有不同程度的重复。需要的结果是统计每一个不同分类等级(界、门、纲、目、科、属)的下级分类单元有多少。例如：统计出每一个科(TaxonFamily)有多少个属(TaxonGenus),多少个分类群(CanonicalString)；统计每一个门有多纲、目、科、属等等，其它依次类推。</p>
+<h1>1、统计每一个科有多少分类群</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT  TaxonFamily AS Family ,
+
+        COUNT(Id) AS TaxonNumber
+
+FROM    dbo.Taxons
+
+GROUP BY TaxonFamily
+
+ORDER BY TaxonNumber DESC</pre>
+<div id="codeSnippetWrapper">
+<pre id="codeSnippet" class="csharpcode">运行结果：</pre>
+<pre class="csharpcode"><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_2.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb.png" border="0" alt="image" width="203" height="244" /></a> </pre>
+<h1>2、统计类群数目最多的10个科</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT TOP(10)  TaxonFamily AS Family ,
+
+
+
+        COUNT(Id) AS TaxonNumber
+
+
+
+FROM    dbo.Taxons
+
+
+
+GROUP BY TaxonFamily
+
+
+
+ORDER BY TaxonNumber DESC<br /></pre>
+<p>&nbsp;</p>
+</div>
+<h1>3、统计每一个科包括有多少个属</h1>
+<p>&nbsp;</p>
+<pre class="brush: sql;">SELECT  TaxonFamily AS Family ,
+
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber
+
+FROM    dbo.Taxons
+
+GROUP BY TaxonFamily
+
+ORDER BY GenusNumber DESC</pre>
+<p>&nbsp;</p>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_4.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_1.png" border="0" alt="image" width="179" height="244" /></a></p>
+<h1>4、统计每一个科的属和分类群的数目</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">&nbsp;</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">ORDER</span> <span style="color: #0000ff;">BY</span> GenusNumber DESC</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_6.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_2.png" border="0" alt="image" width="244" height="321" /></a></p>
+<h2>5、统计每一个属包括的分类群数目并显示这个属的科名</h2>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span> TaxonFamily <span style="color: #0000ff;">AS</span> Family,  TaxonGenus <span style="color: #0000ff;">AS</span> Genus ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonGenus, TaxonFamily</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">ORDER</span> <span style="color: #0000ff;">BY</span> TaxonNumber DESC</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_8.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_3.png" border="0" alt="image" width="258" height="321" /></a></p>
+<h1>6、统计某一个科的属和分类群数目</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> TaxonNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">WHERE</span>   TaxonFamily = <span style="color: #006080;">'Pinaceae'</span></pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_10.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_4.png" border="0" alt="image" width="313" height="89" /></a></p>
+<h1>7、统计物种名字字段(CanonicalString)中空格出现的次数</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  Id ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        CanonicalString ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        LEN(CanonicalString) - LEN(REPLACE(CanonicalString, <span style="color: #006080;">' '</span>, <span style="color: #006080;">''</span>)) <span style="color: #0000ff;">AS</span> 空格出现次数</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF--></div>
+</div>
+<p>运行结果如下：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_12.png"><img style="display: inline; border-width: 0px;" title="image" src="http://images.cnblogs.com/cnblogs_com/apiaceae/WindowsLiveWriter/sql_D319/image_thumb_5.png" border="0" alt="image" width="396" height="277" /></a></p>
+<p>上面这个语句的作用是当我们没有有效标记改类群的分类等级，种或者亚种、变种的时候，可以用来作为筛选记录的一个备选方法。</p>
+<h1>8、统计每一个科有多少属和种(不包括种下等级的情况)</h1>
+<div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
+<div id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">SELECT</span>  TaxonFamily <span style="color: #0000ff;">AS</span> Family ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(<span style="color: #0000ff;">DISTINCT</span> ( TaxonGenus )) <span style="color: #0000ff;">AS</span> GenusNumber ,</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">        <span style="color: #0000ff;">COUNT</span>(Id) <span style="color: #0000ff;">AS</span> SpeciesNumber</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">FROM</span>    dbo.Taxons</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">WHERE</span>   LEN(CanonicalString) - LEN(REPLACE(CanonicalString, <span style="color: #006080;">' '</span>, <span style="color: #006080;">''</span>)) = 1</pre>
+<!--CRLF-->
+<pre style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;"><span style="color: #0000ff;">GROUP</span> <span style="color: #0000ff;">BY</span> TaxonFamily</pre>
+<!--CRLF--></div>
+</div>
+<h2>9、统计每一个大类群(蕨类、苔藓、双子叶等)有的科、属、种的数目</h2>
+<p><a href="http://blog.cnpc.ac.cn/images/2010-12-12_210829.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="2010-12-12_210829" src="http://blog.cnpc.ac.cn/images/2010-12-12_210829_thumb.png" border="0" alt="2010-12-12_210829" width="244" height="204" /></a></p>
+<p>
+<pre class="brush: sql;">--统计大类群的科、属、类群数目
+SELECT  TaxonGroup ,
+        COUNT(DISTINCT ( TaxonFamily )) AS FamilyNumber ,
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber ,
+        COUNT(Id) AS TaxonNumber
+FROM    dbo.Taxons
+GROUP BY TaxonGroup
+ORDER BY FamilyNumber DESC
+
+--统计大类群的科、属、类群数目
+SELECT  TaxonGroup ,
+        COUNT(DISTINCT ( TaxonFamily )) AS FamilyNumber ,
+        COUNT(DISTINCT ( TaxonGenus )) AS GenusNumber ,
+        COUNT(Id) AS SpeciesNumber
+FROM    dbo.Taxons
+WHERE   [RANK] = 'species'
+GROUP BY TaxonGroup
+ORDER BY FamilyNumber DESC</pre>
+</p>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 生物多样性信息学,概念和术语 | 虎克的博客]]></title>
+  <link href="http://apiaceae.github.io/blog/categories/sheng-wu-duo-yang-xing-xin-xi-xue-gai-nian-he-zhu-yu/atom.xml" rel="self"/>
+  <link href="http://apiaceae.github.io/"/>
+  <updated>2013-09-24T23:06:02+08:00</updated>
+  <id>http://apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[什么是生命科学识别码 LSID]]></title>
+    <link href="http://apiaceae.github.io/blog/2009/03/21/-lsid/"/>
+    <updated>2009-03-21T00:00:00+08:00</updated>
+    <id>http://apiaceae.github.io/blog/2009/03/21/-lsid</id>
+    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme6.jpg" alt="LSID首页" /></p>
+
+<p><strong>Life Science Identifiers (LSIDs)</strong> are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources including species names, concepts, occurrences, genes or proteins, or data objects that encode information about them. To put it simply, LSIDs are a way to identify and locate pieces of biological information on the web.</p>
+
+<p>The <em>LSID</em> concept introduces a straightforward approach to naming and identifying data resources stored in multiple, distributed data stores in a manner that overcomes the limitations of naming schemes in use today. Almost every public, internal, or department-level data store today has its own way of naming individual data resources, making integration between different data sources a tedious, never-ending chore for informatics developers and researchers.</p>
+
+<p>By defining a simple, common way to identify and access biologically significant data, whether that data is stored in files, relational databases, in applications, or in internal or public data sources, LSID provides a naming standard underpinning for wide-area science and interoperability.</p>
+
+<p>The Life Sciences Identifier is an <a href="http://www.omg.org/">Object Management Group (OMG)</a> Final Adopted Specification developed by the <a href="http://www.omg.org/lsr/">Life Sciences Research (LSR)</a>.</p>
+
+<p>Included file 'JB/setup' not found in _includes directory</p>
+]]></content>
+  </entry>
+  
+</feed>

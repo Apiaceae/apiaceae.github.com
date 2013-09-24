@@ -1,0 +1,5 @@
+---
+layout: default
+title: Linux Ubuntu8.04常用操作命令
+---
+<div><br /></div><h1>1. 如何完全的卸载MySQL</h1><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">sudo apt-get --purge remove </span></div><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">mysql-server-5.1 mysql-common mysql-client </span></div><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">libmysqlclient15-dev libmysql-ruby </span>&nbsp;</div><div>&nbsp;</div><div>卸载过程中会询问你是否要卸载所有相关的配置文件已经数据库，选择Yes。</div><div>&nbsp;</div><h1>2. 安装完MySQL后如何设置root用户的密码</h1><div><span class="Apple-style-span" style="font-family: Courier, 'Courier New', Verdana, Arial; font-size: 13px; color: #465584; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px">mysqladmin -u root password &#39;new-password&#39;</span>&nbsp;</div><div>&nbsp;</div>
