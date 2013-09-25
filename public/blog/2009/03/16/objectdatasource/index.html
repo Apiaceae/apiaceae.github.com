@@ -58,7 +58,8 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/">About me</a></li> 
+  <li><a href="/tag-cloud/">Tags</a></li>
+  <li><a href="/about/">About me</a></li>
 </ul>
 
 </nav>
@@ -107,37 +108,45 @@ ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL�
 
 <h6>1、新建网页，添加LINQ to SQL Class，命名为Products，在Server Exploer中拖拽Northwind数据库的Product表到设计界面。</h6>
 
-<p>！<a href="/assets/images/2009/3/04.png">图1</a></p>
+<p>！<a href="/images/2009/3/04.png">图1</a></p>
 
 <h6>2、添加一个新类Class命名为roductsLINQPaging</h6>
 
-<p>！<a href="/assets/images/2009/3/05.png">图2</a>
-！<a href="/assets/images/2009/3/06.png">图3</a>
-！<a href="/assets/images/2009/3/06.png">图3</a></p>
+<p>！<a href="/images/2009/3/05.png">图2</a>
+！<a href="/images/2009/3/06.png">图3</a>
+！<a href="/images/2009/3/06.png">图3</a></p>
 
 <h6>3、类中实现的方法如下：</h6>
 
-<div class="highlight"><pre><code class="java"><span class="n">using</span> <span class="n">System</span><span class="o">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="na">Collections</span><span class="o">.</span><span class="na">Generic</span><span class="o">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="na">Linq</span><span class="o">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="na">Data</span><span class="o">.</span><span class="na">Linq</span><span class="o">;</span>
-<span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="na">Web</span><span class="o">;</span>
+<p>&lsquo;&rsquo;&lsquo;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data.Linq;
+using System.Web;</p>
 
-<span class="c1">/// &lt;summary&gt;</span>
-<span class="c1">/// Summary description for ProductsLINQPaging</span>
-<span class="c1">/// &lt;/summary&gt;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProductsLINQPaging</span>
-    <span class="o">{</span>
-      <span class="kd">public</span> <span class="nf">ProductsLINQPaging</span><span class="o">()</span>
-        <span class="o">{</span>
-            <span class="c1">//</span>
-            <span class="c1">// TODO: Add constructor logic here</span>
-            <span class="c1">//</span>
-            
-</code></pre></div>
+<p>/// <summary>
+/// Summary description for ProductsLINQPaging
+/// </summary>
+public class ProductsLINQPaging</p>
 
+<pre><code>{
+  public ProductsLINQPaging()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+</code></pre>
 
-<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
+<p>&lsquo;&rsquo;&#8217;</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/16/objectdatasource/'>http://Apiaceae.github.io/blog/2009/03/16/objectdatasource/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 </div>
 
 
@@ -162,6 +171,12 @@ ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL�
 
 <time datetime="2009-03-16T00:00:00+08:00" pubdate data-updated="true">Mar 16<span>th</span>, 2009</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/asp-dot-net/'>ASP.NET</a>
+  
+</span>
 
 
     </p>
@@ -221,6 +236,42 @@ ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL�
   </ul>
 </section>
 <section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (3)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
+<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
   
   <h1>Visitors</h1>
     <div id="clustrmaps-widget"></div><script type="text/javascript">

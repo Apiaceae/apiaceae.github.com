@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 物种分布模型 | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/blog/categories/wu-chong-fen-bu-mo-xing/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[生态位模型预测新书上架]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/22/"/>
+    <updated>2009-03-22T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/111.jpg" alt="书籍的封面" /></p>
+
+<p><strong>Book Description</strong>: Using theory, applications, and examples of inferences, <strong>Niche Modeling</strong>: Predictions from Statistical Distributions demonstrates how to conduct and evaluate niche modeling projects in any area of application.</p>
+
+<p>It features a series of theoretical and practical exercises for developing and evaluating niche models using the R statistics language. The author discusses applications of predictive modeling methods with reference to valid inferences from assumptions. He elucidates varied and simplified examples with rigor and completeness. Topics include geographic information systems, multivariate modeling, artificial intelligence methods, data handling, and information infrastructure.</p>
+
+<p>Above all, successful niche modeling requires a deep understanding of the process of creating and using probability. Off-the-shelf statistical packages are tailored exactly to applications but can hide problematic complexities. Recipe book implementations fail to educate users in the details, assumptions, and pitfalls of analysis, but may be able to adapt to the specific needs of each study. Examining the sources of errors such as autocorrelation, bias, long term persistence, nonlinearity, circularity, and fraud, this seminal reference provides an understanding of the limitations and potential pitfalls of prediction, emphasizing the importance of avoiding errors.</p>
+]]></content>
+  </entry>
+  
+</feed>

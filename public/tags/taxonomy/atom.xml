@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: taxonomy | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/taxonomy/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[21世纪的物种探险 Species exploration]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration/"/>
+    <updated>2009-03-19T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme8.jpg" alt="Species Exploration首页" /></p>
+
+<p><strong>Taxonomists</strong> discover, describe and classify <em>species</em>. Millions of species remain unknown or unidentifiable, inaccessible to science and society.</p>
+
+<p>Charting the species of the world and their unique attributes are essential parts of understanding the <strong>history of life</strong>.</p>
+
+<p>Reliable taxonomic information is a necessary for managing sustainable ecosystems, attaining conservation goals, and detecting introductions of pests, vectors and invasive species.</p>
+
+<p><strong>Traditional taxonomic tools</strong> and methods have theoretical rigor and rich intellectual content, but are not keeping pace with this growing need for knowledge.</p>
+
+<p><strong>How can we increase the pace at which species exploration progresses while maintaining the scientific rigor of traditional taxonomy?</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

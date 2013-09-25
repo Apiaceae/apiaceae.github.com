@@ -2,11 +2,11 @@
 layout: post
 title: "21世纪的物种探险 Species exploration"
 description: "物种发现的网络"
-category: 生物多样性信息学
+categories: [Biodiversity Informatics,生物多样性信息学]
 tags: [taxonomy,Biodiversity Informatics,生物多样性信息学,分类学,物种发现]
 ---
 
-![Species Exploration首页](/assets/images/2009/3/vtheme8.jpg)
+![Species Exploration首页](/images/2009/3/vtheme8.jpg)
 
 __Taxonomists__ discover, describe and classify *species*. Millions of species remain unknown or unidentifiable, inaccessible to science and society. 
 
@@ -19,4 +19,3 @@ __Traditional taxonomic tools__ and methods have theoretical rigor and rich inte
 **How can we increase the pace at which species exploration progresses while maintaining the scientific rigor of traditional taxonomy?**
 
 
-{% include JB/setup %}

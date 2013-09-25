@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "什么是电子分类学 Cybertaxonomy"
+title: "什么是Cybertaxonomy/etaxonomy"
 description: "what about taxonomy"
-category: 生物多样性信息学,taxonomy
-tags: [etaxonomy,Biodiversity Informatics,生物多样性信息学]
+categories: [生物多样性信息学]
+tags: [etaxonomy]
 ---
 
-![What is Cybertaxonomy](/assets/images/2009/3/vtheme111.jpg)
+![What is Cybertaxonomy](/images/2009/3/vtheme111.jpg)
 
 **Cybertaxonomy(taxonomy)**: The fusion of taxonomy with cyberinfrastructure will transform descriptive taxonomy, creating a modern, efficient science to confront the biodiversity crisis. *Cybertaxonomy* will enable international teams of taxon experts, museums and herbaria to create and test taxonomic knowledge to assure humanity’s access to reliable information about earth’s species. The IISE and its partners are forging _cybertaxonomy_ as the next logical link in a chain of scholarship unbroken since the _time of Linnaeus_.
 
@@ -27,4 +27,3 @@ __(3) Cyberinfrastructure; and__
 __(4) the History and Philosophy of Taxonomy__
 
 
-{% include JB/setup %}

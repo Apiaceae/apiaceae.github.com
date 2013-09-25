@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Mapping | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/mapping/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Geomapping of Life 我们需要它？]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/"/>
+    <updated>2009-03-23T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme12.jpg" alt="COL首页" /></p>
+
+<ul>
+<li>Catalogue of Life</li>
+</ul>
+
+
+<p><img src="/images/2009/3/vtheme10.jpg" alt="TOL首页" /></p>
+
+<ul>
+<li>Tree of Life</li>
+</ul>
+
+
+<p><img src="/images/2009/3/vtheme11.jpg" alt="CBOL首页" /></p>
+
+<ul>
+<li>Barcoding of Life</li>
+</ul>
+
+
+<p><img src="/images/2009/3/vtheme9.jpg" alt="EOL首页" /></p>
+
+<ul>
+<li>Encyclopedia of Life</li>
+</ul>
+
+
+<p><strong>Geomapping of Life</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

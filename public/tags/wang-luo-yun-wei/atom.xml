@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: 网络运维 | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/wang-luo-yun-wei/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Nginx内核参数相关的优化设定说明]]></title>
+    <link href="http://Apiaceae.github.io/blog/2013/09/03/nginx/"/>
+    <updated>2013-09-03T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2013/09/03/nginx</id>
+    <content type="html"><![CDATA[<p>Nginx内核参数在使用的时候有不少问题需要我们解决，其中在优化方面就需要我们格外的注意。在下面就是对Nginx内核参数优化的详细介绍，希望大家有所收获。</p>
+
+<p>关于Nginx内核参数的优化：</p>
+
+<p><strong>net.ipv4.tcp_max_tw_buckets = 6000</strong>
+<em>timewait的数量，默认是180000</em></p>
+
+<p><strong>net.ipv4.ip_local_port_range = 1024 65000</strong>
+<em>允许系统打开的端口范围。</em></p>
+
+<p><strong>net.ipv4.tcp_tw_recycle = 1</strong>
+<em>启用timewait快速回收。</em></p>
+
+<p><strong>net.ipv4.tcp_tw_reuse = 1</strong>
+<em>开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接。</em></p>
+
+<p><strong>net.ipv4.tcp_syncookies = 1</strong>
+<em>开启SYN Cookies，当出现SYN等待队列溢出时，启用cookies来处理。</em></p>
+
+<p><strong>net.core.somaxconn = 262144</strong>
+<em>web应用中listen函数的backlog默认会给我们内核参数的net.core.somaxconn限制到128，而Nginx内核参数定义的NGX_LISTEN_BACKLOG默认为511，所以有必要调整这个值。</em></p>
+
+<p><strong>net.core.netdev_max_backlog = 262144</strong>
+<em>每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目。</em></p>
+
+<p><strong>net.ipv4.tcp_max_orphans = 262144</strong>
+<em>系统中最多有多少个TCP套接字不被关联到任何一个用户文件句柄上。如果超过这个数字，孤儿连接将即刻被复位并打印出警告信息。这个限制仅仅是为了防止简单的DoS攻击，不能过分依靠它或者人为地减小这个值，更应该增加这个值(如果增加了内存之后)。</em></p>
+
+<p><strong>net.ipv4.tcp_max_syn_backlog = 262144</strong>
+<em>记录的那些尚未收到客户端确认信息的连接请求的最大值。对于有128M内存的系统而言，缺省值是1024，小内存的系统则是128。</em></p>
+
+<p><strong>net.ipv4.tcp_timestamps = 0</strong>
+<em>时间戳可以避免序列号的卷绕。一个1Gbps的链路肯定会遇到以前用过的序列号。时间戳能够让内核接受这种“异常”的数据包。这里需要将其关掉。</em></p>
+
+<p><strong>net.ipv4.tcp_synack_retries = 1</strong>
+<em>为了打开对端的连接，内核需要发送一个SYN并附带一个回应前面一个SYN的ACK。也就是所谓三次握手中的第二次握手。这个设置决定了内核放弃连接之前发送SYN+ACK包的数量。</em></p>
+
+<p><strong>net.ipv4.tcp_syn_retries = 1</strong>
+<em>在内核放弃建立连接之前发送SYN包的数量。</em></p>
+
+<p><strong>net.ipv4.tcp_fin_timeout = 1</strong>
+<em>如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间。对端可以出错并永远不关闭连接，甚至意外当机。缺省值是60秒。2.2 内核的通常值是180秒，你可以按这个设置，但要记住的是，即使你的机器是一个轻载的WEB服务器，也有因为大量的死套接字而内存溢出的风险，FIN- WAIT-2的危险性比FIN-WAIT-1要小，因为它最多只能吃掉1.5K内存，但是它们的生存期长些。</em></p>
+
+<p><strong>net.ipv4.tcp_keepalive_time = 30</strong>
+<em>当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时。以上就是对Nginx内核参数的详细介绍。</em></p>
+
+<p><strong>转载自<a href="http://9ilinux.com/9ilinux/68.html">Linux系统运维</a></strong></p>
+]]></content>
+  </entry>
+  
+</feed>

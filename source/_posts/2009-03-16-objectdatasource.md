@@ -2,7 +2,7 @@
 layout: post
 title: "ObjectDataSource控件的分页、排序和筛选"
 description: "ObjectDataSource控件"
-category: 
+categories: ASP.NET
 tags: [ASP.NET]
 ---
 ObjectDataSource控件提供了两种方法对绑定到控件(比如GridView)的数据进行分页和排序：
@@ -20,18 +20,17 @@ ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL�
 实例网站的文档结构如下图：
 
 ######1、新建网页，添加LINQ to SQL Class，命名为Products，在Server Exploer中拖拽Northwind数据库的Product表到设计界面。
-！[图1](/assets/images/2009/3/04.png)
+！[图1](/images/2009/3/04.png)
 
 ######2、添加一个新类Class命名为roductsLINQPaging
 
-！[图2](/assets/images/2009/3/05.png)
-！[图3](/assets/images/2009/3/06.png)
-！[图3](/assets/images/2009/3/06.png)
+！[图2](/images/2009/3/05.png)
+！[图3](/images/2009/3/06.png)
+！[图3](/images/2009/3/06.png)
 
 ######3、类中实现的方法如下：
 
-{% highlight java %}
-
+'''
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,9 +47,4 @@ public class ProductsLINQPaging
 	        //
 	        // TODO: Add constructor logic here
 	        //
-	        
-{% endhighlight %}
-
-
-
-{% include JB/setup %}
+'''	        

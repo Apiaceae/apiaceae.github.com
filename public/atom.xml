@@ -4,7 +4,7 @@
   <title><![CDATA[虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T00:37:14+08:00</updated>
+  <updated>2013-09-26T02:33:51+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -21,6 +21,14 @@
     <content type="html"><![CDATA[<p>This is a test for octopuses blog template.</p>
 
 <p><em>这里仅仅是一个测试页面！</em></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/09/24/move-to-octopress/'>http://Apiaceae.github.io/blog/2013/09/24/move-to-octopress/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 ]]></content>
   </entry>
   
@@ -76,6 +84,14 @@
 <em>当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时。以上就是对Nginx内核参数的详细介绍。</em></p>
 
 <p><strong>转载自<a href="http://9ilinux.com/9ilinux/68.html">Linux系统运维</a></strong></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/09/03/nginx/'>http://Apiaceae.github.io/blog/2013/09/03/nginx/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 ]]></content>
   </entry>
   
@@ -637,6 +653,14 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
 <p><strong>原文地址: 1、<a href="http://club.topsage.com/thread-221396-1-1.html">架构</a>；2、<a href="http://club.topsage.com/thread-221401-1-1.html">Apache</a>；3、<a href="http://club.topsage.com/thread-221406-1-1.html">MySQL</a></strong></p>
 
 <p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/09/03/lamp/'>http://Apiaceae.github.io/blog/2013/09/03/lamp/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 ]]></content>
   </entry>
   
@@ -648,6 +672,14 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
     <content type="html"><![CDATA[<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
 
 <p>h1 这里仅仅是一个测试</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/'>http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 ]]></content>
   </entry>
   
@@ -782,7 +814,12 @@ end
 <div id="file-gistfile1-rb-LC73" class="line" style="margin: 0px; padding: 0px;"><span class="nb" style="margin: 0px; padding: 0px; color: #0086b3;">require</span> <span class="s1" style="margin: 0px; padding: 0px; color: #dd1144;">&#8216;awesome_print&#8217;</span></div>
 <div id="file-gistfile1-rb-LC74" class="line" style="margin: 0px; padding: 0px;"><span class="k" style="margin: 0px; padding: 0px; font-weight: bold;">rescue</span> <span class="no" style="margin: 0px; padding: 0px; color: #008080;">LoadError</span></div>
 <div id="file-gistfile1-rb-LC75" class="line" style="margin: 0px; padding: 0px;"><span class="k" style="margin: 0px; padding: 0px; font-weight: bold;">end</span></div>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/'>http://Apiaceae.github.io/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -812,6 +849,14 @@ end
 
 
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">Also, find out what it&#8217;s doing by running&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: #eeeeee; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;">sudo strace apt-get update</code></p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers/'>http://Apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
 
 ]]></content>
   </entry>
@@ -899,7 +944,12 @@ end
 <!-- google_ad_section_end -->
 <p><a href="http://www.linuxso.com/linuxrumen/13158.html">http://www.linuxso.com/linuxrumen/13158.html</a></p>
 <p><br />&nbsp;</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/'>http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -910,7 +960,12 @@ end
     <content type="html"><![CDATA[<p><img src="http://Apiaceae.github.io/images/2012/11/2012-11-26_180711.png" alt="" /></p>
 <p>&nbsp;</p>
 <p>好书！研究植物就应该这样应用才有价值。</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/'>http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -922,7 +977,12 @@ end
 <p>(2) 按住Shift+v，即大写V，进入可视化编辑的列编辑模式。</p>
 <p>(3) Shift+g，即大写G，选中整个代码。</p>
 <p>(4) 按下等号=，格式化所有代码。</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/'>http://Apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -994,7 +1054,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <div id="content" class="content mod-cs-content text-content clearfix"><strong>&nbsp;locale.Error：unsupported locale setting<br /><br /><br /><br /></strong><strong>1、错误提出</strong><br />（1）locale指令运行出现的错误信息<br />locale：Cannot set LC_CTYPE to default locale： No such file or directory<br />locale：Cannot set LC_MESSAGES to default locale： No such file or directory<br />locale：Cannot set LC_ALL to default locale： No such file or directory<br />（2）setup指令运行出现的错误信息<br />locale.Error：unsupported locale setting，导致无法设置&ldquo;network configuration&#8221;<br />（3）yum指令运行出现的错误信息<br />Failed to set locale, defaulting to C<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/03ca8c7109101d2c8601b07b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/61139699c5fff585c8eaf47b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/982718a3fbd4dcbb4610647b.jpg" alt="" /><br /><br /><br /><strong>2、分析原因</strong><br />locale是用来设置软件运行的语言环境，所以语言环境设置有问题<br /><br /><strong>3、解决故障<br /></strong>重新设置语言环境，最简单的解决办法，例如：<br />[root@Mylinux ~]#&nbsp; echo &#8220;export&nbsp; LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp;&nbsp; /home/XXX/.bash_profile（特定用户）<br />或者<br />[root@Mylinux ~]#&nbsp; echo &#8220;export LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp; /etc/profile（所有用户）<br />[root@Mylinux ~]#&nbsp; exit<br />然后重新登录，使用locale指令查看变量<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/58f80bee1050cc1762d09ffa.jpg" alt="" /><br /><br />=================关于locale的设置，请查阅文章：《<span style="text-decoration: underline;"><strong><a href="http://hi.baidu.com/9812658/blog/item/d0021e33c0b32aa35fdf0e6c.html" target="_blank">Linux系统locale的设置</a></strong></span>》=================</div>
 <p><a href="http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d">http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d</a></p>
 <p>&nbsp;</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/'>http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1034,7 +1099,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <div class="codeblock"><code>service solr start<br />service solr stop<br />service solr restart</code></div>
 <p>如果需要，还可以加上开机自动开启apache solr</p>
 <div class="codeblock"><code>sudo chkconfig --add solr</code></div>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/'>http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1044,7 +1114,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     <id>http://Apiaceae.github.io/blog/2012/07/17/ubuntu解压命令全览</id>
     <content type="html"><![CDATA[<p><strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar</span></span></strong><br /> 解包：tar xvf FileName.tar<br /> 打包：tar cvf FileName.tar DirName<br /> <span style="color: #008000;">（注：tar是打包，不是压缩！）</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.gz</span></span></strong><br /> 解压1：gunzip FileName.gz<br /> 解压2：gzip -d FileName.gz<br /> 压缩：gzip FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.gz 和 .tgz</span></span></strong><br /> 解压：tar zxvf FileName.tar.gz<br /> 压缩：tar zcvf FileName.tar.gz DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz2</span></span></strong><br /> 解压1：bzip2 -d FileName.bz2<br /> 解压2：bunzip2 FileName.bz2<br /> 压缩： bzip2 -z FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz2</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz2<br /> 压缩：tar jcvf FileName.tar.bz2 DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz</span></span></strong><br /> 解压1：bzip2 -d FileName.bz<br /> 解压2：bunzip2 FileName.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.Z</span></span></strong><br /> 解压：uncompress FileName.Z<br /> 压缩：compress FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.Z</span></span></strong><br /> 解压：tar Zxvf FileName.tar.Z<br /> 压缩：tar Zcvf FileName.tar.Z DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.zip</span></span></strong><br /> 解压：unzip FileName.zip<br /> 压缩：zip FileName.zip DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rar</span></span></strong><br /> 解压：rar x FileName.rar<br /> 压缩：rar a FileName.rar DirName<br /> <span style="color: #008000;"><br /> rar请到：<a style="color: #003793;" href="http://www.rarsoft.com/download.htm" target="_blank"><span style="color: #003793;">http://www.rarsoft.com/download.htm</span></a> 下载！<br /> 解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp rar_static /usr/bin/rar</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.lha</span></span></strong><br /> 解压：lha -e FileName.lha<br /> 压缩：lha -a FileName.lha FileName<br /> <span style="color: #008000;"><br /> lha请到：<a style="color: #003793;" href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/" target="_blank"><span style="color: #003793;">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/</span></a>下载！<br /> &gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp lha /usr/bin/</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rpm</span></span></strong><br /> 解包：rpm2cpio FileName.rpm | cpio -div<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.deb</span></span></strong><br /> 解包：ar p FileName.deb data.tar.gz | tar zxf -<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</span></span></strong><br /> 解压：sEx x FileName.*<br /> 压缩：sEx a FileName.* FileName</p>
 <p>文章转自：http://blog.csdn.net/zad522/article/details/2770446</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1094,7 +1169,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <br />
 <p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">本文链接地址:&nbsp;<a style="color: #5a8238;" title="ubuntu12.04 更新源地址列表" href="http://www.maybe520.net/blog/a/424.html">http://www.maybe520.net/blog/a/424.html</a></p>
 </div>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1109,7 +1189,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <p>http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html</p>
 <p>http://lucifr.com/139225/sublime-text-2-tricks-and-tips/</p>
 <p>http://www.iplaysoft.com/sublimetext.html</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/'>http://Apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1121,7 +1206,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <p>&nbsp;</p>
 <p>首先来认识下Fcitx,它是Free Chinese Input Toy for&nbsp;X的简称,中文名叫小企鹅输入法,包括拼音和双拼输入法.目前最新版本为4.0.1,相比之前的版本,新增很多功能包括新的皮肤、词库和详细设置界面。<br /> <a href="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95.gif"><img class="size-medium wp-image-1147 alignnone" title="Fcitx中文输入法" src="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95-300x186.gif" alt="" width="300" height="186" /></a><br /> 之前这款输入法是个人所做(不过已经停止开发)，目前官方主页已经转移到google code上: <a href="http://code.google.com/p/fcitx/">http://code.google.com/p/fcitx/<br /> </a>上面有最新的版本下载和皮肤，词库。<br /> 安装方法如下：<br /> sudo add-apt-repository ppa:wengxt/fcitx-nightly &nbsp; &#92;增加ppa源<br /> sudo apt-get update &nbsp; &#92;更新软件库<br /> sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin &nbsp;&#92;安装fcitx和fcitx-sunpinyin输入法<br /> sudo apt-get install fcitx-table-all &nbsp; &#92;安装码表<br /> 到目前为止输入法已经安装完成了.<br /> 接下来输入:im-switch -s fcitx -z default 把fcitx设置为默认输入法<br /> 或者通过:系统&mdash;系统管理&mdash;语言支持,打开语言和文本设置项,在语言分页中的键盘输入方式系统中选择fcitx.<br /> 另外,可以右击输入法进行配置,包括皮肤,快捷键等.</p>
 <p><br /> 除非注明，<a href="http://www.mylouge.com/">空中楼阁</a>的文章均为原创，支持转载，但请以链接形式标明本文地址 <br /> 本文地址：<a href="http://www.mylouge.com/2011/02/1146.html">http://www.mylouge.com/2011/02/1146.html</a></p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/'>http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1130,7 +1220,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     <updated>2012-03-23T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2012/03/23/植物分类学-比较数据的系统评估第二版</id>
     <content type="html"><![CDATA[<p><a href="http://blog.cnpc.ac.cn/images/20120323173901.jpg"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="20120323173901" border="0" alt="20120323173901" src="http://blog.cnpc.ac.cn/images/20120323173901_thumb.jpg" width="377" height="772" /></a></p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p><font size="4"><strong>Stuessy教授最近又出版了经典分类学著作的第二版。这里有发表在</strong></font><a href="http://sysbio.oxfordjournals.org/content/59/5/608.full" target="_blank"><font size="4"><strong>系统生物学杂志上的书评</strong></font></a><font size="4"><strong>和</strong></font><a href="http://books.google.com.hk/books?id=0bYs8F0Mb9gC&amp;pg=PP31&amp;lpg=PP31&amp;dq=taxonomy+unending+synthesis&amp;source=bl&amp;ots=5PDmIIznED&amp;sig=NDPharGBVmMxVPDDUxnnYxClRrc&amp;hl=zh-CN&amp;sa=X&amp;ei=UxlsT9uuMouQiQe85sjiBQ&amp;ved=0CCwQ6AEwAA#v=onepage&amp;q=taxonomy%20unending%20synthesis&amp;f=false"><font size="4"><strong>Google图书的地址</strong></font></a><font size="4"><strong>。感兴趣的可以看看。顺便再看看下面的这些报道：</strong></font></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/5/218947.html" target="_blank"><font size="4"><strong>动物分类学》：首师大硕士生以“首师大”命名新物种</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2010/8/235565-1.shtm" target="_blank"><font size="4"><strong>中国分类学急剧萎缩 后继乏人成专家心病</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/12/225728.shtm" target="_blank"><font size="4"><strong>分类学研究岌岌可危 中国策划大规模项目拯救濒危学科</strong></font></a></p>  <h3><a href="http://www.sciencemag.org/content/325/5936/31.short" target="_blank"><font size="4">China Searches for an 11th-Hour Lifesaver for a Dying Discipline</font></a></h3>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/'>http://Apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1187,7 +1282,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">&nbsp;</p>
 </blockquote>
 <p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">原文地址：http://www.kunli.info/2009/12/11/mac-install-pink/</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/'>http://Apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1230,7 +1330,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <p>&nbsp;http://www.cs.zju.edu.cn/people/xucf&#8230;sification.ppt 群集演算法 柔性演算(軟計算) R 導論 高新波。2006。</p>
 <p>選擇性模糊聚類分析算法(PPT投影片)。西安電子科技大學電子工程學院。</p>
 <p>&nbsp;物种概念 Summary of 26 species concepts 物种形成(Speciation) 植物的物種形成(Plant Speciation) Crisp, M. D. &amp; G.T. 1996 Paraphyletic species. Telopea 6:813-844. 生物學思想發展的歷史 楊曉珮。生物分類的學派。科學月刊 1995年 7月307期 李學勇，2007。達爾文學說在二十世紀中的演變。第七屆科學史研討會彙刊 169-181。</p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/'>http://Apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1239,7 +1344,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     <updated>2012-01-24T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae</id>
     <content type="html"><![CDATA[<h3>[Visual Studio 2010] Code Rush + PowerCommand + Power Tools 三種套件同時存在的微調修改</h3>  <ul>   <li>2010-08-07</li>    <li>2648</li>    <li>0</li>    <li><a href="http://demo.tc/SeriesArticleList/Visual%20Studio%20%E7%B2%BE%E9%81%B8%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">系列文章</a></li> </ul>  <ul>   <li></li>    <li><a href="http://www.facebook.com/sharer.php?t=[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9-demo%E5%B0%8F%E9%8B%AA&amp;u=http://demo.tc/Post/630">將本文推到Facebook</a></li>    <li><a href="http://twitter.com/?status=http://demo.tc/Post/630%20[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA">將本文推到Twitter</a></li>    <li><a href="http://plurk.com/?status=http://demo.tc/Post/630+([Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA)&amp;qualifier=shares">將本文推到Plurk</a></li>    <li><a href="http://pdfmyurl.com/?url=http://demo.tc/Post/630">下載本文PDF</a></li> </ul>  <p>demo 的 Visual Studio 一直以來都會安裝 Code Rush 和 PowerCommand ，一直也都合作愉快，但最近看了ScottGu&#8217;s 的 Power Tool 介紹文，看到了一個相當棒的功能 Solution Navigator 讓我決定也要安裝 Power Tools ，就因為這樣我的 Visual Studio 擁有了Code Rush + PowerCommand + Power Tools 三套套件，部份功能重複性還滿高的，所以就稍微作了一下調整，記錄下來以免以後忘記。</p>  <p><ins><ins></ins></ins></p>  <ul>   <li>最後更新：2011/7/6 上午 09:12:10</li> </ul>  <p><img title="demo廢言" alt="demo廢言" src="http://demo.tc/images/msn/demosay.gif" />先說明因為 demo 主要功能是 Code Rush &gt; PowerCommand &gt; Power Tools，因此有重複的功能會優先關掉 Power Tool 的，不過考量到 Code Rush 免費版到底有什麼功能我不知道，因此衝突的部份都會寫出來，有需要的朋友再自行調配使用。</p>  <p><img alt="" src="http://lh3.ggpht.com/_PgurvCEASJs/TFz8N-4jlFI/AAAAAAAAGjA/Ocr7cVFvqxo/s800/CPPTools01.gif" />Code Rush （<a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">官網</a>）預設所有功能都是他，不調整</p>  <hr />  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8NyaBirI/AAAAAAAAGjE/nyQLSYxbzps/s800/CPPTools02.gif" />PowerCommand （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8OK_ov6I/AAAAAAAAGjM/swibUMiJ_3w/s800/CPPTools04.gif" /></p>  <ol>   <li>用到機率太小所以關閉。 </li>    <li>內建就有了所以關閉。 </li>    <li>和 Power Tools 重複，所以關閉。</li> </ol>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8N2d1vOI/AAAAAAAAGjI/tE9LSJdYbIU/s800/CPPTools03.gif" />Power Tools （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh4.ggpht.com/_PgurvCEASJs/TFz8OLAP1QI/AAAAAAAAGjQ/D629sgQK1Zg/s800/CPPTools05.gif" /></p>  <ol>   <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>CTRL﹢X 更好用所以關閉。</li> </ol>  <hr />  <p>基於以上的調整後，一些重複的功能就不會出現了，但這三個套件功能繁雜，demo 不可能一一介紹（除非我開三篇文）所以就請各位參考一下官方和其他網友的說明吧。</p>  <p><img title="分隔線" alt="分隔線" src="http://demo.tc/images/msn/linkPage.gif" /></p>  <ul>   <li>Code Rush      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/sam319/archive/2009/12/31/12747.aspx">強力推薦寫程式一定要用的外掛工具 - CodeRush Xpress</a></li>        <li><a href="http://www.minitw.com/archives/633">開啟 CodeRush Xpress 10.1 的選單功能列</a></li>     </ul>   </li>    <li>PowerCommand      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/05/03/visual-studio-2010-extension-manager-and-the-new-vs-2010-powercommands-extension.aspx">Visual Studio 2010 Extension Manager (and the new VS 2010 PowerCommands Extension)</a></li>     </ul>   </li>    <li>Poert Tools      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/larrynung/archive/2010/06/14/15862.aspx">[Visual Studio]Visual Studio 2010 Pro Power Tools</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/08/04/some-nice-code-editor-features-provided-by-the-vs-2010-power-tool-extensions.aspx">Some nice code editor features provided by the VS 2010 Power Tool Extensions</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/07/19/vs-2010-productivity-power-tools-update-with-some-cool-new-features.aspx">VS 2010 Productivity Power Tools Update (with some cool new features)</a></li>     </ul>   </li> </ul>  <p><a href="http://demo.tc/Tag/Visual%20Studio%20%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">Visual Studio 擴充套件</a></p>  <p>原文地址：<a href="http://demo.tc/Post/630">http://demo.tc/Post/630</a></p>
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/'>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
   <entry>
@@ -1248,7 +1358,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     <updated>2011-12-04T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2</id>
     <content type="html"><![CDATA[<h5>linux sed 批量替换多个文件中的字符串 </h5>  <p>&#160;</p> sed -i &quot;s/oldstring/newstring/g&quot; `grep oldstring -rl yourdir` 例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net sed -i &quot;s/www.admin99.net/admin99.net/g&quot; `grep www.admin99.net -rl /home` 这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;  
-]]></content>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/'>http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>]]></content>
   </entry>
   
 </feed>
