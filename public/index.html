@@ -181,8 +181,6 @@
 <em>当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时。以上就是对Nginx内核参数的详细介绍。</em></p>
 
 <p><strong>转载自<a href="http://9ilinux.com/9ilinux/68.html">Linux系统运维</a></strong></p>
-
-<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
 </div>
   
   
@@ -1006,13 +1004,28 @@ end
 
 
   <div class="entry-content"><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Try commenting out your multiverse and universe repos in your&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">/etc/apt/sources.list</em></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Then do a:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get clean all</strong></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">then finally an:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get update</strong></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">See if that clears it up some.</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">&nbsp;</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">Make sure your time &amp; date is set correctly,</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">I had the same problem and fixed it with a simple&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: #eeeeee; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;">ntpdate</code></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">Also, find out what it&#8217;s doing by running&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: #eeeeee; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;">sudo strace apt-get update</code></p>
+
 </div>
   
   
@@ -1320,6 +1333,10 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -1345,7 +1362,19 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     
   </ul>
 </section>
+<section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
 
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
 
 
 
@@ -1362,19 +1391,6 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'flybirdmf';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-25T22:10:59+08:00</updated>
+  <updated>2013-09-26T00:12:57+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -76,8 +76,6 @@
 <em>当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时。以上就是对Nginx内核参数的详细介绍。</em></p>
 
 <p><strong>转载自<a href="http://9ilinux.com/9ilinux/68.html">Linux系统运维</a></strong></p>
-
-<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
 ]]></content>
   </entry>
   
@@ -793,13 +791,28 @@ end
     <updated>2012-11-29T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2012/11/29/apt-get-commands-pausing-at-waiting-for-headers</id>
     <content type="html"><![CDATA[<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Try commenting out your multiverse and universe repos in your&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">/etc/apt/sources.list</em></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">Then do a:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get clean all</strong></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">then finally an:&nbsp;<strong style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;">apt-get update</strong></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">See if that clears it up some.</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; clear: both; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; line-height: 18px;">&nbsp;</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">Make sure your time &amp; date is set correctly,</p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">I had the same problem and fixed it with a simple&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: #eeeeee; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;">ntpdate</code></p>
+
+
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; clear: both; word-wrap: break-word;">Also, find out what it&#8217;s doing by running&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: #eeeeee; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;">sudo strace apt-get update</code></p>
+
 ]]></content>
   </entry>
   

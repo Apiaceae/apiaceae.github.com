@@ -9,7 +9,8 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="1. 如何完全的卸载MySQLsudo apt-get &#8211;purge remove mysql-server-5.1 mysql-common mysql-client libmysqlclient15-dev libmysql-ruby &nbsp;&nbsp; &hellip;">
+  <meta name="description" content="1. 如何完全的卸载MySQL 1
+sudo apt-get --purge remove mysql-server-5.1 mysql-common mysql-client libmysqlclient15-dev libmysql-ruby &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,7 +65,19 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div><br /></div><h1>1. 如何完全的卸载MySQL</h1><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">sudo apt-get &#8211;purge remove </span></div><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">mysql-server-5.1 mysql-common mysql-client </span></div><div><span class="Apple-style-span" style="font-family: monospace, Verdana, Tahoma, Arial, sans-serif; font-size: 13px; line-height: 19px; white-space: pre">libmysqlclient15-dev libmysql-ruby </span>&nbsp;</div><div>&nbsp;</div><div>卸载过程中会询问你是否要卸载所有相关的配置文件已经数据库，选择Yes。</div><div>&nbsp;</div><h1>2. 安装完MySQL后如何设置root用户的密码</h1><div><span class="Apple-style-span" style="font-family: Courier, 'Courier New', Verdana, Arial; font-size: 13px; color: #465584; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px">mysqladmin -u root password &#39;new-password&#39;</span>&nbsp;</div><div>&nbsp;</div>
+      <p><em>1. 如何完全的卸载MySQL</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get --purge remove mysql-server-5.1 mysql-common mysql-client libmysqlclient15-dev libmysql-ruby</span></code></pre></td></tr></table></div></figure>
+
+
+<p>卸载过程中会询问你是否要卸载所有相关的配置文件已经数据库，选择Yes。</p>
+
+<p><em>2. 安装完MySQL后如何设置root用户的密码</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysqladmin -u root password new-password</span></code></pre></td></tr></table></div></figure>
+
 
     </div>
   </div>
@@ -75,19 +88,6 @@
 
 </footer>
   
-
-<script type="text/javascript">
-      var disqus_shortname = 'flybirdmf';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 
 
 
