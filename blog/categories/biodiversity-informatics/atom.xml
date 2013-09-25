@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Biodiversity Informatics | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/blog/categories/biodiversity-informatics/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[什么是生命科学识别码 LSID]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/21/-lsid/"/>
+    <updated>2009-03-21T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/21/-lsid</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme6.jpg" alt="LSID首页" /></p>
+
+<p><strong>Life Science Identifiers (LSIDs)</strong> are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources including species names, concepts, occurrences, genes or proteins, or data objects that encode information about them. To put it simply, LSIDs are a way to identify and locate pieces of biological information on the web.</p>
+
+<p>The <em>LSID</em> concept introduces a straightforward approach to naming and identifying data resources stored in multiple, distributed data stores in a manner that overcomes the limitations of naming schemes in use today. Almost every public, internal, or department-level data store today has its own way of naming individual data resources, making integration between different data sources a tedious, never-ending chore for informatics developers and researchers.</p>
+
+<p>By defining a simple, common way to identify and access biologically significant data, whether that data is stored in files, relational databases, in applications, or in internal or public data sources, LSID provides a naming standard underpinning for wide-area science and interoperability.</p>
+
+<p>The Life Sciences Identifier is an <a href="http://www.omg.org/">Object Management Group (OMG)</a> Final Adopted Specification developed by the <a href="http://www.omg.org/lsr/">Life Sciences Research (LSR)</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[美国自然科学基金对数字化标本平台的支持]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/20/"/>
+    <updated>2009-03-20T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme7.jpg" alt="项目首页" /></p>
+
+<p>The US National Science Foundation has awarded a <strong>Research Coordination Grant</strong> entitled: <strong>Building a National Community of Natural History Collections</strong>.</p>
+
+<p>The purpose of the RCN is to build a strong scientific community to better serve researchers in systematics, biodiversity, and other fields that use natural history collections.</p>
+
+<p>Three professional organizations, <em>the American Institute of Biological Sciences</em>, <em>the Natural Science Collections Alliance</em>, and <em>the Society for the Preservation of Natural History Collections</em> will provide strong support as partners in the RCN, and many other societies have already built ties with the RCN by appointing Core Participants.</p>
+
+<p>The RCN has the following objectives:</p>
+
+<ul>
+<li><p>Identify the institutions and people that will define our community and facilitate dialogue among them about how to better serve the needs of researchers,</p></li>
+<li><p>identify major opportunities and challenges in the current environment and foreseeable future and develop a strategic plan for the future of collections research,</p></li>
+<li><p>determine how to strengthen and modernize the role of collections in education and outreach, and</p></li>
+<li><p>identify the primary needs of collections regarding care, curation, storage, and accessibility.</p></li>
+</ul>
+
+
+<p>The objectives will be met with a series of workshops, symposia, internships, and a website, <a href="http://www.collectionsweb.org/">www.CollectionsWeb.org</a>, which will provide a forum for interaction, host workshop reports, provide information on ways to become involved in the RCN, and provide links to resources for NHC.</p>
+
+<p>Several major community resources will be developed, including a catalogue of NHC, a survey of the status of NHC, a register of curatorial expertise, and an inventory of innovative and successful educational programs.</p>
+
+<p>Broadening minority participation in collections activities is a goal of the RCN.</p>
+
+<p>The initial steering committee members are Henry L. Bart (Tulane University, vertebrate systematics), Meredith Blackwell (Louisiana State University, fungal systematics), L. Alan Prather (Michigan State University, plant
+systematics) and James B. Woolley (Texas A &amp; M University, invertebrate systematics).</p>
+
+<p>Announcements of upcoming events, opportunities to get involved, and reports will be posted to the website, so please check back often. Your input is essential!  Contact us at <a href="http://www.collectionsweb.org/about/steering_committee.html.">http://www.collectionsweb.org/about/steering_committee.html.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[21世纪的物种探险 Species exploration]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration/"/>
+    <updated>2009-03-19T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme8.jpg" alt="Species Exploration首页" /></p>
+
+<p><strong>Taxonomists</strong> discover, describe and classify <em>species</em>. Millions of species remain unknown or unidentifiable, inaccessible to science and society.</p>
+
+<p>Charting the species of the world and their unique attributes are essential parts of understanding the <strong>history of life</strong>.</p>
+
+<p>Reliable taxonomic information is a necessary for managing sustainable ecosystems, attaining conservation goals, and detecting introductions of pests, vectors and invasive species.</p>
+
+<p><strong>Traditional taxonomic tools</strong> and methods have theoretical rigor and rich intellectual content, but are not keeping pace with this growing need for knowledge.</p>
+
+<p><strong>How can we increase the pace at which species exploration progresses while maintaining the scientific rigor of traditional taxonomy?</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Biogeomancer介绍]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/18/biogeomancer/"/>
+    <updated>2009-03-18T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/18/biogeomancer</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme19.jpg" alt="Biogeomancer首页" /></p>
+
+<p><strong><a href="http://www.biogeomancer.org/">BioGeomancer</a></strong>项目是一个世界范围内的自然历史采集和地理空间信息系统专家合作的项目。</p>
+
+<p>该项目的基本目标是尽可能的对生物多样性数据在空间作图方面的数据数量和质量通过保证，并且使这些数据都能够以空间分布图的方式呈现给用户，为科学研究、计划、保护和管理提供决策依据。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BioCASE介绍]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/18/biocase/"/>
+    <updated>2009-03-18T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/18/biocase</id>
+    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme17.jpg" alt="BioCASE首页" /></p>
+
+<p><strong>BioCASE</strong>是一个跨国性的生物学采集网络体系。它使用开源、系统独立的软件和数据标准来整合分布式和异构性的采集和观测数据的数据库系统，并给用户提供统一的网络服务。它与一些的项目和组织保持紧密的合作伙伴关系。</p>
+
+<p><a href="http://www.biogeomancer.org/">BioGeomancer</a> Worldwide collaboration of natural history and geospatial data experts</p>
+
+<p><a href="http://www.enbi.info/">ENBI</a> European Network for Biodiversity Information, Jan. 2003 &ndash; Dec. 2005</p>
+
+<p><a href="http://www.bgbm.org/BioDivInf/projects/ENHSIN/">ENHSIN</a> European Natural History Spcecimen Information Network, Jan. 2000 &ndash; March 2003</p>
+
+<p><a href="http://www.eurobiobank.org/">EuroBioBank</a> European network of DNA, cell and tissue banks for rare diseases</p>
+
+<p><a href="http://www.bgbm.org/biodivinf/projects/GBIF-Mirror/default.htm">GBIF European Mirror</a> Mirroring and replication of GBIF data services at the BGBM</p>
+
+<p><a href="http://www.gbif.org/">GBIF</a> The Global Biodiversity Information Facility</p>
+
+<p><a href="http://www.geant2.net/">Géant2</a> the next generation of the multi-gigabit pan-European research network</p>
+
+<p><a href="http://www.ipgri.cgiar.org/">IPGRI</a> the International Plant Genetic Resources Institute</p>
+
+<p><a href="http://hangingtogether.org/?p=101">Ravns</a> Resources Available in Natural Sciences</p>
+
+<p><a href="http://seek.ecoinformatics.org/">Seek</a> The Science Environment for Ecological Knowledge</p>
+
+<p><a href="http://sp2000europa.org/">Species2000 europa</a> (EuroCat, Feb. 2003 &ndash; Jan.. 2006)</p>
+
+<p><a href="http://www.species2000.org/">Species2000</a> Catalogue of Life Programme</p>
+
+<p><a href="http://www.synthesys.info/">Synthesys</a></p>
+
+<p>Included file 'JB/setup' not found in _includes directory</p>
+]]></content>
+  </entry>
+  
+</feed>

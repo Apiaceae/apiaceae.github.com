@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 生物多样性信息学 | 虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/blog/categories/sheng-wu-duo-yang-xing-xin-xi-xue/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T00:37:14+08:00</updated>
+  <updated>2013-09-26T02:33:51+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -14,32 +14,59 @@
 
   
   <entry>
+    <title type="html"><![CDATA[什么是Cybertaxonomy/etaxonomy]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/24/-cybertaxonomy/"/>
+    <updated>2009-03-24T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/24/-cybertaxonomy</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme111.jpg" alt="What is Cybertaxonomy" /></p>
+
+<p><strong>Cybertaxonomy(taxonomy)</strong>: The fusion of taxonomy with cyberinfrastructure will transform descriptive taxonomy, creating a modern, efficient science to confront the biodiversity crisis. <em>Cybertaxonomy</em> will enable international teams of taxon experts, museums and herbaria to create and test taxonomic knowledge to assure humanity’s access to reliable information about earth’s species. The IISE and its partners are forging <em>cybertaxonomy</em> as the next logical link in a chain of scholarship unbroken since the <em>time of Linnaeus</em>.</p>
+
+<p>The challenge is immense: discovering and describing millions of unknown species while at the same time continually critically testing 1.8 million already named species. International “knowledge communities,” each focused on a major taxon, will assemble and continually improve and expand all that is known of our world’s species.</p>
+
+<p>We are conceiving a taxonomy-specific cyberinfrastructure that will become a worldwide “species observatory” capable of opening access to museum specimens, archived literature, collection data, digital instrumentation and colleagues to vastly expedite descriptive taxonomy. Resultant taxon “knowledge banks” will be the 21st century equivalent of revisions and monographs… the “high throughput” species testing mechanisms of the past. Digital tools, instruments and robots can ease constraints on nearly every phase of taxonomy from collecting and preparing specimens to sharing what is known through user-defined portals such as the Encyclopedia of Life (www.eol.org).</p>
+
+<p>Knowing earth’s species and their myriad characters are fundamental to both evolutionary and environmental biology. The costs of building this new taxonomy are insignificant by comparison to the costs of ignorance as we face the biodiversity crisis.</p>
+
+<p>The IISE will focus on four inter-related areas:</p>
+
+<p><strong>(1) Species Inventories and Collection Development; </strong></p>
+
+<p><strong>(2) Revisionary Taxonomy and Monography; </strong></p>
+
+<p><strong>(3) Cyberinfrastructure; and</strong></p>
+
+<p><strong>(4) the History and Philosophy of Taxonomy</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Geomapping of Life 我们需要它？]]></title>
     <link href="http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/"/>
     <updated>2009-03-23T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-</id>
-    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme12.jpg" alt="COL首页" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme12.jpg" alt="COL首页" /></p>
 
 <ul>
 <li>Catalogue of Life</li>
 </ul>
 
 
-<p><img src="/assets/images/2009/3/vtheme10.jpg" alt="TOL首页" /></p>
+<p><img src="/images/2009/3/vtheme10.jpg" alt="TOL首页" /></p>
 
 <ul>
 <li>Tree of Life</li>
 </ul>
 
 
-<p><img src="/assets/images/2009/3/vtheme11.jpg" alt="CBOL首页" /></p>
+<p><img src="/images/2009/3/vtheme11.jpg" alt="CBOL首页" /></p>
 
 <ul>
 <li>Barcoding of Life</li>
 </ul>
 
 
-<p><img src="/assets/images/2009/3/vtheme9.jpg" alt="EOL首页" /></p>
+<p><img src="/images/2009/3/vtheme9.jpg" alt="EOL首页" /></p>
 
 <ul>
 <li>Encyclopedia of Life</li>
@@ -47,8 +74,23 @@
 
 
 <p><strong>Geomapping of Life</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[什么是生命科学识别码 LSID]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/21/-lsid/"/>
+    <updated>2009-03-21T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/21/-lsid</id>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme6.jpg" alt="LSID首页" /></p>
 
-<p>Included file 'JB/setup' not found in _includes directory</p>
+<p><strong>Life Science Identifiers (LSIDs)</strong> are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources including species names, concepts, occurrences, genes or proteins, or data objects that encode information about them. To put it simply, LSIDs are a way to identify and locate pieces of biological information on the web.</p>
+
+<p>The <em>LSID</em> concept introduces a straightforward approach to naming and identifying data resources stored in multiple, distributed data stores in a manner that overcomes the limitations of naming schemes in use today. Almost every public, internal, or department-level data store today has its own way of naming individual data resources, making integration between different data sources a tedious, never-ending chore for informatics developers and researchers.</p>
+
+<p>By defining a simple, common way to identify and access biologically significant data, whether that data is stored in files, relational databases, in applications, or in internal or public data sources, LSID provides a naming standard underpinning for wide-area science and interoperability.</p>
+
+<p>The Life Sciences Identifier is an <a href="http://www.omg.org/">Object Management Group (OMG)</a> Final Adopted Specification developed by the <a href="http://www.omg.org/lsr/">Life Sciences Research (LSR)</a>.</p>
 ]]></content>
   </entry>
   
@@ -57,7 +99,7 @@
     <link href="http://Apiaceae.github.io/blog/2009/03/20/"/>
     <updated>2009-03-20T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2009/03/</id>
-    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme7.jpg" alt="项目首页" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme7.jpg" alt="项目首页" /></p>
 
 <p>The US National Science Foundation has awarded a <strong>Research Coordination Grant</strong> entitled: <strong>Building a National Community of Natural History Collections</strong>.</p>
 
@@ -85,8 +127,6 @@
 systematics) and James B. Woolley (Texas A &amp; M University, invertebrate systematics).</p>
 
 <p>Announcements of upcoming events, opportunities to get involved, and reports will be posted to the website, so please check back often. Your input is essential!  Contact us at <a href="http://www.collectionsweb.org/about/steering_committee.html.">http://www.collectionsweb.org/about/steering_committee.html.</a></p>
-
-<p>Included file 'JB/setup' not found in _includes directory</p>
 ]]></content>
   </entry>
   
@@ -95,7 +135,7 @@ systematics) and James B. Woolley (Texas A &amp; M University, invertebrate syst
     <link href="http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration/"/>
     <updated>2009-03-19T00:00:00+08:00</updated>
     <id>http://Apiaceae.github.io/blog/2009/03/19/21-species-exploration</id>
-    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme8.jpg" alt="Species Exploration首页" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/2009/3/vtheme8.jpg" alt="Species Exploration首页" /></p>
 
 <p><strong>Taxonomists</strong> discover, describe and classify <em>species</em>. Millions of species remain unknown or unidentifiable, inaccessible to science and society.</p>
 
@@ -106,23 +146,6 @@ systematics) and James B. Woolley (Texas A &amp; M University, invertebrate syst
 <p><strong>Traditional taxonomic tools</strong> and methods have theoretical rigor and rich intellectual content, but are not keeping pace with this growing need for knowledge.</p>
 
 <p><strong>How can we increase the pace at which species exploration progresses while maintaining the scientific rigor of traditional taxonomy?</strong></p>
-
-<p>Included file 'JB/setup' not found in _includes directory</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Biogeomancer介绍]]></title>
-    <link href="http://Apiaceae.github.io/blog/2009/03/18/biogeomancer/"/>
-    <updated>2009-03-18T00:00:00+08:00</updated>
-    <id>http://Apiaceae.github.io/blog/2009/03/18/biogeomancer</id>
-    <content type="html"><![CDATA[<p><img src="/assets/images/2009/3/vtheme19.jpg" alt="Biogeomancer首页" /></p>
-
-<p><strong><a href="http://www.biogeomancer.org/">BioGeomancer</a></strong>项目是一个世界范围内的自然历史采集和地理空间信息系统专家合作的项目。</p>
-
-<p>该项目的基本目标是尽可能的对生物多样性数据在空间作图方面的数据数量和质量通过保证，并且使这些数据都能够以空间分布图的方式呈现给用户，为科学研究、计划、保护和管理提供决策依据。</p>
-
-<p>Included file 'JB/setup' not found in _includes directory</p>
 ]]></content>
   </entry>
   

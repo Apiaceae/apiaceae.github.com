@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ASP.NET | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/blog/categories/asp-dot-net/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T02:33:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.NET应用程序客户端执行的优化小技巧]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/17/aspnet/"/>
+    <updated>2009-03-17T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/17/aspnet</id>
+    <content type="html"><![CDATA[<p><strong>1. 使用较少的HTTP请求</strong></p>
+
+<p><strong>2. 合并文件：尽量将所有的脚本文件或者是CSS样式表文件合并到一个文件</strong></p>
+
+<p><strong>3. 将网页背景图片尽量合并为一张图片文件</strong></p>
+
+<p><strong>4. 使用CSS的'背景图'片和'图片位置属性'（CSS background-image and background-position）进行设置</strong></p>
+
+<p><strong>5. 文件的大小: 减少文件数量, 对文件进行压缩, 将CSS文件放置在文件顶部，JS文件放在底部</strong></p>
+
+<p>详细的检查网页效率和方法参考: <a href="http://www.css8.cn/chat/dispbbs.asp?boardid=26&amp;Id=493">css聊吧</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ObjectDataSource控件的分页、排序和筛选]]></title>
+    <link href="http://Apiaceae.github.io/blog/2009/03/16/objectdatasource/"/>
+    <updated>2009-03-16T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2009/03/16/objectdatasource</id>
+    <content type="html"><![CDATA[<p>ObjectDataSource控件提供了两种方法对绑定到控件(比如GridView)的数据进行分页和排序：</p>
+
+<p>通过用户界面进行分页，优点是容易设置，缺点是当数据量大时执行效率较低；
+实现方法：</p>
+
+<p>对GridView控件使用正确的数据源，比如：DataSet, Collection, DataTable或者DataView，但不能使用DataReader
+在页面设置GridView控件分分页属性为True。AllowPaging=&ldquo;True&rdquo;</p>
+
+<p>通过设置ObjectDataSource的分页，优点是数据量大时执行效率较高，特别是如果配合Caching能极大的提高以数据驱动为主的网络应用程序的效率。
+ObjectDataSource数据源的分页可以在类Class, 存储过程, LINQ to SQL查询中实现，下面以LINQ to SQL,Northwind数据库的Product表为例子来说明用法：</p>
+
+<p>实例网站的文档结构如下图：</p>
+
+<h6>1、新建网页，添加LINQ to SQL Class，命名为Products，在Server Exploer中拖拽Northwind数据库的Product表到设计界面。</h6>
+
+<p>！<a href="/images/2009/3/04.png">图1</a></p>
+
+<h6>2、添加一个新类Class命名为roductsLINQPaging</h6>
+
+<p>！<a href="/images/2009/3/05.png">图2</a>
+！<a href="/images/2009/3/06.png">图3</a>
+！<a href="/images/2009/3/06.png">图3</a></p>
+
+<h6>3、类中实现的方法如下：</h6>
+
+<p>&lsquo;&rsquo;&lsquo;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data.Linq;
+using System.Web;</p>
+
+<p>/// <summary>
+/// Summary description for ProductsLINQPaging
+/// </summary>
+public class ProductsLINQPaging</p>
+
+<pre><code>{
+  public ProductsLINQPaging()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+</code></pre>
+
+<p>&lsquo;&rsquo;'</p>
+]]></content>
+  </entry>
+  
+</feed>

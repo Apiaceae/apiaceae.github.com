@@ -60,7 +60,8 @@ System &hellip;">
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/">About me</a></li> 
+  <li><a href="/tag-cloud/">Tags</a></li>
+  <li><a href="/about/">About me</a></li>
 </ul>
 
 </nav>
@@ -130,7 +131,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <div id="content" class="content mod-cs-content text-content clearfix"><strong>&nbsp;locale.Error：unsupported locale setting<br /><br /><br /><br /></strong><strong>1、错误提出</strong><br />（1）locale指令运行出现的错误信息<br />locale：Cannot set LC_CTYPE to default locale： No such file or directory<br />locale：Cannot set LC_MESSAGES to default locale： No such file or directory<br />locale：Cannot set LC_ALL to default locale： No such file or directory<br />（2）setup指令运行出现的错误信息<br />locale.Error：unsupported locale setting，导致无法设置&ldquo;network configuration&#8221;<br />（3）yum指令运行出现的错误信息<br />Failed to set locale, defaulting to C<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/03ca8c7109101d2c8601b07b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/61139699c5fff585c8eaf47b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/982718a3fbd4dcbb4610647b.jpg" alt="" /><br /><br /><br /><strong>2、分析原因</strong><br />locale是用来设置软件运行的语言环境，所以语言环境设置有问题<br /><br /><strong>3、解决故障<br /></strong>重新设置语言环境，最简单的解决办法，例如：<br />[root@Mylinux ~]#&nbsp; echo &#8220;export&nbsp; LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp;&nbsp; /home/XXX/.bash_profile（特定用户）<br />或者<br />[root@Mylinux ~]#&nbsp; echo &#8220;export LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp; /etc/profile（所有用户）<br />[root@Mylinux ~]#&nbsp; exit<br />然后重新登录，使用locale指令查看变量<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/58f80bee1050cc1762d09ffa.jpg" alt="" /><br /><br />=================关于locale的设置，请查阅文章：《<span style="text-decoration: underline;"><strong><a href="http://hi.baidu.com/9812658/blog/item/d0021e33c0b32aa35fdf0e6c.html" target="_blank">Linux系统locale的设置</a></strong></span>》=================</div>
 <p><a href="http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d">http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d</a></p>
 <p>&nbsp;</p>
-
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/'>http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
     </div>
   </div>
   <footer role="contentinfo"><p>
