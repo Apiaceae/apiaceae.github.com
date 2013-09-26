@@ -30,6 +30,26 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
   
 
 </head>
@@ -851,6 +871,58 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-15T12:30:00+08:00" pubdate data-updated="true">Jul 15<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/2012/7/eol_gbif_maps.module+%e2%80%94+ofc.jpg" alt="" /></p>
+
+<p><strong>一些介绍和技巧文章：</strong></p>
+
+<p><a href="http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html">http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html</a></p>
+
+<p><a href="http://lucifr.com/139225/sublime-text-2-tricks-and-tips/">http://lucifr.com/139225/sublime-text-2-tricks-and-tips/</a></p>
+
+<p><a href="http://www.iplaysoft.com/sublimetext.html">http://www.iplaysoft.com/sublimetext.html</a></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/'>http://Apiaceae.github.io/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a></h1>
     
     
@@ -1099,37 +1171,43 @@ end
   
 
 
-<time datetime="2012-11-28T00:00:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+<time datetime="2012-11-28T13:20:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>第1个问题: 解决GIT代码仓库不同步</p>
-<p>今天在执行<a href="http://www.linuxso.com/command/git.html" target="_blank"><span style="text-decoration: underline;">git</span></a> pull时出现:</p>
-<pre>&nbsp;</pre>
-<ol class="dp-sql">
-<li class="alt">
-<pre><span><span>[root@linuxso.com&nbsp;/data/</span><span class="keyword">work</span><span>/www/rest/lib/Business/Inventory]#&nbsp;git&nbsp;pull &nbsp;</span></span></pre>
+  <div class="entry-content"><p>第1个问题: 解决Git代码仓库不同步git pull时出现:[root@linuxso.com&nbsp;/data/</span><span class="keyword">work</span><span>/www/rest/lib/Business/Inventory]#&nbsp;git&nbsp;pull &nbsp;</span></span></pre>
 </li>
-<li><span>Enter&nbsp;passphrase&nbsp;</span><span class="keyword">for</span><span>&nbsp;</span><span class="keyword">key</span><span>&nbsp;</span><span class="string">&#8216;/root/.ssh/<a href="http://www.linuxso.com/command/id.html" target="_blank"><span style="text-decoration: underline;">id</span></a>_rsa&#8217;</span><span>: &nbsp;</span></li>
+<li><span>Enter&nbsp;passphrase&nbsp;</span><span class="keyword">for</span><span>&nbsp;</span><span class="keyword">key</span><span>&nbsp;</span><span class="string">&lsquo;/root/.ssh/<a href="http://www.linuxso.com/command/id.html" target="_blank"><span style="text-decoration: underline;">id</span></a>_rsa&rsquo;</span><span>: &nbsp;</span></li>
 <li class="alt"><span>Updating&nbsp;70e8b93..a0f1a6c &nbsp;</span></li>
 <li><span style="background-color: #ff9900;">error:&nbsp;Your&nbsp;<span class="keyword">local</span>&nbsp;changes&nbsp;<span class="keyword">to</span>&nbsp;the&nbsp;following&nbsp;<a href="http://www.linuxso.com/command/file.html" target="_blank"><span style="text-decoration: underline;">file</span></a>s&nbsp;would&nbsp;be&nbsp;overwritten&nbsp;<span class="keyword">by</span>&nbsp;merge: &nbsp;</span></li>
 <li class="alt"><span style="background-color: #ff9900;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rest/lib/Business/Inventory/Pro<a href="http://www.linuxso.com/command/du.html" target="_blank"><span style="text-decoration: underline;">du</span></a>ctStatus.php &nbsp;</span></li>
 <li><span>Please,&nbsp;</span><span class="keyword">commit</span><span>&nbsp;your&nbsp;changes&nbsp;</span><span class="op">or</span><span>&nbsp;stash&nbsp;them&nbsp;before&nbsp;you&nbsp;can&nbsp;merge. &nbsp;</span></li>
 <li class="alt"><span>Aborting&nbsp;</span></li>
-</ol>
+</ol></p>
+
 <p>解决方法: 执行git checkout -f，然后再执行git pull重新checkout</p>
+
+
 <pre>&nbsp;</pre>
+
+
 <ol class="dp-sql">
 <li class="alt">
 <pre><span><span>[root@linuxso.com&nbsp;/data/</span><span class="keyword">work</span><span>/www/rest/lib/Business/Inventory]#&nbsp;git&nbsp;checkout&nbsp;-f &nbsp;</span></span></pre>
 </li>
 <li><span>Your&nbsp;bra<a href="http://www.linuxso.com/command/nc.html" target="_blank"><span style="text-decoration: underline;">nc</span></a>h&nbsp;</span><span class="keyword">is</span><span>&nbsp;behind&nbsp;</span><span class="string">&#8216;origin/master&#8217;</span><span>&nbsp;</span><span class="keyword">by</span><span>&nbsp;2&nbsp;commits,&nbsp;</span><span class="op">and</span><span>&nbsp;can&nbsp;be&nbsp;fast-forwarded.&nbsp;</span></li>
 </ol>
+
+
 <p>再执行git pull时就可以了:</p>
+
+
 <pre>&nbsp;</pre>
+
+
 <ol class="dp-sql">
 <li class="alt">
 <pre><span><span>[root@linuxso.com&nbsp;/data/</span><span class="keyword">work</span><span>/www/rest/lib/Business/Inventory]#&nbsp;git&nbsp;pull &nbsp;</span></span></pre>
@@ -1141,11 +1219,23 @@ end
 <li><span>&nbsp;1&nbsp;files&nbsp;changed,&nbsp;1&nbsp;insertions(+),&nbsp;0&nbsp;deletions(-) &nbsp;</span></li>
 <li class="alt"><span>&nbsp;mode&nbsp;change&nbsp;100644&nbsp;=&gt;&nbsp;100755&nbsp;rest/lib/Business/Inventory/ProductStatus.php&nbsp;</span></li>
 </ol>
+
+
 <p>&nbsp;</p>
+
+
 <p>第2个问题: git pull的默认地址问题.</p>
+
+
 <p>1.git处于master这个branch下时，默认的remote就是origin； 2.当在master这个brach下使用指定remote和merge的git pull时，使用默认的remote和merge。 &nbsp; 但是对于自己建的项目，并用push到远程服务器上，并没有这块内容，需要自己配置。 如果直接运行git pull，会得到如此结果：</p>
+
+
 <p>#当执行git pull之后的提示:</p>
+
+
 <pre>&nbsp;</pre>
+
+
 <ol class="dp-sql">
 <li class="alt">
 <pre><span><span>$&nbsp;git&nbsp;pull &nbsp;</span></span></pre>
@@ -1171,8 +1261,14 @@ end
 <li><span>&nbsp; &nbsp;</span></li>
 <li class="alt"><span>See&nbsp;git-config(1)&nbsp;</span><span class="keyword">for</span><span>&nbsp;details.&nbsp;</span></li>
 </ol>
+
+
 <p>#解决方法, 通过git config进行如下配置.</p>
+
+
 <pre>&nbsp;</pre>
+
+
 <ol class="dp-sql">
 <li class="alt">
 <pre><span><span>git&nbsp;remote&nbsp;</span><span class="keyword">a<a href="http://www.linuxso.com/command/dd.html" target="_blank"><span style="text-decoration: underline;">dd</span></a></span><span>&nbsp;-f&nbsp;origin&nbsp;git@192.168.21.44:rest.git &nbsp;</span></span></pre>
@@ -1180,16 +1276,28 @@ end
 <li><span>git&nbsp;config&nbsp;branch.master.remote&nbsp;origin &nbsp;</span></li>
 <li class="alt"><span>git&nbsp;config&nbsp;branch.master.merge&nbsp;refs/heads/master&nbsp;</span></li>
 </ol>
+
+
 <p>&nbsp;</p>
+
+
 <!-- google_ad_section_end -->
+
+
 <p><a href="http://www.linuxso.com/linuxrumen/13158.html">http://www.linuxso.com/linuxrumen/13158.html</a></p>
+
+
 <p><br />&nbsp;</p>
+
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/'>http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -1201,7 +1309,7 @@ end
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/">Bupleurum Species, Scientific Evaluation and Clinical Applications</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/">柴胡属专著</a></h1>
     
     
       <p class="meta">
@@ -1224,15 +1332,18 @@ end
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2012/11/2012-11-26_180711.png" alt="" /></p>
-<p>&nbsp;</p>
-<p>好书！研究植物就应该这样应用才有价值。</p>
+  <div class="entry-content"><p><img src="" title="/images/2012/11/2012-11-26_180711.png" alt="柴胡" /></p>
+
+<p>很好的应用！</p>
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/'>http://Apiaceae.github.io/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -1267,120 +1378,22 @@ end
   </header>
 
 
-  <div class="entry-content"><p>(1) 按两下小写g，即gg，定位光标到第一行。</p>
-<p>(2) 按住Shift+v，即大写V，进入可视化编辑的列编辑模式。</p>
-<p>(3) Shift+g，即大写G，选中整个代码。</p>
-<p>(4) 按下等号=，格式化所有代码。</p>
+  <div class="entry-content"><p>按两下小写g，即gg，定位光标到第一行。</p>
+
+<p>按住Shift+v，即大写V，进入可视化编辑的列编辑模式。</p>
+
+<p>Shift+g，即大写G，选中整个代码。</p>
+
+<p>按下等号=，格式化所有代码。</p>
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/'>http://Apiaceae.github.io/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
+       </p>
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/">如何更新Dell服务器的Bios及Locale问题</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-22T00:00:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>Install libsmbios</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<pre># apt-get update    (not always necessary)
-# apt-get install libsmbios-bin
-</pre>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>Get the System ID</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<pre># getSystemId 
-Libsmbios:    0.12.1
-<strong>System ID: 0x01DD</strong>
-Service Tag:  DT6WLB1
-Express Service Code: 30063287773
-Product Name: Dell DM061
-BIOS Version: 2.3.2
-Vendor:       Dell Inc.
-Is Dell:      1
-</pre>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>Download the latest BIOS &#8220;.HDR&#8221; file for this system. Go here: <a class="external free" href="http://linux.dell.com/repo/firmware/bios-hdrs/" rel="nofollow">http://linux.dell.com/repo/firmware/bios-hdrs/</a>. Scroll down the list to find a directory matching the System ID from the previous step. The directory will be named: system_bios_ven_0x1028_dev_<strong>SYSTEM_ID</strong>_version_<strong>BIOS_VERSION</strong>. Go into this directory and download the file, &#8220;bios.hdr&#8221;.</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>load the <strong>dell_rbu</strong> driver</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<pre># modprobe dell_rbu
-</pre>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>update the bios</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<pre># dellBiosUpdate -u -f ./bios.hdr-2.3.2 
-Supported RBU type for this system: (MONOLITHIC)
-Using RBU v2 driver. Initializing Driver. 
-Setting RBU type in v2 driver to: MONOLITHIC
-Prep driver for data load.
-Writing RBU data (4096bytes/dot): ............................
-..............................................................
-.......................
-Notify driver data is finished.
-Activate CMOS bit to notify BIOS that update is ready on next boot.
-Update staged sucessfully. BIOS update will occur on next reboot.
-</pre>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<ul>
-<li>reboot the system</li>
-</ul>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
-<pre># reboot
-</pre>
-<p><a href="http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate">http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate</a></p>
-<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span>&nbsp;</p>
-<h2 class="title content-title">典型错误：locale.Error：unsupported locale setting</h2>
-<div id="content" class="content mod-cs-content text-content clearfix"><strong>&nbsp;locale.Error：unsupported locale setting<br /><br /><br /><br /></strong><strong>1、错误提出</strong><br />（1）locale指令运行出现的错误信息<br />locale：Cannot set LC_CTYPE to default locale： No such file or directory<br />locale：Cannot set LC_MESSAGES to default locale： No such file or directory<br />locale：Cannot set LC_ALL to default locale： No such file or directory<br />（2）setup指令运行出现的错误信息<br />locale.Error：unsupported locale setting，导致无法设置&ldquo;network configuration&#8221;<br />（3）yum指令运行出现的错误信息<br />Failed to set locale, defaulting to C<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/03ca8c7109101d2c8601b07b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/61139699c5fff585c8eaf47b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/982718a3fbd4dcbb4610647b.jpg" alt="" /><br /><br /><br /><strong>2、分析原因</strong><br />locale是用来设置软件运行的语言环境，所以语言环境设置有问题<br /><br /><strong>3、解决故障<br /></strong>重新设置语言环境，最简单的解决办法，例如：<br />[root@Mylinux ~]#&nbsp; echo &#8220;export&nbsp; LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp;&nbsp; /home/XXX/.bash_profile（特定用户）<br />或者<br />[root@Mylinux ~]#&nbsp; echo &#8220;export LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp; /etc/profile（所有用户）<br />[root@Mylinux ~]#&nbsp; exit<br />然后重新登录，使用locale指令查看变量<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/58f80bee1050cc1762d09ffa.jpg" alt="" /><br /><br />=================关于locale的设置，请查阅文章：《<span style="text-decoration: underline;"><strong><a href="http://hi.baidu.com/9812658/blog/item/d0021e33c0b32aa35fdf0e6c.html" target="_blank">Linux系统locale的设置</a></strong></span>》=================</div>
-<p><a href="http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d">http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d</a></p>
-<p>&nbsp;</p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/'>http://Apiaceae.github.io/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+</div>
   
   
 
@@ -1400,6 +1413,12 @@ Update staged sucessfully. BIOS update will occur on next reboot.
     <section>
   <h1>About Me</h1>
   <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -1422,7 +1441,7 @@ Update staged sucessfully. BIOS update will occur on next reboot.
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -1430,10 +1449,15 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -1454,10 +1478,10 @@ Update staged sucessfully. BIOS update will occur on next reboot.
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>

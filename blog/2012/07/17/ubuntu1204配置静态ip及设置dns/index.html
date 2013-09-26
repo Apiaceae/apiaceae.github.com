@@ -9,11 +9,7 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="静态IP配置方法：
-编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）
-sudo gedit /etc/network/interfaces
-auto eth0
-iface eth0 inet static &nbsp; //指定为static &hellip;">
+  <meta name="description" content="静态IP配置方法： 编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0） ,,,`sudo gedit /etc/network/interfaces auto eth0 iface eth0 inet static   //指定为static &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -33,6 +29,26 @@ iface eth0 inet static &nbsp; //指定为static &hellip;">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -69,54 +85,480 @@ iface eth0 inet static &nbsp; //指定为static &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="content">
-<h1>静态IP配置方法：</h1>
-<div>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</div>
-<div>sudo gedit /etc/network/interfaces</div>
-<div>auto eth0</div>
-<div>iface eth0 inet static &nbsp; //指定为static</div>
-<div>address 192.168.1.103 &nbsp; //IP地址</div>
-<div>gateway 192.168.1.1 &nbsp; //网关</div>
-<div>netmask 255.255.255.0 &nbsp; //子网掩码</div>
-<div>network 192.168.1.0 &nbsp; //这个是网络？</div>
-<div>broadcast 192.168.1.255 &nbsp; //广播</div>
-<div>然后重启网络设备</div>
-<div>sudo /etc/init.d/networking restart</div>
-<div>&nbsp;</div>
-<div>设置DNS：</div>
-<div>Ubuntu设置DNS，只要将DNS地址写入/ect/resolv.conf文件即可，但在12.04 desktop版中，重启系统之后，静态IP设置生效，但无法链接外网，/etc/resole.conf文件的DNS地址也覆盖掉了。</div>
-<div>解决办法，在/etc/resol<a href="http://biancheng.dnbcw.info/vc/">vc</a>onf/resolv.conf.d/目录下创建tail文件，写入</div>
-<div>nameserver 202.96.134.133</div>
-<div>nameserver 202.96.128.68</div>
-<div>然后重启，DNS生效。</div>
-<div>&nbsp;</div>
-<div>参考链接：http://ask<a href="http://biancheng.dnbcw.info/ubuntu/">ubuntu</a>.com/questions/130452/how-do-i-add-a-dns-server-via-resolv-conf</div>
-</div>
-<div>&nbsp;</div>
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ubuntu12.04配置静态IP及设置DNS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-17T00:00:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>静态IP配置方法：</h1>
+
+<p>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</p>
+
+<p>,,,`sudo gedit /etc/network/interfaces</p>
+
+<p>auto eth0</p>
+
+<p>iface eth0 inet static   //指定为static</p>
+
+<p>address 192.168.1.103   //IP地址</p>
+
+<p>gateway 192.168.1.1   //网关</p>
+
+<p>netmask 255.255.255.0   //子网掩码</p>
+
+<p>network 192.168.1.0   //这个是网络？</p>
+
+<p>broadcast 192.168.1.255   //广播`</p>
+
+<p>然后重启网络设备</p>
+
+<p>sudo /etc/init.d/networking restart</p>
+
+<p> </p>
+
+<p>设置DNS：</p>
+
+<p>Ubuntu设置DNS，只要将DNS地址写入/ect/resolv.conf文件即可，但在12.04
+desktop版中，重启系统之后，静态IP设置生效，但无法链接外网，/etc/resole.conf文件的DNS地址也覆盖掉了。</p>
+
+<p>解决办法，在/etc/resol<a href="http://biancheng.dnbcw.info/vc/">vc</a>onf/resolv.conf.d/目录下创建tail文件，写入</p>
+
+<p>nameserver 202.96.134.133</p>
+
+<p>nameserver 202.96.128.68</p>
+
+<p>然后重启，DNS生效。</p>
+
+<p> </p>
+
+<p>参考链接：<a href="http://ask">http://ask</a><a href="http://biancheng.dnbcw.info/ubuntu/">ubuntu</a>.com/questions/130452/how-do-i-add-a-dns-server-via-resolv-conf</p>
+
+<p> </p>
+
 <h1>Ubuntu12.04的一些源列表</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<div class="article_manage"><span class="link_report"><br class="link_categories" /></span></div>
-<p>&nbsp;</p>
-<div id="article_content" class="article_content">
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">安装好ubuntu 12.04之后，可以联网之后，马上要做的最重要的事情之一就是配置更新源列表，这样以后安装更新或者软件才可以获得较好的下载速度。<br /> 首先，备份一下原来的源地址列表文件<br /> sudo cp /etc/apt/sources.list /etc/apt/sources.list.old<br /> 然后进行修改<br /> sudo gedit /etc/apt/sources.list<br /> 可以在里面添加资源地址，我是直接覆盖掉原来的。<br /> 添加好后保存，再输入 sudo apt-get update 就可以更新了，等着慢慢下载东西吧。我虽然选了一个网易的和一个中科大的源，无奈那天网速不给力，还是花了差不多两个小时。<br /> 下面是网上找到的一些较好的源，有大型网站的，也有教育网的，可以根据自己的情况添加两三个即可。<br /> #网易的源（速度很快）<br /> deb http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse<br /> deb http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted<br /> #搜狐的源<br /> deb http://mirrors.sohu.com/ubuntu/ precise main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security multiverse<br /> deb http://extras.ubuntu.com/ubuntu precise main<br /> deb-src http://extras.ubuntu.com/ubuntu precise main<br /> #台湾源<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise main universe restricted multiverse<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise-updates universe main multiverse restricted<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise-updates universe main multiverse restricted</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin<br /> deb http://ubuntu.srt.cn/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise main universe restricted multiverse<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-updates universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-updates universe main multiverse restricted</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#mirror.lupaworld.com的源，速度很快<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-security main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-updates main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-backports main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/ubuntu-cn/ precise main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#ubuntu.cn99.com源（推荐）:<br /> deb http://ubuntu.cn99.com/ubuntu/ precise main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-updates main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu-cn/ precise main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#教育网源<br /> #电子科技大学<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#中国科技大学<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-backports restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#北京理工大学<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#兰州大学<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu-cn/ precise main multiverse restricted universe</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#上海交通大学<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu-cn/ precise main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe</p>
-<br />
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">本文链接地址:&nbsp;<a style="color: #5a8238;" title="ubuntu12.04 更新源地址列表" href="http://www.maybe520.net/blog/a/424.html">http://www.maybe520.net/blog/a/424.html</a></p>
-</div>
+
+<p> </p>
+
+<p> </p>
+
+<p>\</p>
+
+<p> </p>
+
+<p>安装好ubuntu
+12.04之后，可以联网之后，马上要做的最重要的事情之一就是配置更新源列表，这样以后安装更新或者软件才可以获得较好的下载速度。\
+ 首先，备份一下原来的源地址列表文件\
+ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old\
+ 然后进行修改\
+ sudo gedit /etc/apt/sources.list\
+ 可以在里面添加资源地址，我是直接覆盖掉原来的。\
+ 添加好后保存，再输入 sudo apt-get update
+就可以更新了，等着慢慢下载东西吧。我虽然选了一个网易的和一个中科大的源，无奈那天网速不给力，还是花了差不多两个小时。\</p>
+
+<p>下面是网上找到的一些较好的源，有大型网站的，也有教育网的，可以根据自己的情况添加两三个即可。\
+ #网易的源（速度很快）\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ #搜狐的源\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ deb-src <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ #台湾源\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe
+main multiverse restricted\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe
+main multiverse restricted</p>
+
+<p>#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted</p>
+
+<p>#mirror.lupaworld.com的源，速度很快\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise main restricted
+universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-security main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-updates main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/ubuntu-cn/">http://mirror.lupaworld.com/ubuntu/ubuntu-cn/</a> precise main
+restricted universe multiverse</p>
+
+<p>#ubuntu.cn99.com源（推荐）:\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu-cn/">http://ubuntu.cn99.com/ubuntu-cn/</a> precise main restricted universe
+multiverse</p>
+
+<p>#教育网源\
+ #电子科技大学\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#中国科技大学\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#北京理工大学\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main
+multiverse restricted universe</p>
+
+<p>#兰州大学\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu-cn/">ftp://mirror.lzu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe</p>
+
+<p>#上海交通大学\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu-cn/">http://ftp.sjtu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe</p>
+
+<p>\</p>
+
+<p>本文链接地址: <a href="http://www.maybe520.net/blog/a/424.html" title="ubuntu12.04 更新源地址列表">http://www.maybe520.net/blog/a/424.html</a></p>
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-17T00:00:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/" data-via="" data-counturl="http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/" title="Previous Post: ubuntu中文输入法Fcitx安装">&laquo; ubuntu中文输入法Fcitx安装</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/" title="Next Post: ubuntu解压命令全览">ubuntu解压命令全览 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (3)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
   <footer role="contentinfo"><p>

@@ -9,11 +9,9 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:
-1). 安装Java SDK
+  <meta name="description" content="下面为详细安装步骤，一步步来就能配出如图所示的搜索效果: 1). 安装Java SDK ,,,
 yum install java-1.6*
-2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下
-来后，放到非web目录的文件夹下面， &hellip;">
+,,, 2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下来后， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -33,6 +31,26 @@ yum install java-1.6*
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -69,44 +87,290 @@ yum install java-1.6*
 </nav>
   <div id="main">
     <div id="content">
-      <h1>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h1>
-<p>1). 安装Java SDK</p>
-<p><code>yum install java-1.6*</code></p>
-<p>2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下</p>
-<p>来后，放到非web目录的文件夹下面，我放在了/home/ruby 目录下面，并重命名为solr</p>
-<div class="codeblock"><code>cd /home/ruby<br /><br />wget <a title="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" target="_blank">http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz</a> <br /><br />tar xvfz apache-solr-1.4.1.tgz<br /><br />mv apache-solr-1.4.1 solr</code></div>
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu为drupal7配置Apache Solr详细步骤</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-18T15:21:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h3>
+
+<p><strong>1). 安装Java SDK</strong></p>
+
+<p>,,,
+yum install java-1.6*
+,,,</p>
+
+<p><strong>2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下来后，放到非web目录的文件夹下面，我放在了/home/ruby 目录下面，并重命名为solr</strong></p>
+
+<p>&lsquo;&rsquo;&lsquo;
+cd /home/ruby
+&rsquo;&lsquo;&rsquo;
+wget <a title="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" target="_blank"><a href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz">http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz</a></a> <br /><br />tar xvfz apache-solr-1.4.1.tgz<br /><br />mv apache-solr-1.4.1 solr</code></div></p>
+
 <p>3).下载Drupal的Apache Solr(<a title="http://drupal.org/project/ApacheSolr" href="http://drupal.org/project/ApacheSolr" target="_blank">http://drupal.org/project/ApacheSolr</a>)模块, 如果你有drush,用drush会方便的</p>
+
+
 <p>多,如果没有drush,就按常规方便，下载解压缩，放到sites/all/modules目录。并下载php的solr库（</p>
+
+
 <p>http://code.google.com/p/solr-php-client/），放到sites/all/modules/apachesolr根目录,最终结构</p>
+
+
 <p>为:/sites/all/modules/apachesolr/SolrPhpClient。</p>
+
+
 <div class="codeblock"><code>cd /var/www/html/yourdrupal_root<br />drush dl apachesolr<br />cd sites/all/modules/apachesolr<br />wget <a title="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" href="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" target="_blank">http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09...</a> <br />unzip SolrPhpClient.r22.2009-11-09.zip </code></div>
+
+
 <p>4).根据apachesolr模块里面的说明，复制apachesolr模块里面的schema.xml，solrconfig.xml</p>
+
+
 <p>到/home/ruby/solr/example/solr目录.</p>
+
+
 <div class="codeblock"><code>cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/schema.xml /home/ruby/solr/example/solr/conf<br />cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/solrconfig.xml /home/ruby/solr/example/solr/conf</code></div>
+
+
 <p>5).测试一下Apache Solr是否工作了？</p>
+
+
 <div class="codeblock"><code>cd /home/ruby/solr/example<br />java -jar start.jar</code></div>
+
+
 <p><br />在浏览器中输入http://192.168.1.110:8983/solr/admin/ （192.168.1.110换成你自已的地址）,如果你顺利看到</p>
+
+
 <p>如下界面，说明你就成功了！</p>
+
+
 <p><img src="http://drupalsh.cn/userfiles/solr.png" alt="" /></p>
+
+
 <p>6).按照常规模式启用drupal的Apache Solr模块,OK,到后台配制一下(admin/settings/apachesolr)，测试是否成</p>
+
+
 <p>功,如果不出意外，你就会看到本文开头的图片效果.</p>
+
+
 <p>续&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;<br /> 你肯定不想每次都在命令行窗口打开solr服务，好，让我们把solr变成系统服务</p>
+
+
 <p>7).创建系统启动服务功能</p>
+
+
 <div class="codeblock"><code>nano -w /etc/init.d/solr</code></div>
+
+
 <p>复制以下代码:</p>
+
+
 <div class="codeblock"><code>SOLR_DIR="/home/ruby/solr/example"&nbsp; # 换成你的安装路径<br />JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar"<br />LOG_FILE="/var/log/solr.log"<br />JAVA="/usr/bin/java"<br /> <br />case $1 in<br />&nbsp;&nbsp;&nbsp; start)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Starting Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS 2&gt; $LOG_FILE &amp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; stop)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Stopping Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS --stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; restart)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 start<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; *)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Usage: $0 {start|stop|restart}" &gt;&amp;2<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />esac</code></div>
+
+
 <p>保存退出,授权</p>
+
+
 <div class="codeblock"><code>chmod 755 /etc/init.d/solr</code></div>
+
+
 <p>现在，你可以用以下linux常用命令去启动apache solr了</p>
+
+
 <div class="codeblock"><code>service solr start<br />service solr stop<br />service solr restart</code></div>
+
+
 <p>如果需要，还可以加上开机自动开启apache solr</p>
+
+
 <div class="codeblock"><code>sudo chkconfig --add solr</code></div>
+
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/'>http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-18T15:21:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/" data-via="" data-counturl="http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/" title="Previous Post: ubuntu解压命令全览">&laquo; ubuntu解压命令全览</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/" title="Next Post: 如何更新Dell服务器的BIOS及Locale问题">如何更新Dell服务器的BIOS及Locale问题 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (3)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
   <footer role="contentinfo"><p>

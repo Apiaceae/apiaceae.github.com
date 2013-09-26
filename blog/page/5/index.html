@@ -9,12 +9,7 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="http://games.jeuxjeuxjeux.fr/data/1/4/4/14414.swf
-&nbsp;
-jirapatch.rar (295.88 kb)
-atlassian-extras-2.2.2.jar (147.22 kb)
-&nbsp;
-JiraLicenseStoreImpl &hellip;">
+  <meta name="description" content="UBuntu中增加中文字符编码的方法 在Widnows XP下的FTP服务器中有中文文件名，今天使用ftp命令，发现不能显示中文文件名，只能显示????。于是到网上查了一些资料，也没有找到好的解决方法，只是有人说使用图形化的ftp工具 gftp，安装方法：sudo apt-get install &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -34,6 +29,26 @@ JiraLicenseStoreImpl &hellip;">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -72,6 +87,129 @@ JiraLicenseStoreImpl &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/">UBuntu中增加中文字符编码的方法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>UBuntu中增加中文字符编码的方法</p>  <p>在Widnows XP下的FTP服务器中有中文文件名，今天使用ftp命令，发现不能显示中文文件名，只能显示????。于是到网上查了一些资料，也没有找到好的解决方法，只是有人说使用图形化的ftp工具 gftp，安装方法：sudo apt-get install gftp，另外还要增加中文字符编码zh_CN.GBK即可即可。在这里总结一下Ubuntu下增加中文字符编码的方法。   <br />一. Ubuntu默认的中文字符编码    <br />Ubuntu默认的中文字符编码为zh_CN.UTF-8，这个可以在/etc/environment中看到：    <br />sudo gedit /etc/environment    <br />可以看到如下内容：    <br />PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games&quot;    <br />LANG=&quot;zh_CN.UTF-8&quot;    <br />LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;    <br />第二行即是默认的中文字符编码。注：可以通过这里修改默认的中文编码字符，比如修改为：zh_CN.GBK。</p>  <p>二. 添加中文字符编码的方法   <br />1. 直接使用locale-gen    <br />在超级终端输入命令：    <br />sudo locale-gen zh_CN.GB18030    <br />即可完成中文字符集的添加。完成后可以转到/usr/lib/locale/，下面已经有一个zh_CN.gb18030文件夹；在超级终端输入命令：gedit /var/lib/locales/supported.d/local，可以发现文件中多了一行：zh_CN.GB18030 GB18030。说明添加成功。</p>  <p>2. 通过修改/var/lib/locales/supported.d/local文件   <br />在终端输入命令行    <br />sudo gedit /var/lib/locales/supported.d/local    <br />可以看到如下内容：    <br />zh_CN.UTF-8 UTF-8    <br />en_US.UTF-8 UTF-8    <br />在文件尾添加中文字符集    <br />zh_CN.GBK GBK    <br />保存后退出。在超级终端输入命令：    <br />sudo dpkg-reconfigure locales</p>  <p>Generating locales&#8230;   <br />en_AU.UTF-8&#8230; done    <br />en_BW.UTF-8&#8230; done    <br />en_CA.UTF-8&#8230; done    <br />en_DK.UTF-8&#8230; done    <br />en_GB.UTF-8&#8230; done    <br />en_HK.UTF-8&#8230; done    <br />en_IE.UTF-8&#8230; done    <br />en_IN.UTF-8&#8230; done    <br />en_NZ.UTF-8&#8230; done    <br />en_PH.UTF-8&#8230; done    <br />en_SG.UTF-8&#8230; done    <br />en_US.UTF-8&#8230; done    <br />en_ZA.UTF-8&#8230; done    <br />en_ZW.UTF-8&#8230; done    <br />zh_CN.GBK&#8230; done    <br />zh_CN.UTF-8&#8230; up-to-date    <br />zh_HK.UTF-8&#8230; done    <br />zh_SG.UTF-8&#8230; done    <br />zh_TW.UTF-8&#8230; done    <br />Generation complete.</p>  <p>即可生成相应文件：/usr/lib/locale/zh_CN.gbk/   <br />注：也可使用locale-gen</p>  <p>＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋   <br />Ubuntu 默认采用UTF8编码，可以方便global。但对中文支持，还不细致，即便默认采用中文安装，也并不会自动添加GB＊等支持，致使在Ubuntu下访问部分Win文本文件时，出现乱码。</p>  <p>I. 配置系统环境   <br />执行 sudo vi /var/lib/locales/supported.d/zh    <br />加入以下配置参数</p>  <p>zh_CN.GB18030 GB18030 (最新汉字编码字符集，向下兼容GBK,GB2312)   <br />zh_CN.GBK GBK (汉字扩展编码,向下兼容GB2312, 并包含BIG5全部汉字)    <br />zh_CN.GB2312 GB2312 (简化汉字编码字符集, 最近有客户要我们改进GB2312,太看得起我们了，我只能说:&quot;NO!&quot;)    <br />zh_CN.GB18031 GB18031 (数字键盘汉字编码输入,面向手持设备，我的Nokia3120从来就是发短信，接听电话，无法和PC通讯，就不用这个了。 maybe用Google Android SDK的大侠们需要这个)    <br />zh_HK.BIG5 BIG5 (繁体)    <br />zh_TW.BIG5 BIG5 (繁体)</p>  <p>然后执行 sudo locale-gen   <br />提示以下信息，成功了    <br />zh_CN.GB18030&#8230; done    <br />zh_CN.GBK&#8230; done    <br />&#8230;&#8230;</p>  <p>II. 系统环境支持GB*内码了，但用vi, gedit等工具访问文件还会继续乱码，需要针对不同的工具分别配置，使之自己检测支持范围内的编码   <br />e.g. vi    <br />执行 sudo vi /etc/vim/vimrc    <br />加入以下配置参数    <br />let &amp;termencoding=&amp;encoding    <br />set fileencodings=utf-8,gb18030,gbk,gb2312,big5</p>  <p>e.g. gedit   <br />执行 gconf-editor    <br />选择 apps/gedit-2/preferences/encodings    <br />找到 auto_detected 编辑，在Values中分别加入 GB18030,GBK,GB2312,BIG5</p>  <p>OK~</p>  <p>感谢lec的支援。   <br />enca工具很方便，用于检测文件内码（前提是系统环境支持，如，环境不支持BIG5，是无法检测的，这个晕了我许久）    <br />安装 sudo apt-get install enca    <br />用法 enca filename    <br />+++++++++++++++++++++++++++++++++++    <br />1.编辑/var/lib/locales/supported.d/*    <br />格式参考 /usr/share/i18n/SUPPORTED    <br />vi /var/lib/locales/supported.d/local    <br />vi /var/lib/locales/supported.d/zh    <br />vi /var/lib/locales/supported.d/en</p>  <p>如：   <br />more /var/lib/locales/supported.d/local    <br />zh_CN.UTF-8 UTF-8    <br />en_US.UTF-8 UTF-8    <br />zh_CN.GB18030 GB18030</p>  <p>2.生成locale(自动保存在/usr/lib/locale/中)   <br />locale-gen</p>  <p>3.修改locale   <br />vi /etc/environment    <br />把    <br />LANG=&quot;zh_CN.UTF-8&quot;    <br />改成    <br />LANG=&quot;zh_CN.GB18030&quot;</p>  <p>more /etc/environment   <br />PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:    <br />/usr/games&quot;    <br />#LANG=&quot;zh_CN.UTF-8&quot;    <br />LANG=&quot;zh_CN.GB18030&quot;    <br />LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;    <br />CLASSPATH=.:/usr/lib/jvm/java-1.5.0-sun/lib    <br />JAVA_HOME=/usr/lib/jvm/java-1.5.0-sun</p>  <p>4.重新启动或切换下运行级别,查看locale   <br />root@1006:~# locale    <br />LANG=zh_CN.GB18030    <br />LANGUAGE=zh_CN:zh:en_US:en    <br />LC_CTYPE=&quot;zh_CN.GB18030&quot;    <br />LC_NUMERIC=&quot;zh_CN.GB18030&quot;    <br />LC_TIME=&quot;zh_CN.GB18030&quot;    <br />LC_COLLATE=&quot;zh_CN.GB18030&quot;    <br />LC_MONETARY=&quot;zh_CN.GB18030&quot;    <br />LC_MESSAGES=&quot;zh_CN.GB18030&quot;    <br />LC_PAPER=&quot;zh_CN.GB18030&quot;    <br />LC_NAME=&quot;zh_CN.GB18030&quot;    <br />LC_ADDRESS=&quot;zh_CN.GB18030&quot;    <br />LC_TELEPHONE=&quot;zh_CN.GB18030&quot;    <br />LC_MEASUREMENT=&quot;zh_CN.GB18030&quot;    <br />LC_IDENTIFICATION=&quot;zh_CN.GB18030&quot;    <br />LC_ALL=</p>  <p>5.登陆界面的选项里   <br />默认语言也要相应改选成 zh_CN.GB18030,这样ubuntu就完全被中文化了，zh_CN.GB18030是目前最标准国家强制要求的中文编码</p>  <p>原文地址：<a title="http://ihipop.info/2009/06/85.html" href="http://ihipop.info/2009/06/85.html">http://ihipop.info/2009/06/85.html</a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/'>http://Apiaceae.github.io/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/">关于百度的五大真相</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天看到互动百科“<a href="http://w.hudong.com/99e19bbf8fde4055b75acb93270b9744.html">致百度CEO李彦宏的公开信</a>”，文章太酸、太长、太烂，如果说百度已经是人人喊打，那么互动百科其实也好不到哪里去，君不见维基百科仍然正襟危坐？</p>  <p>百度该不该骂？该！百度成为众矢之的离不开中文第一搜的地位，以至于骂百度已经成为媒体博取用户关注的一种手段，赚钱赚到这样让这么多人恶心的程度，也实属难得。如果中国互联网真的有所谓的全民公敌的话，少不了腾讯，也少不了百度。</p>  <p>很多人知道百度，不一定完完全全地了解百度，我这里就权且列五条关于百度的不良记录，权当笑谈。</p>  <p><strong>真相一：在搜索结果中放广告赚钱</strong></p>  <p>搜索竞价排名是我目前了解到的，多年来百度收入占比最大的一块业务，即便多次更名也丝毫没有影响到它的核心地位，如果没有竞价广告就没有今天的百度。</p>  <p>但是与Google这样的关键词搜索广告相比，百度的竞价排名是完全和搜索结果融为一体，如果不仔细分辨你几乎很难发现竞价广告的存在。这一做法引发了截然不同的两种声音，赞同者认为这样的广告会增加客户的实际成交量，而反对者则认为这增加了商家的广告成本和无效用户，百度最夸张的时候一页搜索结果几乎全是竞价排名，商家疯狂追捧的背后是各方利益的追逐。</p>  <p>但是最核心的问题，百度作为搜索引擎的首先服务目标是用户，广告只是服务用户的附带收益，而毫无底线的竞价排名影响到了用户的正常搜索，几度改革的竞价排名虽然尊重用户的口号很大，最终作出的让步却很小。</p>  <p><strong>真相二：大量的不道德案底</strong></p>  <p>百度最广为人知的污点，莫过于央视曝光的医药搜索广告，当时百度为一些不正规的医药产品提供竞价广告服务，导致大量用户利益受到损害。百度事后表示将会拿出诚意痛改前非，所以我们就看到李彦宏出现在了当年的央视春晚上。医药搜索广告事件，揭示的是百度作为一个广告商，在同时面对金钱和道德作出了不正确的选择。医药、钓鱼网站、骗子…各种各样的骗术借着百度广告的外衣大行其道，展现出的是百度作为中国互联网巨头的社会责任感。</p>  <p>百度竞价广为流传的一个说法是，很多百度代理会威胁客户：如果你不买竞价排名，那么你的网站排名会一落千丈，甚至收录被清零。空穴来风，未必无因，越来越多客户的曝光证明了这种做法的存在。百度当然可以推说是部分代理商的做法，自己完全不知情，将会对那些不良代理商进行严厉惩处。听听，这口吻多像相关部门的官方基调，最后拿临时工顶包了事。这种调整权重、调整收录的做法，我不相信百度完全不知情，百度高层完全清白，最可能的事他们故作不知、听之任之，然后面对大把大把的钞票乐。</p>  <p>最典型的案例是，京东、新蛋、卓越亚马逊等大量商业网站，都曾经购买自己网站名称的竞价广告，这不是白白给百度送钱吗？他们怕的是什么？其中的秘辛恐怕只有当事人能够了解。</p>  <p><strong>真相三：依靠人工而不是算法</strong></p>  <p>做互联网的、做技术的很多都习惯用Google而不是百度，因为百度总会猛地给你一个啼笑皆非的搜索结果，而Google的表现则要稳定得多，这种现象背后代表着两种截然不同的发展思路。百度相信人工，而Google更相信算法。</p>  <p>百度从一开始就是一个便于人工调教的搜索，你可以很方便给合作伙伴、自家产品增加流量，也可以很方便给竞争对手、不识相的客户降权甚至清零收录。当然也有很多人表示百度这样子是因为需要配合一套关键词过滤系统，但事实证明Google还没离开的时候搜索结果同样比百度优秀。</p>  <p>这就像是一个破烂的房子，不管你再努力去修修补补都不可能恢复如新，甚至修补的这个过程会加快它的死亡。有时候我们在想百度的搜索结果会不会变得更糟，在这样永无休止、毫无进展的步调下。要逆转胜，除非百度真的重新设计一套搜索引擎框架，但是这可能吗？至少现在我还没有看到这种趋势，百度的心思都放在如何抄袭新业务赚钱。</p>  <p><strong>真相四：员工很难获得成就感</strong></p>  <p>百度的员工会有成就感吗？这话我不敢乱说。但是百度的员工大多在做的几件事情：调整搜索结果、卖广告、抄袭产品。工作内容非正义或者对社会没有积极贡献，员工自然在心理上就会矮半头。他们无法像Google的员工一样，通过自己的努力去创造革命性的产品，进而改变世界。Google有了Android、Chrome，而回过头来看看百度，除了赚钱多一点点其实没什么变化，就连赚钱的套路都一模一样。</p>  <p>工作在这样一家公司，成就感从何而来？别人在通过技术改变世界的时候，他们却在通过技术修修补补。如果你是苹果的员工，如果你是Google的员工，甚至你是腾讯的员工，都可以大大方方相坐而谈，但是如果你是百度员工，虽然大家都仍然礼貌，但是表情、语气多少都会有一些异样，就像看到一个富二代作威作福一样。这无关员工，只是百度自己的问题。</p>  <p><strong>真相五：搜索以外很少有建树</strong></p>  <p>有啊、百付宝停滞不前，好不容易做个百度文库却被指盗版温床，甚至还把用户送进了监狱，百度百科的无理抄袭受到来自维基百科的指责。最近麦田到了百度，成立社会化事业部做了百度说吧，烂得一塌糊涂，前段时间还学习51大玩美女诱惑。</p>  <p>百度的产品，除了贴吧、知道、百科这一类的社区产品，还有地图这样的工具型产品，其它几乎没有任何进展。拥有百度这样一个流量入口，这样的结果实在让人差异。对于百度最好的祝福：如果你不能好好地创造，那就认真地抄袭吧，就像腾讯正在做的那样。</p>  <p>——————分割线——————</p>  <p>互联网完美继承了老祖宗的那套东西，勾心斗角、口蜜腹剑、损人利己、落井下石，百度也不外如是。像百度这样的公司还有太多，黑着心思玩那些恶心手段其实更容易成功，而那些纯技术、产品驱动的公司最后反倒会落得凄惨无比的下场。这是值得我们警醒的事情，这也是为什么大部分中国用户不信任中国互联网公司，因为在这样的产业环境下要独善其身实在太难。</p>  <p>百度病了，但它只是中国互联网的一个缩影，相比之下中国互联网的孱弱更值得我们思考。除了依靠巨大人口基数制造出的虚假繁荣，我们究竟还有多少拿得出手的互联网公司和产品，有多少互联网公司会迫于形势变成另一个百度。 </p>  <p>原文地址：<a title="http://www.xjp.cc/2010-log/12/five-facts-baidu.html" href="http://www.xjp.cc/2010-log/12/five-facts-baidu.html">http://www.xjp.cc/2010-log/12/five-facts-baidu.html</a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/'>http://Apiaceae.github.io/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/">修改及查看mysql数据库的字符集</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-20T00:00:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Liunx下修改MySQL字符集：</strong></p>  <p>1.查找MySQL的cnf文件的位置</p>  <p>find / -iname &#8216;*.cnf&#8217; -print</p>  <p>/usr/share/mysql/my-innodb-heavy-4G.cnf   <br />/usr/share/mysql/my-large.cnf    <br />/usr/share/mysql/my-small.cnf    <br />/usr/share/mysql/my-medium.cnf    <br />/usr/share/mysql/my-huge.cnf    <br />/usr/share/texmf/web2c/texmf.cnf    <br />/usr/share/texmf/web2c/mktex.cnf    <br />/usr/share/texmf/web2c/fmtutil.cnf    <br />/usr/share/texmf/tex/xmltex/xmltexfmtutil.cnf    <br />/usr/share/texmf/tex/jadetex/jadefmtutil.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-innodb-heavy-4G.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-large.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-small.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-medium.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-huge.cnf</p>  <p>2. 拷贝 small.cnf、my-medium.cnf、my-huge.cnf、my-innodb-heavy-4G.cnf其中的一个到/etc下，命名为my.cnf   <br />cp /usr/share/mysql/my-medium.cnf /etc/my.cnf</p>  <p>3. 修改my.cnf</p>  <p>vi /etc/my.cnf</p>  <p>在[client]下添加   <br />default-character-set=utf8</p>  <p>在[mysqld]下添加   <br />default-character-set=utf8</p>  <p>4.重新启动MySQL   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart    <br />Shutting down MySQL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />Starting MySQL.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />[root@bogon ~]# mysql -u root -p    <br />Enter password:    <br />Welcome to the MySQL monitor. Commands end with ; or \g.    <br />Your MySQL connection id is 1    <br />Server version: 5.1.22-rc-community-log MySQL Community Edition (GPL)</p>  <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the buffer.</p>  <p>5.查看字符集设置</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.02 sec)</p>  <p>mysql&gt; show variables like &#8216;character_set_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.02 sec)</p>  <p>mysql&gt;</p>  <p><strong>其他的一些设置方法：</strong></p>  <p><strong>修改数据库的字符集</strong>    <br />&#160;&#160; mysql&gt;use mydb</p>  <p>&#160;&#160; mysql&gt;alter database mydb character set utf-8;   <br /><strong>创建数据库指定数据库的字符集</strong></p>  <p>&#160;&#160; mysql&gt;create database mydb character set utf-8;</p>  <p><strong>通过配置文件修改:</strong></p>  <p>修改/var/lib/mysql/mydb/db.opt   <br />default-character-set=latin1    <br />default-collation=latin1_swedish_ci    <br />为    <br />default-character-set=utf8    <br />default-collation=utf8_general_ci</p>  <p>重起MySQL:   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart</p>  <p><strong>通过MySQL命令行修改:</strong></p>  <p>mysql&gt; set character_set_client=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_connection=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_database=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_results=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_server=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_system=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_connection=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_database=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_server=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p><strong>查看:     <br /></strong>mysql&gt; show variables like &#8216;character_set_%&#8217;;    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.03 sec)</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.04 sec)</p>  <p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>【知识性文章转载】</p>  <p>MYSQL 字符集问题</p>  <p>MySQL的字符集支持(Character Set Support)有两个方面：</p>  <p>&#160;&#160;&#160;&#160; 字符集(Character set)和排序方式(Collation)。</p>  <p>对于字符集的支持细化到四个层次:</p>  <p>&#160;&#160;&#160;&#160; 服务器(server)，数据库(database)，数据表(table)和连接(connection)。</p>  <p>1.MySQL默认字符集</p>  <p>MySQL对于字符集的指定可以细化到一个数据库，一张表，一列，应该用什么字符集。</p>  <p>但是，传统的程序在创建数据库和数据表时并没有使用那么复杂的配置，它们用的是默认的配置，那么，默认的配置从何而来呢？&#160;&#160;&#160; (1)编译MySQL 时，指定了一个默认的字符集，这个字符集是 latin1；</p>  <p>&#160;&#160;&#160; (2)安装MySQL 时，可以在配置文件 (my.ini) 中指定一个默认的的字符集，如果没指定，这个值继承自编译时指定的；</p>  <p>&#160;&#160;&#160; (3)启动mysqld 时，可以在命令行参数中指定一个默认的的字符集，如果没指定，这个值继承自配置文件中的配置,此时 character_set_server 被设定为这个默认的字符集；</p>  <p>&#160;&#160;&#160; (4)当创建一个新的数据库时，除非明确指定，这个数据库的字符集被缺省设定为character_set_server；</p>  <p>&#160;&#160;&#160; (5)当选定了一个数据库时，character_set_database 被设定为这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (6)在这个数据库里创建一张表时，表默认的字符集被设定为 character_set_database，也就是这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (7)当在表内设置一栏时，除非明确指定，否则此栏缺省的字符集就是表默认的字符集；</p>  <p>简单的总结一下，如果什么地方都不修改，那么所有的数据库的所有表的所有栏位的都用 latin1 存储，不过我们如果安装 MySQL，一般都会选择多语言支持，也就是说，安装程序会自动在配置文件中把 default_character_set 设置为 UTF-8，这保证了缺省情况下，所有的数据库的所有表的所有栏位的都用 UTF-8 存储。</p>  <p>2.查看默认字符集(默认情况下，mysql的字符集是latin1(ISO_8859_1)</p>  <p>通常，查看系统的字符集和排序方式的设定可以通过下面的两条命令：</p>  <p>&#160;&#160;&#160;&#160; mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>mysql&gt; SHOW VARIABLES LIKE &#8216;collation_%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| collation_connection | utf8_general_ci |</p>  <p>| collation_database&#160;&#160; | utf8_general_ci |</p>  <p>| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>3.修改默认字符集</p>  <p>(1) 最简单的修改方法，就是修改mysql的my.ini文件中的字符集键值，</p>  <p>如&#160;&#160;&#160; default-character-set = utf8</p>  <p>&#160;&#160;&#160;&#160;&#160; character_set_server = utf8</p>  <p>&#160;&#160; 修改完后，重启mysql的服务，service mysql restart</p>  <p>&#160;&#160; 使用 mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;查看，发现数据库编码均已改成utf8</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>&#160;&#160; (2) 还有一种修改字符集的方法，就是使用mysql的命令</p>  <p>&#160;&#160; mysql&gt; SET character_set_client = utf8 ;</p>  <p>&#160;</p>  <p>原文地址：<a title="http://blog.chinaunix.net/u1/51541/showart_505638.html" href="http://blog.chinaunix.net/u1/51541/showart_505638.html">http://blog.chinaunix.net/u1/51541/showart_505638.html</a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/'>http://Apiaceae.github.io/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -636,129 +774,6 @@ ORDER BY FamilyNumber DESC</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/11/26/e4bdbfe794a8host-trackere69da5e79b91e6b58be7bd91e7ab99/">使用Host-tracker来监测网站</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><a href="http://blog.cnpc.ac.cn/images/2010-11-26_205151.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2010-11-26_205151" border="0" alt="2010-11-26_205151" src="http://blog.cnpc.ac.cn/images/2010-11-26_205151_thumb.png" width="644" height="344" /></a>  <p>网站管理员可以利用<a title="http://host-tracker.com/" href="http://host-tracker.com/">http://host-tracker.com/</a>来监测网站是否允许良好和挂机的情况，如果网站挂机还可以通过电子邮件通知。使用方法非常简单。只需要到host-tracker网站输入自己的网址，然后点击Check now，系统会发生异地请求的想要报告。在Subscribe框填入邮件地址就可以收到网站情况的消息。<img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-openmouthedsmile" alt="大笑" src="http://blog.cnpc.ac.cn/images/wlEmoticon-openmouthedsmile.png" /></p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/11/26/e4bdbfe794a8host-trackere69da5e79b91e6b58be7bd91e7ab99/'>http://Apiaceae.github.io/blog/2010/11/26/e4bdbfe794a8host-trackere69da5e79b91e6b58be7bd91e7ab99/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/16/e5a682e4bd95e59ca8windowse6938de4bd9ce7b3bbe7bb9fe4b88be4b88be8bdbdgithube4b88ae79a84e5bc80e6ba90e4bba3e7a081/">如何在Windows操作系统下下载github上的开源代码</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-16T00:00:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>现在越来越多的开源项目都通过github来进行管理，习惯了使用SVN的朋友可能不熟悉github下载代码方法。比较简单。</p>  <p>1、下载<a href="http://code.google.com/p/msysgit/downloads/list">Git for windows</a>然后安装，主要安装过程的一些选项；</p>  <p>2、进入你希望保存源代码的文件夹，然后在文件夹上点右键弹出git菜单如下图，选择git bash here</p>  <p><a href="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/4075F354/20100916_162309.gif"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-09-16_162309" border="0" alt="2010-09-16_162309" src="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/02E8958B/20100916_162309_thumb.gif" width="635" height="484" /></a> </p>  <p>3、在弹出的unix shell窗口输入需要下载代码的http地址（红色部分），如下图</p>  <p><a href="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/49D1B888/20100916_161757.gif"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-09-16_161757" border="0" alt="2010-09-16_161757" src="http://blog.cnpc.ac.cn/images/WindowsLiveWriter/Windowsgithub/29B6ABCB/20100916_161757_thumb.gif" width="644" height="328" /></a></p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/09/16/e5a682e4bd95e59ca8windowse6938de4bd9ce7b3bbe7bb9fe4b88be4b88be8bdbdgithube4b88ae79a84e5bc80e6ba90e4bba3e7a081/'>http://Apiaceae.github.io/blog/2010/09/16/e5a682e4bd95e59ca8windowse6938de4bd9ce7b3bbe7bb9fe4b88be4b88be8bdbdgithube4b88ae79a84e5bc80e6ba90e4bba3e7a081/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/07/e4bc9ee5bda2e7a791e6a48de789a9e588bae88ab9enryngium-foetidume79a84e7949fe6b4bbe79fa5e8af86/">伞形科植物刺芹Enryngium Foetidum的生活知识</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Culantro in Pho – An Herb in a League of Its Own</h3>  <p><abbr>April 18, 2009</abbr></p>  <p>0diggs<a>digg</a></p>  <p><em>Updated 07-14-09</em>. When you order a bowl of <strong>Vietnamese pho</strong> at a restaurant, you will typically be served a plate of garnishing along with your steaming bowl of meat and rice noodles. The only time that plate of garnishing would be absent is when you happened to eat in a restaurant that serves authentic pho bac, the northern Vietnamese version of <strong>pho</strong> that is a lot more austere but in no way less flavorful. A typical plate of garnishing that accompanies a bowl of <strong>Vietnamese pho</strong> would contain lime wedges, chopped Asian chili, fresh Thai basil, bean sprouts and <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is relatively unknown in the United States, and it is often mistaken for its cousin cilantro, another herb often found in a bowl of pho. However, for all their similarities, <strong>culantro</strong> and cilantro are two entirely different herbs.</p>  <p>What is <strong>culantro</strong> and just how different is it from <strong>cilantro</strong>?&#160; How important is <strong>culantro</strong> to a <em>bowl of pho</em>? Let’s dig a little deeper.</p>  <h4><strong>So What Is Culantro?</strong></h4>  <p><strong><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1.jpg"><img title="Culantro" alt="Culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1-300x225.jpg" width="210" height="158" /></a>Culantro</strong> is actually the Spanish name of an herb in the parsley family that bears the scientific name <em>Eryngium foetidum</em> and has long leaves edged with spines. This herb has many other names, such as: fitweed, saw leaf, sawtooth, recao, Mexican coriander, long coriander, serrated coriander and shado beni, among many others. In Vietnam, <strong>culantro</strong> is known as <em>ngo gai</em> (ngò gai) or thorny coriander.</p>  <p>The <strong>culantro</strong> plant often grows as a small plant in roseate formation, and its leaves are elongated, growing from between four to eight inches long. The plant does not thrive in frost or under direct sunlight, although it is possible to find wild <strong>culantro</strong> growing in open, sunlit areas.</p>  <p><strong>Culantro</strong> is actually a native plant of Central America and the Caribbean Islands. Colonization and trading are largely responsible for introducing <strong>culantro</strong> to the rest of the world, particularly to India and Southeast Asia. However, as mentioned above, <strong>culantro</strong> is practically unknown in the United States, where it is often mistaken for cilantro.</p>  <h4><strong>Comparison with Other Corianders</strong></h4>  <p>The reason why <strong>culantro</strong> is often mistaken for cilantro is because they share similar smell and taste to the uninitiated. Just like cilantro, culantro has a pungent odor that can be reminiscent of crushed bedbugs. Some people are fine with such a smell, but some people can barely stand it. In addition to the smell, both culantro and cilantro have a bitter, soapy taste, although this flavor is stronger in culantro.</p>  <p>But that is where the similarities end. Although they both belong to the parsley family, cilantro has smaller leaves than <strong>culantro</strong>. Cilantro leaves are also lacy rather than thorny as in the case of <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is also sometimes compared to the Vietnamese coriander, another popular herb used in Southeast Asian cuisine. Vietnamese coriander also has long leaves, but its stems are knotty and knobby. Also known as laksa leaves, Vietnamese coriander is also more fragrant than <strong>culantro</strong>.</p>  <h4><strong>The Role of Culantro in Pho</strong></h4>  <p><strong><img title="Pho garnishes and condiments" alt="Pho garnishes and condiments" src="http://www.lovingpho.com/wp-content/uploads/2009/04/pho-garnishes-condiments-300x300.jpg" width="210" height="210" />Culantro</strong> is an optional garnish in <strong>Vietnamese pho</strong>, along with the bean sprouts, lime wedges, chopped Asian chili and Thai basil. When you eat a bowl of pho, it is up to you to put <strong>culantro</strong> in your bowl or not. Some people actually choose not to add the herb in their pho because the smell can be too strong and the taste too bitter.</p>  <p>The herb nonetheless helps balances out the flavors in pho. Vietnamese cooking is highly influenced by Chinese cuisine, and among the principles followed in Chinese cuisine that the Vietnamese themselves have adopted is the principle of balance. In this principle, the five flavors of food – salty, sour, sweet, bitter and spicy – should be present in each dish. But these flavors should not compete with one another; instead, they should exist harmoniously and lend to complex layers of taste.</p>  <p><strong>Culantro</strong> literally acts out a bitter role in pho. However, there is already a bitter element in every bowl of pho as provided by the chopped cilantro/scallion mix sprinkled over the noodle-and-meat assembly in the bowl. But because the cilantro and scallion are normally already cooked by the scalding broth by the time the bowl of pho is served at the table, <strong>Culantro</strong> then plays the role of the fresh and raw bitterness as chosen by the diner. It is meant to enhance the bitter layer in the flavor of pho and to give the broth a stronger zing, if that is what the diner wants in his or her pho.</p>  <p>Many people just tear the long culantro leaves into pieces of about one to two inches long and drop them directly into their bowl before taking the first bite (or slurp). This in effect gives them cooked culantro as they finish the meal. Others add them a few pieces at a time as they progress so that they get the maximum bitterness, freshness and crunchiness from the herb in every bite. For maximum effect, many pho connoisseurs like to tear culantro (and basil too) into smaller pieces (maybe 1/2 inch size) and add them as they eat their pho.</p>  <p>We take culantro (ngo gai) so seriously that our point system for rating pho at restaurants and shops gives ngo gai extra points for freshness. See the post “<a href="http://www.lovingpho.com/pho-ingredients-garnishes/importance-garnishes-pho/">The Importance of Garnishes for Pho</a>.”</p>  <h4><strong>Health Facts about Culantro</strong></h4>  <p>Aside from being a garnish or an ingredient in a dish, <strong>culantro</strong> also has medicinal properties. It is sometimes eaten to stimulate appetite in a diner and to help the diner digest his or her food, a trait that <strong>culantro</strong> shares with cilantro. The leaves of the <strong>culantro</strong> can also be boiled and made into tea that can help treat flu, pneumonia, diarrhea, fever and vomiting. Sometimes, the herb is also administered to cure convulsions in children, which is why it is called fitweed in some countries.</p>  <p>The herb is also healthy to eat on its own, even if you are not sick. <strong>Culantro</strong> has a high content of calcium, beta-carotene, riboflavin and iron – nutrients that the body needs to stay fit and to stave off disease.</p>  <h4><strong>Cultivating Culantro</strong></h4>  <p><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg"><img title="Planting culantro" alt="Planting culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg" width="224" height="168" /></a>It is actually easy to cultivate <strong>culantro</strong> in a garden. All you need to do is to have a plot of well-drained soil and protected from direct sunlight. You can also grow <strong>culantro</strong> in pots indoors.</p>  <p>When you grow <strong>culantro</strong> in a garden, the best time to do your planting is during springtime, when the frost of winter has already melted down
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/09/07/e4bc9ee5bda2e7a791e6a48de789a9e588bae88ab9enryngium-foetidume79a84e7949fe6b4bbe79fa5e8af86/'>http://Apiaceae.github.io/blog/2010/09/07/e4bc9ee5bda2e7a791e6a48de789a9e588bae88ab9enryngium-foetidume79a84e7949fe6b4bbe79fa5e8af86/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -774,6 +789,12 @@ ORDER BY FamilyNumber DESC</pre>
     <section>
   <h1>About Me</h1>
   <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -796,7 +817,7 @@ ORDER BY FamilyNumber DESC</pre>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -804,10 +825,15 @@ ORDER BY FamilyNumber DESC</pre>
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -828,10 +854,10 @@ ORDER BY FamilyNumber DESC</pre>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>

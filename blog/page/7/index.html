@@ -9,7 +9,7 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="&#160; EndNote Web通过在线数据库的方式来管理和同步你的桌面EndNote文献数据库。如果你已经在使用EndNote桌面数据库，你只需要注册一个EndNote Web账户，然后从桌面EndNote数据库导入到EndNote Web中，导入的条目数最大限制是10000条。 &hellip;">
+  <meta name="description" content="原来的数据如上图上图，需要得到的结果如下图 sql语句如下： 1: SELECT vo.name_id , 2: COMNAME = SUBSTRING(vo.COMNAME, number, 3: CHARINDEX(',', vo.COMNAME + ',', number) 4: - b. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,26 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -67,6 +87,152 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/18/e68b86e58886e5ad97e7aca6e4b8b2e4b8bae58d95e69da1e8aeb0e5bd95/">拆分字符串为单条记录</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-18T00:00:00+08:00" pubdate data-updated="true">Apr 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/cefc5b49342d/19B3A749/20100418_201757.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="2010-04-18_201757" border="0" alt="2010-04-18_201757" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/cefc5b49342d/4AD8034B/20100418_201757_thumb.png" width="644" height="350" /></a> </p>  <p>原来的数据如上图上图，需要得到的结果如下图</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/cefc5b49342d/552E490D/20100418_202054.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="2010-04-18_202054" border="0" alt="2010-04-18_202054" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/cefc5b49342d/3679EFD3/20100418_202054_thumb.png" width="158" height="484" /></a> </p>  <p>sql语句如下：</p>  <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">   <div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">     <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum1">   1:</span> <span style="color: #0000ff">SELECT</span>  vo.name_id ,</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum2">   2:</span>           COMNAME = <span style="color: #0000ff">SUBSTRING</span>(vo.COMNAME, number,</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum3">   3:</span>                               CHARINDEX(<span style="color: #006080">','</span>, vo.COMNAME + <span style="color: #006080">','</span>, number)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum4">   4:</span>                               - b.number)</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum5">   5:</span>   <span style="color: #0000ff">FROM</span>    dbo.verna_org <span style="color: #0000ff">AS</span> vo</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum6">   6:</span>           <span style="color: #0000ff">JOIN</span> master..spt_values b <span style="color: #0000ff">ON</span> b.type = <span style="color: #006080">'p'</span></pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum7">   7:</span>                                        <span style="color: #0000ff">AND</span> CHARINDEX(<span style="color: #006080">','</span>, <span style="color: #006080">','</span> + vo.COMNAME,</pre>
+<!--CRLF-->
+
+    <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"><span style="color: #606060" id="lnum8">   8:</span>                                                      number) = number</pre>
+<!--CRLF--></div>
+</div>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/04/18/e68b86e58886e5ad97e7aca6e4b8b2e4b8bae58d95e69da1e8aeb0e5bd95/'>http://Apiaceae.github.io/blog/2010/04/18/e68b86e58886e5ad97e7aca6e4b8b2e4b8bae58d95e69da1e8aeb0e5bd95/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/01/eole5928cgoogle-mape79a84e7bb93e59088/">EOL和Google Map的结合</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>EOL和Google Map的结合的确很有意思，不仅仅是简洁明了的表现方式。还有就是RIA应用程序的特点：漂亮。</p>  <p>原来EOL的物种分布图是请vizzuality公司，联合GBIF一起来开发的。采用了Adobe Flex Builder框架和PHP代码结合，的确不错。</p>  <p>你可以看看vizzuality公司的介绍，这是一个专门致力生物多样性信息学RIA应用程序哦，好的是都是开源的。</p>  <p>&#160;</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/EOLGoogleMap/283002A0/20100401_152020.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-04-01_152020" border="0" alt="2010-04-01_152020" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/EOLGoogleMap/67F9E925/20100401_152020_thumb.png" width="644" height="191" /></a> </p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/EOLGoogleMap/2EE30C23/20100401_151845.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-04-01_151845" border="0" alt="2010-04-01_151845" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/EOLGoogleMap/359615A6/20100401_151845_thumb.png" width="595" height="484" /></a> </p>  <p><a title="http://www.vizzuality.com/" href="http://www.vizzuality.com/">http://www.vizzuality.com/</a></p>  <p><a title="http://code.google.com/p/vizzuality/" href="http://code.google.com/p/vizzuality/">http://code.google.com/p/vizzuality/</a></p>  <p>学习Adobe Flex Builder应用可以看这里：<a title="http://www.adobe.com/cn/devnet/flex/testdrive/articles/4_deploy_app.html" href="http://www.adobe.com/cn/devnet/flex/testdrive/articles/4_deploy_app.html">http://www.adobe.com/cn/devnet/flex/testdrive/articles/4_deploy_app.html</a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/04/01/eole5928cgoogle-mape79a84e7bb93e59088/'>http://Apiaceae.github.io/blog/2010/04/01/eole5928cgoogle-mape79a84e7bb93e59088/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/31/e8b0b7e6ad8ce8b5b0e4ba86efbc8ce8b0b7e5a790e69da5e4ba86/">谷歌走了，谷姐来了</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-31T00:00:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对于已经习惯了每天Google无数次的我来说，近日正是体会到没有了谷歌的痛苦。好的是谷歌已经搬了一个新家，<a title="http://www.google.com.hk" href="http://www.google.com.hk">http://www.google.com.hk</a>。可能是新家还没有适应的缘故吧。总是出现无法连接的情况。</p>  <p>前段时间听朋友说起有个谷姐的网站，今天偶然浏览了一下，真够雷人的。看看主页吧，广东文化还比较浓厚。哈哈，谷姐一下应该改成靓妹一下更好。</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/54656420/20100331_221206.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-03-31_221206" border="0" alt="2010-03-31_221206" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/04D8963F/20100331_221206_thumb.png" width="644" height="434" /></a> </p>  <p>不过实际的搜索结果确实不敢恭维。谷姐不告诉你关键词搜索到底返回多少条结果？？？原因是保密</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/176D445C/20100331_221119.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-03-31_221119" border="0" alt="2010-03-31_221119" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/280CF15D/20100331_221119_thumb.png" width="498" height="484" /></a> </p>  <p>到底还是哥们大方啊。清楚的告诉你结果和效果哦。</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/6C0AF26B/20100331_221335.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-03-31_221335" border="0" alt="2010-03-31_221335" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/70a1162fe50d/052B6E06/20100331_221335_thumb.png" width="644" height="424" /></a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/03/31/e8b0b7e6ad8ce8b5b0e4ba86efbc8ce8b0b7e5a790e69da5e4ba86/'>http://Apiaceae.github.io/blog/2010/03/31/e8b0b7e6ad8ce8b5b0e4ba86efbc8ce8b0b7e5a790e69da5e4ba86/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -363,129 +529,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/02/12/e7949fe789a9e5a49ae6a0b7e680a7e4bfa1e681afe5ada6e7a094e7a9b6e8bf9be5b195/">生物多样性信息学研究进展</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-12T00:00:00+08:00" pubdate data-updated="true">Feb 12<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><span class="Apple-style-span" style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px"><h1 style="margin-top: 10px; margin-right: 0px; margin-bottom: 5px; margin-left: 0px; font-size: 24px; line-height: 48px" align="left">生物多样性信息学研究进展</h1><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left"><strong>摘要：</strong>生物多样性信息学是一门年轻而蓬勃发展的新学科。它将现代的信息技术带入生物多样性及其相关学科的研究领域。它在生物多样性基础数据的数字化、模型工具、专家系统、数据整合，全球、地区和国家性生物多样性网络等多个方面的发展，向我们展示了未来在全球范围内自由、免费获取生物多样性研究信息和数据的局面，并为我们实现全球保护战略目标，解决生物多样性危机，全球气候变化条件下生物多样性资源管理和利用奠定了坚实的信息基础。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left"><strong>关键词：</strong>生物多样性，信息学，数据库，物种，标本，地理信息系统</p><h1 style="margin-top: 10px; margin-right: 0px; margin-bottom: 5px; margin-left: 0px; font-size: 24px; line-height: 48px" align="left">Progress in Biodiversity Informatics</h1><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left"><strong>Abstract:</strong>&nbsp;Biodiversity Informatics is a young and rapidly growingfield that brings information science and technologies to bear on the data andinformation generated by the study of biodiversity and related subjects. Recentyears, biodivesity informatcis community make an extrondinary efforts in digitizationof primary biodiversity data, modelling tools, expert system, data integration,and county/regional/global biodivesity networks. In doing so, it is creatingunprecedented global access to information and data produced by biodiversityscience; it is also building a strong information facilities in implementing thegoals set by Global Plant Conservation Strategy, resvolving biodiversity crisisand management of biodiversity resource in global climate change scenarios.</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left"><strong>Key words:</strong>&nbsp;Biodiversity, Informatics, Database, Species, Specimen, GIS</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px" align="left">前言</h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">信息技术的发展对科学研究的影响是巨大的。从基础数据的采集、信息存储、分析到科学假设的形成和验证，所有科学研究的相关活动在计算机和网络技术的帮助下正逐渐自动化。在21世纪，信息技术在支持测试、计算公式、提出假说等方面将继续扮演日益重要的中心角色。科学的计算机化具有很高的潜在利益&mdash;从广泛的科学数据中产生知识，为各类技术创新铺平道路，这些技术创新从个性化机器到处理和避免气候变化的影响包罗万象(Muggleton, 2006)。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">数字地球、数字城市、数字电视、数字图书馆、数字地图&hellip;&hellip;，不仅仅是时髦的词汇，而是现代知识创新、知识转移和知识传播信息时代的形象表达。在科学诸多领域中，生命科学所具有的信息量几乎是无限的，并且依然保持着指数式的增长方式。生命科学中最基本的科学问题是物种问题，植物物种的研究决定性地影响着从宏观的全球生态系统至微观领域的生命DNA分子构造等全部研究内容，更与国家目标中的农业、能源、信息、环境、人口与健康，以及可持续发展等问题的研究和解决直接相关。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">通过几个世纪的研究积累，全世界现已认知有花植物物种数目约22万~40万种(Govaerts, 2001,2003; Groombridge and Jenkins, 2002; Kier et al., 2009; Scotland and Wortley,2003; Tangley, 1997; Thorne, 2002)；我国现已描述和认知的植物物种约3万余种(Yang et al.,2005)，占世界已知物种总数的10%左右。植物物种是最基本和最重要的植物自然科技资源。物种及其存在凭证的重要原始材料是保藏在标本馆中的植物标本、植物园栽培的活植物、自然保护区和原始林区等自然植被中存在的物种。据粗略估计我国数百个标本馆共保存植物标本约1千7百万份(付立国等，1993)，涵盖中国全部植物物种和世界物种约5万种；各地植物园不重复计算，引种栽培我国约60%的野生植物约2万种，引种国外物种约5000种。这些植物物种、标本和活植物是我国植物自然科技资源中最重要的原始性材料。国际上近年来把基于高科技方法保存的植物器官（种子）、营养体和蛋白质和DNA大分子材料等，也都归于植物自然科技资源保护、研究和利用的热点范畴。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">目前，植物自然科技资源的研究管理已经进入崭新的迅猛发展年代，随着宏观、微观生物学实验观测手段的改善，引起了生物数据和信息的&ldquo;爆炸&rdquo;式增长。传统的信息管理、处理方式已显得力不从心。引入信息学及计算机科学的最新技术和成果，成为生物学家驾驭庞大数据信息的唯一选择。近年来信息技术的发展，例如大容量电子存储媒介、因特网、分布式数据库技术和开放性数据共享政策，如大范围的数字化工作、数据对公共普通用户的开放性使用，为生物多样性信息的产生、维持、传播和使用带来了革命性的发展(Bisby, 2000; Bisby et al., 2002; Brent and Bruck,2006; Causey et al., 2004; Edwards et al., 2000; Kagan, 2009; Krishtalka andHumphrey, 2000; Krishtalka et al., 2002; Oliver et al., 2000; Paton, 2009;Smith et al., 2000)。由于大量研究实践活动的涌现，生物学家和计算机专家的积极合作和努力，科学家们意识到需要有一个新的研究领域来界定这些科研人员积极的研究活动，明确他们的研究目标、内容、工作方法，对这些研究活动的将来做出科学地规划和设计，并且合理评价这些科研活动对社会的贡献和价值。因此，科学家们开始通过会议摘要、口头报告、个人博客、文章等多种形式来讨论相关的问题，并最终使用&ldquo;生物多样性信息学&rdquo;(BiodiversityInformatics：简称BI)这个词来界定这一活跃而蓬勃生长的新研究领域(Canhos et al., 2004; Cotter and Bauldock, 2000;Godfray, 2002; Godfray, 2007; Godfray et al., 2007; Graham et al., 2004a;Guralnick and Hill, 2009; Johnson, 2007; Kagan, 2009; Lane et al., 2000; Page,2008; Paton, 2009; Sarkar, 2009a; Sarkar, 2007, 2009b; Soberon and Peterson,2004)。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left"><strong>图</strong><strong>1.&nbsp;</strong><strong>生物多样性信息学和生物信息学的联系和区别</strong><strong>&nbsp;</strong></p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">科学家们认为，BI指利用信息技术，对生物有机体基础数据(Primarydata)的管理、算法的探究、分析和解释，尤其是在物种水平上的应用(Berendsohn and Geoffroy, 2007; Johnson, 2007; Soberonand Peterson, 2004)。因此，它涉及到对信息的收集、存储、提交、检索和分析，它主要关注单个有机体、居群和分类群以及它们的相互关系。它的信息内容覆盖了系统学、进化生物学、居群生物学、行为科学，以及从传粉生物学到寄生病和植物社会学等的大生态等领域。</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px" align="left">如同其它信息学科的研究方法一样，作为信息学的一个分支，BI依赖计算机技术和信息学的原则来处理异质性数据的管理和应用。我们可以应用信息学的普遍原则和技巧来处理生物多样性基础信息，但是我们也面临思考一些创造性的方法来解决生物多样性领域信息化的特殊性问题。例如：如何在信息系统中对生物有机体名称和分类概念间建立联系，从而完整记录分
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/02/12/e7949fe789a9e5a49ae6a0b7e680a7e4bfa1e681afe5ada6e7a094e7a9b6e8bf9be5b195/'>http://Apiaceae.github.io/blog/2010/02/12/e7949fe789a9e5a49ae6a0b7e680a7e4bfa1e681afe5ada6e7a094e7a9b6e8bf9be5b195/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/02/11/aspnet-how-to-doe7b3bbe58897e69687e7aba0e6b187e680bb/">ASP.NET How to Do系列文章汇总</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-11T00:00:00+08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><span class="Apple-style-span" style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px"><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">1、如何在ASP.NET MVC中利用JQuery TreeView</h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both"><a style="color: navy; text-decoration: none" href="http://www.matthidinger.com/archive/2009/02/08/asp.net-mvc-recursive-treeview-helper.aspx" title="http://www.matthidinger.com/archive/2009/02/08/asp.net-mvc-recursive-treeview-helper.aspx">http://www.matthidinger.com/archive/2009/02/08/asp.net-mvc-recursive-treeview-helper.aspx</a></p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">2、ASP.NET MVC: Using RESTful Architecture</h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both"><a style="color: navy; text-decoration: none" href="http://blog.wekeroad.com/2007/12/06/aspnet-mvc-using-restful-architecture/" title="http://blog.wekeroad.com/2007/12/06/aspnet-mvc-using-restful-architecture/">http://blog.wekeroad.com/2007/12/06/aspnet-mvc-using-restful-architecture/</a></p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">3、<a style="color: navy; text-decoration: none" href="http://www.superexpert.com/blog/archive/2009/03/03/chapter-6-understanding-html-helpers.aspx">Understanding HTML Helpers</a></h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">4、<a style="color: navy; text-decoration: none" href="http://stephenwalther.com/blog/archive/2008/08/24/asp-net-mvc-tip-37-create-an-auto-complete-text-field.aspx">ASP.NET MVC Tip #37 &ndash; Create an Auto-Complete Text Field</a></h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">5、<a style="color: navy; text-decoration: none" href="http://www.cnblogs.com/lxinxuan/archive/2008/04/16/1156683.html">使用Asp.net mvc + Linq + mvc_scaffold_gen_setup.exe 生成一个完整的家庭帐册大管家程序</a></h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><h2 style="margin-top: 10px; margin-bottom: 3px; font-size: 18px">6、Autocompletion Textbox in MVC Using jQuery</h2><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both"><a style="color: navy; text-decoration: none" href="http://blogs.msdn.com/miah/archive/2008/11/13/autocompletion-textbox-in-mvc-using-jquery.aspx" title="http://blogs.msdn.com/miah/archive/2008/11/13/autocompletion-textbox-in-mvc-using-jquery.aspx">http://blogs.msdn.com/miah/archive/2008/11/13/autocompletion-textbox-in-mvc-using-jquery.aspx</a></p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: auto; text-indent: 0px; clear: both">&nbsp;</p><p style="font-size: 13px; line-height: 19px; margin-top: 5px; margin-right: auto; margin-bottom: 5px; margin-left: 
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/02/11/aspnet-how-to-doe7b3bbe58897e69687e7aba0e6b187e680bb/'>http://Apiaceae.github.io/blog/2010/02/11/aspnet-how-to-doe7b3bbe58897e69687e7aba0e6b187e680bb/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/31/e8bdbbe9878fe7baa7e79a84rubye58d9ae5aea2thoth/">轻量级的Ruby博客Thoth</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-31T00:00:00+08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/Blogs/images/2010/1/2010-01-31_2302.png" alt="" /></p><p><a rel="blog ruby" href="http://wiki.github.com/rgrove/thoth/" title="ruby blog Thoth">http://wiki.github.com/rgrove/thoth/</a></p><p>&nbsp;</p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/01/31/e8bdbbe9878fe7baa7e79a84rubye58d9ae5aea2thoth/'>http://Apiaceae.github.io/blog/2010/01/31/e8bdbbe9878fe7baa7e79a84rubye58d9ae5aea2thoth/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -501,6 +544,12 @@
     <section>
   <h1>About Me</h1>
   <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -523,7 +572,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -531,10 +580,15 @@
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -555,10 +609,10 @@
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>

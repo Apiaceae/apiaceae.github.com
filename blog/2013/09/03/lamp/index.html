@@ -30,6 +30,26 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
   
 
 </head>
@@ -717,6 +737,12 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
   <p>A little something about me.</p>
 </section>
 <section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -737,7 +763,7 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -745,10 +771,15 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -769,10 +800,10 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>

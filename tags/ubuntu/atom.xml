@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: ubuntu | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/ubuntu/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T13:24:13+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu为drupal7配置Apache Solr详细步骤]]></title>
+    <link href="http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"/>
+    <updated>2012-07-18T15:21:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2012/07/18/ubuntu为drupal7配置apache-solr详细步骤</id>
+    <content type="html"><![CDATA[<h3>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h3>
+
+<p><strong>1). 安装Java SDK</strong></p>
+
+<p>,,,
+yum install java-1.6*
+,,,</p>
+
+<p><strong>2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下来后，放到非web目录的文件夹下面，我放在了/home/ruby 目录下面，并重命名为solr</strong></p>
+
+<p>&lsquo;&rsquo;&lsquo;
+cd /home/ruby
+&rsquo;&lsquo;&rsquo;
+wget <a title="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" target="_blank"><a href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz">http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz</a></a> <br /><br />tar xvfz apache-solr-1.4.1.tgz<br /><br />mv apache-solr-1.4.1 solr</code></div></p>
+
+<p>3).下载Drupal的Apache Solr(<a title="http://drupal.org/project/ApacheSolr" href="http://drupal.org/project/ApacheSolr" target="_blank">http://drupal.org/project/ApacheSolr</a>)模块, 如果你有drush,用drush会方便的</p>
+
+
+<p>多,如果没有drush,就按常规方便，下载解压缩，放到sites/all/modules目录。并下载php的solr库（</p>
+
+
+<p>http://code.google.com/p/solr-php-client/），放到sites/all/modules/apachesolr根目录,最终结构</p>
+
+
+<p>为:/sites/all/modules/apachesolr/SolrPhpClient。</p>
+
+
+<div class="codeblock"><code>cd /var/www/html/yourdrupal_root<br />drush dl apachesolr<br />cd sites/all/modules/apachesolr<br />wget <a title="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" href="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" target="_blank">http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09...</a> <br />unzip SolrPhpClient.r22.2009-11-09.zip </code></div>
+
+
+<p>4).根据apachesolr模块里面的说明，复制apachesolr模块里面的schema.xml，solrconfig.xml</p>
+
+
+<p>到/home/ruby/solr/example/solr目录.</p>
+
+
+<div class="codeblock"><code>cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/schema.xml /home/ruby/solr/example/solr/conf<br />cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/solrconfig.xml /home/ruby/solr/example/solr/conf</code></div>
+
+
+<p>5).测试一下Apache Solr是否工作了？</p>
+
+
+<div class="codeblock"><code>cd /home/ruby/solr/example<br />java -jar start.jar</code></div>
+
+
+<p><br />在浏览器中输入http://192.168.1.110:8983/solr/admin/ （192.168.1.110换成你自已的地址）,如果你顺利看到</p>
+
+
+<p>如下界面，说明你就成功了！</p>
+
+
+<p><img src="http://drupalsh.cn/userfiles/solr.png" alt="" /></p>
+
+
+<p>6).按照常规模式启用drupal的Apache Solr模块,OK,到后台配制一下(admin/settings/apachesolr)，测试是否成</p>
+
+
+<p>功,如果不出意外，你就会看到本文开头的图片效果.</p>
+
+
+<p>续&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;<br /> 你肯定不想每次都在命令行窗口打开solr服务，好，让我们把solr变成系统服务</p>
+
+
+<p>7).创建系统启动服务功能</p>
+
+
+<div class="codeblock"><code>nano -w /etc/init.d/solr</code></div>
+
+
+<p>复制以下代码:</p>
+
+
+<div class="codeblock"><code>SOLR_DIR="/home/ruby/solr/example"&nbsp; # 换成你的安装路径<br />JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar"<br />LOG_FILE="/var/log/solr.log"<br />JAVA="/usr/bin/java"<br /> <br />case $1 in<br />&nbsp;&nbsp;&nbsp; start)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Starting Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS 2&gt; $LOG_FILE &amp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; stop)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Stopping Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS --stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; restart)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 start<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; *)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Usage: $0 {start|stop|restart}" &gt;&amp;2<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />esac</code></div>
+
+
+<p>保存退出,授权</p>
+
+
+<div class="codeblock"><code>chmod 755 /etc/init.d/solr</code></div>
+
+
+<p>现在，你可以用以下linux常用命令去启动apache solr了</p>
+
+
+<div class="codeblock"><code>service solr start<br />service solr stop<br />service solr restart</code></div>
+
+
+<p>如果需要，还可以加上开机自动开启apache solr</p>
+
+
+<div class="codeblock"><code>sudo chkconfig --add solr</code></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu解压命令全览]]></title>
+    <link href="http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/"/>
+    <updated>2012-07-17T13:25:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2012/07/17/ubuntu解压命令全览</id>
+    <content type="html"><![CDATA[<p><strong>.tar</strong></p>
+
+<p>解包：tar xvf FileName.tar</p>
+
+<p>打包：tar cvf FileName.tar DirName</p>
+
+<p>(注：tar是打包，不是压缩！）</p>
+
+<p><strong>.gz</strong></p>
+
+<p>解压1：gunzip FileName.gz
+解压2：gzip -d FileName.gz<br /> 压缩：gzip FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.gz 和 .tgz</span></span></strong><br /> 解压：tar zxvf FileName.tar.gz<br /> 压缩：tar zcvf FileName.tar.gz DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz2</span></span></strong><br /> 解压1：bzip2 -d FileName.bz2<br /> 解压2：bunzip2 FileName.bz2<br /> 压缩： bzip2 -z FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz2</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz2<br /> 压缩：tar jcvf FileName.tar.bz2 DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz</span></span></strong><br /> 解压1：bzip2 -d FileName.bz<br /> 解压2：bunzip2 FileName.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.Z</span></span></strong><br /> 解压：uncompress FileName.Z<br /> 压缩：compress FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.Z</span></span></strong><br /> 解压：tar Zxvf FileName.tar.Z<br /> 压缩：tar Zcvf FileName.tar.Z DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.zip</span></span></strong><br /> 解压：unzip FileName.zip<br /> 压缩：zip FileName.zip DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rar</span></span></strong><br /> 解压：rar x FileName.rar<br /> 压缩：rar a FileName.rar DirName<br /> <span style="color: #008000;"><br /> rar请到：<a style="color: #003793;" href="http://www.rarsoft.com/download.htm" target="_blank"><span style="color: #003793;"><a href="http://www.rarsoft.com/download.htm">http://www.rarsoft.com/download.htm</a></span></a> 下载！<br /> 解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp rar_static /usr/bin/rar</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.lha</span></span></strong><br /> 解压：lha -e FileName.lha<br /> 压缩：lha -a FileName.lha FileName<br /> <span style="color: #008000;"><br /> lha请到：<a style="color: #003793;" href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/" target="_blank"><span style="color: #003793;"><a href="http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/</a></span></a>下载！<br /> &gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp lha /usr/bin/</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rpm</span></span></strong><br /> 解包：rpm2cpio FileName.rpm | cpio -div<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.deb</span></span></strong><br /> 解包：ar p FileName.deb data.tar.gz | tar zxf &ndash;<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</span></span></strong><br /> 解压：sEx x FileName.<em><br /> 压缩：sEx a FileName.</em> FileName</p></p>
+
+<p>文章转自：http://blog.csdn.net/zad522/article/details/2770446</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ubuntu12.04配置静态IP及设置DNS]]></title>
+    <link href="http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/"/>
+    <updated>2012-07-17T00:00:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204配置静态ip及设置dns</id>
+    <content type="html"><![CDATA[<h1>静态IP配置方法：</h1>
+
+<p>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</p>
+
+<p>,,,`sudo gedit /etc/network/interfaces</p>
+
+<p>auto eth0</p>
+
+<p>iface eth0 inet static   //指定为static</p>
+
+<p>address 192.168.1.103   //IP地址</p>
+
+<p>gateway 192.168.1.1   //网关</p>
+
+<p>netmask 255.255.255.0   //子网掩码</p>
+
+<p>network 192.168.1.0   //这个是网络？</p>
+
+<p>broadcast 192.168.1.255   //广播`</p>
+
+<p>然后重启网络设备</p>
+
+<p>sudo /etc/init.d/networking restart</p>
+
+<p> </p>
+
+<p>设置DNS：</p>
+
+<p>Ubuntu设置DNS，只要将DNS地址写入/ect/resolv.conf文件即可，但在12.04
+desktop版中，重启系统之后，静态IP设置生效，但无法链接外网，/etc/resole.conf文件的DNS地址也覆盖掉了。</p>
+
+<p>解决办法，在/etc/resol<a href="http://biancheng.dnbcw.info/vc/">vc</a>onf/resolv.conf.d/目录下创建tail文件，写入</p>
+
+<p>nameserver 202.96.134.133</p>
+
+<p>nameserver 202.96.128.68</p>
+
+<p>然后重启，DNS生效。</p>
+
+<p> </p>
+
+<p>参考链接：<a href="http://ask">http://ask</a><a href="http://biancheng.dnbcw.info/ubuntu/">ubuntu</a>.com/questions/130452/how-do-i-add-a-dns-server-via-resolv-conf</p>
+
+<p> </p>
+
+<h1>Ubuntu12.04的一些源列表</h1>
+
+<p> </p>
+
+<p> </p>
+
+<p>\</p>
+
+<p> </p>
+
+<p>安装好ubuntu
+12.04之后，可以联网之后，马上要做的最重要的事情之一就是配置更新源列表，这样以后安装更新或者软件才可以获得较好的下载速度。\
+ 首先，备份一下原来的源地址列表文件\
+ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old\
+ 然后进行修改\
+ sudo gedit /etc/apt/sources.list\
+ 可以在里面添加资源地址，我是直接覆盖掉原来的。\
+ 添加好后保存，再输入 sudo apt-get update
+就可以更新了，等着慢慢下载东西吧。我虽然选了一个网易的和一个中科大的源，无奈那天网速不给力，还是花了差不多两个小时。\</p>
+
+<p>下面是网上找到的一些较好的源，有大型网站的，也有教育网的，可以根据自己的情况添加两三个即可。\
+ #网易的源（速度很快）\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ #搜狐的源\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ deb-src <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ #台湾源\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe
+main multiverse restricted\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe
+main multiverse restricted</p>
+
+<p>#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted</p>
+
+<p>#mirror.lupaworld.com的源，速度很快\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise main restricted
+universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-security main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-updates main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/ubuntu-cn/">http://mirror.lupaworld.com/ubuntu/ubuntu-cn/</a> precise main
+restricted universe multiverse</p>
+
+<p>#ubuntu.cn99.com源（推荐）:\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu-cn/">http://ubuntu.cn99.com/ubuntu-cn/</a> precise main restricted universe
+multiverse</p>
+
+<p>#教育网源\
+ #电子科技大学\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#中国科技大学\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#北京理工大学\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main
+multiverse restricted universe</p>
+
+<p>#兰州大学\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu-cn/">ftp://mirror.lzu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe</p>
+
+<p>#上海交通大学\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu-cn/">http://ftp.sjtu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe</p>
+
+<p>\</p>
+
+<p>本文链接地址: <a href="http://www.maybe520.net/blog/a/424.html" title="ubuntu12.04 更新源地址列表">http://www.maybe520.net/blog/a/424.html</a></p>
+]]></content>
+  </entry>
+  
+</feed>

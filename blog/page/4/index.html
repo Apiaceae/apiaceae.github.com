@@ -9,7 +9,11 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="&#160; 两个月了 &#160; original link: http://Apiaceae.github.io/blog/2011/01/24/e5b08fe5aeb6e4bc99e6bba1e69c88e4ba86e79c9fe8be9be88ba6/ &nbsp;written by &hellip;">
+  <meta name="description" content="物种数据文件的格式 R命令行操作
+&gt;library(maptools)
+&gt;testdata&lt;-read.csv(&#8220;/home/RData/vulgare.csv&#8221;, header=T)
+&gt;head(testata)
+然后如下图 分布图显示效果如下图 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +33,26 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -67,6 +91,262 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/04/05/e4bdbfe794a8re8bdafe4bbb6e58c85e7bb98e588b6e789a9e7a78de59cb0e79086e58886e5b883e59bbe/">使用R软件包绘制物种地理分布图</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-05T00:00:00+08:00" pubdate data-updated="true">Apr 5<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="font-size: medium;">物种数据文件的格式</span></p>
+<p><br /><img src="/images/2011/4/screenshot3.png" alt="" /></p>
+<p><span style="font-size: medium;">R命令行操作</span></p>
+<p>&gt;library(maptools)</p>
+<p>&gt;testdata&lt;-read.csv(&#8220;/home/RData/vulgare.csv&#8221;, header=T)</p>
+<p>&gt;head(testata)</p>
+<p>然后如下图</p>
+<p><img src="/images/2011/4/screenshot4.png" alt="" /></p>
+<p><span style="font-size: medium;">分布图显示效果如下图</span></p>
+<p><img src="/images/2011/4/screenshot2.png" alt="" /></p>
+<p>呵呵有一个分布记录错误了，跑到海洋里面去了<img title="Embarassed" src="http://blog.cnpc.ac.cn/editors/tiny_mce_3_3_9_2/plugins/emotions/img/smiley-embarassed.gif" border="0" alt="Embarassed" /></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2011/04/05/e4bdbfe794a8re8bdafe4bbb6e58c85e7bb98e588b6e789a9e7a78de59cb0e79086e58886e5b883e59bbe/'>http://Apiaceae.github.io/blog/2011/04/05/e4bdbfe794a8re8bdafe4bbb6e58c85e7bb98e588b6e789a9e7a78de59cb0e79086e58886e5b883e59bbe/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/30/mac-os-e7bc96e8af91e5ae89e8a385ruby-on-rails/">Mac OS 编译安装Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-30T00:00:00+08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="font-family: Arial, sans-serif, Helvetica, Tahoma; font-size: 12px; line-height: 18px;">看到在snow leopard上默认就安装好了rails，我只需gem update rails就可以了。&nbsp;<br />Mac OS X确实强大，但心里总觉得缺点什么，本着折腾的原则，看到rails3.0beta出来了，我准备重新编译安装一下。&nbsp;<br />说干就干，系统原先的就保留着不动。&nbsp;<br />第一步：设置shell路径，使/usr/local/bin能够先认识。打开终端输入&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=vi%20~%2F.profile"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">vi&nbsp;~/.profile&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<br />添加如下命令：&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=export%20PATH%3D%2Fusr%2Flocal%2Fbin%3A%2Fusr%2Flocal%2Fsbin%3A%2Fusr%2Flocal%2Fmysql%2Fbin%3A%24PATH"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">export&nbsp;PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:</span><span class="variable" style="color: #aa7700; font-weight: bold;">$PATH</span><span style="color: black;">&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<br />使用如下命令使之生效：&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=source%20~%2F.profile"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">source&nbsp;~/.profile&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<br />最后再检验一下PATH变量&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=echo%20%24PATH"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">echo&nbsp;</span><span class="variable" style="color: #aa7700; font-weight: bold;">$PATH</span><span style="color: black;">&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<br />这样的话/usr/local/bin就会在/usr/bin前面，这点很重要。&nbsp;<br /><br />第二步：下载Ruby和 RubyGems&nbsp;<br />先建个目录用来存放ruby和rubygems源码&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=mkdir%20~%2Fsrc%0Acd%20~%2Fsrc"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">mkdir&nbsp;~/src&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;~/src&nbsp;&nbsp;</span></li>
+</ol></div>
+<br />从网站上下载源码&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=curl%20-O%20ftp%3A%2F%2Fftp.ruby-lang.org%2Fpub%2Fruby%2F1.8%2Fruby-1.8.7-p174.tar.gz%0Acurl%20-O%20http%3A%2F%2Ffiles.rubyforge.vm.bytemark.co.uk%2Frubygems%2Frubygems-1.3.6.tgz"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">curl&nbsp;-O&nbsp;ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p174.tar.gz&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">curl&nbsp;-O&nbsp;http://files.rubyforge.vm.bytemark.co.uk/rubygems/rubygems-1.3.6.tgz&nbsp;&nbsp;</span></li>
+</ol></div>
+<br /><br />第三步：编译和安装&nbsp;<br />首先是Ruby&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=tar%20xzvf%20ruby-1.8.7-p174.tar.gz%0Acd%20ruby-1.8.7-p174%0A.%2Fconfigure%20--enable-shared%20--enable-pthread%20CFLAGS%3D-D_XOPEN_SOURCE%3D1%0Amake%0Asudo%20make%20install%0Acd%20.."></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">tar&nbsp;xzvf&nbsp;ruby-1.8.7-p174.tar.gz&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;ruby-1.8.7-p174&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">./configure&nbsp;&#8211;enable-shared&nbsp;&#8211;enable-pthread&nbsp;CFLAGS=-D_XOPEN_SOURCE=1&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">make&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">sudo&nbsp;make&nbsp;install&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;..&nbsp;&nbsp;</span></li>
+</ol></div>
+<br />安装好使用which ruby命令你会发现/usr/local/bin/ruby&nbsp;<br />使用ruby -v,你会发现ruby 1.8.7 (2009-06-12 patchlevel 174) [i686-darwin10.2.0]&nbsp;<br />然后是RubyGems,&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=tar%20xzvf%20rubygems-1.3.6.tgz%0Acd%20rubygems-1.3.6%0Asudo%20%2Fusr%2Flocal%2Fbin%2Fruby%20setup.rb%0Acd%20.."></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">tar&nbsp;xzvf&nbsp;rubygems-1.3.6.tgz&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;rubygems-1.3.6&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">sudo&nbsp;/usr/local/bin/ruby&nbsp;setup.rb&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;..&nbsp;&nbsp;</span></li>
+</ol></div>
+<br />安装rails3.0beta&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=sudo%20gem%20install%20tzinfo%20builder%20i18n%20memcache-client%20rack%20%5C%0A%20%09%09rake%20rack-test%20erubis%20mail%20text-format%20%5C%0A%20%09%09thor%20bundler%0Asudo%20gem%20install%20rack-mount%20-v%3D0.4%0Asudo%20gem%20install%20rails%20%E2%80%93pre"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">sudo&nbsp;gem&nbsp;install&nbsp;tzinfo&nbsp;builder&nbsp;i18n&nbsp;memcache-client&nbsp;rack&nbsp;\&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rake&nbsp;rack-test&nbsp;erubis&nbsp;mail&nbsp;text-format&nbsp;\&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thor&nbsp;bundler&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">sudo&nbsp;gem&nbsp;install&nbsp;rack-mount&nbsp;-v=0.4&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">sudo&nbsp;gem&nbsp;install&nbsp;rails&nbsp;&ndash;pre&nbsp;&nbsp;</span></li>
+</ol></div>
+<br />装好后rails blog,失败，漏装了sqlite3-ruby&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=sudo%20gem%20install%20sqlite3-ruby"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">sudo&nbsp;gem&nbsp;install&nbsp;sqlite3-ruby&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<br />装好后，再测试一下&nbsp;<br />
+<div class="dp-highlighter" style="font-family: Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Consolas, 'Courier New', monospace; font-size: 12px; background-color: transparent; width: 694px; overflow-x: auto; overflow-y: auto; margin-left: 9px; word-break: break-all; word-wrap: break-word; padding: 1px;">
+<div class="bar">
+<div class="tools" style="text-align: left; color: black; font-weight: bold; padding: 3px; margin: 0px;">Ruby代码&nbsp;<embed type="application/x-shockwave-flash" width="14" height="15" src="http://damezc.javaeye.com/javascripts/syntaxhighlighter/clipboard_new.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" allowscriptaccess="always" quality="high" flashvars="clipboard=rails%20blog%0Acd%20blog%0Arails%20server"></embed></div>
+</div>
+<ol class="dp-rb" style="font-size: 1em; line-height: 1.4em; margin-top: 0px; margin-right: 0px; margin-bottom: 1px; margin-left: 0px; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; list-style-type: decimal; list-style-position: initial; list-style-image: initial; background-color: #ffffff; color: #2b91af; border: 1px solid #d1d7dc;">
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;"><span style="color: black;">rails&nbsp;blog&nbsp;&nbsp;</span></span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">cd&nbsp;blog&nbsp;&nbsp;</span></li>
+<li style="font-size: 1em; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 38px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 10px; border-left-width: 1px; border-left-style: solid; border-left-color: #d1d7dc; background-color: #fafafa; line-height: 18px;"><span style="color: black;">rails&nbsp;server&nbsp;&nbsp;</span></li>
+</ol></div>
+</span></p>
+<p><br />打开Safari访问http://localhost:3000/成功！</p>
+<p>原文地址：http://damezc.javaeye.com/blog/627937</p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2011/01/30/mac-os-e7bc96e8af91e5ae89e8a385ruby-on-rails/'>http://Apiaceae.github.io/blog/2011/01/30/mac-os-e7bc96e8af91e5ae89e8a385ruby-on-rails/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/28/e9858de7bdaee4b8aae680a7e58c96e79a84gedite7bc96e7a88be78eafe5a283/">配置个性化的GEdit编程环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-28T00:00:00+08:00" pubdate data-updated="true">Jan 28<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用gEdit搭配terminal来写程序也有一段时间了，但一直当它是windows下的notepad，没有好好熟悉下它，今天无意中发现原来gEdit也可以打造一个不错的编程环境。这里对相关的资料收集总结了一下，与大家共享。<br /> gEdit是GNOME桌面环境中默认的文本编辑器，它简单易用，对中文支持良好，支持多种字符编码，同时具有开放的插件支持特性。通过安装插件，作一些 简单的设置，gEdit就可以做为一个简洁的编程环境。在我的ubuntu 8.04下，默认情况只安装了gedit包，还有以下几个插件：</p>
+<div class="codetitle"><strong>代码:</strong></div>
+<div class="codecontent">&nbsp; &nbsp;Change case: Changes the case of selected text. <br />&nbsp;  &nbsp;Document Statistics: Analyses the current document and reports the  number of words, lines, characters and non-space characters in it. <br />&nbsp; &nbsp;External tools: Execute external commands and shell scripts. (More) <br />&nbsp;  &nbsp;File Browser: A file browser plugin allowing to easily access your  filesystem (includes remote mounts, creating new files/dirs, monitor  dirs for changes, etc) (More) <br />&nbsp; &nbsp;Indent: Indents or un-indents selected lines. <br />&nbsp; &nbsp;Modelines: Emacs, Kate and Vim-style modelines support for gedit. <br />&nbsp; &nbsp;Python console: Interactive python console standing in the bottom panel. <br />&nbsp; &nbsp;Snippets: Insert often used pieces of text in a fast way. (More) <br />&nbsp; &nbsp;Sort: Sorts a document or selected text. <br />&nbsp; &nbsp;Spell: Checks the spelling of the current document. <br />&nbsp; &nbsp;Tag list: Provides a method to easily insert into a document commonly used tags/strings without having to type them. <br />&nbsp; &nbsp;Insert Date/Time: Inserts current date and time at the cursor position.</div>
+<p><br /> 就编程而言，我觉得比较有用的有External  tools(外部工具)，通过它在菜单上集成shell命令来编译运行程序(由于不是交互性的shell，所以不便用于debug)；File  Browser(文件浏览器)，提供一个多文件(工程)的视图，还有可以编辑远程文件，虽然后者我很少用到；Snippets(片断)，提供一种代码模板 以快速输入，如我在snippets-&gt;C++下定义了如下for循环:</p>
+<div class="codetitle"><strong>代码:</strong></div>
+<div class="codecontent">&nbsp; &nbsp;&nbsp; &nbsp;for( $1 ; $2 ; ${3:++ix} )<br />&nbsp; &nbsp;&nbsp; &nbsp;{<br />&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;$4<br />&nbsp; &nbsp;&nbsp; &nbsp;}<br />&nbsp; &nbsp;&nbsp; &nbsp;$0</div>
+<p><br /> 并且其Tab触发器设置为forlp＋tab(表示输入forlp，然后按下tab键)。之后在代码中每当我要输入for循环，在C++的源文件中，只需 输入forlp，然后按下tab键，forlp+tab就会自动扩展成上面的for循环，光标会处于$1处，此时可以直接输入for的初始条件，然后按一 下tab，光标会跳到$2处，再按tab，跳到$3处，如此类推。$3处设置了默认值++ix，如果直接按tab跳过，就为默认值++ix，如果输入 ix++之后再按tab跳到$4，默认值就会被ix++覆盖。$0为此模块最后跳转到的位置。<br /> 此外Tag  list对编写网页等多tag源文件比较有用，Indent方便我们对代码进行缩进与取消缩进。默认安装好系统后，gedit能通过后缀正确识别到不同语 言的源代码，其语法高亮也做得比较好。但是要作为一个编程环境还有很多不方便的地方，此时就要安装另外一些插件来完善其功能了，首先我们安装软件源中 gedit的plugin集，terminal下输入:</p>
+<div class="codetitle"><strong>代码:</strong></div>
+<div class="codecontent">&nbsp; &nbsp;&nbsp; &nbsp;$ sudo apt-get install gedit-plugins</div>
+<p><br /> 安装gedit-plugins。其中包括</p>
+<div class="codetitle"><strong>代码:</strong></div>
+<div class="codecontent">&nbsp; &nbsp;&nbsp; * Smart Spaces: Forget you&#8217;re not using tabulations.&nbsp; &nbsp;&lt;=== 智能空格<br />&nbsp;  &nbsp;&nbsp; * Embedded Terminal: Embed a terminal in the bottom pane.&nbsp; &nbsp;&lt;===  内嵌的terminal，应该是最有用的一个插件了，有了它，我们就可以不用上面External  tools来编译调试程序啦，而且也不用心烦在gedit与terminal之间来回切换了，不足之处是貌似只能有一个terminal，有时不够方便。<br />&nbsp; &nbsp;&nbsp; * Show/Hide Tabbar: Add a menu entry to show/hide the tabbar.&nbsp; &nbsp; &nbsp;&lt;=== 显示/隐藏标签栏<br />&nbsp; &nbsp;&nbsp; * Join/Split Lines: Join several lines or split long ones&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;=== 合并/分割行<br />&nbsp; &nbsp;&nbsp; * Color Picker: Pick a color from a dialog and insert its hexadecimal representation.&nbsp; &lt;=== 拾色器<br />&nbsp; &nbsp;&nbsp; * Draw Spaces: Draw Spaces and Tabs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;=== 特别显示空格与制表符<br />&nbsp; &nbsp;&nbsp; * Session Saver: Save and restore your working sessions&nbsp; &nbsp; &lt;=== 会话保存&nbsp; 不过貌似不怎么管用哦，&gt;3&lt;<br />&nbsp; &nbsp;&nbsp; * Code comment: Comment out or uncomment a selected block of code.&nbsp; &nbsp;&lt;=== 注释代码，这下要注释大片代码就方便了<br />&nbsp; &nbsp;&nbsp; * Bracket Completion: Automatically adds closing brackets.&nbsp; &nbsp; &nbsp;&lt;=== 自动的括号补全<br />&nbsp; &nbsp;&nbsp; * Character Map: Insert special characters just by clicking on them.&nbsp; &lt;=== 对特殊字符集映射，暂时对我而言没什么用</div>
+<p><br /> 安装好后将觉得有用的插件启用，不用的插件禁用掉。比起notepad已经好用了很多，但是还不够，要让gEdit变得更方便，登录gEdit的插件网站 http://live.gnome.org/Gedit/Plugins  ，选择你需要的插件啦。这里写下个人觉得写代码比较有用的几个插件，仅供参考：<br /> 1.Class Browser:显示代码中类，函数，宏等的大纲，类似于VC或eclipse的类视图，支持多种语言，但这个插件相对简单，另一个Symbol Browser貌似更强大，不过暂时我找不到下载。<br /> 2.单词自动补全，有多个word  completion的小插件，功能大同小异，都支持自动补全前文或所有打开的文件标签中已经出现过的单词，类似于visual  assist或eclipse的自动补全功能，不足在于暂时不支持根据不同语言提供不同的关键字自动补全<br /> 3.Full screen: 在打开文件的情况下将gEdit全屏，偶尔会用下。<br /> 4.Open terminal here: 在当前文件夹下打开新terminal，有了Embedded Terminal这个插件比较鸡肋了<br /> 5.session autosave: 记录上次退出gEdit时打开的文件，下次打开时重新打开这些文件，由于止面的Session Saver好像不能用，所以装了这个。打开多个相关文件时比较有用，退出后下次就不用一个个文件手动打开啦<br /> 6.Code Formatter：自动格式化<br /> 7.snap open:　输入文件名(支持正则表达式)查找并打开文件<br /> 8.vigedit: 支持vi快捷键<br /> 9.Tabs Extend： 扩展的标签功能支持<br /> gEdit的插件多用python来写，我们可以根据自己的偏好来修改编写，gEdit的插件网站上也有很多的插件，可以根据自己的需要酌情安装。这些插 件都放在~/.gnome2/gedit/plugins/目录下，如果没有此目录则创建一个，下载的插件可以直接放到此目录下。<br /> 很多人可能习惯去改变编辑器的配色(代码高亮，像定制vim或Emacs时常常做的那样)，使经常面对着电脑写代码的眼睛没那么累，在gEdit的菜单  [编辑]-&gt;[首选项]-&gt;[字体和颜色]  中，只有4种配色可选，此外通过GUI并不能具体定制配色。要DIY配色的话，我们可以从网上下载载配置文件，添加配色，或自己重新写一个。下面提供两个 配色文件下载网站：<br /> 1. <a class="postlink" href="http://github.com/mig/gedit-themes/tree/master">http://github.com/mig/gedit-themes/tree/master</a><br /> 2. <a class="postlink" href="http://live.gnome.org/GtkSourceView/StyleSchemes">http://live.gnome.org/GtkSourceView/StyleSchemes</a><br /> gEdit使用的是gtksourceview，我们将后缀为.xml的文件下载并放入<br /> 1. /usr/share/gtksourceview-2.0/styles   &lt;====  所有用户均可用<br /> or 2. ~/.gnome2/gedit/styles              &lt;====   只有你自己可用<br /> 重启一次gedit，就可以在[编辑]-&gt;[首选项]-&gt;[字体和颜色]选择喜欢的配色，也可以修改配色文件来DIY自己的Style.再定义一种好看的字体，对行号，备份时间等简单设置一下，整个编辑环境就相当个性，舒服啦。<br /> 虽然比不上vim,emacs的灵活，也比不上IDE的强大，但Gedit也是不错的一种工具。即使搭配了众多的插件，gEdit还是相当轻量的编辑器， 如你像我一样，用不习惯vim或Emacs，又不喜欢那些慢悠悠的IDE，那就试下系统默认安装的Gedit吧。附我的gEdit截图：</p>
+<div class="attachtitle">附件:</div>
+<div class="attachcontent"><a class="highslide  " href="http://forum.ubuntu.org.cn/download/file.php?id=57293&amp;sid=375a77a0f3e75e3c3edb576e3bee0441&amp;mode=view/my_gEdit.png"><img title="Click to enlarge" src="http://forum.ubuntu.org.cn/download/file.php?id=57293&amp;t=1&amp;sid=375a77a0f3e75e3c3edb576e3bee0441" alt="my_gEdit.png" /></a> <br /><span class="gensmall">my_gEdit.png [ 301.01 KiB | 被浏览 4616 次 ]</span><br /> <br /></div>
+<p><br /> <br /> 参考：<br /> <br /> 1. 把Gedit打造為Linux下的Textmate<br /> <a class="postlink" href="http://www.ubuntu-tw.org/modules/newbb/viewtopic.php?post_id=39747">http://www.ubuntu-tw.org/modules/newbb/ &#8230; t_id=39747</a><br /> 2. 磨快linux下免费的小刀－gedit<br /> <a class="postlink" href="http://ror-party.group.javaeye.com/group/blog/195702">http://ror-party.group.javaeye.com/group/blog/195702</a><br /> 3. 13 Gedit Plugins to Make It a More Useful Text Editor <br /> <a class="postlink" href="http://www.makeuseof.com/tag/top-plugins-to-extend-and-make-gedit-a-more-useful-text-editor-linux/">http://www.makeuseof.com/tag/top-plugin &#8230; 囗囗囗-linux/</a><br /> 4. 让linux下的gedit媲美textmate<br /> <a class="postlink" href="http://www.agatezone.cn/code/archives/62">http://www.agatezone.cn/code/archives/62</a><br /> 5. Pimp my Gedit (Was: Textmate for Linux)<br /> <a class="postlink" href="http://grigio.org/pimp_my_gedit_was_textmate_linux">http://grigio.org/pimp_my_gedit_was_textmate_linux</a><br /> <br /> 友情链接：<br /><br /> ljcs - gedit的c++提示插件<br /> <a class="postlink" href="https://forum.ubuntu.org.cn/viewtopic.php?f=88&amp;t=53912&amp;start=0">https://forum.ubuntu.org.cn/viewtopic.p &#8230; 12&amp;start=0</a></p>
+<p><br />原文地址：http://forum.ubuntu.org.cn/viewtopic.php?t=186178</p>
+<p>&nbsp;</p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2011/01/28/e9858de7bdaee4b8aae680a7e58c96e79a84gedite7bc96e7a88be78eafe5a283/'>http://Apiaceae.github.io/blog/2011/01/28/e9858de7bdaee4b8aae680a7e58c96e79a84gedite7bc96e7a88be78eafe5a283/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1096,129 +1376,6 @@ Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/">UBuntu中增加中文字符编码的方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>UBuntu中增加中文字符编码的方法</p>  <p>在Widnows XP下的FTP服务器中有中文文件名，今天使用ftp命令，发现不能显示中文文件名，只能显示????。于是到网上查了一些资料，也没有找到好的解决方法，只是有人说使用图形化的ftp工具 gftp，安装方法：sudo apt-get install gftp，另外还要增加中文字符编码zh_CN.GBK即可即可。在这里总结一下Ubuntu下增加中文字符编码的方法。   <br />一. Ubuntu默认的中文字符编码    <br />Ubuntu默认的中文字符编码为zh_CN.UTF-8，这个可以在/etc/environment中看到：    <br />sudo gedit /etc/environment    <br />可以看到如下内容：    <br />PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games&quot;    <br />LANG=&quot;zh_CN.UTF-8&quot;    <br />LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;    <br />第二行即是默认的中文字符编码。注：可以通过这里修改默认的中文编码字符，比如修改为：zh_CN.GBK。</p>  <p>二. 添加中文字符编码的方法   <br />1. 直接使用locale-gen    <br />在超级终端输入命令：    <br />sudo locale-gen zh_CN.GB18030    <br />即可完成中文字符集的添加。完成后可以转到/usr/lib/locale/，下面已经有一个zh_CN.gb18030文件夹；在超级终端输入命令：gedit /var/lib/locales/supported.d/local，可以发现文件中多了一行：zh_CN.GB18030 GB18030。说明添加成功。</p>  <p>2. 通过修改/var/lib/locales/supported.d/local文件   <br />在终端输入命令行    <br />sudo gedit /var/lib/locales/supported.d/local    <br />可以看到如下内容：    <br />zh_CN.UTF-8 UTF-8    <br />en_US.UTF-8 UTF-8    <br />在文件尾添加中文字符集    <br />zh_CN.GBK GBK    <br />保存后退出。在超级终端输入命令：    <br />sudo dpkg-reconfigure locales</p>  <p>Generating locales&#8230;   <br />en_AU.UTF-8&#8230; done    <br />en_BW.UTF-8&#8230; done    <br />en_CA.UTF-8&#8230; done    <br />en_DK.UTF-8&#8230; done    <br />en_GB.UTF-8&#8230; done    <br />en_HK.UTF-8&#8230; done    <br />en_IE.UTF-8&#8230; done    <br />en_IN.UTF-8&#8230; done    <br />en_NZ.UTF-8&#8230; done    <br />en_PH.UTF-8&#8230; done    <br />en_SG.UTF-8&#8230; done    <br />en_US.UTF-8&#8230; done    <br />en_ZA.UTF-8&#8230; done    <br />en_ZW.UTF-8&#8230; done    <br />zh_CN.GBK&#8230; done    <br />zh_CN.UTF-8&#8230; up-to-date    <br />zh_HK.UTF-8&#8230; done    <br />zh_SG.UTF-8&#8230; done    <br />zh_TW.UTF-8&#8230; done    <br />Generation complete.</p>  <p>即可生成相应文件：/usr/lib/locale/zh_CN.gbk/   <br />注：也可使用locale-gen</p>  <p>＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋   <br />Ubuntu 默认采用UTF8编码，可以方便global。但对中文支持，还不细致，即便默认采用中文安装，也并不会自动添加GB＊等支持，致使在Ubuntu下访问部分Win文本文件时，出现乱码。</p>  <p>I. 配置系统环境   <br />执行 sudo vi /var/lib/locales/supported.d/zh    <br />加入以下配置参数</p>  <p>zh_CN.GB18030 GB18030 (最新汉字编码字符集，向下兼容GBK,GB2312)   <br />zh_CN.GBK GBK (汉字扩展编码,向下兼容GB2312, 并包含BIG5全部汉字)    <br />zh_CN.GB2312 GB2312 (简化汉字编码字符集, 最近有客户要我们改进GB2312,太看得起我们了，我只能说:&quot;NO!&quot;)    <br />zh_CN.GB18031 GB18031 (数字键盘汉字编码输入,面向手持设备，我的Nokia3120从来就是发短信，接听电话，无法和PC通讯，就不用这个了。 maybe用Google Android SDK的大侠们需要这个)    <br />zh_HK.BIG5 BIG5 (繁体)    <br />zh_TW.BIG5 BIG5 (繁体)</p>  <p>然后执行 sudo locale-gen   <br />提示以下信息，成功了    <br />zh_CN.GB18030&#8230; done    <br />zh_CN.GBK&#8230; done    <br />&#8230;&#8230;</p>  <p>II. 系统环境支持GB*内码了，但用vi, gedit等工具访问文件还会继续乱码，需要针对不同的工具分别配置，使之自己检测支持范围内的编码   <br />e.g. vi    <br />执行 sudo vi /etc/vim/vimrc    <br />加入以下配置参数    <br />let &amp;termencoding=&amp;encoding    <br />set fileencodings=utf-8,gb18030,gbk,gb2312,big5</p>  <p>e.g. gedit   <br />执行 gconf-editor    <br />选择 apps/gedit-2/preferences/encodings    <br />找到 auto_detected 编辑，在Values中分别加入 GB18030,GBK,GB2312,BIG5</p>  <p>OK~</p>  <p>感谢lec的支援。   <br />enca工具很方便，用于检测文件内码（前提是系统环境支持，如，环境不支持BIG5，是无法检测的，这个晕了我许久）    <br />安装 sudo apt-get install enca    <br />用法 enca filename    <br />+++++++++++++++++++++++++++++++++++    <br />1.编辑/var/lib/locales/supported.d/*    <br />格式参考 /usr/share/i18n/SUPPORTED    <br />vi /var/lib/locales/supported.d/local    <br />vi /var/lib/locales/supported.d/zh    <br />vi /var/lib/locales/supported.d/en</p>  <p>如：   <br />more /var/lib/locales/supported.d/local    <br />zh_CN.UTF-8 UTF-8    <br />en_US.UTF-8 UTF-8    <br />zh_CN.GB18030 GB18030</p>  <p>2.生成locale(自动保存在/usr/lib/locale/中)   <br />locale-gen</p>  <p>3.修改locale   <br />vi /etc/environment    <br />把    <br />LANG=&quot;zh_CN.UTF-8&quot;    <br />改成    <br />LANG=&quot;zh_CN.GB18030&quot;</p>  <p>more /etc/environment   <br />PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:    <br />/usr/games&quot;    <br />#LANG=&quot;zh_CN.UTF-8&quot;    <br />LANG=&quot;zh_CN.GB18030&quot;    <br />LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;    <br />CLASSPATH=.:/usr/lib/jvm/java-1.5.0-sun/lib    <br />JAVA_HOME=/usr/lib/jvm/java-1.5.0-sun</p>  <p>4.重新启动或切换下运行级别,查看locale   <br />root@1006:~# locale    <br />LANG=zh_CN.GB18030    <br />LANGUAGE=zh_CN:zh:en_US:en    <br />LC_CTYPE=&quot;zh_CN.GB18030&quot;    <br />LC_NUMERIC=&quot;zh_CN.GB18030&quot;    <br />LC_TIME=&quot;zh_CN.GB18030&quot;    <br />LC_COLLATE=&quot;zh_CN.GB18030&quot;    <br />LC_MONETARY=&quot;zh_CN.GB18030&quot;    <br />LC_MESSAGES=&quot;zh_CN.GB18030&quot;    <br />LC_PAPER=&quot;zh_CN.GB18030&quot;    <br />LC_NAME=&quot;zh_CN.GB18030&quot;    <br />LC_ADDRESS=&quot;zh_CN.GB18030&quot;    <br />LC_TELEPHONE=&quot;zh_CN.GB18030&quot;    <br />LC_MEASUREMENT=&quot;zh_CN.GB18030&quot;    <br />LC_IDENTIFICATION=&quot;zh_CN.GB18030&quot;    <br />LC_ALL=</p>  <p>5.登陆界面的选项里   <br />默认语言也要相应改选成 zh_CN.GB18030,这样ubuntu就完全被中文化了，zh_CN.GB18030是目前最标准国家强制要求的中文编码</p>  <p>原文地址：<a title="http://ihipop.info/2009/06/85.html" href="http://ihipop.info/2009/06/85.html">http://ihipop.info/2009/06/85.html</a></p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/'>http://Apiaceae.github.io/blog/2010/12/21/ubuntue4b8ade5a29ee58aa0e4b8ade69687e5ad97e7aca6e7bc96e7a081e79a84e696b9e6b395/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/">关于百度的五大真相</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-21T00:00:00+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨天看到互动百科“<a href="http://w.hudong.com/99e19bbf8fde4055b75acb93270b9744.html">致百度CEO李彦宏的公开信</a>”，文章太酸、太长、太烂，如果说百度已经是人人喊打，那么互动百科其实也好不到哪里去，君不见维基百科仍然正襟危坐？</p>  <p>百度该不该骂？该！百度成为众矢之的离不开中文第一搜的地位，以至于骂百度已经成为媒体博取用户关注的一种手段，赚钱赚到这样让这么多人恶心的程度，也实属难得。如果中国互联网真的有所谓的全民公敌的话，少不了腾讯，也少不了百度。</p>  <p>很多人知道百度，不一定完完全全地了解百度，我这里就权且列五条关于百度的不良记录，权当笑谈。</p>  <p><strong>真相一：在搜索结果中放广告赚钱</strong></p>  <p>搜索竞价排名是我目前了解到的，多年来百度收入占比最大的一块业务，即便多次更名也丝毫没有影响到它的核心地位，如果没有竞价广告就没有今天的百度。</p>  <p>但是与Google这样的关键词搜索广告相比，百度的竞价排名是完全和搜索结果融为一体，如果不仔细分辨你几乎很难发现竞价广告的存在。这一做法引发了截然不同的两种声音，赞同者认为这样的广告会增加客户的实际成交量，而反对者则认为这增加了商家的广告成本和无效用户，百度最夸张的时候一页搜索结果几乎全是竞价排名，商家疯狂追捧的背后是各方利益的追逐。</p>  <p>但是最核心的问题，百度作为搜索引擎的首先服务目标是用户，广告只是服务用户的附带收益，而毫无底线的竞价排名影响到了用户的正常搜索，几度改革的竞价排名虽然尊重用户的口号很大，最终作出的让步却很小。</p>  <p><strong>真相二：大量的不道德案底</strong></p>  <p>百度最广为人知的污点，莫过于央视曝光的医药搜索广告，当时百度为一些不正规的医药产品提供竞价广告服务，导致大量用户利益受到损害。百度事后表示将会拿出诚意痛改前非，所以我们就看到李彦宏出现在了当年的央视春晚上。医药搜索广告事件，揭示的是百度作为一个广告商，在同时面对金钱和道德作出了不正确的选择。医药、钓鱼网站、骗子…各种各样的骗术借着百度广告的外衣大行其道，展现出的是百度作为中国互联网巨头的社会责任感。</p>  <p>百度竞价广为流传的一个说法是，很多百度代理会威胁客户：如果你不买竞价排名，那么你的网站排名会一落千丈，甚至收录被清零。空穴来风，未必无因，越来越多客户的曝光证明了这种做法的存在。百度当然可以推说是部分代理商的做法，自己完全不知情，将会对那些不良代理商进行严厉惩处。听听，这口吻多像相关部门的官方基调，最后拿临时工顶包了事。这种调整权重、调整收录的做法，我不相信百度完全不知情，百度高层完全清白，最可能的事他们故作不知、听之任之，然后面对大把大把的钞票乐。</p>  <p>最典型的案例是，京东、新蛋、卓越亚马逊等大量商业网站，都曾经购买自己网站名称的竞价广告，这不是白白给百度送钱吗？他们怕的是什么？其中的秘辛恐怕只有当事人能够了解。</p>  <p><strong>真相三：依靠人工而不是算法</strong></p>  <p>做互联网的、做技术的很多都习惯用Google而不是百度，因为百度总会猛地给你一个啼笑皆非的搜索结果，而Google的表现则要稳定得多，这种现象背后代表着两种截然不同的发展思路。百度相信人工，而Google更相信算法。</p>  <p>百度从一开始就是一个便于人工调教的搜索，你可以很方便给合作伙伴、自家产品增加流量，也可以很方便给竞争对手、不识相的客户降权甚至清零收录。当然也有很多人表示百度这样子是因为需要配合一套关键词过滤系统，但事实证明Google还没离开的时候搜索结果同样比百度优秀。</p>  <p>这就像是一个破烂的房子，不管你再努力去修修补补都不可能恢复如新，甚至修补的这个过程会加快它的死亡。有时候我们在想百度的搜索结果会不会变得更糟，在这样永无休止、毫无进展的步调下。要逆转胜，除非百度真的重新设计一套搜索引擎框架，但是这可能吗？至少现在我还没有看到这种趋势，百度的心思都放在如何抄袭新业务赚钱。</p>  <p><strong>真相四：员工很难获得成就感</strong></p>  <p>百度的员工会有成就感吗？这话我不敢乱说。但是百度的员工大多在做的几件事情：调整搜索结果、卖广告、抄袭产品。工作内容非正义或者对社会没有积极贡献，员工自然在心理上就会矮半头。他们无法像Google的员工一样，通过自己的努力去创造革命性的产品，进而改变世界。Google有了Android、Chrome，而回过头来看看百度，除了赚钱多一点点其实没什么变化，就连赚钱的套路都一模一样。</p>  <p>工作在这样一家公司，成就感从何而来？别人在通过技术改变世界的时候，他们却在通过技术修修补补。如果你是苹果的员工，如果你是Google的员工，甚至你是腾讯的员工，都可以大大方方相坐而谈，但是如果你是百度员工，虽然大家都仍然礼貌，但是表情、语气多少都会有一些异样，就像看到一个富二代作威作福一样。这无关员工，只是百度自己的问题。</p>  <p><strong>真相五：搜索以外很少有建树</strong></p>  <p>有啊、百付宝停滞不前，好不容易做个百度文库却被指盗版温床，甚至还把用户送进了监狱，百度百科的无理抄袭受到来自维基百科的指责。最近麦田到了百度，成立社会化事业部做了百度说吧，烂得一塌糊涂，前段时间还学习51大玩美女诱惑。</p>  <p>百度的产品，除了贴吧、知道、百科这一类的社区产品，还有地图这样的工具型产品，其它几乎没有任何进展。拥有百度这样一个流量入口，这样的结果实在让人差异。对于百度最好的祝福：如果你不能好好地创造，那就认真地抄袭吧，就像腾讯正在做的那样。</p>  <p>——————分割线——————</p>  <p>互联网完美继承了老祖宗的那套东西，勾心斗角、口蜜腹剑、损人利己、落井下石，百度也不外如是。像百度这样的公司还有太多，黑着心思玩那些恶心手段其实更容易成功，而那些纯技术、产品驱动的公司最后反倒会落得凄惨无比的下场。这是值得我们警醒的事情，这也是为什么大部分中国用户不信任中国互联网公司，因为在这样的产业环境下要独善其身实在太难。</p>  <p>百度病了，但它只是中国互联网的一个缩影，相比之下中国互联网的孱弱更值得我们思考。除了依靠巨大人口基数制造出的虚假繁荣，我们究竟还有多少拿得出手的互联网公司和产品，有多少互联网公司会迫于形势变成另一个百度。 </p>  <p>原文地址：<a title="http://www.xjp.cc/2010-log/12/five-facts-baidu.html" href="http://www.xjp.cc/2010-log/12/five-facts-baidu.html">http://www.xjp.cc/2010-log/12/five-facts-baidu.html</a></p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/'>http://Apiaceae.github.io/blog/2010/12/21/e585b3e4ba8ee799bee5baa6e79a84e4ba94e5a4a7e79c9fe79bb8/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/">修改及查看mysql数据库的字符集</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-20T00:00:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Liunx下修改MySQL字符集：</strong></p>  <p>1.查找MySQL的cnf文件的位置</p>  <p>find / -iname &#8216;*.cnf&#8217; -print</p>  <p>/usr/share/mysql/my-innodb-heavy-4G.cnf   <br />/usr/share/mysql/my-large.cnf    <br />/usr/share/mysql/my-small.cnf    <br />/usr/share/mysql/my-medium.cnf    <br />/usr/share/mysql/my-huge.cnf    <br />/usr/share/texmf/web2c/texmf.cnf    <br />/usr/share/texmf/web2c/mktex.cnf    <br />/usr/share/texmf/web2c/fmtutil.cnf    <br />/usr/share/texmf/tex/xmltex/xmltexfmtutil.cnf    <br />/usr/share/texmf/tex/jadetex/jadefmtutil.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-innodb-heavy-4G.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-large.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-small.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-medium.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-huge.cnf</p>  <p>2. 拷贝 small.cnf、my-medium.cnf、my-huge.cnf、my-innodb-heavy-4G.cnf其中的一个到/etc下，命名为my.cnf   <br />cp /usr/share/mysql/my-medium.cnf /etc/my.cnf</p>  <p>3. 修改my.cnf</p>  <p>vi /etc/my.cnf</p>  <p>在[client]下添加   <br />default-character-set=utf8</p>  <p>在[mysqld]下添加   <br />default-character-set=utf8</p>  <p>4.重新启动MySQL   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart    <br />Shutting down MySQL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />Starting MySQL.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />[root@bogon ~]# mysql -u root -p    <br />Enter password:    <br />Welcome to the MySQL monitor. Commands end with ; or \g.    <br />Your MySQL connection id is 1    <br />Server version: 5.1.22-rc-community-log MySQL Community Edition (GPL)</p>  <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the buffer.</p>  <p>5.查看字符集设置</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.02 sec)</p>  <p>mysql&gt; show variables like &#8216;character_set_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.02 sec)</p>  <p>mysql&gt;</p>  <p><strong>其他的一些设置方法：</strong></p>  <p><strong>修改数据库的字符集</strong>    <br />&#160;&#160; mysql&gt;use mydb</p>  <p>&#160;&#160; mysql&gt;alter database mydb character set utf-8;   <br /><strong>创建数据库指定数据库的字符集</strong></p>  <p>&#160;&#160; mysql&gt;create database mydb character set utf-8;</p>  <p><strong>通过配置文件修改:</strong></p>  <p>修改/var/lib/mysql/mydb/db.opt   <br />default-character-set=latin1    <br />default-collation=latin1_swedish_ci    <br />为    <br />default-character-set=utf8    <br />default-collation=utf8_general_ci</p>  <p>重起MySQL:   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart</p>  <p><strong>通过MySQL命令行修改:</strong></p>  <p>mysql&gt; set character_set_client=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_connection=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_database=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_results=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_server=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_system=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_connection=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_database=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_server=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p><strong>查看:     <br /></strong>mysql&gt; show variables like &#8216;character_set_%&#8217;;    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.03 sec)</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.04 sec)</p>  <p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>【知识性文章转载】</p>  <p>MYSQL 字符集问题</p>  <p>MySQL的字符集支持(Character Set Support)有两个方面：</p>  <p>&#160;&#160;&#160;&#160; 字符集(Character set)和排序方式(Collation)。</p>  <p>对于字符集的支持细化到四个层次:</p>  <p>&#160;&#160;&#160;&#160; 服务器(server)，数据库(database)，数据表(table)和连接(connection)。</p>  <p>1.MySQL默认字符集</p>  <p>MySQL对于字符集的指定可以细化到一个数据库，一张表，一列，应该用什么字符集。</p>  <p>但是，传统的程序在创建数据库和数据表时并没有使用那么复杂的配置，它们用的是默认的配置，那么，默认的配置从何而来呢？&#160;&#160;&#160; (1)编译MySQL 时，指定了一个默认的字符集，这个字符集是 latin1；</p>  <p>&#160;&#160;&#160; (2)安装MySQL 时，可以在配置文件 (my.ini) 中指定一个默认的的字符集，如果没指定，这个值继承自编译时指定的；</p>  <p>&#160;&#160;&#160; (3)启动mysqld 时，可以在命令行参数中指定一个默认的的字符集，如果没指定，这个值继承自配置文件中的配置,此时 character_set_server 被设定为这个默认的字符集；</p>  <p>&#160;&#160;&#160; (4)当创建一个新的数据库时，除非明确指定，这个数据库的字符集被缺省设定为character_set_server；</p>  <p>&#160;&#160;&#160; (5)当选定了一个数据库时，character_set_database 被设定为这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (6)在这个数据库里创建一张表时，表默认的字符集被设定为 character_set_database，也就是这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (7)当在表内设置一栏时，除非明确指定，否则此栏缺省的字符集就是表默认的字符集；</p>  <p>简单的总结一下，如果什么地方都不修改，那么所有的数据库的所有表的所有栏位的都用 latin1 存储，不过我们如果安装 MySQL，一般都会选择多语言支持，也就是说，安装程序会自动在配置文件中把 default_character_set 设置为 UTF-8，这保证了缺省情况下，所有的数据库的所有表的所有栏位的都用 UTF-8 存储。</p>  <p>2.查看默认字符集(默认情况下，mysql的字符集是latin1(ISO_8859_1)</p>  <p>通常，查看系统的字符集和排序方式的设定可以通过下面的两条命令：</p>  <p>&#160;&#160;&#160;&#160; mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>mysql&gt; SHOW VARIABLES LIKE &#8216;collation_%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| collation_connection | utf8_general_ci |</p>  <p>| collation_database&#160;&#160; | utf8_general_ci |</p>  <p>| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>3.修改默认字符集</p>  <p>(1) 最简单的修改方法，就是修改mysql的my.ini文件中的字符集键值，</p>  <p>如&#160;&#160;&#160; default-character-set = utf8</p>  <p>&#160;&#160;&#160;&#160;&#160; character_set_server = utf8</p>  <p>&#160;&#160; 修改完后，重启mysql的服务，service mysql restart</p>  <p>&#160;&#160; 使用 mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;查看，发现数据库编码均已改成utf8</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>&#160;&#160; (2) 还有一种修改字符集的方法，就是使用mysql的命令</p>  <p>&#160;&#160; mysql&gt; SET character_set_client = utf8 ;</p>  <p>&#160;</p>  <p>原文地址：<a title="http://blog.chinaunix.net/u1/51541/showart_505638.html" href="http://blog.chinaunix.net/u1/51541/showart_505638.html">http://blog.chinaunix.net/u1/51541/showart_505638.html</a></p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/'>http://Apiaceae.github.io/blog/2010/12/20/e4bfaee694b9e58f8ae69fa5e79c8bmysqle695b0e68daee5ba93e79a84e5ad97e7aca6e99b86/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -1234,6 +1391,12 @@ Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
     <section>
   <h1>About Me</h1>
   <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -1256,7 +1419,7 @@ Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -1264,10 +1427,15 @@ Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -1288,10 +1456,10 @@ Ext.onReady(myNameSpace.myModule.init, myNameSpace.myModule, true);</pre>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>

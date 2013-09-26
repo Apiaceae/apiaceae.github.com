@@ -33,6 +33,26 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
   
 
 </head>
@@ -133,6 +153,20 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
+<h1><a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a></h1>
+<time datetime="2013-07-15T12:30:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>15</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/gong-ju/'>工具</a></span>
+</footer>
+
+
+</article>
+
+
+
+<article>
+  
 <h1><a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a></h1>
 <time datetime="2013-02-23T00:00:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>23</span> <span class='year'>2013</span></time>
 
@@ -157,7 +191,11 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <article>
   
 <h1><a href="/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/">解决git pull时出现的几个问题</a></h1>
-<time datetime="2012-11-28T00:00:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>28</span> <span class='year'>2012</span></time>
+<time datetime="2012-11-28T13:20:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>28</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/git/'>Git</a></span>
+</footer>
 
 
 </article>
@@ -166,8 +204,12 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
-<h1><a href="/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/">Bupleurum Species, Scientific Evaluation and Clinical Applications</a></h1>
+<h1><a href="/blog/2012/11/26/bupleurum-species-scientific-evaluation-and-clinical-applications/">柴胡属专著</a></h1>
 <time datetime="2012-11-26T00:00:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>26</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/san-xing-ke/'>伞形科</a></span>
+</footer>
 
 
 </article>
@@ -179,6 +221,10 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <h1><a href="/blog/2012/10/23/vim%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%BB%A3%E7%A0%81/">Vim格式化代码</a></h1>
 <time datetime="2012-10-23T00:00:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>23</span> <span class='year'>2012</span></time>
 
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/ji-qiao/'>技巧</a></span>
+</footer>
+
 
 </article>
 
@@ -186,8 +232,12 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
-<h1><a href="/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/">如何更新Dell服务器的Bios及Locale问题</a></h1>
-<time datetime="2012-10-22T00:00:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>22</span> <span class='year'>2012</span></time>
+<h1><a href="/blog/2012/10/22/%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0dell%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84bios/">如何更新Dell服务器的BIOS及Locale问题</a></h1>
+<time datetime="2012-10-22T15:30:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>22</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>Linux</a></span>
+</footer>
 
 
 </article>
@@ -197,7 +247,11 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <article>
   
 <h1><a href="/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/">Ubuntu为drupal7配置Apache Solr详细步骤</a></h1>
-<time datetime="2012-07-18T00:00:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+<time datetime="2012-07-18T15:21:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>Linux</a></span>
+</footer>
 
 
 </article>
@@ -206,8 +260,12 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
-<h1><a href="/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/"> ubuntu解压命令全览 </a></h1>
-<time datetime="2012-07-17T00:00:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>17</span> <span class='year'>2012</span></time>
+<h1><a href="/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/">ubuntu解压命令全览</a></h1>
+<time datetime="2012-07-17T13:25:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>17</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>Linux</a></span>
+</footer>
 
 
 </article>
@@ -219,15 +277,9 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <h1><a href="/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/">ubuntu12.04配置静态IP及设置DNS</a></h1>
 <time datetime="2012-07-17T00:00:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>17</span> <span class='year'>2012</span></time>
 
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a></h1>
-<time datetime="2012-07-15T00:00:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>15</span> <span class='year'>2012</span></time>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>Linux</a></span>
+</footer>
 
 
 </article>
@@ -236,8 +288,12 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
-<h1><a href="/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/">ubuntu中文输入法Fcitx安装 </a></h1>
+<h1><a href="/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/">ubuntu中文输入法Fcitx安装</a></h1>
 <time datetime="2012-04-20T00:00:00+08:00" pubdate><span class='month'>Apr</span> <span class='day'>20</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/linux/'>linux</a></span>
+</footer>
 
 
 </article>
@@ -266,8 +322,42 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 
 <article>
   
+<h1><a href="/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB.html/">分类学杂七杂八</a></h1>
+<time datetime="2012-03-09T00:00:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>09</span> <span class='year'>2012</span></time>
+
+
+</article>
+
+
+
+<article>
+  
 <h1><a href="/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">分类学杂七杂八</a></h1>
 <time datetime="2012-03-09T00:00:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>09</span> <span class='year'>2012</span></time>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">分类学杂七杂八</a></h1>
+<time datetime="2012-03-09T00:00:00+08:00" pubdate><span class='month'>Mar</span> <span class='day'>09</span> <span class='year'>2012</span></time>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/">Visual Studio 2010快捷工具配置</a></h1>
+<time datetime="2012-01-24T14:20:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>24</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/asp-dot-net/'>ASP.NET</a></span>
+</footer>
 
 
 </article>
@@ -1129,6 +1219,12 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
   <p>A little something about me.</p>
 </section>
 <section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -1149,7 +1245,7 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
+        <a href="/blog/2013/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a>
       </li>
     
   </ul>
@@ -1157,10 +1253,15 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (7)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -1181,10 +1282,10 @@ Sep 03 2013 posted in Linux Hello jekyll &hellip;">
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 157%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 70%" href="/tags/bao-hu/">保护</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
