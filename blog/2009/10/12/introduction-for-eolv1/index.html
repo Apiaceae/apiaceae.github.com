@@ -32,26 +32,6 @@ Life: http://www.eol.org，简称EOL
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
-<script type="text/javascript">
-
-function addBlankTargetForLinks () {
-
-  $('a[href^="http"]').each(function(){
-
-      $(this).attr('target', '_blank');
-
-  });
-
-}
-
-$(document).bind('DOMNodeInserted', function(event) {
-
-  addBlankTargetForLinks();
-
-});
-
-</script>
-
   
 
 </head>
@@ -78,10 +58,10 @@ $(document).bind('DOMNodeInserted', function(event) {
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/tag-cloud/">Tags</a></li>
-  <li><a href="/about/">About me</a></li>
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">博客存档</a></li>
+  <li><a href="/tag-cloud">标签</a></li>
+    <li><a href="/about">关于</a></li>
 </ul>
 
 </nav>
@@ -208,6 +188,8 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
   <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Apiaceae.github.io/blog/2009/10/12/introduction-for-eolv1/" data-via="" data-counturl="http://Apiaceae.github.io/blog/2009/10/12/introduction-for-eolv1/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
+  
   
 </div>
 
@@ -230,7 +212,7 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
     <section>
   <h1>About Me</h1>
   <img src="/images/profile.jpg" alt="">
-  <p>Live in a big city, but heart had gone to county!</p>
+  <p>混在城市心在农村</p>
 </section>
 <section>
   <h2>What did I read</h2>
@@ -241,6 +223,10 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
@@ -258,10 +244,6 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
         <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/15/sublimetext2-intro/">SublimeText2超强的文本编辑器</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -276,11 +258,13 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 <li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
 <li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (4)</a></li>
 <li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
 <li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -299,9 +283,9 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/api/">api</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
-<a style="font-size: 70%" href="/tags/sql/">sql</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
 <a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
@@ -344,6 +328,14 @@ var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'serve
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

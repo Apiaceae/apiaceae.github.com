@@ -9,7 +9,7 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="生物多样性信息学研究进展&nbsp;摘要：生物多样性信息学是一门年轻而蓬勃发展的新学科。它将现代的信息技术带入生物多样性及其相关学科的研究领域。它在生物多样性基础数据的数字化、模型工具、专家系统、数据整合，全球、地区和国家性生物多样性网络等多个方面的发展，向我们展示了未来在全球范围内自由、 &hellip;">
+  <meta name="description" content="先来了解一下文件属性， 在shell环境里输入：ls -l 可以查看当前目录文件。如： drwxr-xr-x 2 nsf users 1024 12-10 17:37 下载文件备份 分别对应的是： 文件属性 连接数 文件拥有者 所属群组 文件大小 文件修改时间 文件名 这里r是可读，w可写,x &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,26 +29,6 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-<script type="text/javascript">
-
-function addBlankTargetForLinks () {
-
-  $('a[href^="http"]').each(function(){
-
-      $(this).attr('target', '_blank');
-
-  });
-
-}
-
-$(document).bind('DOMNodeInserted', function(event) {
-
-  addBlankTargetForLinks();
-
-});
-
-</script>
 
   
 
@@ -76,10 +56,10 @@ $(document).bind('DOMNodeInserted', function(event) {
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/tag-cloud/">Tags</a></li>
-  <li><a href="/about/">About me</a></li>
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">博客存档</a></li>
+  <li><a href="/tag-cloud">标签</a></li>
+    <li><a href="/about">关于</a></li>
 </ul>
 
 </nav>
@@ -87,6 +67,47 @@ $(document).bind('DOMNodeInserted', function(event) {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/02/25/ubuntu-file-permmission-config/">如何在ubuntu下修改文件权限-网站访问配置</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-25T00:00:00+08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ubuntu/2D44D647/20100225_00015.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2010-02-25_00015" border="0" alt="2010-02-25_00015" src="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ubuntu/13DCD30D/20100225_00015_thumb.png" width="583" height="448" /></a> </p>  <p>先来了解一下文件属性，   <br />在shell环境里输入：ls -l 可以查看当前目录文件。如：    <br />drwxr-xr-x 2 nsf users 1024 12-10 17:37 下载文件备份    <br />分别对应的是：    <br />文件属性 连接数 文件拥有者 所属群组 文件大小 文件修改时间 文件名    <br />这里r是可读，w可写,x 可执行，其中文件属性分为四段，&#8212;- &#8212; &#8212; 10个位置    <br />例如：    <br />d rwx r-x r-x    <br />第一个字符指定了文件类型。在通常意义上，一个目录也是一个文件。如果第一个字符是横线，表示是一个非目录的文件。如果是d，表示是一个目录。    <br />第二段是文件拥有者的属性，    <br />第三段是文件所属群组的属性，    <br />第四段是对于其它用户的属性，    <br />如上面文件夹“下载文件备份” 的访问权限，表示文件夹“下载文件备份” 是一个目录文件；文件夹“下载文件备份” 的属主有读写可执行权限；与文件夹“下载文件备份” 属主同组的用户只有读和可执行权限；其他用户也有读和可执行权限。    <br />确定了一个文件的访问权限后，用户可以利用Linux系统提供的chmod命令来重新设定不同的访问权限。也可以利用chown命令来更改某个文件或目录的所有者。利用chgrp命令来更改某个文件或目录的用户组。    <br />chmod 命令    <br />功能：chmod命令是非常重要的，用于改变文件或目录的访问权限.用户用它控制文件或目录的访问权限.    <br />语法：该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。    <br />1. 文字设定法    <br />chmod [who] [+ | - | =] [mode] 文件名?    <br />参数：    <br />操作对象who可是下述字母中的任一个或者它们的组合：    <br />u 表示“用户（user）”，即文件或目录的所有者。    <br />g 表示“同组（group）用户”，即与文件属主有相同组ID的所有用户。    <br />o 表示“其他（others）用户”。    <br />a 表示“所有（all）用户”。它是系统默认值。    <br />操作符号可以是：    <br />+ 添加某个权限。    <br />- 取消某个权限。    <br />= 赋予给定权限并取消其他所有权限（如果有的话）。    <br />设置mode所表示的权限可用下述字母的任意组合：    <br />r 可读。    <br />w 可写。    <br />x 可执行。    <br />X 只有目标文件对某些用户是可执行的或该目标文件是目录时才追加x 属性。    <br />s 在文件执行时把进程的属主或组ID置为该文件的文件属主。方式“u＋s”设置文件的用&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 户ID位，“g＋s”设置组ID位。    <br />t 保存程序的文本到交换设备上。    <br />u 与文件属主拥有一样的权限。    <br />g 与和文件属主同组的用户拥有一样的权限。    <br />o 与其他用户拥有一样的权限。    <br />文件名：以空格分开的要改变权限的文件列表，支持通配符。    <br />在一个命令行中可给出多个权限方式，其间用逗号隔开。例如：chmod g+r，o+r example    <br />使同组和其他用户对文件example 有读权限。    <br />chgrp命令    <br />功能：改变文件或目录所属的组。    <br />语法：chgrp [选项] group filename?    <br />该命令改变指定指定文件所属的用户组。其中group可以是用户组ID，也可以是/etc/group文件中用户组的组名。文件名是以空格分开的要改变属组的文件列表，支持通配符。如果用户不是该文件的属主或超级用户，则不能改变该文件的组。    <br />参数：    <br />- R 递归式地改变指定目录及其下的所有子目录和文件的属组。    <br />例1：$ chgrp - R book /opt/local /book    <br />改变/opt/local /book/及其子目录下的所有文件的属组为book。    <br />chown 命令    <br />功能：更改某个文件或目录的属主和属组。这个命令也很常用。例如root用户把自己的一个文件拷贝给用户xu，为了让用户xu能够存取这个文件，root用户应该把这个文件的属主设为xu，否则，用户xu无法存取这个文件。    <br />语法：chown [选项] 用户或组 文件    <br />说明：chown将指定文件的拥有者改为指定的用户或组。用户可以是用户名或用户ID。组可以是组名或组ID。文件是以空格分开的要改变权限的文件列表，支持通配符。    <br />参数：    <br />- R 递归式地改变指定目录及其下的所有子目录和文件的拥有者。    <br />- v 显示chown命令所做的工作。    <br />例1：把文件shiyan.c的所有者改为wang。    <br />$ chown wang shiyan.c    <br />例2：把目录/his及其下的所有文件和子目录的属主改成wang，属组改成users。    <br />$ chown - R wang.users /his</p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/02/25/ubuntu-file-permmission-config/'>http://Apiaceae.github.io/blog/2010/02/25/ubuntu-file-permmission-config/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -567,68 +588,6 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/28/progress-conservation-biogeography/">保护生物地理学研究进展</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-28T00:00:00+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/2009/3/condore.jpg" alt="保护生物地理学" /></p>
-
-<p><strong>Biogeography: assessment and prospect</strong></p>
-
-<p>There is general agreement among scientists that biodiversity is under assault on a global basis and that species are being lost at a greatly enhanced rate. This article examines the role played by biogeographical science in the emergence of conservation guidance and makes the case for the recognition ofConservation Biogeography as a key subfield of conservation biology delimited as: the application of biogeographical principles, theories, and analyses, being those concerned with the distributional dynamics of taxa individually and collectively, to problems concerning the conservation of biodiversity.</p>
-
-<p>Conservation biogeography thus encompasses both a substantial body of theory and analysis, and some of the most prominent planning works used in conservation. Considerable advances in conservation guidelines have been made over the last few decades by applying biogeographical methods and principles. Herein we provide a critical review focussed on the sensitivity to assumptions inherent in the applications we examine.</p>
-
-<p>In particular, we focus on four inter-related factors:</p>
-
-<p>(i) scale dependency (both spatial and temporal);
-(ii) inadequacies in taxonomic and distributional data (the so-called Linnean and Wallacean shortfalls);
-(iii) effects of model structure and parameterisation; and
-(iv) inadequacies of theory.
-These generic problems are illustrated by reference to studies ranging from the application of historical biogeography, through island biogeography, and complementarity analyses to bioclimatic envelope modelling. There is a great deal of uncertainty inherent in predictive analyses in conservation biogeography and this area in particular presents considerable challenges.</p>
-
-<p>Protected area planning works and their resulting map outputs are amongst the most powerful and influential applications within conservation biogeography, and at the global scale are characterised by the production, by a small number of prominent NGOs, of bespoke schemes, which serve both to mobilise funds and channel efforts in a highly targeted fashion. We provide a simple typology of protected area planning works, with particular reference to the global scale, and provide a brief critique of some of their strengths and weaknesses. Finally, we discuss the importance, especially at regional scales, of developing more responsive analyses and models that integrate pattern (the compositionalist approach) and processes (the alist approach) such as range collapse and climate change, again noting the sensitivity of outcomes to starting assumptions. We make the case for the greater engagement of the biogeographical community in a programme of evaluation and refinement of all such schemes to test their robustness and their sensitivity to alternative conservation priorities and goals.</p>
-
-<p>Keywords: Conservation biogeography, models, protected area works, scale, sensitivity analysis, uncertainty.</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/28/progress-conservation-biogeography/'>http://Apiaceae.github.io/blog/2009/03/28/progress-conservation-biogeography/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -644,7 +603,7 @@ These generic problems are illustrated by reference to studies ranging from the 
     <section>
   <h1>About Me</h1>
   <img src="/images/profile.jpg" alt="">
-  <p>Live in a big city, but heart had gone to county!</p>
+  <p>混在城市心在农村</p>
 </section>
 <section>
   <h2>What did I read</h2>
@@ -655,6 +614,10 @@ These generic problems are illustrated by reference to studies ranging from the 
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
@@ -672,10 +635,6 @@ These generic problems are illustrated by reference to studies ranging from the 
         <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/15/sublimetext2-intro/">SublimeText2超强的文本编辑器</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -690,11 +649,13 @@ These generic problems are illustrated by reference to studies ranging from the 
 <li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
 <li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (4)</a></li>
 <li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
 <li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -713,9 +674,9 @@ These generic problems are illustrated by reference to studies ranging from the 
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/api/">api</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
-<a style="font-size: 70%" href="/tags/sql/">sql</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
 <a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
@@ -757,6 +718,14 @@ var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'serve
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
