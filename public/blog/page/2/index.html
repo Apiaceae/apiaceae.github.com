@@ -9,9 +9,11 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="下面为详细安装步骤，一步步来就能配出如图所示的搜索效果: 1). 安装Java SDK ,,,
-yum install java-1.6*
-,,, 2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下来后， &hellip;">
+  <meta name="description" content="Install libsmbios ,,,
+$ apt-get update (not always necessary) $ apt-get install libsmbios-bin
+,,, Get the System ID $ getSystemId
+,,,
+Libsmbios: 0.12 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -31,26 +33,6 @@ yum install java-1.6*
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-<script type="text/javascript">
-
-function addBlankTargetForLinks () {
-
-  $('a[href^="http"]').each(function(){
-
-      $(this).attr('target', '_blank');
-
-  });
-
-}
-
-$(document).bind('DOMNodeInserted', function(event) {
-
-  addBlankTargetForLinks();
-
-});
-
-</script>
 
   
 
@@ -78,10 +60,10 @@ $(document).bind('DOMNodeInserted', function(event) {
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/tag-cloud/">Tags</a></li>
-  <li><a href="/about/">About me</a></li>
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">博客存档</a></li>
+  <li><a href="/tag-cloud">标签</a></li>
+    <li><a href="/about">关于</a></li>
 </ul>
 
 </nav>
@@ -89,6 +71,155 @@ $(document).bind('DOMNodeInserted', function(event) {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/22/update-dell-server-bios/">如何更新Dell服务器的BIOS及Locale问题</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-22T15:30:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Install libsmbios</h1>
+
+<p>,,,
+$ apt-get update    (not always necessary)</p>
+
+<p>$ apt-get install libsmbios-bin
+,,,</p>
+
+<h1>Get the System ID</h1>
+
+<p>$ getSystemId
+,,,
+Libsmbios:    0.12.1</p>
+
+<p>System ID: 0x01DD</p>
+
+<p>Service Tag:  DT6WLB1</p>
+
+<p>Express Service Code: 30063287773</p>
+
+<p>Product Name: Dell DM061</p>
+
+<p>BIOS Version: 2.3.2</p>
+
+<p>Vendor:       Dell Inc.</p>
+
+<p>Is Dell:      1
+,,,</p>
+
+<p>Download the latest BIOS &ldquo;.HDR&rdquo; file for this system. Go here: <a class="external free" href="http://linux.dell.com/repo/firmware/bios-hdrs/" rel="nofollow"><a href="http://linux.dell.com/repo/firmware/bios-hdrs/">http://linux.dell.com/repo/firmware/bios-hdrs/</a></a>. Scroll down the list to find a directory matching the System ID from the previous step. The directory will be named: system_bios_ven_0x1028_dev<em><strong>SYSTEM_ID</strong></em>version_<strong>BIOS_VERSION</strong>. Go into this directory and download the file, &ldquo;bios.hdr&rdquo;.</li>
+</ul></p>
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>load the <strong>dell_rbu</strong> driver</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># modprobe dell_rbu
+</pre>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>update the bios</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># dellBiosUpdate -u -f ./bios.hdr-2.3.2 
+Supported RBU type for this system: (MONOLITHIC)
+Using RBU v2 driver. Initializing Driver. 
+Setting RBU type in v2 driver to: MONOLITHIC
+Prep driver for data load.
+Writing RBU data (4096bytes/dot): ............................
+..............................................................
+.......................
+Notify driver data is finished.
+Activate CMOS bit to notify BIOS that update is ready on next boot.
+Update staged sucessfully. BIOS update will occur on next reboot.
+</pre>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>reboot the system</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># reboot
+</pre>
+
+
+<p><a href="http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate">http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate</a></p>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span>&nbsp;</p>
+
+
+<h2 class="title content-title">典型错误：locale.Error：unsupported locale setting</h2>
+
+
+<div id="content" class="content mod-cs-content text-content clearfix"><strong>&nbsp;locale.Error：unsupported locale setting<br /><br /><br /><br /></strong><strong>1、错误提出</strong><br />（1）locale指令运行出现的错误信息<br />locale：Cannot set LC_CTYPE to default locale： No such file or directory<br />locale：Cannot set LC_MESSAGES to default locale： No such file or directory<br />locale：Cannot set LC_ALL to default locale： No such file or directory<br />（2）setup指令运行出现的错误信息<br />locale.Error：unsupported locale setting，导致无法设置&ldquo;network configuration&#8221;<br />（3）yum指令运行出现的错误信息<br />Failed to set locale, defaulting to C<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/03ca8c7109101d2c8601b07b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/61139699c5fff585c8eaf47b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/982718a3fbd4dcbb4610647b.jpg" alt="" /><br /><br /><br /><strong>2、分析原因</strong><br />locale是用来设置软件运行的语言环境，所以语言环境设置有问题<br /><br /><strong>3、解决故障<br /></strong>重新设置语言环境，最简单的解决办法，例如：<br />[root@Mylinux ~]#&nbsp; echo &#8220;export&nbsp; LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp;&nbsp; /home/XXX/.bash_profile（特定用户）<br />或者<br />[root@Mylinux ~]#&nbsp; echo &#8220;export LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp; /etc/profile（所有用户）<br />[root@Mylinux ~]#&nbsp; exit<br />然后重新登录，使用locale指令查看变量<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/58f80bee1050cc1762d09ffa.jpg" alt="" /><br /><br />
+
+*关于locale的设置，请查阅文章：《<span style="text-decoration: underline;"><strong><a href="http://hi.baidu.com/9812658/blog/item/d0021e33c0b32aa35fdf0e6c.html" target="_blank">Linux系统locale的设置</a></strong></span></div>
+
+
+<p><a href="http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d">http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d</a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/10/22/update-dell-server-bios/'>http://Apiaceae.github.io/blog/2012/10/22/update-dell-server-bios/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1248,66 +1379,6 @@ features)</a></li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/04/ubuntue-sed-commands/">Ubuntu使用Sed命令批量替换文件夹中文件内的字符串</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-04T13:56:00+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>linux sed 批量替换多个文件中的字符串</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/oldstring/newstring/g&quot; \`grep oldstring -rl yourdir\`
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/www.admin99.net/admin99.net/g&quot; \`grep www.admin99.net -rl /home\`
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/'>http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1323,7 +1394,7 @@ features)</a></li>
     <section>
   <h1>About Me</h1>
   <img src="/images/profile.jpg" alt="">
-  <p>Live in a big city, but heart had gone to county!</p>
+  <p>混在城市心在农村</p>
 </section>
 <section>
   <h2>What did I read</h2>
@@ -1334,6 +1405,10 @@ features)</a></li>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
@@ -1351,10 +1426,6 @@ features)</a></li>
         <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/07/15/sublimetext2-intro/">SublimeText2超强的文本编辑器</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -1369,11 +1440,13 @@ features)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
 <li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
 <li class='category'><a href='/blog/categories/分类学/'>分类学 (4)</a></li>
 <li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
 <li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -1392,9 +1465,9 @@ features)</a></li>
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/api/">api</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
-<a style="font-size: 70%" href="/tags/sql/">sql</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
 <a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
@@ -1436,6 +1509,14 @@ var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'serve
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

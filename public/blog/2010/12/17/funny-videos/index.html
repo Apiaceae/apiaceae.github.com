@@ -35,26 +35,6 @@ JiraLicenseStoreImpl &hellip;">
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
-<script type="text/javascript">
-
-function addBlankTargetForLinks () {
-
-  $('a[href^="http"]').each(function(){
-
-      $(this).attr('target', '_blank');
-
-  });
-
-}
-
-$(document).bind('DOMNodeInserted', function(event) {
-
-  addBlankTargetForLinks();
-
-});
-
-</script>
-
   
 
 </head>
@@ -81,10 +61,10 @@ $(document).bind('DOMNodeInserted', function(event) {
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/tag-cloud/">Tags</a></li>
-  <li><a href="/about/">About me</a></li>
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">博客存档</a></li>
+  <li><a href="/tag-cloud">标签</a></li>
+    <li><a href="/about">关于</a></li>
 </ul>
 
 </nav>
@@ -117,6 +97,14 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
