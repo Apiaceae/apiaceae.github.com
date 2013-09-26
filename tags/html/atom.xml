@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: html | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/html/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-27T00:56:51+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[读取数据库数据到HTMLTable 并加入一些漂亮的CSS]]></title>
+    <link href="http://Apiaceae.github.io/blog/2013/09/26/cutom-table-css-from-sql-database/"/>
+    <updated>2013-09-26T22:51:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2013/09/26/cutom-table-css-from-sql-database</id>
+    <content type="html"><![CDATA[<p><img src="/images/WindowsLiveWriter/edb0d7de12e0/352A5F48/20090528_00079.jpg" alt="效果图" /></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>&mdash;-default.aspx </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>%@ Page Language=<span class="ni">&amp;ldquo;</span>C#<span class="ni">&amp;rdquo;</span> AutoEventWireup=<span class="ni">&amp;ldquo;</span>true<span class="ni">&amp;rdquo;</span> CodeFile=<span class="ni">&amp;ldquo;</span>Default.aspx.cs<span class="ni">&amp;rdquo;</span> Inherits=<span class="ni">&amp;ldquo;</span>_Default<span class="ni">&amp;rdquo;</span> %&gt;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>!DOCTYPE html PUBLIC <span class="ni">&amp;ldquo;&amp;ndash;</span>//W3C//DTD XHTML 1.0 Transitional//EN<span class="ni">&amp;rdquo;</span> <span class="ni">&amp;ldquo;</span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span class="nt">&gt;</span>http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd<span class="nt">&lt;/a&gt;</span><span class="ni">&amp;rdquo;</span>&gt;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;head</span> <span class="na">runat=</span><span class="s">&quot;server&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>style<span class="ni">&amp;gt;</span>
+</span><span class='line'>    /* roScripts Table Design by Mihalcea Romeo www.roscripts.com */
+</span><span class='line'>
+</span><span class='line'>    table
+</span><span class='line'>    {
+</span><span class='line'>        border-collapse: collapse;
+</span><span class='line'>        background: #EFF4FB url(http://www.roscripts.com/images/teaser.gif) repeat-x;
+</span><span class='line'>        border-left: 1px solid #686868;
+</span><span class='line'>        border-right: 1px solid #686868;
+</span><span class='line'>        font: 0.8em/145% &#39;Trebuchet MS&#39; ,helvetica,arial,verdana;
+</span><span class='line'>        color: #333;
+</span><span class='line'>    }
+</span><span class='line'>    td, th
+</span><span class='line'>    {
+</span><span class='line'>        padding: 5px;
+</span><span class='line'>    }
+</span><span class='line'>    caption
+</span><span class='line'>    {
+</span><span class='line'>        padding: 0 0 .5em 0;
+</span><span class='line'>        text-align: left;
+</span><span class='line'>        font-size: 1.4em;
+</span><span class='line'>        font-weight: bold;
+</span><span class='line'>        text-transform: uppercase;
+</span><span class='line'>        color: #333;
+</span><span class='line'>        background: transparent;
+</span><span class='line'>    }
+</span><span class='line'>    /* =links */
+</span><span class='line'>
+</span><span class='line'>    table a
+</span><span class='line'>    {
+</span><span class='line'>        color: #950000;
+</span><span class='line'>        text-decoration: none;
+</span><span class='line'>    }
+</span><span class='line'>    table a:link
+</span><span class='line'>    {
+</span><span class='line'>    }
+</span><span class='line'>    table a:visited
+</span><span class='line'>    {
+</span><span class='line'>        font-weight: normal;
+</span><span class='line'>        color: #666;
+</span><span class='line'>        text-decoration: line-through;
+</span><span class='line'>    }
+</span><span class='line'>    table a:hover
+</span><span class='line'>    {
+</span><span class='line'>        border-bottom: 1px dashed #bbb;
+</span><span class='line'>    }
+</span><span class='line'>    /* =head =foot*/
+</span><span class='line'>
+</span><span class='line'>    thead th, tfoot th, tfoot td
+</span><span class='line'>    {
+</span><span class='line'>        background: #333 url(http://www.roscripts.com/images/llsh.gif) repeat-x;
+</span><span class='line'>        color: #fff;
+</span><span class='line'>    }
+</span><span class='line'>    tfoot td
+</span><span class='line'>    {
+</span><span class='line'>        text-align: right;
+</span><span class='line'>    }
+</span><span class='line'>    /* =body */
+</span><span class='line'>
+</span><span class='line'>    tbody th, tbody td
+</span><span class='line'>    {
+</span><span class='line'>        border-bottom: dotted 1px #333;
+</span><span class='line'>    }
+</span><span class='line'>    tbody th
+</span><span class='line'>    {
+</span><span class='line'>        white-space: nowrap;
+</span><span class='line'>    }
+</span><span class='line'>    tbody th a
+</span><span class='line'>    {
+</span><span class='line'>        color: #333;
+</span><span class='line'>    }
+</span><span class='line'>    .odd
+</span><span class='line'>    {
+</span><span class='line'>    }
+</span><span class='line'>    tbody tr:hover
+</span><span class='line'>    {
+</span><span class='line'>        background: #fafafa;
+</span><span class='line'>    }
+</span><span class='line'><span class="ni">&amp;lt;</span>/style<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>form id=&quot;form1&quot; runat=&quot;server&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>div<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>div id=&quot;display&quot; runat=&quot;server&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>        中国高等植物名录<span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/form<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
