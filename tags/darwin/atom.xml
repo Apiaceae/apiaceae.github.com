@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: darwin | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/darwin/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T16:19:03+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[当达尔文遇见Facebook:社会化的网络工具让自然博物学家们可以分享数据]]></title>
+    <link href="http://Apiaceae.github.io/blog/2011/10/14/when-darwin-meet-facebook/"/>
+    <updated>2011-10-14T12:30:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2011/10/14/when-darwin-meet-facebook</id>
+    <content type="html"><![CDATA[<p>自然历史学家希望能够将地球上的生命多样性进行详细的刻画。然而，这门学科却遭遇大量研究信息和数据没有被充分利用的尴尬局面。英国大英自然历史博物馆的研究人员设计了出了一个叫“<a href="http://scratchpads.eu/">Scratchpads</a>”的工具是科学家们可以相互分享他们的研究成果。</p>
+
+<p><a href="http://blog.cnpc.ac.cn/images/image_8.png"><img src="http://blog.cnpc.ac.cn/images/image_thumb_8.png" title="image" alt="image" /></a></p>
+
+<p>Scratchpads基于开源的内容管理<a href="http://drupal.org/">Drupal</a>基础上的二次开发。因此该系统除了具备Drupal本书的博客、合作编辑、论坛、网络社区、新闻通告、图片管理、数据上传和下载等基本的功能。大英自然历史博物馆的科学家在此基础上开发除了一些针对分类学家使用的模块，比如生物标本和文献，分类树数据的导入和导出，以及通过WebService技术是用户可以非常方便的使用<a href="http://scholar.google.com/">Google
+Scholar</a>, <a href="http://www.biodiversitylibrary.org/">Biodiversity Heritage
+Library</a>,
+<a href="http://www.flickr.com/">flickr</a>, <a href="http://www.ncbi.nlm.nih.gov/Genbank/index.html">NCBI
+Genbank</a>,
+<a href="http://www.morphbank.net">Morphbank</a>等网站的相关信息.</p>
+
+<p>原文地址：<a href="http://www.sciencedaily.com/releases/2009/11/091110065917.htm" title="http://www.sciencedaily.com/releases/2009/11/091110065917.htm">http://www.sciencedaily.com/releases/2009/11/091110065917.htm</a></p>
+]]></content>
+  </entry>
+  
+</feed>

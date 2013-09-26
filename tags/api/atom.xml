@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: api | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/api/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T16:19:03+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.NET MVC REST API 应用实例]]></title>
+    <link href="http://Apiaceae.github.io/blog/2010/04/25/aspnet-mvc-rest-api-example/"/>
+    <updated>2010-04-25T16:20:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2010/04/25/aspnet-mvc-rest-api-example</id>
+    <content type="html"><![CDATA[<p><strong>需要解决的问题</strong></p>
+
+<hr />
+
+<p><strong>1：创建更为简洁的/Product/Details/1 URL</strong></p>
+
+<p>**** </p>
+
+<p>+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| <strong>Valid route definitions</strong>          | <strong><strong>                                 |
+|                                      |                                      |
+|                                      | </strong>Examples of matching URL</strong>         |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| {controller}/{action}/{id}           | /Products/Details/1                  |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| {controller}/{action}/{id}           | /Products/1                          |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| {controller}/{action}/{id}.{Format}  | /Products/Show/1.xml                 |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+</p>
+
+<p> </p>
+
+<p>“/Products/Details/1”是我们在MVC开发中默认浏览对象Details方法的路由，需要实现的是更为简洁的url表示，如“/Products/1”，返回和“/Products/Details/1“同样的结果。这个处理比较简单，仅仅需要在Global.asax文件中添加一条新的路由规则，不过一定记得是添加在默认路由的前面。</p>
+
+<p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/77781FD4/20100425_233011.png"><img src="/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/56873DDE/20100425_233011_thumb.png" title="2010-04-25_233011" alt="2010-04-25_233011" /></a></p>
+
+<p> </p>
+
+<p><strong>2：创建一个/Product/Show/1.xml的API</strong></p>
+
+<p>要实现xml访问的API,需要先建立一个抽象类来处理返回结果的路由和xml结果的序列化，这里用到了MVC
+Contrib的类库，可以去<a href="http://mvccontrib.codeplex.com/documentation">MVC Contrib Code
+Plex</a>下载添加引用。见下图代码的return
+new XMLResult</p>
+
+<p>代码如下：</p>
+
+<p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/383F1799/20100425_233740.png"><img src="/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/3E1C4BE3/20100425_233740_thumb.png" title="2010-04-25_233740" alt="2010-04-25_233740" /></a></p>
+
+<p>最后需要在相应的Action中添加对应的返回类型，这里是Show，见下图</p>
+
+<p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/5C1F7B39/20100425_234102.png"><img src="/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/57A8FA72/20100425_234102_thumb.png" title="2010-04-25_234102" alt="2010-04-25_234102" /></a></p>
+
+<p>实际效果如下：</p>
+
+<p><a href="http://blog.cnpc.ac.cn/Blogs/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/2DCB16EE/20100425_234456.png"><img src="/images/WindowsLiveWriter/ASP.NETMVCRESTAPI/3ED1D582/20100425_234456_thumb.png" title="2010-04-25_234456" alt="2010-04-25_234456" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>
