@@ -9,7 +9,8 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="linux sed 批量替换多个文件中的字符串 &#160; sed -i &quot;s/oldstring/newstring/g&quot; `grep oldstring -rl yourdir` 例如：替换/resources下所有文件中的www.admin99.net为admin99. &hellip;">
+  <meta name="description" content="linux sed 批量替换多个文件中的字符串 1
+sed -i &quot;s/oldstring/newstring/g&quot; \`grep oldstring -rl yourdir\` 例如：替换/resources下所有文件中的www.admin99.net为admin99.net &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,13 +86,32 @@ $(document).bind('DOMNodeInserted', function(event) {
 </nav>
   <div id="main">
     <div id="content">
-      <h5>linux sed 批量替换多个文件中的字符串 </h5>  <p>&#160;</p> sed -i &quot;s/oldstring/newstring/g&quot; `grep oldstring -rl yourdir` 例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net sed -i &quot;s/www.admin99.net/admin99.net/g&quot; `grep www.admin99.net -rl /home` 这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;  
+      <h3>linux sed 批量替换多个文件中的字符串</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/oldstring/newstring/g&quot; \`grep oldstring -rl yourdir\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/www.admin99.net/admin99.net/g&quot; \`grep www.admin99.net -rl /home\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;</p>
+
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/'>http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>
+
+
     </div>
   </div>
   <footer role="contentinfo"><p>

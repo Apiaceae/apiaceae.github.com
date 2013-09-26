@@ -4,7 +4,7 @@
   <title><![CDATA[虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T15:24:46+08:00</updated>
+  <updated>2013-09-26T16:19:03+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -1050,25 +1050,6 @@ Handler_read_rnd_next / Com_select 得出了表扫描比率 —— 在本例中�
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2013/09/03/lamp/'>http://Apiaceae.github.io/blog/2013/09/03/lamp/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello jekyll world]]></title>
-    <link href="http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/"/>
-    <updated>2013-09-02T00:00:00+08:00</updated>
-    <id>http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world</id>
-    <content type="html"><![CDATA[<p>Included file &lsquo;JB/setup&rsquo; not found in _includes directory</p>
-
-<p>h1 这里仅仅是一个测试</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/'>http://Apiaceae.github.io/blog/2013/09/02/hello-jekyll-world/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>
@@ -2325,6 +2306,39 @@ features)</a></li>
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2012/01/24/visual-studio-productivit-tools/'>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-productivit-tools/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu使用Sed命令批量替换文件夹中文件内的字符串]]></title>
+    <link href="http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/"/>
+    <updated>2011-12-04T13:56:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands</id>
+    <content type="html"><![CDATA[<h3>linux sed 批量替换多个文件中的字符串</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/oldstring/newstring/g&quot; \`grep oldstring -rl yourdir\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/www.admin99.net/admin99.net/g&quot; \`grep www.admin99.net -rl /home\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/'>http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>

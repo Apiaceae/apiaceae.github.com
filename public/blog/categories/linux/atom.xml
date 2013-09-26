@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | 虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T15:24:46+08:00</updated>
+  <updated>2013-09-26T16:19:03+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -47,6 +47,27 @@
 <p>除非注明，<a href="http://www.mylouge.com/">空中楼阁</a>的文章均为原创，支持转载，但请以链接形式标明本文地址</p>
 
 <p>本文地址：<a href="http://www.mylouge.com/2011/02/1146.html">http://www.mylouge.com/2011/02/1146.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu使用Sed命令批量替换文件夹中文件内的字符串]]></title>
+    <link href="http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands/"/>
+    <updated>2011-12-04T13:56:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2011/12/04/ubuntue-sed-commands</id>
+    <content type="html"><![CDATA[<h3>linux sed 批量替换多个文件中的字符串</h3>
+
+<p><code>text
+sed -i "s/oldstring/newstring/g" \`grep oldstring -rl yourdir\`
+</code></p>
+
+<p>例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net</p>
+
+<p><code>text
+sed -i "s/www.admin99.net/admin99.net/g" \`grep www.admin99.net -rl /home\`
+</code></p>
+
+<p>这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 '</p>
 ]]></content>
   </entry>
   
