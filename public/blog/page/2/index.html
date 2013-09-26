@@ -9,11 +9,11 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:
-1). 安装Java SDK
-yum install java-1.6*
-2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下
-来后，放到非web目录的文件夹下面， &hellip;">
+  <meta name="description" content="Install libsmbios ,,,
+$ apt-get update (not always necessary) $ apt-get install libsmbios-bin
+,,, Get the System ID $ getSystemId
+,,,
+Libsmbios: 0.12 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -33,6 +33,26 @@ yum install java-1.6*
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
 
   
 
@@ -77,7 +97,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/">Ubuntu为drupal7配置Apache Solr详细步骤</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/10/22/update-dell-server-bios/">如何更新Dell服务器的BIOS及Locale问题</a></h1>
     
     
       <p class="meta">
@@ -93,51 +113,263 @@ yum install java-1.6*
   
 
 
-<time datetime="2012-07-18T00:00:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2012</time>
+<time datetime="2012-10-22T15:30:00+08:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h1>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h1>
-<p>1). 安装Java SDK</p>
-<p><code>yum install java-1.6*</code></p>
-<p>2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下</p>
-<p>来后，放到非web目录的文件夹下面，我放在了/home/ruby 目录下面，并重命名为solr</p>
-<div class="codeblock"><code>cd /home/ruby<br /><br />wget <a title="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" target="_blank">http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz</a> <br /><br />tar xvfz apache-solr-1.4.1.tgz<br /><br />mv apache-solr-1.4.1 solr</code></div>
+  <div class="entry-content"><h1>Install libsmbios</h1>
+
+<p>,,,
+$ apt-get update    (not always necessary)</p>
+
+<p>$ apt-get install libsmbios-bin
+,,,</p>
+
+<h1>Get the System ID</h1>
+
+<p>$ getSystemId
+,,,
+Libsmbios:    0.12.1</p>
+
+<p>System ID: 0x01DD</p>
+
+<p>Service Tag:  DT6WLB1</p>
+
+<p>Express Service Code: 30063287773</p>
+
+<p>Product Name: Dell DM061</p>
+
+<p>BIOS Version: 2.3.2</p>
+
+<p>Vendor:       Dell Inc.</p>
+
+<p>Is Dell:      1
+,,,</p>
+
+<p>Download the latest BIOS &ldquo;.HDR&rdquo; file for this system. Go here: <a class="external free" href="http://linux.dell.com/repo/firmware/bios-hdrs/" rel="nofollow"><a href="http://linux.dell.com/repo/firmware/bios-hdrs/">http://linux.dell.com/repo/firmware/bios-hdrs/</a></a>. Scroll down the list to find a directory matching the System ID from the previous step. The directory will be named: system_bios_ven_0x1028_dev<em><strong>SYSTEM_ID</strong></em>version_<strong>BIOS_VERSION</strong>. Go into this directory and download the file, &ldquo;bios.hdr&rdquo;.</li>
+</ul></p>
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>load the <strong>dell_rbu</strong> driver</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># modprobe dell_rbu
+</pre>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>update the bios</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># dellBiosUpdate -u -f ./bios.hdr-2.3.2 
+Supported RBU type for this system: (MONOLITHIC)
+Using RBU v2 driver. Initializing Driver. 
+Setting RBU type in v2 driver to: MONOLITHIC
+Prep driver for data load.
+Writing RBU data (4096bytes/dot): ............................
+..............................................................
+.......................
+Notify driver data is finished.
+Activate CMOS bit to notify BIOS that update is ready on next boot.
+Update staged sucessfully. BIOS update will occur on next reboot.
+</pre>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<ul>
+<li>reboot the system</li>
+</ul>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span></span></p>
+
+
+<pre># reboot
+</pre>
+
+
+<p><a href="http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate">http://linux.dell.com/wiki/index.php/Tech/libsmbios_dellBiosUpdate</a></p>
+
+
+<p><span style="font-family: sans-serif; font-size: 13px; line-height: 19px;"></span>&nbsp;</p>
+
+
+<h2 class="title content-title">典型错误：locale.Error：unsupported locale setting</h2>
+
+
+<div id="content" class="content mod-cs-content text-content clearfix"><strong>&nbsp;locale.Error：unsupported locale setting<br /><br /><br /><br /></strong><strong>1、错误提出</strong><br />（1）locale指令运行出现的错误信息<br />locale：Cannot set LC_CTYPE to default locale： No such file or directory<br />locale：Cannot set LC_MESSAGES to default locale： No such file or directory<br />locale：Cannot set LC_ALL to default locale： No such file or directory<br />（2）setup指令运行出现的错误信息<br />locale.Error：unsupported locale setting，导致无法设置&ldquo;network configuration&#8221;<br />（3）yum指令运行出现的错误信息<br />Failed to set locale, defaulting to C<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/03ca8c7109101d2c8601b07b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/61139699c5fff585c8eaf47b.jpg" alt="" /><br /><img src="http://hiphotos.baidu.com/9812658/pic/item/982718a3fbd4dcbb4610647b.jpg" alt="" /><br /><br /><br /><strong>2、分析原因</strong><br />locale是用来设置软件运行的语言环境，所以语言环境设置有问题<br /><br /><strong>3、解决故障<br /></strong>重新设置语言环境，最简单的解决办法，例如：<br />[root@Mylinux ~]#&nbsp; echo &#8220;export&nbsp; LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp;&nbsp; /home/XXX/.bash_profile（特定用户）<br />或者<br />[root@Mylinux ~]#&nbsp; echo &#8220;export LC_ALL=en_US.UTF-8&#8221;&nbsp; &gt;&gt;&nbsp; /etc/profile（所有用户）<br />[root@Mylinux ~]#&nbsp; exit<br />然后重新登录，使用locale指令查看变量<br /><img src="http://hiphotos.baidu.com/9812658/pic/item/58f80bee1050cc1762d09ffa.jpg" alt="" /><br /><br />
+
+*关于locale的设置，请查阅文章：《<span style="text-decoration: underline;"><strong><a href="http://hi.baidu.com/9812658/blog/item/d0021e33c0b32aa35fdf0e6c.html" target="_blank">Linux系统locale的设置</a></strong></span></div>
+
+
+<p><a href="http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d">http://hi.baidu.com/linuxtrip/item/02b8c7774d7a70215d17893d</a></p>
+
+
+<p>&nbsp;</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/10/22/update-dell-server-bios/'>http://Apiaceae.github.io/blog/2012/10/22/update-dell-server-bios/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/18/ubuntu-drupal7-apache-solr-steps/">Ubuntu为drupal7配置Apache Solr详细步骤</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-18T15:21:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>下面为详细安装步骤，一步步来就能配出如图所示的搜索效果:</h3>
+
+<p><strong>1). 安装Java SDK</strong></p>
+
+<p>,,,
+yum install java-1.6*
+,,,</p>
+
+<p><strong>2).下载最新版本的Solr，当前最新版本是1.4.1 , 经过测试，在国内用bjtu.edu.cn地址下载速度比较快，下载下来后，放到非web目录的文件夹下面，我放在了/home/ruby 目录下面，并重命名为solr</strong></p>
+
+<p>&lsquo;&rsquo;&lsquo;
+cd /home/ruby
+&rsquo;&lsquo;&rsquo;
+wget <a title="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz" target="_blank"><a href="http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz">http://mirror.bjtu.edu.cn/apache/lucene/solr/1.4.1/apache-solr-1.4.1.tgz</a></a> <br /><br />tar xvfz apache-solr-1.4.1.tgz<br /><br />mv apache-solr-1.4.1 solr</code></div></p>
+
 <p>3).下载Drupal的Apache Solr(<a title="http://drupal.org/project/ApacheSolr" href="http://drupal.org/project/ApacheSolr" target="_blank">http://drupal.org/project/ApacheSolr</a>)模块, 如果你有drush,用drush会方便的</p>
+
+
 <p>多,如果没有drush,就按常规方便，下载解压缩，放到sites/all/modules目录。并下载php的solr库（</p>
+
+
 <p>http://code.google.com/p/solr-php-client/），放到sites/all/modules/apachesolr根目录,最终结构</p>
+
+
 <p>为:/sites/all/modules/apachesolr/SolrPhpClient。</p>
+
+
 <div class="codeblock"><code>cd /var/www/html/yourdrupal_root<br />drush dl apachesolr<br />cd sites/all/modules/apachesolr<br />wget <a title="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" href="http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09.zip" target="_blank">http://solr-php-client.googlecode.com/files/SolrPhpClient.r22.2009-11-09...</a> <br />unzip SolrPhpClient.r22.2009-11-09.zip </code></div>
+
+
 <p>4).根据apachesolr模块里面的说明，复制apachesolr模块里面的schema.xml，solrconfig.xml</p>
+
+
 <p>到/home/ruby/solr/example/solr目录.</p>
+
+
 <div class="codeblock"><code>cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/schema.xml /home/ruby/solr/example/solr/conf<br />cp /var/www/html/yourdrupal_root/sites/all/modules/apachesolr/solrconfig.xml /home/ruby/solr/example/solr/conf</code></div>
+
+
 <p>5).测试一下Apache Solr是否工作了？</p>
+
+
 <div class="codeblock"><code>cd /home/ruby/solr/example<br />java -jar start.jar</code></div>
+
+
 <p><br />在浏览器中输入http://192.168.1.110:8983/solr/admin/ （192.168.1.110换成你自已的地址）,如果你顺利看到</p>
+
+
 <p>如下界面，说明你就成功了！</p>
+
+
 <p><img src="http://drupalsh.cn/userfiles/solr.png" alt="" /></p>
+
+
 <p>6).按照常规模式启用drupal的Apache Solr模块,OK,到后台配制一下(admin/settings/apachesolr)，测试是否成</p>
+
+
 <p>功,如果不出意外，你就会看到本文开头的图片效果.</p>
+
+
 <p>续&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;<br /> 你肯定不想每次都在命令行窗口打开solr服务，好，让我们把solr变成系统服务</p>
+
+
 <p>7).创建系统启动服务功能</p>
+
+
 <div class="codeblock"><code>nano -w /etc/init.d/solr</code></div>
+
+
 <p>复制以下代码:</p>
+
+
 <div class="codeblock"><code>SOLR_DIR="/home/ruby/solr/example"&nbsp; # 换成你的安装路径<br />JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar"<br />LOG_FILE="/var/log/solr.log"<br />JAVA="/usr/bin/java"<br /> <br />case $1 in<br />&nbsp;&nbsp;&nbsp; start)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Starting Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS 2&gt; $LOG_FILE &amp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; stop)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Stopping Solr"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd $SOLR_DIR<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $JAVA $JAVA_OPTIONS --stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; restart)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 stop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0 start<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />&nbsp;&nbsp;&nbsp; *)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "Usage: $0 {start|stop|restart}" &gt;&amp;2<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit 1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;<br />esac</code></div>
+
+
 <p>保存退出,授权</p>
+
+
 <div class="codeblock"><code>chmod 755 /etc/init.d/solr</code></div>
+
+
 <p>现在，你可以用以下linux常用命令去启动apache solr了</p>
+
+
 <div class="codeblock"><code>service solr start<br />service solr stop<br />service solr restart</code></div>
+
+
 <p>如果需要，还可以加上开机自动开启apache solr</p>
+
+
 <div class="codeblock"><code>sudo chkconfig --add solr</code></div>
+
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/'>http://Apiaceae.github.io/blog/2012/07/18/ubuntu%E4%B8%BAdrupal7%E9%85%8D%E7%BD%AEapache-solr%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/07/18/ubuntu-drupal7-apache-solr-steps/'>http://Apiaceae.github.io/blog/2012/07/18/ubuntu-drupal7-apache-solr-steps/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -149,7 +381,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/">Ubuntu解压命令全览</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/07/17/ubuntu-tar-commands-details/">Ubuntu解压命令全览</a></h1>
     
     
       <p class="meta">
@@ -165,21 +397,37 @@ yum install java-1.6*
   
 
 
-<time datetime="2012-07-17T00:00:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
+<time datetime="2012-07-17T13:25:00+08:00" pubdate data-updated="true">Jul 17<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar</span></span></strong><br /> 解包：tar xvf FileName.tar<br /> 打包：tar cvf FileName.tar DirName<br /> <span style="color: #008000;">（注：tar是打包，不是压缩！）</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.gz</span></span></strong><br /> 解压1：gunzip FileName.gz<br /> 解压2：gzip -d FileName.gz<br /> 压缩：gzip FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.gz 和 .tgz</span></span></strong><br /> 解压：tar zxvf FileName.tar.gz<br /> 压缩：tar zcvf FileName.tar.gz DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz2</span></span></strong><br /> 解压1：bzip2 -d FileName.bz2<br /> 解压2：bunzip2 FileName.bz2<br /> 压缩： bzip2 -z FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz2</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz2<br /> 压缩：tar jcvf FileName.tar.bz2 DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz</span></span></strong><br /> 解压1：bzip2 -d FileName.bz<br /> 解压2：bunzip2 FileName.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.Z</span></span></strong><br /> 解压：uncompress FileName.Z<br /> 压缩：compress FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.Z</span></span></strong><br /> 解压：tar Zxvf FileName.tar.Z<br /> 压缩：tar Zcvf FileName.tar.Z DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.zip</span></span></strong><br /> 解压：unzip FileName.zip<br /> 压缩：zip FileName.zip DirName<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rar</span></span></strong><br /> 解压：rar x FileName.rar<br /> 压缩：rar a FileName.rar DirName<br /> <span style="color: #008000;"><br /> rar请到：<a style="color: #003793;" href="http://www.rarsoft.com/download.htm" target="_blank"><span style="color: #003793;">http://www.rarsoft.com/download.htm</span></a> 下载！<br /> 解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp rar_static /usr/bin/rar</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.lha</span></span></strong><br /> 解压：lha -e FileName.lha<br /> 压缩：lha -a FileName.lha FileName<br /> <span style="color: #008000;"><br /> lha请到：<a style="color: #003793;" href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/" target="_blank"><span style="color: #003793;">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/</span></a>下载！<br /> &gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp lha /usr/bin/</span><br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rpm</span></span></strong><br /> 解包：rpm2cpio FileName.rpm | cpio -div<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.deb</span></span></strong><br /> 解包：ar p FileName.deb data.tar.gz | tar zxf -<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</span></span></strong><br /> 解压：sEx x FileName.*<br /> 压缩：sEx a FileName.* FileName</p>
+  <div class="entry-content"><p><strong>.tar</strong></p>
+
+<p>解包：tar xvf FileName.tar</p>
+
+<p>打包：tar cvf FileName.tar DirName</p>
+
+<p>(注：tar是打包，不是压缩！）</p>
+
+<p><strong>.gz</strong></p>
+
+<p>解压1：gunzip FileName.gz
+解压2：gzip -d FileName.gz<br /> 压缩：gzip FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.gz 和 .tgz</span></span></strong><br /> 解压：tar zxvf FileName.tar.gz<br /> 压缩：tar zcvf FileName.tar.gz DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz2</span></span></strong><br /> 解压1：bzip2 -d FileName.bz2<br /> 解压2：bunzip2 FileName.bz2<br /> 压缩： bzip2 -z FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz2</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz2<br /> 压缩：tar jcvf FileName.tar.bz2 DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.bz</span></span></strong><br /> 解压1：bzip2 -d FileName.bz<br /> 解压2：bunzip2 FileName.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.bz</span></span></strong><br /> 解压：tar jxvf FileName.tar.bz<br /> 压缩：<span style="color: #ffa500;">未知</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.Z</span></span></strong><br /> 解压：uncompress FileName.Z<br /> 压缩：compress FileName<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar.Z</span></span></strong><br /> 解压：tar Zxvf FileName.tar.Z<br /> 压缩：tar Zcvf FileName.tar.Z DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.zip</span></span></strong><br /> 解压：unzip FileName.zip<br /> 压缩：zip FileName.zip DirName<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rar</span></span></strong><br /> 解压：rar x FileName.rar<br /> 压缩：rar a FileName.rar DirName<br /> <span style="color: #008000;"><br /> rar请到：<a style="color: #003793;" href="http://www.rarsoft.com/download.htm" target="_blank"><span style="color: #003793;"><a href="http://www.rarsoft.com/download.htm">http://www.rarsoft.com/download.htm</a></span></a> 下载！<br /> 解压后请将rar_static拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp rar_static /usr/bin/rar</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.lha</span></span></strong><br /> 解压：lha -e FileName.lha<br /> 压缩：lha -a FileName.lha FileName<br /> <span style="color: #008000;"><br /> lha请到：<a style="color: #003793;" href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/" target="_blank"><span style="color: #003793;"><a href="http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/">http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/</a></span></a>下载！<br /> &gt;解压后请将lha拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br /> [root@www2 tmp]# cp lha /usr/bin/</span><br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.rpm</span></span></strong><br /> 解包：rpm2cpio FileName.rpm | cpio -div<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.deb</span></span></strong><br /> 解包：ar p FileName.deb data.tar.gz | tar zxf &ndash;<br /> &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<br /> <strong><span style="font-size: x-small;"><span style="color: #0000ff;">.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</span></span></strong><br /> 解压：sEx x FileName.<em><br /> 压缩：sEx a FileName.</em> FileName</p></p>
+
 <p>文章转自：http://blog.csdn.net/zad522/article/details/2770446</p>
+
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%85%A8%E8%A7%88/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu-tar-commands-details/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu-tar-commands-details/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -191,7 +439,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/">ubuntu12.04配置静态IP及设置DNS</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/07/17/ubuntu-config-static-ip/">ubuntu12.04配置静态IP及设置DNS</a></h1>
     
     
       <p class="meta">
@@ -214,54 +462,297 @@ yum install java-1.6*
   </header>
 
 
-  <div class="entry-content"><div class="content">
-<h1>静态IP配置方法：</h1>
-<div>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</div>
-<div>sudo gedit /etc/network/interfaces</div>
-<div>auto eth0</div>
-<div>iface eth0 inet static &nbsp; //指定为static</div>
-<div>address 192.168.1.103 &nbsp; //IP地址</div>
-<div>gateway 192.168.1.1 &nbsp; //网关</div>
-<div>netmask 255.255.255.0 &nbsp; //子网掩码</div>
-<div>network 192.168.1.0 &nbsp; //这个是网络？</div>
-<div>broadcast 192.168.1.255 &nbsp; //广播</div>
-<div>然后重启网络设备</div>
-<div>sudo /etc/init.d/networking restart</div>
-<div>&nbsp;</div>
-<div>设置DNS：</div>
-<div>Ubuntu设置DNS，只要将DNS地址写入/ect/resolv.conf文件即可，但在12.04 desktop版中，重启系统之后，静态IP设置生效，但无法链接外网，/etc/resole.conf文件的DNS地址也覆盖掉了。</div>
-<div>解决办法，在/etc/resol<a href="http://biancheng.dnbcw.info/vc/">vc</a>onf/resolv.conf.d/目录下创建tail文件，写入</div>
-<div>nameserver 202.96.134.133</div>
-<div>nameserver 202.96.128.68</div>
-<div>然后重启，DNS生效。</div>
-<div>&nbsp;</div>
-<div>参考链接：http://ask<a href="http://biancheng.dnbcw.info/ubuntu/">ubuntu</a>.com/questions/130452/how-do-i-add-a-dns-server-via-resolv-conf</div>
-</div>
-<div>&nbsp;</div>
+  <div class="entry-content"><h1>静态IP配置方法：</h1>
+
+<p>编辑/etc/network/interfaces，删掉内容，并输入以下几行（假设你的网卡是eth0）</p>
+
+<p>,,,`sudo gedit /etc/network/interfaces</p>
+
+<p>auto eth0</p>
+
+<p>iface eth0 inet static   //指定为static</p>
+
+<p>address 192.168.1.103   //IP地址</p>
+
+<p>gateway 192.168.1.1   //网关</p>
+
+<p>netmask 255.255.255.0   //子网掩码</p>
+
+<p>network 192.168.1.0   //这个是网络？</p>
+
+<p>broadcast 192.168.1.255   //广播`</p>
+
+<p>然后重启网络设备</p>
+
+<p>sudo /etc/init.d/networking restart</p>
+
+<p> </p>
+
+<p>设置DNS：</p>
+
+<p>Ubuntu设置DNS，只要将DNS地址写入/ect/resolv.conf文件即可，但在12.04
+desktop版中，重启系统之后，静态IP设置生效，但无法链接外网，/etc/resole.conf文件的DNS地址也覆盖掉了。</p>
+
+<p>解决办法，在/etc/resol<a href="http://biancheng.dnbcw.info/vc/">vc</a>onf/resolv.conf.d/目录下创建tail文件，写入</p>
+
+<p>nameserver 202.96.134.133</p>
+
+<p>nameserver 202.96.128.68</p>
+
+<p>然后重启，DNS生效。</p>
+
+<p> </p>
+
+<p>参考链接：<a href="http://ask">http://ask</a><a href="http://biancheng.dnbcw.info/ubuntu/">ubuntu</a>.com/questions/130452/how-do-i-add-a-dns-server-via-resolv-conf</p>
+
+<p> </p>
+
 <h1>Ubuntu12.04的一些源列表</h1>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<div class="article_manage"><span class="link_report"><br class="link_categories" /></span></div>
-<p>&nbsp;</p>
-<div id="article_content" class="article_content">
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">安装好ubuntu 12.04之后，可以联网之后，马上要做的最重要的事情之一就是配置更新源列表，这样以后安装更新或者软件才可以获得较好的下载速度。<br /> 首先，备份一下原来的源地址列表文件<br /> sudo cp /etc/apt/sources.list /etc/apt/sources.list.old<br /> 然后进行修改<br /> sudo gedit /etc/apt/sources.list<br /> 可以在里面添加资源地址，我是直接覆盖掉原来的。<br /> 添加好后保存，再输入 sudo apt-get update 就可以更新了，等着慢慢下载东西吧。我虽然选了一个网易的和一个中科大的源，无奈那天网速不给力，还是花了差不多两个小时。<br /> 下面是网上找到的一些较好的源，有大型网站的，也有教育网的，可以根据自己的情况添加两三个即可。<br /> #网易的源（速度很快）<br /> deb http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse<br /> deb http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted<br /> #搜狐的源<br /> deb http://mirrors.sohu.com/ubuntu/ precise main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-updates multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-updates multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security main restricted<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security main restricted<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security universe<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security universe<br /> deb http://mirrors.sohu.com/ubuntu/ precise-security multiverse<br /> deb-src http://mirrors.sohu.com/ubuntu/ precise-security multiverse<br /> deb http://extras.ubuntu.com/ubuntu precise main<br /> deb-src http://extras.ubuntu.com/ubuntu precise main<br /> #台湾源<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise main universe restricted multiverse<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://tw.archive.ubuntu.com/ubuntu/ precise-updates universe main multiverse restricted<br /> deb-src http://tw.archive.ubuntu.com/ubuntu/ precise-updates universe main multiverse restricted</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin<br /> deb http://ubuntu.srt.cn/ubuntu/ precise main universe restricted multiverse<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise main universe restricted multiverse<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-security universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-security universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-updates universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-proposed universe main multiverse restricted<br /> deb http://ubuntu.srt.cn/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-backports universe main multiverse restricted<br /> deb-src http://ubuntu.srt.cn/ubuntu/ precise-updates universe main multiverse restricted</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#mirror.lupaworld.com的源，速度很快<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-security main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-updates main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/archive/ precise-backports main restricted universe multiverse<br /> deb http://mirror.lupaworld.com/ubuntu/ubuntu-cn/ precise main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#ubuntu.cn99.com源（推荐）:<br /> deb http://ubuntu.cn99.com/ubuntu/ precise main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-updates main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://ubuntu.cn99.com/ubuntu-cn/ precise main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#教育网源<br /> #电子科技大学<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://ubuntu.uestc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb-src http://ubuntu.uestc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#中国科技大学<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-backports restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-backports main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-security main restricted universe multiverse<br /> deb-src http://debian.ustc.edu.cn/ubuntu/ precise-updates main restricted universe multiverse</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#北京理工大学<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb http://mirror.bjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb-src http://mirror.bjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#兰州大学<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb ftp://mirror.lzu.edu.cn/ubuntu-cn/ precise main multiverse restricted universe</p>
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">#上海交通大学<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe<br /> deb http://ftp.sjtu.edu.cn/ubuntu-cn/ precise main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-security main multiverse restricted universe<br /> deb-src http://ftp.sjtu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe</p>
-<br />
-<p style="margin-top: 0px; margin-bottom: 14px; padding-top: 0px; padding-bottom: 0px; color: #333333; font-family: arial,宋体,sans-serif; font-size: 14px; line-height: 21px;">本文链接地址:&nbsp;<a style="color: #5a8238;" title="ubuntu12.04 更新源地址列表" href="http://www.maybe520.net/blog/a/424.html">http://www.maybe520.net/blog/a/424.html</a></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>\</p>
+
+<p> </p>
+
+<p>安装好ubuntu
+12.04之后，可以联网之后，马上要做的最重要的事情之一就是配置更新源列表，这样以后安装更新或者软件才可以获得较好的下载速度。\
+ 首先，备份一下原来的源地址列表文件\
+ sudo cp /etc/apt/sources.list /etc/apt/sources.list.old\
+ 然后进行修改\
+ sudo gedit /etc/apt/sources.list\
+ 可以在里面添加资源地址，我是直接覆盖掉原来的。\
+ 添加好后保存，再输入 sudo apt-get update
+就可以更新了，等着慢慢下载东西吧。我虽然选了一个网易的和一个中科大的源，无奈那天网速不给力，还是花了差不多两个小时。\</p>
+
+<p>下面是网上找到的一些较好的源，有大型网站的，也有教育网的，可以根据自己的情况添加两三个即可。\
+ #网易的源（速度很快）\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://mirrors.163.com/ubuntu/">http://mirrors.163.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ #搜狐的源\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise main restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-updates multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main restricted\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security main
+restricted\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security universe\
+ deb <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb-src <a href="http://mirrors.sohu.com/ubuntu/">http://mirrors.sohu.com/ubuntu/</a> precise-security multiverse\
+ deb <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ deb-src <a href="http://extras.ubuntu.com/ubuntu">http://extras.ubuntu.com/ubuntu</a> precise main\
+ #台湾源\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise main universe
+restricted multiverse\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-security universe
+main multiverse restricted\
+ deb <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb-src <a href="http://tw.archive.ubuntu.com/ubuntu/">http://tw.archive.ubuntu.com/ubuntu/</a> precise-updates universe
+main multiverse restricted</p>
+
+<p>#骨头源，骨头源是bones7456架设的一个Ubuntu源 ，提供ubuntu,deepin\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise main universe restricted
+multiverse\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-security universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-proposed universe main
+multiverse restricted\
+ deb <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-backports universe main
+multiverse restricted\
+ deb-src <a href="http://ubuntu.srt.cn/ubuntu/">http://ubuntu.srt.cn/ubuntu/</a> precise-updates universe main
+multiverse restricted</p>
+
+<p>#mirror.lupaworld.com的源，速度很快\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise main restricted
+universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-security main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-updates main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/archive/">http://mirror.lupaworld.com/ubuntu/archive/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://mirror.lupaworld.com/ubuntu/ubuntu-cn/">http://mirror.lupaworld.com/ubuntu/ubuntu-cn/</a> precise main
+restricted universe multiverse</p>
+
+<p>#ubuntu.cn99.com源（推荐）:\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu/">http://ubuntu.cn99.com/ubuntu/</a> precise-backports main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.cn99.com/ubuntu-cn/">http://ubuntu.cn99.com/ubuntu-cn/</a> precise main restricted universe
+multiverse</p>
+
+<p>#教育网源\
+ #电子科技大学\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://ubuntu.uestc.edu.cn/ubuntu/">http://ubuntu.uestc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#中国科技大学\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted universe
+multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main restricted
+universe multiverse\
+ deb <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise main restricted
+universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-backports main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-proposed main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-security main
+restricted universe multiverse\
+ deb-src <a href="http://debian.ustc.edu.cn/ubuntu/">http://debian.ustc.edu.cn/ubuntu/</a> precise-updates main
+restricted universe multiverse</p>
+
+<p>#北京理工大学\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-proposed main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-security main
+multiverse restricted universe\
+ deb-src <a href="http://mirror.bjtu.edu.cn/ubuntu/">http://mirror.bjtu.edu.cn/ubuntu/</a> precise-updates main
+multiverse restricted universe</p>
+
+<p>#兰州大学\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu/">ftp://mirror.lzu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="ftp://mirror.lzu.edu.cn/ubuntu-cn/">ftp://mirror.lzu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe</p>
+
+<p>#上海交通大学\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse restricted
+universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe\
+ deb <a href="http://ftp.sjtu.edu.cn/ubuntu-cn/">http://ftp.sjtu.edu.cn/ubuntu-cn/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-backports main
+multiverse restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-proposed main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-security main multiverse
+restricted universe\
+ deb-src <a href="http://ftp.sjtu.edu.cn/ubuntu/">http://ftp.sjtu.edu.cn/ubuntu/</a> precise-updates main multiverse
+restricted universe</p>
+
+<p>\</p>
+
+<p>本文链接地址: <a href="http://www.maybe520.net/blog/a/424.html" title="ubuntu12.04 更新源地址列表">http://www.maybe520.net/blog/a/424.html</a></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu-config-static-ip/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu-config-static-ip/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
 </div>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/'>http://Apiaceae.github.io/blog/2012/07/17/ubuntu1204%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip%E5%8F%8A%E8%AE%BE%E7%BD%AEdns/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
   
   
 
@@ -273,54 +764,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">SublimeText2超强的文本编辑器</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-15T00:00:00+08:00" pubdate data-updated="true">Jul 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&nbsp;</p>
-<p>&nbsp;</p>
-<p><img src="/images/2012/7/eol_gbif_maps.module+%e2%80%94+ofc.jpg" alt="" /></p>
-<p>一些介绍和技巧文章：</p>
-<p>http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html</p>
-<p>http://lucifr.com/139225/sublime-text-2-tricks-and-tips/</p>
-<p>http://www.iplaysoft.com/sublimetext.html</p>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/'>http://Apiaceae.github.io/blog/2012/07/15/sublimetext2%E8%B6%85%E5%BC%BA%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/">ubuntu中文输入法Fcitx安装</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/04/20/ubuntu-language-input-tool-fcitx/">ubuntu中文输入法Fcitx安装</a></h1>
     
     
       <p class="meta">
@@ -343,16 +787,44 @@ yum install java-1.6*
   </header>
 
 
-  <div class="entry-content"><p>在ubuntu10.10系统安装成功后,系统默认的中文输入法是ibus,但是这个输入法给我们这些在windows下使用sougou用惯了的 人是很不习惯的.特别是打词组的时侯,不能联想,词库不是很多.后来有了解到还有一款中文输入法Fcitx,所以换成这个之后,发现比较适合我使用,虽然 存在很多不足.</p>
-<p>&nbsp;</p>
-<p>首先来认识下Fcitx,它是Free Chinese Input Toy for&nbsp;X的简称,中文名叫小企鹅输入法,包括拼音和双拼输入法.目前最新版本为4.0.1,相比之前的版本,新增很多功能包括新的皮肤、词库和详细设置界面。<br /> <a href="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95.gif"><img class="size-medium wp-image-1147 alignnone" title="Fcitx中文输入法" src="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95-300x186.gif" alt="" width="300" height="186" /></a><br /> 之前这款输入法是个人所做(不过已经停止开发)，目前官方主页已经转移到google code上: <a href="http://code.google.com/p/fcitx/">http://code.google.com/p/fcitx/<br /> </a>上面有最新的版本下载和皮肤，词库。<br /> 安装方法如下：<br /> sudo add-apt-repository ppa:wengxt/fcitx-nightly &nbsp; &#92;增加ppa源<br /> sudo apt-get update &nbsp; &#92;更新软件库<br /> sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin &nbsp;&#92;安装fcitx和fcitx-sunpinyin输入法<br /> sudo apt-get install fcitx-table-all &nbsp; &#92;安装码表<br /> 到目前为止输入法已经安装完成了.<br /> 接下来输入:im-switch -s fcitx -z default 把fcitx设置为默认输入法<br /> 或者通过:系统&mdash;系统管理&mdash;语言支持,打开语言和文本设置项,在语言分页中的键盘输入方式系统中选择fcitx.<br /> 另外,可以右击输入法进行配置,包括皮肤,快捷键等.</p>
-<p><br /> 除非注明，<a href="http://www.mylouge.com/">空中楼阁</a>的文章均为原创，支持转载，但请以链接形式标明本文地址 <br /> 本文地址：<a href="http://www.mylouge.com/2011/02/1146.html">http://www.mylouge.com/2011/02/1146.html</a></p>
+  <div class="entry-content"><p>在ubuntu10.10系统安装成功后,系统默认的中文输入法是ibus,但是这个输入法给我们这些在windows下使用sougou用惯了的
+人是很不习惯的.特别是打词组的时侯,不能联想,词库不是很多.后来有了解到还有一款中文输入法Fcitx,所以换成这个之后,发现比较适合我使用,虽然
+存在很多不足.</p>
+
+<p>首先来认识下Fcitx,它是Free Chinese Input Toy for X的简称,中文名叫小企鹅输入法,包括拼音和双拼输入法.目前最新版本为4.0.1,相比之前的版本,新增很多功能包括新的皮肤、词库和详细设置界面。\</p>
+
+<p><a href="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95.gif"><img src="http://www.mylouge.com/wp-content/uploads/2011/02/Fcitx%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95-300x186.gif" title="Fcitx中文输入法" alt="" /></a>\</p>
+
+<p>之前这款输入法是个人所做(不过已经停止开发)，目前官方主页已经转移到google code上: <a href="http://code.google.com/p/fcitx/">http://code.google.com/p/fcitx/\
+</a>上面有最新的版本下载和皮肤，词库。</p>
+
+<p><strong>安装方法如下：</strong></p>
+
+<p>&lsquo; sudo add-apt-repository ppa:wengxt/fcitx-nightly   &#92;增加ppa源\
+ sudo apt-get update   &#92;更新软件库\
+ sudo apt-get install fcitx fcitx-config-gtk fcitx-sunpinyin
+ &#92;安装fcitx和fcitx-sunpinyin输入法\
+ sudo apt-get install fcitx-table-all   &#92;安装码表\&rsquo;</p>
+
+<p> 到目前为止输入法已经安装完成了.</p>
+
+<p> 接下来输入:im-switch -s fcitx -z default 把fcitx设置为默认输入法</p>
+
+<p>或者通过:系统—系统管理—语言支持,打开语言和文本设置项,在语言分页中的键盘输入方式系统中选择fcitx.\
+ 另外,可以右击输入法进行配置,包括皮肤,快捷键等.</p>
+
+<p>除非注明，<a href="http://www.mylouge.com/">空中楼阁</a>的文章均为原创，支持转载，但请以链接形式标明本文地址</p>
+
+<p>本文地址：<a href="http://www.mylouge.com/2011/02/1146.html">http://www.mylouge.com/2011/02/1146.html</a></p>
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/'>http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/04/20/ubuntu-language-input-tool-fcitx/'>http://Apiaceae.github.io/blog/2012/04/20/ubuntu-language-input-tool-fcitx/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -364,7 +836,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/">植物分类学-比较数据的系统评估第二版</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/23/taxonomy-stuessy-book/">植物分类学-比较数据的系统评估第二版</a></h1>
     
     
       <p class="meta">
@@ -380,20 +852,77 @@ yum install java-1.6*
   
 
 
-<time datetime="2012-03-23T00:00:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+<time datetime="2012-03-23T15:20:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/images/20120323173901.jpg"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="20120323173901" border="0" alt="20120323173901" src="http://blog.cnpc.ac.cn/images/20120323173901_thumb.jpg" width="377" height="772" /></a></p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p>&#160;</p>  <p><font size="4"><strong>Stuessy教授最近又出版了经典分类学著作的第二版。这里有发表在</strong></font><a href="http://sysbio.oxfordjournals.org/content/59/5/608.full" target="_blank"><font size="4"><strong>系统生物学杂志上的书评</strong></font></a><font size="4"><strong>和</strong></font><a href="http://books.google.com.hk/books?id=0bYs8F0Mb9gC&amp;pg=PP31&amp;lpg=PP31&amp;dq=taxonomy+unending+synthesis&amp;source=bl&amp;ots=5PDmIIznED&amp;sig=NDPharGBVmMxVPDDUxnnYxClRrc&amp;hl=zh-CN&amp;sa=X&amp;ei=UxlsT9uuMouQiQe85sjiBQ&amp;ved=0CCwQ6AEwAA#v=onepage&amp;q=taxonomy%20unending%20synthesis&amp;f=false"><font size="4"><strong>Google图书的地址</strong></font></a><font size="4"><strong>。感兴趣的可以看看。顺便再看看下面的这些报道：</strong></font></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/5/218947.html" target="_blank"><font size="4"><strong>动物分类学》：首师大硕士生以“首师大”命名新物种</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2010/8/235565-1.shtm" target="_blank"><font size="4"><strong>中国分类学急剧萎缩 后继乏人成专家心病</strong></font></a></p>  <p><a href="http://news.sciencenet.cn/htmlnews/2009/12/225728.shtm" target="_blank"><font size="4"><strong>分类学研究岌岌可危 中国策划大规模项目拯救濒危学科</strong></font></a></p>  <h3><a href="http://www.sciencemag.org/content/325/5936/31.short" target="_blank"><font size="4">China Searches for an 11th-Hour Lifesaver for a Dying Discipline</font></a></h3>
+  <div class="entry-content"><p><img src="/images/20120323173901_thumb.jpg" alt="" /></p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p> </p>
+
+<p><strong>Stuessy教授最近又出版了经典分类学著作的第二版。这里有发表在</strong><a href="http://sysbio.oxfordjournals.org/content/59/5/608.full"><strong>系统生物学杂志上的书评</strong></a><strong>和</strong><a href="http://books.google.com.hk/books?id=0bYs8F0Mb9gC&amp;pg=PP31&amp;lpg=PP31&amp;dq=taxonomy+unending+synthesis&amp;source=bl&amp;ots=5PDmIIznED&amp;sig=NDPharGBVmMxVPDDUxnnYxClRrc&amp;hl=zh-CN&amp;sa=X&amp;ei=UxlsT9uuMouQiQe85sjiBQ&amp;ved=0CCwQ6AEwAA#v=onepage&amp;q=taxonomy%20unending%20synthesis&amp;f=false"><strong>Google图书的地址</strong></a><strong>。感兴趣的可以看看。顺便再看看下面的这些报道：</strong></p>
+
+<p><a href="http://news.sciencenet.cn/htmlnews/2009/5/218947.html"><strong>动物分类学》：首师大硕士生以“首师大”命名新物种</strong></a></p>
+
+<p><a href="http://news.sciencenet.cn/htmlnews/2010/8/235565-1.shtm"><strong>中国分类学急剧萎缩
+后继乏人成专家心病</strong></a></p>
+
+<p><a href="http://news.sciencenet.cn/htmlnews/2009/12/225728.shtm"><strong>分类学研究岌岌可危
+中国策划大规模项目拯救濒危学科</strong></a></p>
+
+<h3><a href="http://www.sciencemag.org/content/325/5936/31.short">China Searches for an 11th-Hour Lifesaver for a Dying Discipline</a></h3>
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/'>http://Apiaceae.github.io/blog/2012/03/23/%E6%A4%8D%E7%89%A9%E5%88%86%E7%B1%BB%E5%AD%A6-%E6%AF%94%E8%BE%83%E6%95%B0%E6%8D%AE%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0%E7%AC%AC%E4%BA%8C%E7%89%88/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/03/23/taxonomy-stuessy-book/'>http://Apiaceae.github.io/blog/2012/03/23/taxonomy-stuessy-book/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -405,7 +934,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/">MacOS Fink命令</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/11/macos-fink-command/">MacOS Fink命令</a></h1>
     
     
       <p class="meta">
@@ -421,68 +950,108 @@ yum install java-1.6*
   
 
 
-<time datetime="2012-03-11T00:00:00+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2012</time>
+<time datetime="2012-03-11T13:29:00+08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。</p>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">Fink工程的目的和MacPort一样，通过修改 Unix 软件来port到Mac OS X 上，然后提供某种下载安装机制供大家使用。在Fink里面你可以像Ubuntu中那样用apt这套工具直接安装二进制包，也可以直接使用Fink来通过源代码编译安装。一般直接用Fink比较好，因为里面的东西比较新。</p>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;"><br />Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">sudo rm -rf /sw</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">升级fink自身</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink selfupdate<br />fink selfupdate-rsync<br />fink index -f<br />fink selfupdate</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">安装</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink install xxx</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">卸载</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink remove xxx</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">如果想把依赖包也一起卸载，加-r。如果想配置文件一并卸载，用</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink purge</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">类似与ubuntu里面的remove &ndash;purge</p>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">更新所有已安装包</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink update-all</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">查看可安装包</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink list xxx 或者 fink apropos xxx</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">也支持正泽表达式</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink list &ldquo;xxx*&rdquo;</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">查看相关包的描述</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink info</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">如果不小心删除了某个包的文件，想重新安装整个包</p>
-<blockquote style="font-size: 13px; border-left-width: 3px; border-left-style: solid; border-left-color: #336699; padding-left: 5px; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">
-<p style="font-size: 1.15em;">fink reinstall</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">显示某个包的依赖关系</p>
-<blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;"><span style="font-size: 15px;">fink show-deps xxx</span></p>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">&nbsp;</p>
-</blockquote>
-<p style="font-size: 1.15em; color: #111111; font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 21px; text-align: justify; background-color: #fcfcfc;">原文地址：http://www.kunli.info/2009/12/11/mac-install-pink/</p>
+  <div class="entry-content"><p>苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。</p>
+
+<p>Fink工程的目的和MacPort一样，通过修改 Unix 软件来port到Mac OS X
+上，然后提供某种下载安装机制供大家使用。在Fink里面你可以像Ubuntu中那样用apt这套工具直接安装二进制包，也可以直接使用Fink来通过源代码编译安装。一般直接用Fink比较好，因为里面的东西比较新。</p>
+
+<p>Fink 的所有文件几乎都安装在 /sw（或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：</p>
+
+<p><code>
+$ sudo rm -rf /sw
+</code></p>
+
+<p><strong>升级fink自身</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ fink selfupdate
+</span><span class='line'>
+</span><span class='line'>$ fink selfupdate-rsync
+</span><span class='line'>
+</span><span class='line'>$ fink index -f
+</span><span class='line'>
+</span><span class='line'>$ fink selfupdate</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>安装</strong></p>
+
+<p><code>
+$ fink install xxx
+</code></p>
+
+<p><strong>卸载</strong></p>
+
+<p><code>
+$ fink remove xxx
+</code></p>
+
+<p><strong>如果想把依赖包也一起卸载，加-r。如果想配置文件一并卸载，用</strong></p>
+
+<p><code>
+$ fink purge
+</code></p>
+
+<p>类似与ubuntu里面的remove –purge</p>
+
+<p><strong>更新所有已安装包</strong></p>
+
+<p><code>
+$ fink update-all
+</code></p>
+
+<p><strong>查看可安装包</strong></p>
+
+<p><code>
+$ fink list xxx 或者 fink apropos xxx
+</code></p>
+
+<p><strong>也支持正泽表达式</strong></p>
+
+<p><code>
+$ fink list “xxx\*”
+</code></p>
+
+<p><strong>查看相关包的描述</strong></p>
+
+<p><code>
+$ fink info
+</code></p>
+
+<p><strong>如果不小心删除了某个包的文件，想重新安装整个包</strong></p>
+
+<p><code>
+$ fink reinstall
+</code></p>
+
+<p><strong>显示某个包的依赖关系</strong></p>
+
+<p><code>
+$ fink show-deps xxx
+ </code></p>
+
+<p>原文地址：<a href="http://www.kunli.info/2009/12/11/mac-install-pink/">http://www.kunli.info/2009/12/11/mac-install-pink/</a></p>
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/'>http://Apiaceae.github.io/blog/2012/03/11/macos-fink%E5%91%BD%E4%BB%A4/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command/'>http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -494,7 +1063,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/">分类学杂七杂八</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/09/taxonomy-mess-items/">Taxonomy Mess Items</a></h1>
     
     
       <p class="meta">
@@ -517,47 +1086,113 @@ yum install java-1.6*
   </header>
 
 
-  <div class="entry-content"><h2>近代的生物分类系统</h2>
+  <div class="entry-content"><hr />
+
+<p>layout: post
+title: 分类学杂七杂八
+date: 2012-03-09 12:45
+categories: 分类学</p>
+
+<h2>tags: 分类系统</h2>
+
+<p><strong>近代的生物分类系统</strong></p>
+
 <p>Taxa of Life Tree of Life Life on Earth</p>
+
 <p>The Green Tree of Life Faunaflora</p>
-<p>&nbsp;Taxonomy information (Aquatic Organisms)</p>
+
+<p> Taxonomy information (Aquatic Organisms)</p>
+
 <p>Systema Naturae 2000 &amp; The Taxonomicon</p>
+
 <p>National Center for Biotechnology Information (NCBI)</p>
-<p>&nbsp;Integrated Taxonomic Information System (ITIS)</p>
+
+<p> Integrated Taxonomic Information System (ITIS)</p>
+
 <p>Compleat Botanica Consensus</p>
+
 <p>Phylogeny of Eukaryotes Lanfranco, 2007.</p>
-<p>&nbsp;A phylogenetic classification of organisms other than animals. Shipunov, 2008.</p>
-<p>Systema Naturae [Electronic resource, 1995&mdash;onwards].</p>
-<p>Baldauf, S. L., 2008. An overview of the phylogeny and diversity of eukaryotes (真核生物系统发育和多样性概况).</p>
-<p>Journal of Systematics and Evolution 46(3): 263-273 How do we classify the living world? What is a plant?</p>
+
+<p> A phylogenetic classification of organisms other than animals.
+Shipunov, 2008.</p>
+
+<p>Systema Naturae [Electronic resource, 1995—onwards].</p>
+
+<p>Baldauf, S. L., 2008. An overview of the phylogeny and diversity of
+eukaryotes (真核生物系统发育和多样性概况).</p>
+
+<p>Journal of Systematics and Evolution 46(3): 263-273 How do we classify
+the living world? What is a plant?</p>
+
 <h2>植物分类系统列表</h2>
+
 <p>(List of systems of plant taxonomy)(Wikipedia)</p>
-<p>&nbsp;被子植物分類系統相關分析（靜生(傅德志教授)發佈於義妹論壇）</p>
-<p>&nbsp;Angiosperm Phylogeny Website Shipunov. Systema Angiospermarum (The classification of flowering plants)[Electronic resource, 1991&mdash;onwards]. v.4.804 (2007) PDF file.</p>
+
+<p> 被子植物分類系統相關分析（靜生(傅德志教授)發佈於義妹論壇）</p>
+
+<p> Angiosperm Phylogeny Website Shipunov. Systema Angiospermarum (The
+classification of flowering plants)[Electronic resource, 1991—onwards].
+v.4.804 (2007) PDF file.</p>
+
 <p>PLANT SYSTEMATICS(植物系统分类学教学网站)</p>
-<p>&nbsp;Michael G. Simpson. 2006. Plant Systematics. Slide Presentations,</p>
-<p>2007. Concordance of Angiosperm Family Names Flowering Plant Gateway</p>
-<p>Cole, T.C.H. and H.H. Hilger. 2008. Angiosperm Phylogeny：Flowering Plant Systematics (Poster).</p>
+
+<p> Michael G. Simpson. 2006. Plant Systematics. Slide Presentations,</p>
+
+<p>​2007. Concordance of Angiosperm Family Names Flowering Plant Gateway</p>
+
+<p>Cole, T.C.H. and H.H. Hilger. 2008. Angiosperm Phylogeny：Flowering
+Plant Systematics (Poster).</p>
+
 <h2>系统发育树和系统分类的概念</h2>
-<p>&#8220;Phylogenetic Trees: Reclassifying Life, Retelling Time; Topo-, Chrono-, and Patrocladistics&#8221;</p>
-<p>&nbsp;Glossary of Phylogenetic Systematics Phylogenetic tree construction Concepts of Phenetic &amp; Patristic distance, and Cladistic relationship Understanding Evolution(認識演化)</p>
+
+<p>&ldquo;Phylogenetic Trees: Reclassifying Life, Retelling Time; Topo-, Chrono-,
+and Patrocladistics&rdquo;</p>
+
+<p> Glossary of Phylogenetic Systematics Phylogenetic tree construction
+Concepts of Phenetic &amp; Patristic distance, and Cladistic relationship
+Understanding Evolution(認識演化)</p>
+
 <h2>学名和命名法规 生物俗名與學名</h2>
-<p>&nbsp;International Code of Botanical Nomenclature (Vienna Code, 2005)</p>
-<p>&nbsp;國際植物命名法規(維也納法規) 新版國際植物命名法規(維也納法規) 中的主要變化</p>
-<p>Guidelines on Biological Nomenclature PhyloCode PhyloCode: A New System of Nomenclature PhyloCode:</p>
-<p>A Phylogenetic Code of Biological Nomenclature Cantino, P. D., H. N. Bryant, K. de Queiroz, M. J. Donoghue, T. Eriksson, D. M. Hillis, and M. S. Y. Lee. 1999.</p>
-<p>&nbsp;Species names in phylogenetic nomenclature. Syst. Biol. 48: 790-807.</p>
-<p>A Taxonomic Information Model for Botanical Databases. Draft version 7.3 Shin, Jyh-Wei (辛致煒). 2004. Phylogenetic Analysis (online PPT Lecture)</p>
-<h2>&nbsp;(親緣分析，線上投影片). 统计学分类和预测</h2>
-<p>&nbsp;http://www.cs.zju.edu.cn/people/xucf&#8230;sification.ppt 群集演算法 柔性演算(軟計算) R 導論 高新波。2006。</p>
+
+<p> International Code of Botanical Nomenclature (Vienna Code, 2005)</p>
+
+<p> 國際植物命名法規(維也納法規) 新版國際植物命名法規(維也納法規)
+中的主要變化</p>
+
+<p>Guidelines on Biological Nomenclature PhyloCode PhyloCode: A New System
+of Nomenclature PhyloCode:</p>
+
+<p>A Phylogenetic Code of Biological Nomenclature Cantino, P. D., H. N.
+Bryant, K. de Queiroz, M. J. Donoghue, T. Eriksson, D. M. Hillis, and M.
+S. Y. Lee. 1999.</p>
+
+<p> Species names in phylogenetic nomenclature. Syst. Biol. 48: 790-807.</p>
+
+<p>A Taxonomic Information Model for Botanical Databases. Draft version 7.3
+Shin, Jyh-Wei (辛致煒). 2004. Phylogenetic Analysis (online PPT Lecture)</p>
+
+<h2> (親緣分析，線上投影片). 统计学分类和预测</h2>
+
+<p> <a href="http://www.cs.zju.edu.cn/people/xucf...sification.ppt">http://www.cs.zju.edu.cn/people/xucf&#8230;sification.ppt</a> 群集演算法
+柔性演算(軟計算) R 導論 高新波。2006。</p>
+
 <p>選擇性模糊聚類分析算法(PPT投影片)。西安電子科技大學電子工程學院。</p>
-<p>&nbsp;物种概念 Summary of 26 species concepts 物种形成(Speciation) 植物的物種形成(Plant Speciation) Crisp, M. D. &amp; G.T. 1996 Paraphyletic species. Telopea 6:813-844. 生物學思想發展的歷史 楊曉珮。生物分類的學派。科學月刊 1995年 7月307期 李學勇，2007。達爾文學說在二十世紀中的演變。第七屆科學史研討會彙刊 169-181。</p>
+
+<p> 物种概念 Summary of 26 species concepts 物种形成(Speciation)
+植物的物種形成(Plant Speciation) Crisp, M. D. &amp; G.T. 1996 Paraphyletic
+species. Telopea 6:813-844. 生物學思想發展的歷史
+楊曉珮。生物分類的學派。科學月刊 1995年 7月307期
+李學勇，2007。達爾文學說在二十世紀中的演變。第七屆科學史研討會彙刊
+169-181。</p>
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/'>http://Apiaceae.github.io/blog/2012/03/09/%E5%88%86%E7%B1%BB%E5%AD%A6%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/03/09/taxonomy-mess-items/'>http://Apiaceae.github.io/blog/2012/03/09/taxonomy-mess-items/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -569,7 +1204,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/">Visual Studio 2010快捷工具配置</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/24/visual-studio-productivit-tools/">Visual Studio 2010快捷工具配置</a></h1>
     
     
       <p class="meta">
@@ -585,20 +1220,138 @@ yum install java-1.6*
   
 
 
-<time datetime="2012-01-24T00:00:00+08:00" pubdate data-updated="true">Jan 24<span>th</span>, 2012</time>
+<time datetime="2012-01-24T14:20:00+08:00" pubdate data-updated="true">Jan 24<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3>[Visual Studio 2010] Code Rush + PowerCommand + Power Tools 三種套件同時存在的微調修改</h3>  <ul>   <li>2010-08-07</li>    <li>2648</li>    <li>0</li>    <li><a href="http://demo.tc/SeriesArticleList/Visual%20Studio%20%E7%B2%BE%E9%81%B8%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">系列文章</a></li> </ul>  <ul>   <li></li>    <li><a href="http://www.facebook.com/sharer.php?t=[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9-demo%E5%B0%8F%E9%8B%AA&amp;u=http://demo.tc/Post/630">將本文推到Facebook</a></li>    <li><a href="http://twitter.com/?status=http://demo.tc/Post/630%20[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA">將本文推到Twitter</a></li>    <li><a href="http://plurk.com/?status=http://demo.tc/Post/630+([Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA)&amp;qualifier=shares">將本文推到Plurk</a></li>    <li><a href="http://pdfmyurl.com/?url=http://demo.tc/Post/630">下載本文PDF</a></li> </ul>  <p>demo 的 Visual Studio 一直以來都會安裝 Code Rush 和 PowerCommand ，一直也都合作愉快，但最近看了ScottGu&#8217;s 的 Power Tool 介紹文，看到了一個相當棒的功能 Solution Navigator 讓我決定也要安裝 Power Tools ，就因為這樣我的 Visual Studio 擁有了Code Rush + PowerCommand + Power Tools 三套套件，部份功能重複性還滿高的，所以就稍微作了一下調整，記錄下來以免以後忘記。</p>  <p><ins><ins></ins></ins></p>  <ul>   <li>最後更新：2011/7/6 上午 09:12:10</li> </ul>  <p><img title="demo廢言" alt="demo廢言" src="http://demo.tc/images/msn/demosay.gif" />先說明因為 demo 主要功能是 Code Rush &gt; PowerCommand &gt; Power Tools，因此有重複的功能會優先關掉 Power Tool 的，不過考量到 Code Rush 免費版到底有什麼功能我不知道，因此衝突的部份都會寫出來，有需要的朋友再自行調配使用。</p>  <p><img alt="" src="http://lh3.ggpht.com/_PgurvCEASJs/TFz8N-4jlFI/AAAAAAAAGjA/Ocr7cVFvqxo/s800/CPPTools01.gif" />Code Rush （<a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">官網</a>）預設所有功能都是他，不調整</p>  <hr />  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8NyaBirI/AAAAAAAAGjE/nyQLSYxbzps/s800/CPPTools02.gif" />PowerCommand （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8OK_ov6I/AAAAAAAAGjM/swibUMiJ_3w/s800/CPPTools04.gif" /></p>  <ol>   <li>用到機率太小所以關閉。 </li>    <li>內建就有了所以關閉。 </li>    <li>和 Power Tools 重複，所以關閉。</li> </ol>  <p><img alt="" src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8N2d1vOI/AAAAAAAAGjI/tE9LSJdYbIU/s800/CPPTools03.gif" />Power Tools （<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">官網</a>）調整如下：</p>  <p><img alt="" src="http://lh4.ggpht.com/_PgurvCEASJs/TFz8OLAP1QI/AAAAAAAAGjQ/D629sgQK1Zg/s800/CPPTools05.gif" /></p>  <ol>   <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。 </li>    <li>與 Code Rush 衝突，因此關閉。 </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>單純因為自己用不到所以關閉&#8230;.. </li>    <li>CTRL﹢X 更好用所以關閉。</li> </ol>  <hr />  <p>基於以上的調整後，一些重複的功能就不會出現了，但這三個套件功能繁雜，demo 不可能一一介紹（除非我開三篇文）所以就請各位參考一下官方和其他網友的說明吧。</p>  <p><img title="分隔線" alt="分隔線" src="http://demo.tc/images/msn/linkPage.gif" /></p>  <ul>   <li>Code Rush      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/sam319/archive/2009/12/31/12747.aspx">強力推薦寫程式一定要用的外掛工具 - CodeRush Xpress</a></li>        <li><a href="http://www.minitw.com/archives/633">開啟 CodeRush Xpress 10.1 的選單功能列</a></li>     </ul>   </li>    <li>PowerCommand      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/05/03/visual-studio-2010-extension-manager-and-the-new-vs-2010-powercommands-extension.aspx">Visual Studio 2010 Extension Manager (and the new VS 2010 PowerCommands Extension)</a></li>     </ul>   </li>    <li>Poert Tools      <ul>       <li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">Visual Studio 模組下載介紹頁面</a></li>        <li><a href="http://www.dotblogs.com.tw/larrynung/archive/2010/06/14/15862.aspx">[Visual Studio]Visual Studio 2010 Pro Power Tools</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/08/04/some-nice-code-editor-features-provided-by-the-vs-2010-power-tool-extensions.aspx">Some nice code editor features provided by the VS 2010 Power Tool Extensions</a></li>        <li><a href="http://weblogs.asp.net/scottgu/archive/2010/07/19/vs-2010-productivity-power-tools-update-with-some-cool-new-features.aspx">VS 2010 Productivity Power Tools Update (with some cool new features)</a></li>     </ul>   </li> </ul>  <p><a href="http://demo.tc/Tag/Visual%20Studio%20%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">Visual Studio 擴充套件</a></p>  <p>原文地址：<a href="http://demo.tc/Post/630">http://demo.tc/Post/630</a></p>
+  <div class="entry-content"><h4>Visual Studio 2010+Code Rush + PowerCommand + Power Tools三種套件同時存在的微調修改</h4>
+
+<p><a href="http://demo.tc/SeriesArticleList/Visual%20Studio%20%E7%B2%BE%E9%81%B8%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">系列文章</a></p>
+
+<ul>
+<li><a href="http://www.facebook.com/sharer.php?t=[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9-demo%E5%B0%8F%E9%8B%AA&amp;u=http://demo.tc/Post/630">將本文推到Facebook</a></li>
+<li><a href="http://twitter.com/?status=http://demo.tc/Post/630%20[Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA">將本文推到Twitter</a></li>
+<li><a href="http://plurk.com/?status=http://demo.tc/Post/630+([Visual%20Studio%202010]%20Code%20Rush%20+%20PowerCommand%20+%20Power%20Tools%20%E4%B8%89%E7%A8%AE%E5%A5%97%E4%BB%B6%E5%90%8C%E6%99%82%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BE%AE%E8%AA%BF%E4%BF%AE%E6%94%B9+-+demo%E5%B0%8F%E9%8B%AA">將本文推到Plurk</a>&amp;qualifier=shares)</li>
+<li><a href="http://pdfmyurl.com/?url=http://demo.tc/Post/630">下載本文PDF</a></li>
+</ul>
+
+
+<p>demo 的 Visual Studio 一直以來都會安裝 Code Rush 和 PowerCommand
+，一直也都合作愉快，但最近看了ScottGu&rsquo;s 的 Power Tool
+介紹文，看到了一個相當棒的功能 Solution Navigator 讓我決定也要安裝 Power
+Tools ，就因為這樣我的 Visual Studio 擁有了Code Rush + PowerCommand +
+Power Tools
+三套套件，部份功能重複性還滿高的，所以就稍微作了一下調整，記錄下來以免以後忘記。</p>
+
+<ul>
+<li>最後更新：2011/7/6 上午 09:12:10</li>
+</ul>
+
+
+<p><img src="http://demo.tc/images/msn/demosay.gif" title="demo廢言" alt="demo廢言" />先說明因為
+demo 主要功能是 Code Rush > PowerCommand > Power
+Tools，因此有重複的功能會優先關掉 Power Tool 的，不過考量到 Code Rush
+免費版到底有什麼功能我不知道，因此衝突的部份都會寫出來，有需要的朋友再自行調配使用。</p>
+
+<p><img src="http://lh3.ggpht.com/_PgurvCEASJs/TFz8N-4jlFI/AAAAAAAAGjA/Ocr7cVFvqxo/s800/CPPTools01.gif" alt="" />Code
+Rush
+（<a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">官網</a>）預設所有功能都是他，不調整</p>
+
+<hr />
+
+<p><img src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8NyaBirI/AAAAAAAAGjE/nyQLSYxbzps/s800/CPPTools02.gif" alt="" />PowerCommand
+（<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">官網</a>）調整如下：</p>
+
+<p><img src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8OK_ov6I/AAAAAAAAGjM/swibUMiJ_3w/s800/CPPTools04.gif" alt="" /></p>
+
+<ol>
+<li>用到機率太小所以關閉。</li>
+<li>內建就有了所以關閉。</li>
+<li>和 Power Tools 重複，所以關閉。</li>
+</ol>
+
+
+<p><img src="http://lh5.ggpht.com/_PgurvCEASJs/TFz8N2d1vOI/AAAAAAAAGjI/tE9LSJdYbIU/s800/CPPTools03.gif" alt="" />Power
+Tools
+（<a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">官網</a>）調整如下：</p>
+
+<p><img src="http://lh4.ggpht.com/_PgurvCEASJs/TFz8OLAP1QI/AAAAAAAAGjQ/D629sgQK1Zg/s800/CPPTools05.gif" alt="" /></p>
+
+<ol>
+<li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。</li>
+<li>與 Code Rush 衝突，因此關閉。</li>
+<li>與 Code Rush 衝突，因此關閉。</li>
+<li>因不一定團隊成員都有安裝，所以意義不大，因此關閉。</li>
+<li>與 Code Rush 衝突，因此關閉。</li>
+<li>單純因為自己用不到所以關閉&hellip;..</li>
+<li>單純因為自己用不到所以關閉&hellip;..</li>
+<li>單純因為自己用不到所以關閉&hellip;..</li>
+<li>CTRL﹢X 更好用所以關閉。</li>
+</ol>
+
+
+<hr />
+
+<p>基於以上的調整後，一些重複的功能就不會出現了，但這三個套件功能繁雜，demo
+不可能一一介紹（除非我開三篇文）所以就請各位參考一下官方和其他網友的說明吧。</p>
+
+<p><img src="http://demo.tc/images/msn/linkPage.gif" title="分隔線" alt="分隔線" /></p>
+
+<ul>
+<li><p>Code Rush</p>
+
+<ul>
+<li><a href="http://visualstudiogallery.msdn.microsoft.com/zh-TW/F9CDA5D8-10AF-4CC6-9D17-207222A3FD13">Visual Studio
+模組下載介紹頁面</a></li>
+<li><a href="http://www.dotblogs.com.tw/sam319/archive/2009/12/31/12747.aspx">強力推薦寫程式一定要用的外掛工具 &ndash; CodeRush
+Xpress</a></li>
+<li><a href="http://www.minitw.com/archives/633">開啟 CodeRush Xpress 10.1
+的選單功能列</a></li>
+</ul>
+</li>
+<li><p>PowerCommand</p>
+
+<ul>
+<li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99">Visual Studio
+模組下載介紹頁面</a></li>
+<li><a href="http://weblogs.asp.net/scottgu/archive/2010/05/03/visual-studio-2010-extension-manager-and-the-new-vs-2010-powercommands-extension.aspx">Visual Studio 2010 Extension Manager (and the new VS 2010
+PowerCommands
+Extension)</a></li>
+</ul>
+</li>
+<li><p>Poert Tools</p>
+
+<ul>
+<li><a href="http://visualstudiogallery.msdn.microsoft.com/en-us/d0d33361-18e2-46c0-8ff2-4adea1e34fef">Visual Studio
+模組下載介紹頁面</a></li>
+<li><a href="http://www.dotblogs.com.tw/larrynung/archive/2010/06/14/15862.aspx">[Visual Studio]Visual Studio 2010 Pro Power
+Tools</a></li>
+<li><a href="http://weblogs.asp.net/scottgu/archive/2010/08/04/some-nice-code-editor-features-provided-by-the-vs-2010-power-tool-extensions.aspx">Some nice code editor features provided by the VS 2010 Power
+Tool
+Extensions</a></li>
+<li><a href="http://weblogs.asp.net/scottgu/archive/2010/07/19/vs-2010-productivity-power-tools-update-with-some-cool-new-features.aspx">VS 2010 Productivity Power Tools Update (with some cool new
+features)</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="http://demo.tc/Tag/Visual%20Studio%20%E6%93%B4%E5%85%85%E5%A5%97%E4%BB%B6">Visual Studio
+擴充套件</a></p>
+
+<p>原文地址：<a href="http://demo.tc/Post/630">http://demo.tc/Post/630</a></p>
+
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/'>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-2010e5bfabe68db7e5b7a5e585b7e9858de7bdae/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2012/01/24/visual-studio-productivit-tools/'>http://Apiaceae.github.io/blog/2012/01/24/visual-studio-productivit-tools/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+       </p>
+
+</div>
   
   
 
@@ -610,7 +1363,7 @@ yum install java-1.6*
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/">Ubuntu使用Sed命令批量替换文件夹中文件内的字符串</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/12/04/ubuntue-config-02/">Ubuntu使用Sed命令批量替换文件夹中文件内的字符串</a></h1>
     
     
       <p class="meta">
@@ -626,20 +1379,38 @@ yum install java-1.6*
   
 
 
-<time datetime="2011-12-04T00:00:00+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2011</time>
+<time datetime="2011-12-04T12:30:00+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h5>linux sed 批量替换多个文件中的字符串 </h5>  <p>&#160;</p> sed -i &quot;s/oldstring/newstring/g&quot; `grep oldstring -rl yourdir` 例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net sed -i &quot;s/www.admin99.net/admin99.net/g&quot; `grep www.admin99.net -rl /home` 这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &#8217;  
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/'>http://Apiaceae.github.io/blog/2011/12/04/ubuntue4bdbfe794a8sede591bde4bba4e689b9e9878fe69bbfe68da2e69687e4bbb6e5a4b9e4b8ade69687e4bbb6e58685e79a84e5ad97e7aca6e4b8b2/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
+  <div class="entry-content"><h5>linux sed 批量替换多个文件中的字符串</h5>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/oldstring/newstring/g&quot; \`grep oldstring -rl yourdir\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>例如：替换/resources下所有文件中的<a href="http://www.admin99.net">www.admin99.net</a>为admin99.net</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>sed -i &quot;s/www.admin99.net/admin99.net/g&quot; \`grep www.admin99.net -rl
+</span><span class='line'>/home\`
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>这个` 符号是F1下边，tab键上边，数字1左边的那个，不是单引号 &lsquo;</strong><p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2011/12/04/ubuntue-config-02/'&gt;http://Apiaceae.github.io/blog/2011/12/04/ubuntue-config-02/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
   
   
 
@@ -663,11 +1434,21 @@ yum install java-1.6*
   <p>A little something about me.</p>
 </section>
 <section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/09/24/move-to-octopress/">Move to Octopress</a>
+        <a href="/blog/2017/07/17/ubuntu-tips23/">Ubuntu10.04长期支持版本(LTS)发布</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
       </li>
     
       <li class="post">
@@ -682,19 +1463,21 @@ yum install java-1.6*
         <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/02/23/%E4%BD%BF%E7%94%A8pry%E4%BB%A3%E6%9B%BFrails-console/">使用PRY代替RAILS CONSOLE</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (2)</a></li>
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
 <li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>Linux (3)</a></li>
-<li class='category'><a href='/blog/categories/分类学/'>分类学 (1)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (2)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
 <li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
@@ -715,12 +1498,12 @@ yum install java-1.6*
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
 <a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
-<a style="font-size: 70%" href="/tags/fen-lei-xue/">分类学</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
 <a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
-<a style="font-size: 70%" href="/tags/wu-chong-fa-xian/">物种发现</a>
 <a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
 <a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 70%" href="/tags/zhong-yao-xing/">重要性</a>
 <a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
 
   </ul>

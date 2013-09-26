@@ -1,0 +1,15 @@
+---
+layout: default
+title: 如何在ASP.NET MVC视图中使用DataTable对象
+---
+<h3>控制器代码</h3>
+<pre class="brush: c-sharp;">public ActionResult Index()
+{    
+  DataTable dt = new DataTable(); 
+    return View(dt);
+
+}</pre>
+<h3>视图代码</h3>
+<pre class="brush: c-sharp;">Inherits="System.Web.Mvc.ViewPage&lt;System.Data.DataTable&gt;"</pre>
+<pre class="brush: c-sharp;"><span style="font-size: medium;">显示数据</span></pre>
+<pre style="font-family: consolas;"><span style="font-size: medium;"><span style="background: yellow;">&lt;%</span>&nbsp;<span style="color: blue;">foreach</span>&nbsp;(System.Data.<span style="color: #2b91af;">DataRow</span>&nbsp;row&nbsp;<span style="color: blue;">in</span>&nbsp;Model.Rows)</span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span><span style="color: blue;">=</span>&nbsp;row["columnName"].ToString()&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span>}<span style="background: yellow;">%&gt;</span></span></pre>

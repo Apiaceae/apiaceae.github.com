@@ -1,0 +1,178 @@
+---
+layout: default
+title: RubyGems常用命令
+---
+<h3>升级ruby gem</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;update&nbsp;--system&nbsp; <br /></span></span></li>
+</ol></div>
+<h3>查看gem版本</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;-v&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem -v
+</pre>
+<h3>查看gem版本，gems安装目录，remote sources等</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;env&nbsp; <br /></span></span></li>
+</ol></div>
+<h3>查看已经添加的remote sources</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;sources&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem sources
+</pre>
+<h3><br />添加一个source</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;sources&nbsp;-a&nbsp;</span><span class="string">'htt://rubygems.org'</span><span>&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem sources -a 'htt://rubygems.org'
+</pre>
+<h3>安装一个gem包</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;install&nbsp;will_paginate&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem install will_paginate
+</pre>
+<h3><br />指定源位置</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;install&nbsp;will_paginate&nbsp;--source&nbsp;</span><span class="string">'http://rubygems.org'</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>gem&nbsp;install&nbsp;will_paginate&nbsp;-s&nbsp;<span class="string">'http://rubygems.org'</span><span>&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem install will_paginate --source 'http://rubygems.org'
+gem install will_paginate -s 'http://rubygems.org'
+</pre>
+<h3><br />指定版本</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;install&nbsp;rails&nbsp;-v=2.3.5&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem install rails -v=2.3.5
+</pre>
+<h3><br />查看已经安装的全部gem包</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;list&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem list
+</pre>
+<h3><br />或者 gem list -d 查看具体的信息，例如project的author，homepage，安装在系统中的路径 等信息，建议加上该参数&hellip; <br />查看d开头的gem包</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;list&nbsp;d&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem list d
+</pre>
+<h3><br />更详细的查看</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;list&nbsp;will_paginate&nbsp;-d&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem list will_paginate -d
+</pre>
+<h3><br />卸载gem包</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;uninstall&nbsp;rails&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem uninstall rails
+</pre>
+<h3><br />卸载指定版本</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;uninstall&nbsp;rails&nbsp;-v=2.1.0&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem uninstall rails -v=2.1.0
+</pre>
+<h3><br />查找gem包</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;search&nbsp;will_paginate&nbsp;--both&nbsp;(在local和remote源中search含有will_paginate关键字的)&nbsp;&nbsp;</span></span></li>
+<li><span>gem&nbsp;list&nbsp;-r&nbsp;will_paginate&nbsp;&nbsp;</span></li>
+<li><span>gem&nbsp;list&nbsp;-dr&nbsp;will_paginate&nbsp;(我常用这个)&nbsp;&nbsp;</span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem search will_paginate --both (在local和remote源中search含有will_paginate关键字的)
+gem list -r will_paginate
+gem list -dr will_paginate (我常用这个)
+</pre>
+<h3><br />查看gem包依赖其他的gem：</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;dependency&nbsp;rails&nbsp;-v&nbsp;2.3.5&nbsp;&nbsp;</span></span></li>
+<li><span>Gem&nbsp;rails-2.3.5&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;actionmailer&nbsp;(=&nbsp;2.3.5,&nbsp;runtime)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;actionpack&nbsp;(=&nbsp;2.3.5,&nbsp;runtime)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;activerecord&nbsp;(=&nbsp;2.3.5,&nbsp;runtime)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;activeresource&nbsp;(=&nbsp;2.3.5,&nbsp;runtime)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;activesupport&nbsp;(=&nbsp;2.3.5,&nbsp;runtime)&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;rake&nbsp;(&gt;=&nbsp;0.8.3,&nbsp;runtime)&nbsp; <br /></span></li>
+</ol></div>
+<h3>查看gem包的rdoc帮助</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;server&nbsp;(然后http://localhost:8808查看)&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem server (然后http://localhost:8808查看)
+</pre>
+<h3><br />windows 平台上安装</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;install&nbsp;hpricot&nbsp;--platform=mswin32&nbsp;</span><span class="comment">#&nbsp;不指定在windows安装会报错</span><span>&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem install hpricot --platform=mswin32 # 不指定在windows安装会报错
+</pre>
+<h3><br />不安装ri 和 rdoc</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;install&nbsp;hpricot&nbsp;--no-ri&nbsp;--no-rdoc&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem install hpricot --no-ri --no-rdoc
+</pre>
+<h3><br />查看更多的gem帮助，可以</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>gem&nbsp;-h&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">gem -h
+</pre>
+<h3><br /> <br />项目里常用gem命令</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>rake&nbsp;-T&nbsp;gems:&nbsp;&nbsp;</span></span></li>
+<li><span>(<span class="keyword">in</span><span>&nbsp;/usr/local/system/entos/netposa_redmine)&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:build</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">#&nbsp;Build&nbsp;any&nbsp;native&nbsp;extensions&nbsp;for&nbsp;unpacked&nbsp;gems</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:build</span><span class="symbol">:force</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">#&nbsp;Force&nbsp;the&nbsp;build&nbsp;of&nbsp;all&nbsp;gems</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:install</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">#&nbsp;Installs&nbsp;all&nbsp;required&nbsp;gems.</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:refresh_specs</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">#&nbsp;Regenerate&nbsp;gem&nbsp;specifications&nbsp;in&nbsp;correct&nbsp;format.</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:unpack</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">#&nbsp;Unpacks&nbsp;all&nbsp;required&nbsp;gems&nbsp;into&nbsp;vendor/gems.</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>rake&nbsp;gems<span class="symbol">:unpack</span><span class="symbol">:dependencies</span><span>&nbsp;&nbsp;</span><span class="comment">#&nbsp;Unpacks&nbsp;all&nbsp;required&nbsp;gems&nbsp;and&nbsp;their&nbsp;dependencies&nbsp;into&nbsp;vendor/gems.</span><span>&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">rake -T gems:
+(in /usr/local/system/entos/netposa_redmine)
+rake gems:build                # Build any native extensions for unpacked gems
+rake gems:build:force          # Force the build of all gems
+rake gems:install              # Installs all required gems.
+rake gems:refresh_specs        # Regenerate gem specifications in correct format.
+rake gems:unpack               # Unpacks all required gems into vendor/gems.
+rake gems:unpack:dependencies  # Unpacks all required gems and their dependencies into vendor/gems.
+</pre>
+<h3><br />例如你enviroment.rb 中配置了paperclip gem</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>config.gem&nbsp;</span><span class="string">'paperclip'</span><span>,&nbsp;</span><span class="string">'2.3.5'</span><span>&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">config.gem 'paperclip', '2.3.5'
+</pre>
+<h3><br />那么</h3>
+<div class="dp-highlighter"><ol class="dp-rb">
+<li><span><span>rake&nbsp;gems</span><span class="symbol">:install</span><span>&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">rake gems:install 
+</pre>
+<p><br />将会安装paperclip 2.3.5 到你的ruby目录里,</p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">Ruby代码</div>
+</div>
+<ol class="dp-rb">
+<li><span><span>rake&nbsp;gems</span><span class="symbol">:unpack</span><span class="symbol">:dependencies</span><span>&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">rake gems:unpack:dependencies 
+</pre>
+<p><br />将会把依赖的gem包unpack 到vendor/gems 目录下, <br />如果你是直接从gem包copy 到vendor/gems 目录下的话,需要执行</p>
+<div class="dp-highlighter">
+<div class="bar">
+<div class="tools">Ruby代码</div>
+</div>
+<ol class="dp-rb">
+<li><span><span>rake&nbsp;gems</span><span class="symbol">:refresh_specs</span><span>&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol></div>
+<pre class="ruby" style="display: none;">rake gems:refresh_specs 
+</pre>
+<p><br />来生成 .specifications 文件</p>

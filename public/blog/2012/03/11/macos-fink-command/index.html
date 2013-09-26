@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>MacOS Fink命令 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud/">Tags</a></li>
+  <li><a href="/about/">About me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <p>苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。</p>
+
+<p>Fink工程的目的和MacPort一样，通过修改 Unix 软件来port到Mac OS X
+上，然后提供某种下载安装机制供大家使用。在Fink里面你可以像Ubuntu中那样用apt这套工具直接安装二进制包，也可以直接使用Fink来通过源代码编译安装。一般直接用Fink比较好，因为里面的东西比较新。</p>
+
+<p>Fink 的所有文件几乎都安装在 /sw（或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：</p>
+
+<p><code>
+$ sudo rm -rf /sw
+</code></p>
+
+<p><strong>升级fink自身</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ fink selfupdate
+</span><span class='line'>
+</span><span class='line'>$ fink selfupdate-rsync
+</span><span class='line'>
+</span><span class='line'>$ fink index -f
+</span><span class='line'>
+</span><span class='line'>$ fink selfupdate</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>安装</strong></p>
+
+<p><code>
+$ fink install xxx
+</code></p>
+
+<p><strong>卸载</strong></p>
+
+<p><code>
+$ fink remove xxx
+</code></p>
+
+<p><strong>如果想把依赖包也一起卸载，加-r。如果想配置文件一并卸载，用</strong></p>
+
+<p><code>
+$ fink purge
+</code></p>
+
+<p>类似与ubuntu里面的remove –purge</p>
+
+<p><strong>更新所有已安装包</strong></p>
+
+<p><code>
+$ fink update-all
+</code></p>
+
+<p><strong>查看可安装包</strong></p>
+
+<p><code>
+$ fink list xxx 或者 fink apropos xxx
+</code></p>
+
+<p><strong>也支持正泽表达式</strong></p>
+
+<p><code>
+$ fink list “xxx\*”
+</code></p>
+
+<p><strong>查看相关包的描述</strong></p>
+
+<p><code>
+$ fink info
+</code></p>
+
+<p><strong>如果不小心删除了某个包的文件，想重新安装整个包</strong></p>
+
+<p><code>
+$ fink reinstall
+</code></p>
+
+<p><strong>显示某个包的依赖关系</strong></p>
+
+<p><code>
+$ fink show-deps xxx
+ </code></p>
+
+<p>原文地址：<a href="http://www.kunli.info/2009/12/11/mac-install-pink/">http://www.kunli.info/2009/12/11/mac-install-pink/</a></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command/'>http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

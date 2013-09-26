@@ -1,0 +1,5 @@
+---
+layout: default
+title: 如何在Ubuntu上删除Munin服务及其软件包
+---
+<p><strong><font color="#ff0000">$ apt-get --purge munin       <br /></font></strong>E: Invalid operation munin    <br /><strong><font color="#ff0000">$ dpkg --purge munin</font></strong>    <br />(Reading database ... 36418 files and directories currently installed.)    <br />Removing munin ...    <br />Purging configuration files for munin ...    <br />The generated web site or accumulated data won't be removed.    <br />Processing triggers for man-db ...    <br /><strong><font color="#ff0000">$ dpkg --purge munin-node</font></strong>    <br />(Reading database ... 36374 files and directories currently installed.)    <br />Removing munin-node ...    <br />Stopping Munin-Node: done.    <br />Purging configuration files for munin-node ...    <br />dpkg - warning: while removing munin-node, directory `/var/lib/munin' not empty so not removed.    <br />Processing triggers for man-db ...</p>  <p>   <br />然后再根据信息提示删除相应的文件夹：$ rm -r /var/lib/munin</p>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Fink | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/fink/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T15:24:46+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MacOS Fink命令]]></title>
+    <link href="http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command/"/>
+    <updated>2012-03-11T13:29:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2012/03/11/macos-fink-command</id>
+    <content type="html"><![CDATA[<p>苹果上自带的Unix其实是很少的，像gcc，make，gnuplot，unrar啊这种杀人越货必备武器都默认没有的。gcc这帮工具好说，安装xcode就行了，其他东西以前用Mac的时候都是用MacPort来搞，但是这次的新Mac在安装Unix工具的时候，上网搜了一下，发现Fink这个更好的工具。</p>
+
+<p>Fink工程的目的和MacPort一样，通过修改 Unix 软件来port到Mac OS X
+上，然后提供某种下载安装机制供大家使用。在Fink里面你可以像Ubuntu中那样用apt这套工具直接安装二进制包，也可以直接使用Fink来通过源代码编译安装。一般直接用Fink比较好，因为里面的东西比较新。</p>
+
+<p>Fink 的所有文件几乎都安装在 /sw（或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：</p>
+
+<p><code>
+$ sudo rm -rf /sw
+</code></p>
+
+<p><strong>升级fink自身</strong></p>
+
+<p>```
+$ fink selfupdate</p>
+
+<p>$ fink selfupdate-rsync</p>
+
+<p>$ fink index -f</p>
+
+<p>$ fink selfupdate
+```</p>
+
+<p><strong>安装</strong></p>
+
+<p><code>
+$ fink install xxx
+</code></p>
+
+<p><strong>卸载</strong></p>
+
+<p><code>
+$ fink remove xxx
+</code></p>
+
+<p><strong>如果想把依赖包也一起卸载，加-r。如果想配置文件一并卸载，用</strong></p>
+
+<p><code>
+$ fink purge
+</code></p>
+
+<p>类似与ubuntu里面的remove –purge</p>
+
+<p><strong>更新所有已安装包</strong></p>
+
+<p><code>
+$ fink update-all
+</code></p>
+
+<p><strong>查看可安装包</strong></p>
+
+<p><code>
+$ fink list xxx 或者 fink apropos xxx
+</code></p>
+
+<p><strong>也支持正泽表达式</strong></p>
+
+<p><code>
+$ fink list “xxx\*”
+</code></p>
+
+<p><strong>查看相关包的描述</strong></p>
+
+<p><code>
+$ fink info
+</code></p>
+
+<p><strong>如果不小心删除了某个包的文件，想重新安装整个包</strong></p>
+
+<p><code>
+$ fink reinstall
+</code></p>
+
+<p><strong>显示某个包的依赖关系</strong></p>
+
+<p><code>
+$ fink show-deps xxx
+ </code></p>
+
+<p>原文地址：<a href="http://www.kunli.info/2009/12/11/mac-install-pink/">http://www.kunli.info/2009/12/11/mac-install-pink/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

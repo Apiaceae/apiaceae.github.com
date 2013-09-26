@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: SublimeText | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/sublimetext/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T15:24:46+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SublimeText2超强的文本编辑器]]></title>
+    <link href="http://Apiaceae.github.io/blog/2013/07/15/sublimetext2-intro/"/>
+    <updated>2013-07-15T12:30:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2013/07/15/sublimetext2-intro</id>
+    <content type="html"><![CDATA[<p><img src="/images/2012/7/eol_gbif_maps.module+%e2%80%94+ofc.jpg" alt="" /></p>
+
+<p><strong>一些介绍和技巧文章：</strong></p>
+
+<p><a href="http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html">http://www.qianduan.net/essential-to-sublime-the-text-2-plugins.html</a></p>
+
+<p><a href="http://lucifr.com/139225/sublime-text-2-tricks-and-tips/">http://lucifr.com/139225/sublime-text-2-tricks-and-tips/</a></p>
+
+<p><a href="http://www.iplaysoft.com/sublimetext.html">http://www.iplaysoft.com/sublimetext.html</a></p>
+]]></content>
+  </entry>
+  
+</feed>

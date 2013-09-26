@@ -1,0 +1,23 @@
+---
+layout: default
+title: 使用JavaScript脚本控制查询页面导航和清除用户输入字符串的首尾空格
+---
+<p>对于查询页面来说，经常会在页面上设置查询信息类别的选项，希望根据用户的查询的信息类别导航的不同的结果页面。并且能够去掉用户输入文本的首尾空格(这个在用户从其它地方拷贝查询字符串过来的时候是经常发生的事情)。以下面的为例子：</p>
+<p><a href="http://blog.cnpc.ac.cn/images/image_6.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" src="http://blog.cnpc.ac.cn/images/image_thumb_6.png" border="0" alt="image" width="607" height="89" /></a></p>
+<h3>JavaScript脚本</h3>
+<pre class="brush: js;">function doSearch() {        
+        var category = document.getElementsByName("category");
+        var queryinput = document.getElementById('SearchName').value;
+        var query = queryinput.replace(/^\s+|\s+$/g, "");        
+        document.getElementById('SearchName').value =query;
+        document.getElementById('SearchName').disabled = true;
+        for (var i = 0; i &lt; category.length; i++) {
+            if (category[0].checked) {
+                window.location = "/name/search?category=name&amp;q=" + query + "&amp;page=" + 1;
+            }
+            if (category[1].checked) {
+                window.location = "/vernacular/search?category=vernacular&amp;q=" + query + "&amp;page=" + 1;
+            }
+        }
+    }</pre>
+<p class="brush: js;">处理用户输入文本空格的方法和原理可以参考<a href="http://www.opensourcevarsity.com/javascriptbasics/l5trimmingwhitespaces">这篇文章</a>。</p>

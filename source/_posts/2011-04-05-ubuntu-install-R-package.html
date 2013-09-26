@@ -1,0 +1,15 @@
+---
+layout: default
+title: Ubuntu10.04下正确安装和配置R软件包
+---
+<p>首先需要安装Sun Java软件包</p>
+<p>$sudo apt-get install sun-java6-jdk</p>
+<p>$sudo apt-get install openjdk-6-jdk</p>
+<p><span style="color: #ff0000;">(注意在Ubuntu里面OpenJDK软件包的名字是"openjdk-6-jdk",如果你安装成&lsquo;openjdk-6-jre&lsquo;后面配置安装R中的一些软件包后出错)</span></p>
+<p>安装好JAVA后使用下面的命令检查JAVA对R软件包的支持配置是否正确</p>
+<p>$sudo R CMD javareconf</p>
+<p>正确配置的结果如下图：</p>
+<p><img src="/images/2011/4/screenshot1.png" alt="" /></p>
+<p>笔者经历过错误安装<span style="color: #ff0000;">openjdk-6-jre<span style="color: #000000;">后，JNI cpp flags后面的配置为空，导致在R软件包中无法安装rJava包。</span></span></p>
+<p><span style="color: #ff0000;"><span style="color: #000000;">$sudo R</span></span></p>
+<p><span style="color: #ff0000;"><span style="color: #000000;">&gt;install.packages(c('rJava', 'XML', 'sp', 'raster', 'dismo', 'rgdal'))<br /></span></span></p>

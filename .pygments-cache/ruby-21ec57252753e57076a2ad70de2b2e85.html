@@ -1,0 +1,141 @@
+<div class="highlight"><pre><span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">editor</span> <span class="o">=</span> <span class="s2">&quot;mvim&quot;</span>
+
+<span class="c1">####` Launch Pry with access to the entire Rails stack.</span>
+<span class="c1">####&#39; If you have Pry in your Gemfile, you can pass: ./script/console --irb=pry instead.</span>
+
+<span class="c1">####` If you don&#39;t, you can load it through the lines below :)</span>
+
+<span class="n">rails</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span> <span class="no">Dir</span><span class="o">.</span><span class="n">getwd</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;environment.rb&#39;</span>
+<span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">rails</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;SKIP\_RAILS&#39;</span><span class="o">].</span><span class="n">nil?</span>
+
+<span class="nb">require</span> <span class="n">rails</span><span class="err"> </span>
+
+<span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span>
+
+<span class="nb">require</span> <span class="s1">&#39;console\_app&#39;</span>
+
+<span class="nb">require</span> <span class="s1">&#39;console\_with\_helpers&#39;</span>
+
+<span class="k">elsif</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span>
+
+<span class="nb">require</span> <span class="s1">&#39;rails/console/app&#39;</span>
+
+<span class="nb">require</span> <span class="s1">&#39;rails/console/helpers&#39;</span>
+
+<span class="p">\</span><span class="c1"># Show sql output</span>
+
+<span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span> <span class="k">if</span> <span class="n">defined?</span>
+<span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+
+<span class="p">\</span><span class="c1"># Add reload! command if rails version \&gt; 3.2</span>
+
+<span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">2</span><span class="o">.</span><span class="n">.</span><span class="mi">2</span><span class="o">].</span><span class="n">to</span><span class="p">\</span><span class="n">_i</span> <span class="p">\</span><span class="o">&gt;=</span> <span class="mi">2</span>
+
+<span class="kp">include</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:ConsoleMethods</span>
+
+<span class="k">end</span>
+
+<span class="k">else</span>
+
+<span class="nb">warn</span> <span class="s2">&quot;[WARN] cannot load Rails console commands (Not on Rails2 or</span>
+<span class="s2">Rails3?)&quot;</span>
+
+<span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="p">\</span><span class="c1"># To edit the method given by editor mvim</span>
+
+<span class="k">class</span> <span class="nc">Object</span>
+
+<span class="k">def</span> <span class="nf">mvim</span><span class="p">(</span><span class="nb">method</span><span class="p">\</span><span class="n">_name</span><span class="p">)</span>
+
+<span class="n">file</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">method</span><span class="p">(</span><span class="nb">method</span><span class="p">\</span><span class="n">_name</span><span class="p">)</span><span class="o">.</span><span class="n">source</span><span class="p">\</span><span class="n">_location</span>
+
+<span class="p">\</span><span class="sb">`mvim &#39;</span><span class="se">\#</span><span class="sb">{file}&#39; +</span><span class="se">\#</span><span class="sb">{line}\`</span>
+
+<span class="k">end</span>
+
+<span class="k">end</span>
+<span class="err"> </span>
+
+<span class="p">\</span><span class="c1"># Break out of the Bundler jail</span>
+
+<span class="p">\</span><span class="c1"># from</span>
+<span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="no">ConradIrwin</span><span class="o">/</span><span class="n">pry</span><span class="o">-</span><span class="n">debundle</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pry</span><span class="o">-</span><span class="n">debundle</span><span class="o">.</span><span class="n">rb</span>
+
+<span class="k">if</span> <span class="n">defined?</span> <span class="no">Bundler</span>
+
+<span class="no">Gem</span><span class="o">.</span><span class="n">post</span><span class="p">\</span><span class="n">_reset</span><span class="p">\</span><span class="n">_hooks</span><span class="o">.</span><span class="n">reject!</span> <span class="p">{</span> <span class="o">|</span><span class="n">hook</span><span class="o">|</span> <span class="n">hook</span><span class="o">.</span><span class="n">source</span><span class="p">\</span><span class="n">_location</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span><span class="p">\</span><span class="o">~</span>
+<span class="sr">%r{/bundler/}</span> <span class="p">}</span>
+
+<span class="ss">Gem</span><span class="p">:</span><span class="ss">:Specification</span><span class="o">.</span><span class="n">reset</span>
+
+<span class="nb">load</span> <span class="s1">&#39;rubygems/custom\_require.rb&#39;</span>
+
+<span class="k">end</span>
+
+<span class="err"> </span>
+
+<span class="k">if</span> <span class="n">defined?</span> <span class="no">Rails</span>
+
+<span class="k">begin</span>
+
+<span class="nb">require</span> <span class="s1">&#39;hirb&#39;</span>
+
+<span class="k">rescue</span> <span class="no">LoadError</span>
+
+<span class="k">end</span>
+
+<span class="err"> </span>
+
+<span class="k">if</span> <span class="n">defined?</span> <span class="no">Hirb</span>
+
+<span class="p">\</span><span class="c1"># Dirty hack to support in-session Hirb.disable/enable</span>
+
+<span class="ss">Hirb</span><span class="p">:</span><span class="ss">:View</span><span class="o">.</span><span class="n">instance</span><span class="p">\</span><span class="n">_eval</span> <span class="k">do</span>
+
+<span class="k">def</span> <span class="nf">enable</span><span class="p">\</span><span class="n">_output</span><span class="p">\</span><span class="n">_method</span>
+
+<span class="vi">@output</span><span class="p">\</span><span class="n">_method</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+
+<span class="ss">Hirb</span><span class="p">:</span><span class="ss">:View</span><span class="o">.</span><span class="n">view</span><span class="p">\</span><span class="n">_or</span><span class="p">\</span><span class="n">_page</span><span class="p">\</span><span class="n">_output</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">||</span>
+<span class="ss">Pry</span><span class="p">:</span><span class="ss">:DEFAULT</span><span class="p">\</span><span class="n">_PRINT</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="err"> </span>
+
+<span class="k">def</span> <span class="nf">disable</span><span class="p">\</span><span class="n">_output</span><span class="p">\</span><span class="n">_method</span>
+
+<span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+<span class="ss">Pry</span><span class="p">:</span><span class="ss">:DEFAULT</span><span class="p">\</span><span class="n">_PRINT</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="vi">@output</span><span class="p">\</span><span class="n">_method</span> <span class="o">=</span> <span class="kp">nil</span>
+
+<span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="err"> </span>
+
+<span class="no">Hirb</span><span class="o">.</span><span class="n">enable</span>
+
+<span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="err"> </span>
+
+<span class="k">begin</span>
+
+<span class="nb">require</span> <span class="s1">&#39;awesome\_print&#39;</span>
+
+<span class="k">rescue</span> <span class="no">LoadError</span>
+
+<span class="k">end</span>
+</pre></div>

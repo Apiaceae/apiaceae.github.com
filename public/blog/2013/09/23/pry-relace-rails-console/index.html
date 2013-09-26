@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>使用PRY代替RAILS CONSOLE - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="rails默认的调度工具是ruby-debug19，启动时还要加上”–debug”参数，或许你觉得用起来也还可以。但如果你用过pry，你会发现原来可以还这么方便，ruby-debug19是那么的简陋。以前还整过一堆插件来增强irb的功能，现在有了pry，默认配置就够用了，还有rails &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud/">Tags</a></li>
+  <li><a href="/about/">About me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">使用PRY代替RAILS CONSOLE</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-23T15:30:00+08:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>rails默认的调度工具是ruby-debug19，启动时还要加上”–debug”参数，或许你觉得用起来也还可以。但如果你用过pry，你会发现原来可以还这么方便，ruby-debug19是那么的简陋。以前还整过一堆插件来增强irb的功能，现在有了pry，默认配置就够用了，还有rails console也可以歇歇了。</p>
+
+<h2>安装</h2>
+
+<p><strong>在Gemfile中添加</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;pry&#39;</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>然后执行</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">bundle</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>即可。</p>
+
+<p><strong>它可以这样用</strong></p>
+
+<p><strong>用pry代替irb方法，直接运行</strong>：
+<code>
+pry
+</code></p>
+
+<p><strong>用pry代替rails console方法，运行：</strong>
+<code>
+pry -r ./config/environment.rb
+</code></p>
+
+<p><strong>调试rails方法：</strong></p>
+
+<p>直接在要调试的地方添加
+<code>binding.pry</code></p>
+
+<p><code>rails server</code>当运行到这行代码时会自动调出一个pry终端，可以在这里进行交互。退出调试用&#8217;&lsquo;exit-all&rsquo;&lsquo;。</p>
+
+<p>如：<code>/app/controllers/articles_controller.rb</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">index</span>
+</span><span class='line'>  <span class="vi">@articles</span> <span class="o">=</span> <span class="no">Article</span><span class="o">.</span><span class="n">all</span>
+</span><span class='line'>  <span class="nb">binding</span><span class="o">.</span><span class="n">pry</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>常用命令</h2>
+
+<p><strong>cd</strong>: 这可不是切换目录的，而是切换类。如<code>cd Article</code>会进入Article类中，<code>Article.all</code>可直接缩写为<code>all</code></p>
+
+<p><strong>nesting: </strong> cd切来切去如果迷了路，用它可以看当前在哪个类下面。我倒觉得如果名字改为”pwd”会更好。</p>
+
+<p><strong>ls</strong>: 查看一些信息，ls -h查看帮助，ls -m查看实例方法，ls-M查看类方法，ls -p查看private方法。</p>
+
+<p><strong>show-doc Array#in_groups_of</strong>：查看文档。</p>
+
+<p><strong>show-method -l Array#in_groups_of</strong>：查看方法的源代码，-l显示行号。</p>
+
+<p><strong>edit-method Array#in_groups_of</strong>：调出nano来编辑代码，如果是能调出vim就好啦。(后来发现其实很简单，见后面。)</p>
+
+<p><strong>help</strong>：显示帮助</p>
+
+<h2>调试Rails</h2>
+
+<p>pry默认没有调试中经常用到的下一步，上一步等命令，要安装
+<code>
+gem "pry-nav"
+</code>
+<strong>然后就可以使用step, next, continue来跳来跳去了。</strong></p>
+
+<h2>edit和edit-method能自动调用vim</h2>
+
+<p>默认调出nano编辑源代码是因为系统环境变量中没有\$EDITOR的缘故，有两种方法改为vim。
+1、添加环境变量\$EDITOR=”vim”
+2、新建\~/.pryrc配置文件，添加
+<code>Pry.config.editor = "vim"
+</code></p>
+
+<p>更多参考：</p>
+
+<p><a href="http://railscasts.com/episodes/280-pry-with-rails?view=asciicast">http://railscasts.com/episodes/280-pry-with-rails?view=asciicast</a></p>
+
+<p><a href="https://github.com/pry/pry">https://github.com/pry/pry</a></p>
+
+<p><a href="http://tyok.org/prying_ruby/">http://tyok.org/prying_ruby/</a></p>
+
+<p><a href="http://blog.tyraeltong.com/blog/2011/10/14/introducing-pry">http://blog.tyraeltong.com/blog/2011/10/14/introducing-pry</a></p>
+
+<p><a href="http://gnepud.tumblr.com">http://gnepud.tumblr.com</a></p>
+
+<p><a href="http://rubyer.me/blog/1585/">http://rubyer.me/blog/1585/</a></p>
+
+<p><strong>下面是Pry—Hirb-awsom-print三个Gem包配合使用的.pryrc配置文件</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">editor</span> <span class="o">=</span> <span class="s2">&quot;mvim&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">####` Launch Pry with access to the entire Rails stack.</span>
+</span><span class='line'><span class="c1">####&#39; If you have Pry in your Gemfile, you can pass: ./script/console --irb=pry instead.</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">####` If you don&#39;t, you can load it through the lines below :)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">rails</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span> <span class="no">Dir</span><span class="o">.</span><span class="n">getwd</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;environment.rb&#39;</span>
+</span><span class='line'><span class="k">if</span> <span class="no">File</span><span class="o">.</span><span class="n">exist?</span><span class="p">(</span><span class="n">rails</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;SKIP\_RAILS&#39;</span><span class="o">].</span><span class="n">nil?</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="n">rails</span><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;console\_app&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;console\_with\_helpers&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">elsif</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rails/console/app&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rails/console/helpers&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># Show sql output</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span> <span class="k">if</span> <span class="n">defined?</span>
+</span><span class='line'><span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># Add reload! command if rails version \&gt; 3.2</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="no">Rails</span><span class="o">.</span><span class="n">version</span><span class="o">[</span><span class="mi">2</span><span class="o">.</span><span class="n">.</span><span class="mi">2</span><span class="o">].</span><span class="n">to</span><span class="p">\</span><span class="n">_i</span> <span class="p">\</span><span class="o">&gt;=</span> <span class="mi">2</span>
+</span><span class='line'>
+</span><span class='line'><span class="kp">include</span> <span class="ss">Rails</span><span class="p">:</span><span class="ss">:ConsoleMethods</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">warn</span> <span class="s2">&quot;[WARN] cannot load Rails console commands (Not on Rails2 or</span>
+</span><span class='line'><span class="s2">Rails3?)&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># To edit the method given by editor mvim</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Object</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">mvim</span><span class="p">(</span><span class="nb">method</span><span class="p">\</span><span class="n">_name</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">file</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">method</span><span class="p">(</span><span class="nb">method</span><span class="p">\</span><span class="n">_name</span><span class="p">)</span><span class="o">.</span><span class="n">source</span><span class="p">\</span><span class="n">_location</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="sb">`mvim &#39;</span><span class="se">\#</span><span class="sb">{file}&#39; +</span><span class="se">\#</span><span class="sb">{line}\`</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># Break out of the Bundler jail</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># from</span>
+</span><span class='line'><span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="no">ConradIrwin</span><span class="o">/</span><span class="n">pry</span><span class="o">-</span><span class="n">debundle</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pry</span><span class="o">-</span><span class="n">debundle</span><span class="o">.</span><span class="n">rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">defined?</span> <span class="no">Bundler</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Gem</span><span class="o">.</span><span class="n">post</span><span class="p">\</span><span class="n">_reset</span><span class="p">\</span><span class="n">_hooks</span><span class="o">.</span><span class="n">reject!</span> <span class="p">{</span> <span class="o">|</span><span class="n">hook</span><span class="o">|</span> <span class="n">hook</span><span class="o">.</span><span class="n">source</span><span class="p">\</span><span class="n">_location</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span><span class="p">\</span><span class="o">~</span>
+</span><span class='line'><span class="sr">%r{/bundler/}</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">Gem</span><span class="p">:</span><span class="ss">:Specification</span><span class="o">.</span><span class="n">reset</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">load</span> <span class="s1">&#39;rubygems/custom\_require.rb&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">defined?</span> <span class="no">Rails</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;hirb&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">rescue</span> <span class="no">LoadError</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">defined?</span> <span class="no">Hirb</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">\</span><span class="c1"># Dirty hack to support in-session Hirb.disable/enable</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">Hirb</span><span class="p">:</span><span class="ss">:View</span><span class="o">.</span><span class="n">instance</span><span class="p">\</span><span class="n">_eval</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">enable</span><span class="p">\</span><span class="n">_output</span><span class="p">\</span><span class="n">_method</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@output</span><span class="p">\</span><span class="n">_method</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">Hirb</span><span class="p">:</span><span class="ss">:View</span><span class="o">.</span><span class="n">view</span><span class="p">\</span><span class="n">_or</span><span class="p">\</span><span class="n">_page</span><span class="p">\</span><span class="n">_output</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">||</span>
+</span><span class='line'><span class="ss">Pry</span><span class="p">:</span><span class="ss">:DEFAULT</span><span class="p">\</span><span class="n">_PRINT</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">disable</span><span class="p">\</span><span class="n">_output</span><span class="p">\</span><span class="n">_method</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Pry</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="o">|</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+</span><span class='line'><span class="ss">Pry</span><span class="p">:</span><span class="ss">:DEFAULT</span><span class="p">\</span><span class="n">_PRINT</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="vi">@output</span><span class="p">\</span><span class="n">_method</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Hirb</span><span class="o">.</span><span class="n">enable</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err"> </span>
+</span><span class='line'>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;awesome\_print&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">rescue</span> <span class="no">LoadError</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console/'>http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-23T15:30:00+08:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console/" data-via="" data-counturl="http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/03/nginx/" title="Previous Post: Nginx内核参数相关的优化设定说明">&laquo; Nginx内核参数相关的优化设定说明</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2017/07/17/ubuntu-tips23/" title="Next Post: Ubuntu10.04长期支持版本(LTS)发布">Ubuntu10.04长期支持版本(LTS)发布 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/07/17/ubuntu-tips23/">Ubuntu10.04长期支持版本(LTS)发布</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/02/hello-jekyll-world/">Hello Jekyll World</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (3)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (2)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (3)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/specimens/">Specimens</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 70%" href="/tags/biao-ben-shu-zi-hua/">标本数字化</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 70%" href="/tags/zhong-yao-xing/">重要性</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
