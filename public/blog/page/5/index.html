@@ -9,8 +9,11 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="对于查询页面来说，经常会在页面上设置查询信息类别的选项，希望根据用户的查询的信息类别导航的不同的结果页面。并且能够去掉用户输入文本的首尾空格(这个在用户从其它地方拷贝查询字符串过来的时候是经常发生的事情)。以下面的为例子： JavaScript脚本
-function doSearch() { &hellip;">
+  <meta name="description" content="控制器代码
+public ActionResult Index()
+{ DataTable dt = new DataTable(); return View(dt); }
+视图代码
+Inherits="System.Web.Mvc.ViewPage&lt;System.Data. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +91,57 @@ $(document).bind('DOMNodeInserted', function(event) {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/16/aspnet-datatables-objects/">如何在ASP.NET MVC视图中使用DataTable对象</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-16T00:00:00+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>控制器代码</h3>
+<pre class="brush: c-sharp;">public ActionResult Index()
+{    
+  DataTable dt = new DataTable(); 
+    return View(dt);
+
+}</pre>
+<h3>视图代码</h3>
+<pre class="brush: c-sharp;">Inherits="System.Web.Mvc.ViewPage&lt;System.Data.DataTable&gt;"</pre>
+<pre class="brush: c-sharp;"><span style="font-size: medium;">显示数据</span></pre>
+<pre style="font-family: consolas;"><span style="font-size: medium;"><span style="background: yellow;">&lt;%</span>&nbsp;<span style="color: blue;">foreach</span>&nbsp;(System.Data.<span style="color: #2b91af;">DataRow</span>&nbsp;row&nbsp;<span style="color: blue;">in</span>&nbsp;Model.Rows)</span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span><span style="color: blue;">=</span>&nbsp;row["columnName"].ToString()&nbsp;<span style="background: yellow;">%&gt;</span></span><br /><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="background: yellow;">&lt;%</span>}<span style="background: yellow;">%&gt;</span></span></pre>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/12/16/aspnet-datatables-objects/'>http://Apiaceae.github.io/blog/2010/12/16/aspnet-datatables-objects/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -717,47 +771,6 @@ ORDER BY FamilyNumber DESC</pre>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/26/funny-video-003/">很崩溃</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-26T00:00:00+08:00" pubdate data-updated="true">Aug 26<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我是海盗</p>  <p><embed src="http://player.youku.com/player.php/sid/XNjUzOTQ5MzY=/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed></p>  <p>吉他神童郑成河</p>  <p><embed src="http://player.youku.com/player.php/sid/XOTA1MDY5NTI=/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed></p>  <p>陈楚生-姑娘</p>  <p><embed src="http://player.youku.com/player.php/sid/XMTI4NTI1OTA0/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed></p> <a title="http://player.youku.com/player.php/sid/XNjUzOTQ5MzY=/v.swf" href="http://player.youku.com/player.php/sid/XNjUzOTQ5MzY=/v.swf"></a>
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/08/26/funny-video-003/'>http://Apiaceae.github.io/blog/2010/08/26/funny-video-003/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -772,7 +785,8 @@ ORDER BY FamilyNumber DESC</pre>
   
     <section>
   <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <img src="/images/profile.jpg" alt="">
+  <p>Live in a big city, but heart had gone to county!</p>
 </section>
 <section>
   <h2>What did I read</h2>
@@ -785,7 +799,7 @@ ORDER BY FamilyNumber DESC</pre>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2017/07/17/ubuntu-tips23/">Ubuntu10.04长期支持版本(LTS)发布</a>
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
       </li>
     
       <li class="post">
@@ -828,7 +842,7 @@ ORDER BY FamilyNumber DESC</pre>
 <li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
 <li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
 <li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
-<li class='category'><a href='/blog/categories/随笔/'>随笔 (3)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
 
   </ul>
 </section>
@@ -841,9 +855,9 @@ ORDER BY FamilyNumber DESC</pre>
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
-<a style="font-size: 70%" href="/tags/eolv1/">eolv1</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 70%" href="/tags/sql/">sql</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
 <a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
 <a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
