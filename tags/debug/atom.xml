@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: debug | 虎克的博客]]></title>
+  <link href="http://Apiaceae.github.io/tags/debug/atom.xml" rel="self"/>
+  <link href="http://Apiaceae.github.io/"/>
+  <updated>2013-09-26T15:24:46+08:00</updated>
+  <id>http://Apiaceae.github.io/</id>
+  <author>
+    <name><![CDATA[Hooker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用PRY代替RAILS CONSOLE]]></title>
+    <link href="http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console/"/>
+    <updated>2013-09-23T15:30:00+08:00</updated>
+    <id>http://Apiaceae.github.io/blog/2013/09/23/pry-relace-rails-console</id>
+    <content type="html"><![CDATA[<p>rails默认的调度工具是ruby-debug19，启动时还要加上”–debug”参数，或许你觉得用起来也还可以。但如果你用过pry，你会发现原来可以还这么方便，ruby-debug19是那么的简陋。以前还整过一堆插件来增强irb的功能，现在有了pry，默认配置就够用了，还有rails console也可以歇歇了。</p>
+
+<h2>安装</h2>
+
+<p><strong>在Gemfile中添加</strong></p>
+
+<p><code>ruby
+gem 'pry', :group =&gt; :development
+</code></p>
+
+<p><strong>然后执行</strong>
+<code>ruby
+bundle install
+</code>
+即可。</p>
+
+<p><strong>它可以这样用</strong></p>
+
+<p><strong>用pry代替irb方法，直接运行</strong>：
+<code>
+pry
+</code></p>
+
+<p><strong>用pry代替rails console方法，运行：</strong>
+<code>
+pry -r ./config/environment.rb
+</code></p>
+
+<p><strong>调试rails方法：</strong></p>
+
+<p>直接在要调试的地方添加
+<code>binding.pry</code></p>
+
+<p><code>rails server</code>当运行到这行代码时会自动调出一个pry终端，可以在这里进行交互。退出调试用'&lsquo;exit-all&rsquo;&lsquo;。</p>
+
+<p>如：<code>/app/controllers/articles_controller.rb</code></p>
+
+<p><code>ruby
+def index
+  @articles = Article.all
+  binding.pry
+end
+</code></p>
+
+<h2>常用命令</h2>
+
+<p><strong>cd</strong>: 这可不是切换目录的，而是切换类。如<code>cd Article</code>会进入Article类中，<code>Article.all</code>可直接缩写为<code>all</code></p>
+
+<p><strong>nesting: </strong> cd切来切去如果迷了路，用它可以看当前在哪个类下面。我倒觉得如果名字改为”pwd”会更好。</p>
+
+<p><strong>ls</strong>: 查看一些信息，ls -h查看帮助，ls -m查看实例方法，ls-M查看类方法，ls -p查看private方法。</p>
+
+<p><strong>show-doc Array#in_groups_of</strong>：查看文档。</p>
+
+<p><strong>show-method -l Array#in_groups_of</strong>：查看方法的源代码，-l显示行号。</p>
+
+<p><strong>edit-method Array#in_groups_of</strong>：调出nano来编辑代码，如果是能调出vim就好啦。(后来发现其实很简单，见后面。)</p>
+
+<p><strong>help</strong>：显示帮助</p>
+
+<h2>调试Rails</h2>
+
+<p>pry默认没有调试中经常用到的下一步，上一步等命令，要安装
+<code>
+gem "pry-nav"
+</code>
+<strong>然后就可以使用step, next, continue来跳来跳去了。</strong></p>
+
+<h2>edit和edit-method能自动调用vim</h2>
+
+<p>默认调出nano编辑源代码是因为系统环境变量中没有\$EDITOR的缘故，有两种方法改为vim。
+1、添加环境变量\$EDITOR=”vim”
+2、新建\~/.pryrc配置文件，添加
+<code>Pry.config.editor = "vim"
+</code></p>
+
+<p>更多参考：</p>
+
+<p><a href="http://railscasts.com/episodes/280-pry-with-rails?view=asciicast">http://railscasts.com/episodes/280-pry-with-rails?view=asciicast</a></p>
+
+<p><a href="https://github.com/pry/pry">https://github.com/pry/pry</a></p>
+
+<p><a href="http://tyok.org/prying_ruby/">http://tyok.org/prying_ruby/</a></p>
+
+<p><a href="http://blog.tyraeltong.com/blog/2011/10/14/introducing-pry">http://blog.tyraeltong.com/blog/2011/10/14/introducing-pry</a></p>
+
+<p><a href="http://gnepud.tumblr.com">http://gnepud.tumblr.com</a></p>
+
+<p><a href="http://rubyer.me/blog/1585/">http://rubyer.me/blog/1585/</a></p>
+
+<p><strong>下面是Pry—Hirb-awsom-print三个Gem包配合使用的.pryrc配置文件</strong></p>
+
+<p>``` ruby
+Pry.config.editor = &ldquo;mvim&rdquo;</p>
+
+<h4>` Launch Pry with access to the entire Rails stack.</h4>
+
+<h4>&lsquo; If you have Pry in your Gemfile, you can pass: ./script/console &mdash;irb=pry instead.</h4>
+
+<h4>` If you don&rsquo;t, you can load it through the lines below :)</h4>
+
+<p>rails = File.join Dir.getwd, &lsquo;config&rsquo;, &lsquo;environment.rb&rsquo;
+if File.exist?(rails) &amp;&amp; ENV[&lsquo;SKIP_RAILS&rsquo;].nil?</p>
+
+<p>require rails </p>
+
+<p>if Rails.version[0..0] == &ldquo;2&rdquo;</p>
+
+<p>require &lsquo;console_app&rsquo;</p>
+
+<p>require &lsquo;console_with_helpers&rsquo;</p>
+
+<p>elsif Rails.version[0..0] == &ldquo;3&rdquo;</p>
+
+<p>require &lsquo;rails/console/app&rsquo;</p>
+
+<p>require &lsquo;rails/console/helpers&rsquo;</p>
+
+<p># Show sql output</p>
+
+<p>ActiveRecord::Base.logger = Logger.new(STDOUT) if defined?
+ActiveRecord::Base</p>
+
+<p># Add reload! command if rails version > 3.2</p>
+
+<p>if Rails.version[2..2].to_i >= 2</p>
+
+<p>include Rails::ConsoleMethods</p>
+
+<p>end</p>
+
+<p>else</p>
+
+<p>warn &ldquo;[WARN] cannot load Rails console commands (Not on Rails2 or
+Rails3?)&rdquo;</p>
+
+<p>end</p>
+
+<p>end</p>
+
+<p># To edit the method given by editor mvim</p>
+
+<p>class Object</p>
+
+<p>def mvim(method_name)</p>
+
+<p>file, line = method(method_name).source_location</p>
+
+<p>`mvim &lsquo;#{file}&rsquo; +#{line}`</p>
+
+<p>end</p>
+
+<p>end
+ </p>
+
+<p># Break out of the Bundler jail</p>
+
+<p># from
+<a href="https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb">https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb</a></p>
+
+<p>if defined? Bundler</p>
+
+<p>Gem.post_reset_hooks.reject! { |hook| hook.source_location.first =\~
+%r{/bundler/} }</p>
+
+<p>Gem::Specification.reset</p>
+
+<p>load &lsquo;rubygems/custom_require.rb&rsquo;</p>
+
+<p>end</p>
+
+<p> </p>
+
+<p>if defined? Rails</p>
+
+<p>begin</p>
+
+<p>require &lsquo;hirb&rsquo;</p>
+
+<p>rescue LoadError</p>
+
+<p>end</p>
+
+<p> </p>
+
+<p>if defined? Hirb</p>
+
+<p># Dirty hack to support in-session Hirb.disable/enable</p>
+
+<p>Hirb::View.instance_eval do</p>
+
+<p>def enable_output_method</p>
+
+<p>@output_method = true</p>
+
+<p>Pry.config.print = proc do |output, value|</p>
+
+<p>Hirb::View.view_or_page_output(value) ||
+Pry::DEFAULT_PRINT.call(output, value)</p>
+
+<p>end</p>
+
+<p>end</p>
+
+<p> </p>
+
+<p>def disable_output_method</p>
+
+<p>Pry.config.print = proc { |output, value|
+Pry::DEFAULT_PRINT.call(output, value) }</p>
+
+<p>@output_method = nil</p>
+
+<p>end</p>
+
+<p>end</p>
+
+<p> </p>
+
+<p>Hirb.enable</p>
+
+<p>end</p>
+
+<p>end</p>
+
+<p> </p>
+
+<p>begin</p>
+
+<p>require &lsquo;awesome_print&rsquo;</p>
+
+<p>rescue LoadError</p>
+
+<p>end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

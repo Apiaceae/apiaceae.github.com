@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: git | 虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/tags/git/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T13:24:13+08:00</updated>
+  <updated>2013-09-26T15:24:46+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[解决git pull时出现的几个问题]]></title>
-    <link href="http://Apiaceae.github.io/blog/2012/11/28/%E8%A7%A3%E5%86%B3git-pull%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/11/28/revolve-git-pull-erros/"/>
     <updated>2012-11-28T13:20:00+08:00</updated>
-    <id>http://Apiaceae.github.io/blog/2012/11/28/解决git-pull时出现的几个问题</id>
+    <id>http://Apiaceae.github.io/blog/2012/11/28/revolve-git-pull-erros</id>
     <content type="html"><![CDATA[<p>第1个问题: 解决Git代码仓库不同步git pull时出现:[root@linuxso.com&nbsp;/data/</span><span class="keyword">work</span><span>/www/rest/lib/Business/Inventory]#&nbsp;git&nbsp;pull &nbsp;</span></span></pre>
 </li>
 <li><span>Enter&nbsp;passphrase&nbsp;</span><span class="keyword">for</span><span>&nbsp;</span><span class="keyword">key</span><span>&nbsp;</span><span class="string">&lsquo;/root/.ssh/<a href="http://www.linuxso.com/command/id.html" target="_blank"><span style="text-decoration: underline;">id</span></a>_rsa&rsquo;</span><span>: &nbsp;</span></li>

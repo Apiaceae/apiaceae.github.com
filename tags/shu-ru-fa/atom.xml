@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 输入法 | 虎克的博客]]></title>
   <link href="http://Apiaceae.github.io/tags/shu-ru-fa/atom.xml" rel="self"/>
   <link href="http://Apiaceae.github.io/"/>
-  <updated>2013-09-26T13:24:13+08:00</updated>
+  <updated>2013-09-26T15:24:46+08:00</updated>
   <id>http://Apiaceae.github.io/</id>
   <author>
     <name><![CDATA[Hooker]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ubuntu中文输入法Fcitx安装]]></title>
-    <link href="http://Apiaceae.github.io/blog/2012/04/20/ubuntu%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx%E5%AE%89%E8%A3%85/"/>
+    <link href="http://Apiaceae.github.io/blog/2012/04/20/ubuntu-language-input-tool-fcitx/"/>
     <updated>2012-04-20T00:00:00+08:00</updated>
-    <id>http://Apiaceae.github.io/blog/2012/04/20/ubuntu中文输入法fcitx安装</id>
+    <id>http://Apiaceae.github.io/blog/2012/04/20/ubuntu-language-input-tool-fcitx</id>
     <content type="html"><![CDATA[<p>在ubuntu10.10系统安装成功后,系统默认的中文输入法是ibus,但是这个输入法给我们这些在windows下使用sougou用惯了的
 人是很不习惯的.特别是打词组的时侯,不能联想,词库不是很多.后来有了解到还有一款中文输入法Fcitx,所以换成这个之后,发现比较适合我使用,虽然
 存在很多不足.</p>
