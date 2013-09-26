@@ -50,7 +50,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [custom/asides/about.html, custom/asides/douban.html, asides/recent_posts.html, custom/asides/category_list.html, custom/asides/tags.html, custom/asides/clustrmaps.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+default_asides: [custom/asides/about.html, custom/asides/douban.html, asides/recent_posts.html, custom/asides/recent_comments.html, custom/asides/category_list.html, custom/asides/tags.html, custom/asides/clustrmaps.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -70,10 +70,10 @@ github_skip_forks: true
 
 # Twitter
 twitter_user:
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
-google_plus_one: true
+google_plus_one: false
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -85,17 +85,26 @@ googleplus_hidden: false
 # pinboard_user:
 # pinboard_count: 3
 
+# JiaThis
+jiathis: true
+
 # Delicious
 # delicious_user:
 # delicious_count: 3
 
 # Disqus Comments
-# disqus_short_name: flybirdmf
-# disqus_show_comment_count: false
+# disqus_short_name: apiaceaegit
+# disqus_show_comment_count: true
 
 # Duoshuo Comments
-duoshuo_show_comment_count: true
-
+duoshuo_comments: true
+duoshuo_short_name: apiaceaegit
+duoshuo_asides_num: 5      # 侧边栏评论显示条目数
+duoshuo_asides_avatars: 1   # 侧边栏评论是否显示头像
+duoshuo_asides_time: 1      # 侧边栏评论是否显示时间
+duoshuo_asides_title: 1     # 侧边栏评论是否显示标题
+duoshuo_asides_admin: 0     # 侧边栏评论是否显示作者评论
+duoshuo_asides_length: 18   # 侧边栏评论截取的长度
 
 # Google Analytics
 # google_analytics_tracking_id:

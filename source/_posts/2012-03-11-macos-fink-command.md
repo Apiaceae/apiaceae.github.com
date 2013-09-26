@@ -1,5 +1,5 @@
 --- 
-layout: default 
+layout: post 
 title: "MacOS Fink命令"
 date: 2012-03-11 13:29
 categories: Linux

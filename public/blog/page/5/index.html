@@ -9,12 +9,7 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="http://games.jeuxjeuxjeux.fr/data/1/4/4/14414.swf
-&nbsp;
-jirapatch.rar (295.88 kb)
-atlassian-extras-2.2.2.jar (147.22 kb)
-&nbsp;
-JiraLicenseStoreImpl &hellip;">
+  <meta name="description" content="Liunx下修改MySQL字符集： 1.查找MySQL的cnf文件的位置 find / -iname &#8216;*.cnf&#8217; -print /usr/share/mysql/my-innodb-heavy-4G.cnf /usr/share/mysql/my-large.cnf / &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,17 +18,21 @@ JiraLicenseStoreImpl &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://Apiaceae.github.io/blog/page/5">
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/page/5/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"> -->
+<!-- <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"> -->
+
+$heading-font-family: arial, sans-serif;
+$header-title-font-family: arial, sans-serif;
+$header-subtitle-font-family: arial, sans-serif;
 
   
 
@@ -41,10 +40,17 @@ JiraLicenseStoreImpl &hellip;">
 
 <body   >
   <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
   <h1><a href="/">虎克的博客</a></h1>
   
     <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
   
+  <div class="clear"></div>
 </hgroup>
 
 </header>
@@ -61,10 +67,11 @@ JiraLicenseStoreImpl &hellip;">
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">首页</a></li>
-  <li><a href="/blog/archives">博客存档</a></li>
-  <li><a href="/tag-cloud">标签</a></li>
-    <li><a href="/about">关于</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
 </ul>
 
 </nav>
@@ -78,7 +85,55 @@ JiraLicenseStoreImpl &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/17/funny-videos/">奥巴马看见你了小游戏</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/20/mysql-charsets/">修改及查看mysql数据库的字符集</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-20T00:00:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2010</time>
+        
+        
+                 | <a href="/blog/2010/12/20/mysql-charsets/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Liunx下修改MySQL字符集：</strong></p>  <p>1.查找MySQL的cnf文件的位置</p>  <p>find / -iname &#8216;*.cnf&#8217; -print</p>  <p>/usr/share/mysql/my-innodb-heavy-4G.cnf   <br />/usr/share/mysql/my-large.cnf    <br />/usr/share/mysql/my-small.cnf    <br />/usr/share/mysql/my-medium.cnf    <br />/usr/share/mysql/my-huge.cnf    <br />/usr/share/texmf/web2c/texmf.cnf    <br />/usr/share/texmf/web2c/mktex.cnf    <br />/usr/share/texmf/web2c/fmtutil.cnf    <br />/usr/share/texmf/tex/xmltex/xmltexfmtutil.cnf    <br />/usr/share/texmf/tex/jadetex/jadefmtutil.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-innodb-heavy-4G.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-large.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-small.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-medium.cnf    <br />/usr/share/doc/MySQL-server-community-5.1.22/my-huge.cnf</p>  <p>2. 拷贝 small.cnf、my-medium.cnf、my-huge.cnf、my-innodb-heavy-4G.cnf其中的一个到/etc下，命名为my.cnf   <br />cp /usr/share/mysql/my-medium.cnf /etc/my.cnf</p>  <p>3. 修改my.cnf</p>  <p>vi /etc/my.cnf</p>  <p>在[client]下添加   <br />default-character-set=utf8</p>  <p>在[mysqld]下添加   <br />default-character-set=utf8</p>  <p>4.重新启动MySQL   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart    <br />Shutting down MySQL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />Starting MySQL.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; [ 确定 ]    <br />[root@bogon ~]# mysql -u root -p    <br />Enter password:    <br />Welcome to the MySQL monitor. Commands end with ; or \g.    <br />Your MySQL connection id is 1    <br />Server version: 5.1.22-rc-community-log MySQL Community Edition (GPL)</p>  <p>Type &#8216;help;&#8217; or &#8216;\h&#8217; for help. Type &#8216;\c&#8217; to clear the buffer.</p>  <p>5.查看字符集设置</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.02 sec)</p>  <p>mysql&gt; show variables like &#8216;character_set_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.02 sec)</p>  <p>mysql&gt;</p>  <p><strong>其他的一些设置方法：</strong></p>  <p><strong>修改数据库的字符集</strong>    <br />&#160;&#160; mysql&gt;use mydb</p>  <p>&#160;&#160; mysql&gt;alter database mydb character set utf-8;   <br /><strong>创建数据库指定数据库的字符集</strong></p>  <p>&#160;&#160; mysql&gt;create database mydb character set utf-8;</p>  <p><strong>通过配置文件修改:</strong></p>  <p>修改/var/lib/mysql/mydb/db.opt   <br />default-character-set=latin1    <br />default-collation=latin1_swedish_ci    <br />为    <br />default-character-set=utf8    <br />default-collation=utf8_general_ci</p>  <p>重起MySQL:   <br />[root@bogon ~]# /etc/rc.d/init.d/mysql restart</p>  <p><strong>通过MySQL命令行修改:</strong></p>  <p>mysql&gt; set character_set_client=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_connection=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_database=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_results=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_server=utf8;   <br />Query OK, 0 rows affected (0.00 sec)</p>  <p>mysql&gt; set character_set_system=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_connection=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_database=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p>mysql&gt; set collation_server=utf8;   <br />Query OK, 0 rows affected (0.01 sec)</p>  <p><strong>查看:     <br /></strong>mysql&gt; show variables like &#8216;character_set_%&#8217;;    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | /usr/share/mysql/charsets/ |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+    <br />8 rows in set (0.03 sec)</p>  <p>mysql&gt; show variables like &#8216;collation_%&#8217;;   <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />| collation_connection | utf8_general_ci |    <br />| collation_database&#160;&#160; | utf8_general_ci |    <br />| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |    <br />+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+    <br />3 rows in set (0.04 sec)</p>  <p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>  <p>【知识性文章转载】</p>  <p>MYSQL 字符集问题</p>  <p>MySQL的字符集支持(Character Set Support)有两个方面：</p>  <p>&#160;&#160;&#160;&#160; 字符集(Character set)和排序方式(Collation)。</p>  <p>对于字符集的支持细化到四个层次:</p>  <p>&#160;&#160;&#160;&#160; 服务器(server)，数据库(database)，数据表(table)和连接(connection)。</p>  <p>1.MySQL默认字符集</p>  <p>MySQL对于字符集的指定可以细化到一个数据库，一张表，一列，应该用什么字符集。</p>  <p>但是，传统的程序在创建数据库和数据表时并没有使用那么复杂的配置，它们用的是默认的配置，那么，默认的配置从何而来呢？&#160;&#160;&#160; (1)编译MySQL 时，指定了一个默认的字符集，这个字符集是 latin1；</p>  <p>&#160;&#160;&#160; (2)安装MySQL 时，可以在配置文件 (my.ini) 中指定一个默认的的字符集，如果没指定，这个值继承自编译时指定的；</p>  <p>&#160;&#160;&#160; (3)启动mysqld 时，可以在命令行参数中指定一个默认的的字符集，如果没指定，这个值继承自配置文件中的配置,此时 character_set_server 被设定为这个默认的字符集；</p>  <p>&#160;&#160;&#160; (4)当创建一个新的数据库时，除非明确指定，这个数据库的字符集被缺省设定为character_set_server；</p>  <p>&#160;&#160;&#160; (5)当选定了一个数据库时，character_set_database 被设定为这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (6)在这个数据库里创建一张表时，表默认的字符集被设定为 character_set_database，也就是这个数据库默认的字符集；</p>  <p>&#160;&#160;&#160; (7)当在表内设置一栏时，除非明确指定，否则此栏缺省的字符集就是表默认的字符集；</p>  <p>简单的总结一下，如果什么地方都不修改，那么所有的数据库的所有表的所有栏位的都用 latin1 存储，不过我们如果安装 MySQL，一般都会选择多语言支持，也就是说，安装程序会自动在配置文件中把 default_character_set 设置为 UTF-8，这保证了缺省情况下，所有的数据库的所有表的所有栏位的都用 UTF-8 存储。</p>  <p>2.查看默认字符集(默认情况下，mysql的字符集是latin1(ISO_8859_1)</p>  <p>通常，查看系统的字符集和排序方式的设定可以通过下面的两条命令：</p>  <p>&#160;&#160;&#160;&#160; mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | latin1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>mysql&gt; SHOW VARIABLES LIKE &#8216;collation_%&#8217;;</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>| collation_connection | utf8_general_ci |</p>  <p>| collation_database&#160;&#160; | utf8_general_ci |</p>  <p>| collation_server&#160;&#160;&#160;&#160; | utf8_general_ci |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>  <p>3.修改默认字符集</p>  <p>(1) 最简单的修改方法，就是修改mysql的my.ini文件中的字符集键值，</p>  <p>如&#160;&#160;&#160; default-character-set = utf8</p>  <p>&#160;&#160;&#160;&#160;&#160; character_set_server = utf8</p>  <p>&#160;&#160; 修改完后，重启mysql的服务，service mysql restart</p>  <p>&#160;&#160; 使用 mysql&gt; SHOW VARIABLES LIKE &#8216;character%&#8217;;查看，发现数据库编码均已改成utf8</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| Variable_name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | Value&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>| character_set_client&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_connection | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_database&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_filesystem | binary&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_results&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_server&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_set_system&#160;&#160;&#160;&#160; | utf8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; |</p>  <p>| character_sets_dir&#160;&#160;&#160;&#160;&#160;&#160; | D:&quot;mysql-5.0.37&quot;share&quot;charsets&quot; |</p>  <p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+</p>  <p>&#160;&#160; (2) 还有一种修改字符集的方法，就是使用mysql的命令</p>  <p>&#160;&#160; mysql&gt; SET character_set_client = utf8 ;</p>  <p>&#160;</p>  <p>原文地址：<a title="http://blog.chinaunix.net/u1/51541/showart_505638.html" href="http://blog.chinaunix.net/u1/51541/showart_505638.html">http://blog.chinaunix.net/u1/51541/showart_505638.html</a></p>
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2010/12/20/mysql-charsets/'>http://Apiaceae.github.io/blog/2010/12/20/mysql-charsets/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/17/funny-videos/">奥巴马看见你了小游戏</a></h1>
+      
     
     
       <p class="meta">
@@ -96,6 +151,9 @@ JiraLicenseStoreImpl &hellip;">
 
 <time datetime="2010-12-17T00:00:00+08:00" pubdate data-updated="true">Dec 17<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/17/funny-videos/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -126,7 +184,9 @@ JiraLicenseStoreImpl &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/16/aspnet-datatables-objects/">如何在ASP.NET MVC视图中使用DataTable对象</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/16/aspnet-datatables-objects/">如何在ASP.NET MVC视图中使用DataTable对象</a></h1>
+      
     
     
       <p class="meta">
@@ -144,6 +204,9 @@ JiraLicenseStoreImpl &hellip;">
 
 <time datetime="2010-12-16T00:00:00+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/16/aspnet-datatables-objects/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -177,7 +240,9 @@ JiraLicenseStoreImpl &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/13/jscript-tips1/">使用JavaScript脚本控制查询页面导航和清除用户输入字符串的首尾空格</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/13/jscript-tips1/">使用JavaScript脚本控制查询页面导航和清除用户输入字符串的首尾空格</a></h1>
+      
     
     
       <p class="meta">
@@ -195,6 +260,9 @@ JiraLicenseStoreImpl &hellip;">
 
 <time datetime="2010-12-13T00:00:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/13/jscript-tips1/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -236,7 +304,9 @@ JiraLicenseStoreImpl &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/13/3D-taclouds-example/">3D标签云示例</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/13/3D-taclouds-example/">3D标签云示例</a></h1>
+      
     
     
       <p class="meta">
@@ -254,6 +324,9 @@ JiraLicenseStoreImpl &hellip;">
 
 <time datetime="2010-12-13T00:00:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/13/3D-taclouds-example/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -360,7 +433,9 @@ JiraLicenseStoreImpl &hellip;">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/12/sql-dataclean-tips001/">Sql如何从单个具有重复项的表中获得统计数据</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/12/sql-dataclean-tips001/">Sql如何从单个具有重复项的表中获得统计数据</a></h1>
+      
     
     
       <p class="meta">
@@ -378,6 +453,9 @@ JiraLicenseStoreImpl &hellip;">
 
 <time datetime="2010-12-12T00:00:00+08:00" pubdate data-updated="true">Dec 12<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/12/sql-dataclean-tips001/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -559,7 +637,9 @@ ORDER BY FamilyNumber DESC</pre>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/09/how-many-higher-plants-in-china/">中国有多少高等植物？</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/09/how-many-higher-plants-in-china/">中国有多少高等植物？</a></h1>
+      
     
     
       <p class="meta">
@@ -577,6 +657,9 @@ ORDER BY FamilyNumber DESC</pre>
 
 <time datetime="2010-12-09T00:00:00+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/09/how-many-higher-plants-in-china/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -600,7 +683,9 @@ ORDER BY FamilyNumber DESC</pre>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/12/02/put-col-online-cnpc/">中国高等植物信息系统新版上线测试</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/12/02/put-col-online-cnpc/">中国高等植物信息系统新版上线测试</a></h1>
+      
     
     
       <p class="meta">
@@ -618,6 +703,9 @@ ORDER BY FamilyNumber DESC</pre>
 
 <time datetime="2010-12-02T00:00:00+08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/12/02/put-col-online-cnpc/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -641,7 +729,9 @@ ORDER BY FamilyNumber DESC</pre>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/11/26/ubuntu-host-trackere/">使用Host-tracker来监测网站</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/11/26/ubuntu-host-trackere/">使用Host-tracker来监测网站</a></h1>
+      
     
     
       <p class="meta">
@@ -659,6 +749,9 @@ ORDER BY FamilyNumber DESC</pre>
 
 <time datetime="2010-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/11/26/ubuntu-host-trackere/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -682,7 +775,9 @@ ORDER BY FamilyNumber DESC</pre>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2010/09/16/windows-install-git-code/">如何在Windows操作系统下下载github上的开源代码</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2010/09/16/windows-install-git-code/">如何在Windows操作系统下下载github上的开源代码</a></h1>
+      
     
     
       <p class="meta">
@@ -700,6 +795,9 @@ ORDER BY FamilyNumber DESC</pre>
 
 <time datetime="2010-09-16T00:00:00+08:00" pubdate data-updated="true">Sep 16<span>th</span>, 2010</time>
         
+        
+                 | <a href="/blog/2010/09/16/windows-install-git-code/#comments">Comments</a>
+                
       </p>
     
   </header>
@@ -709,47 +807,6 @@ ORDER BY FamilyNumber DESC</pre>
 <p class='post-footer'>
        original link:
        <a href='http://Apiaceae.github.io/blog/2010/09/16/windows-install-git-code/'>http://Apiaceae.github.io/blog/2010/09/16/windows-install-git-code/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/07/apiaceae-enryngium-knowledge-life/">伞形科植物刺芹Enryngium Foetidum的生活知识</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-09-07T00:00:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Culantro in Pho – An Herb in a League of Its Own</h3>  <p><abbr>April 18, 2009</abbr></p>  <p>0diggs<a>digg</a></p>  <p><em>Updated 07-14-09</em>. When you order a bowl of <strong>Vietnamese pho</strong> at a restaurant, you will typically be served a plate of garnishing along with your steaming bowl of meat and rice noodles. The only time that plate of garnishing would be absent is when you happened to eat in a restaurant that serves authentic pho bac, the northern Vietnamese version of <strong>pho</strong> that is a lot more austere but in no way less flavorful. A typical plate of garnishing that accompanies a bowl of <strong>Vietnamese pho</strong> would contain lime wedges, chopped Asian chili, fresh Thai basil, bean sprouts and <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is relatively unknown in the United States, and it is often mistaken for its cousin cilantro, another herb often found in a bowl of pho. However, for all their similarities, <strong>culantro</strong> and cilantro are two entirely different herbs.</p>  <p>What is <strong>culantro</strong> and just how different is it from <strong>cilantro</strong>?&#160; How important is <strong>culantro</strong> to a <em>bowl of pho</em>? Let’s dig a little deeper.</p>  <h4><strong>So What Is Culantro?</strong></h4>  <p><strong><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1.jpg"><img title="Culantro" alt="Culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/culantro1-300x225.jpg" width="210" height="158" /></a>Culantro</strong> is actually the Spanish name of an herb in the parsley family that bears the scientific name <em>Eryngium foetidum</em> and has long leaves edged with spines. This herb has many other names, such as: fitweed, saw leaf, sawtooth, recao, Mexican coriander, long coriander, serrated coriander and shado beni, among many others. In Vietnam, <strong>culantro</strong> is known as <em>ngo gai</em> (ngò gai) or thorny coriander.</p>  <p>The <strong>culantro</strong> plant often grows as a small plant in roseate formation, and its leaves are elongated, growing from between four to eight inches long. The plant does not thrive in frost or under direct sunlight, although it is possible to find wild <strong>culantro</strong> growing in open, sunlit areas.</p>  <p><strong>Culantro</strong> is actually a native plant of Central America and the Caribbean Islands. Colonization and trading are largely responsible for introducing <strong>culantro</strong> to the rest of the world, particularly to India and Southeast Asia. However, as mentioned above, <strong>culantro</strong> is practically unknown in the United States, where it is often mistaken for cilantro.</p>  <h4><strong>Comparison with Other Corianders</strong></h4>  <p>The reason why <strong>culantro</strong> is often mistaken for cilantro is because they share similar smell and taste to the uninitiated. Just like cilantro, culantro has a pungent odor that can be reminiscent of crushed bedbugs. Some people are fine with such a smell, but some people can barely stand it. In addition to the smell, both culantro and cilantro have a bitter, soapy taste, although this flavor is stronger in culantro.</p>  <p>But that is where the similarities end. Although they both belong to the parsley family, cilantro has smaller leaves than <strong>culantro</strong>. Cilantro leaves are also lacy rather than thorny as in the case of <strong>culantro</strong>.</p>  <p><strong>Culantro</strong> is also sometimes compared to the Vietnamese coriander, another popular herb used in Southeast Asian cuisine. Vietnamese coriander also has long leaves, but its stems are knotty and knobby. Also known as laksa leaves, Vietnamese coriander is also more fragrant than <strong>culantro</strong>.</p>  <h4><strong>The Role of Culantro in Pho</strong></h4>  <p><strong><img title="Pho garnishes and condiments" alt="Pho garnishes and condiments" src="http://www.lovingpho.com/wp-content/uploads/2009/04/pho-garnishes-condiments-300x300.jpg" width="210" height="210" />Culantro</strong> is an optional garnish in <strong>Vietnamese pho</strong>, along with the bean sprouts, lime wedges, chopped Asian chili and Thai basil. When you eat a bowl of pho, it is up to you to put <strong>culantro</strong> in your bowl or not. Some people actually choose not to add the herb in their pho because the smell can be too strong and the taste too bitter.</p>  <p>The herb nonetheless helps balances out the flavors in pho. Vietnamese cooking is highly influenced by Chinese cuisine, and among the principles followed in Chinese cuisine that the Vietnamese themselves have adopted is the principle of balance. In this principle, the five flavors of food – salty, sour, sweet, bitter and spicy – should be present in each dish. But these flavors should not compete with one another; instead, they should exist harmoniously and lend to complex layers of taste.</p>  <p><strong>Culantro</strong> literally acts out a bitter role in pho. However, there is already a bitter element in every bowl of pho as provided by the chopped cilantro/scallion mix sprinkled over the noodle-and-meat assembly in the bowl. But because the cilantro and scallion are normally already cooked by the scalding broth by the time the bowl of pho is served at the table, <strong>Culantro</strong> then plays the role of the fresh and raw bitterness as chosen by the diner. It is meant to enhance the bitter layer in the flavor of pho and to give the broth a stronger zing, if that is what the diner wants in his or her pho.</p>  <p>Many people just tear the long culantro leaves into pieces of about one to two inches long and drop them directly into their bowl before taking the first bite (or slurp). This in effect gives them cooked culantro as they finish the meal. Others add them a few pieces at a time as they progress so that they get the maximum bitterness, freshness and crunchiness from the herb in every bite. For maximum effect, many pho connoisseurs like to tear culantro (and basil too) into smaller pieces (maybe 1/2 inch size) and add them as they eat their pho.</p>  <p>We take culantro (ngo gai) so seriously that our point system for rating pho at restaurants and shops gives ngo gai extra points for freshness. See the post “<a href="http://www.lovingpho.com/pho-ingredients-garnishes/importance-garnishes-pho/">The Importance of Garnishes for Pho</a>.”</p>  <h4><strong>Health Facts about Culantro</strong></h4>  <p>Aside from being a garnish or an ingredient in a dish, <strong>culantro</strong> also has medicinal properties. It is sometimes eaten to stimulate appetite in a diner and to help the diner digest his or her food, a trait that <strong>culantro</strong> shares with cilantro. The leaves of the <strong>culantro</strong> can also be boiled and made into tea that can help treat flu, pneumonia, diarrhea, fever and vomiting. Sometimes, the herb is also administered to cure convulsions in children, which is why it is called fitweed in some countries.</p>  <p>The herb is also healthy to eat on its own, even if you are not sick. <strong>Culantro</strong> has a high content of calcium, beta-carotene, riboflavin and iron – nutrients that the body needs to stay fit and to stave off disease.</p>  <h4><strong>Cultivating Culantro</strong></h4>  <p><a href="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg"><img title="Planting culantro" alt="Planting culantro" src="http://www.lovingpho.com/wp-content/uploads/2009/04/planting-culantro.jpg" width="224" height="168" /></a>It is actually easy to cultivate <strong>culantro</strong> in a garden. All you need to do is to have a plot of well-drained soil and protected from direct sunlight. You can also grow <strong>culantro</strong> in pots indoors.</p>  <p>When you grow <strong>culantro</strong> in a garden, the best time to do your planting is during springtime, when the frost of winter has already melted down
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2010/09/07/apiaceae-enryngium-knowledge-life/'>http://Apiaceae.github.io/blog/2010/09/07/apiaceae-enryngium-knowledge-life/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p></div>
@@ -772,9 +829,8 @@ ORDER BY FamilyNumber DESC</pre>
 <aside class="sidebar">
   
     <section>
-  <h1>About Me</h1>
-  <img src="/images/profile.jpg" alt="">
-  <p>混在城市心在农村</p>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
 </section>
 <section>
   <h2>What did I read</h2>
@@ -785,6 +841,10 @@ ORDER BY FamilyNumber DESC</pre>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
@@ -802,11 +862,25 @@ ORDER BY FamilyNumber DESC</pre>
         <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/09/03/lamp/">LAMP系统性能调优</a>
-      </li>
-    
   </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+
 </section>
 <section>
   <h1>Categories</h1>
@@ -822,8 +896,9 @@ ORDER BY FamilyNumber DESC</pre>
 <li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
 <li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
-<li class='category'><a href='/blog/categories/分类学/'>分类学 (4)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
 <li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
 <li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
 <li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
@@ -845,7 +920,7 @@ ORDER BY FamilyNumber DESC</pre>
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
-<a style="font-size: 70%" href="/tags/api/">api</a>
+<a style="font-size: 70%" href="/tags/darwin/">darwin</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
@@ -890,25 +965,7 @@ var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'serve
 
 
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

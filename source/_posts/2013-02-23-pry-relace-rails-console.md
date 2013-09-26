@@ -2,6 +2,8 @@
 layout: post 
 title: 使用PRY代替RAILS CONSOLE 
 date: 2013-09-23 15:30
+sharing: true
+comments: true
 categories: Ruby
 tags: [pry, debug]
 ---
