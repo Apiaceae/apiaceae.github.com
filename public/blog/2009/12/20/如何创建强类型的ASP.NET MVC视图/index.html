@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>如何创建强类型的ASP.NET MVC视图 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="1.在你的MVC应用程序根目录添加新文件夹，取名为CodeSmith 2.添加CodeSmith模板文件StrongTypedViews.cst. 3.右键点击CodeSmith文件夹，选择添加一个新的CodeSmith Project，取名为CodeSmith.csp. 4. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">如何创建强类型的ASP.NET MVC视图</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-20T04:40:41+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2009</time>
+        
+        
+                 | <a href="#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/392FD326/20091219_201740.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_201740" border="0" alt="2009-12-19_201740" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/68ED7BA5/20091219_201740_thumb.png" width="269" height="288" /></a> </p>
+
+
+<p>  <p>1.在你的MVC应用程序根目录添加新文件夹，取名为<strong>CodeSmith</strong></p>  <p>2.添加CodeSmith模板文件<strong>StrongTypedViews.cst.</strong></p>  <p>3.右键点击CodeSmith文件夹，选择添加一个新的CodeSmith Project，取名为<strong>CodeSmith.csp</strong>.</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/41B5C321/20091219_202243.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202243" border="0" alt="2009-12-19_202243" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/49CF8027/20091219_202243_thumb.png" width="682" height="371" /></a> </p>  <p>4.右键点击刚生成的<strong>CodeSmith.csp</strong>文件在弹出的右键菜单选择Manager Output</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/06899969/20091219_202635.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202635" border="0" alt="2009-12-19_202635" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/339E8637/20091219_202635_thumb.png" width="318" height="340" /></a> </p>  <p>5.在弹出的对话框菜单做如下的设置</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/558C796C/20091219_202821.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202821" border="0" alt="2009-12-19_202821" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/14EA2CFD/20091219_202821_thumb.png" width="551" height="339" /></a> </p>  <p></p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/087E9A85/20091219_203037.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_203037" border="0" alt="2009-12-19_203037" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/0644A27A/20091219_203037_thumb.png" width="547" height="374" /></a> </p>  <p>6.右键<strong>CodeSmith.csp</strong>选择Generate Output生成<strong>CotrollerBase.cs</strong></p>  <p><a href="http://blog.rthand.com/image.axd?picture=WindowsLiveWriter/StrongtypingASP.NETMVC/595713E9/stv4.png"><img title="stv4" border="0" alt="stv4" src="http://blog.rthand.com/image.axd?picture=WindowsLiveWriter/StrongtypingASP.NETMVC/595713E9/stv4_thumb.png" width="234" height="346" /></a></p>  <p>ControllerBase.cs文件</p>  <pre class="code"><span style="color: blue">namespace </span><span style="color: #010001">CNPC</span>.<span style="color: #010001">Controllers
+</span>{</p>
+
+<pre><code>&lt;span style="color: blue"&gt;public partial class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ControllerBase&lt;/span&gt;: &lt;span style="color: #2b91af"&gt;Controller
+&lt;/span&gt;{
+    &lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewFolderBase
+    &lt;/span&gt;{
+        &lt;span style="color: blue"&gt;protected readonly &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;;
+
+        &lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #010001"&gt;ViewFolderBase&lt;/span&gt;(&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;)
+        { &lt;span style="color: blue"&gt;this&lt;/span&gt;.&lt;span style="color: #010001"&gt;controllerBase &lt;/span&gt;= &lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;; }
+    }
+
+    &lt;span style="color: blue"&gt;public new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewResult &lt;/span&gt;&lt;span style="color: #010001"&gt;View&lt;/span&gt;(&lt;span style="color: blue"&gt;string &lt;/span&gt;&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: blue"&gt;object &lt;/span&gt;&lt;span style="color: #010001"&gt;model&lt;/span&gt;)
+    {
+        &lt;span style="color: blue"&gt;return base&lt;/span&gt;.&lt;span style="color: #010001"&gt;View&lt;/span&gt;(&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: #010001"&gt;model&lt;/span&gt;);
+    }
+
+    &lt;span style="color: blue"&gt;public new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;PartialViewResult &lt;/span&gt;&lt;span style="color: #010001"&gt;PartialView&lt;/span&gt;(&lt;span style="color: blue"&gt;string &lt;/span&gt;&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: blue"&gt;object &lt;/span&gt;&lt;span style="color: #010001"&gt;model&lt;/span&gt;)
+    {
+        &lt;span style="color: blue"&gt;return base&lt;/span&gt;.&lt;span style="color: #010001"&gt;PartialView&lt;/span&gt;(&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: #010001"&gt;model&lt;/span&gt;);
+    }
+
+    &lt;span style="color: blue"&gt;protected &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder &lt;/span&gt;&lt;span style="color: #010001"&gt;Views
+    &lt;/span&gt;{ &lt;span style="color: blue"&gt;get &lt;/span&gt;{ &lt;span style="color: blue"&gt;return new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder&lt;/span&gt;(&lt;span style="color: blue"&gt;this&lt;/span&gt;); } }
+
+
+&lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder&lt;/span&gt;: &lt;span style="color: #2b91af"&gt;ViewFolderBase
+&lt;/span&gt;{
+    &lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #010001"&gt;ViewsFolder&lt;/span&gt;(&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;): &lt;span style="color: blue"&gt;base&lt;/span&gt;(&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;) { }
+    &lt;/pre&gt;
+</code></pre>
+
+<p><a href="http://11011.net/software/vspaste"></a></p>
+
+<p>7.最好需要修改你的控制器类从ControllerBase继承，如下</p>
+
+
+
+
+<p>&#160;</p>
+
+
+
+
+<p><pre class="code"><span style="color: blue">using </span><span style="color: #010001">System</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Collections</span>.<span style="color: #010001">Generic</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Linq</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Mvc</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Mvc</span>.<span style="color: #010001">Ajax</span>;</p>
+
+<p><span style="color: blue">namespace </span><span style="color: #010001">CNPC</span>.<span style="color: #010001">Controllers
+</span>{</p>
+
+<pre><code>&lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;SearchController &lt;/span&gt;: &lt;span style="color: #2b91af"&gt;ControllerBase//&lt;font color="#ff0000"&gt;继承类&lt;/font&gt;
+&lt;/span&gt;{
+    &lt;span style="color: #010001"&gt;Models&lt;/span&gt;.&lt;span style="color: #2b91af"&gt;cnpcDataContext &lt;/span&gt;&lt;span style="color: #010001"&gt;cnpc &lt;/span&gt;= &lt;span style="color: blue"&gt;new &lt;/span&gt;&lt;span style="color: #010001"&gt;CNPC&lt;/span&gt;.&lt;span style="color: #010001"&gt;Models&lt;/span&gt;.&lt;span style="color: #2b91af"&gt;cnpcDataContext&lt;/span&gt;();
+
+    &lt;span style="color: green"&gt;//Example Url: /Search
+    //
+    &lt;/span&gt;&lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ActionResult &lt;/span&gt;&lt;span style="color: #010001"&gt;Index&lt;/span&gt;()
+    {
+        &lt;span style="color: blue"&gt;return &lt;/span&gt;&lt;span style="color: #010001"&gt;Views&lt;/span&gt;.&lt;span style="color: #010001"&gt;Search&lt;/span&gt;.&lt;span style="color: #010001"&gt;Index&lt;/s&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/'&gt;http://Apiaceae.github.io/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-20T04:40:41+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tsina">新浪微博</a>
+      <a class="jiathis_button_googleplus">Google+</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_qzone">QQ空间</a>
+      <a class="jiathis_button_tqq">腾讯微博</a>
+      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+  
+  
+  <!-- AddThis Button BEGIN -->
+  <!-- <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52445f441d3a06fc"></script> -->
+  <!-- AddThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2009/12/18/ASP.NET%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/" title="Previous Post: ASP.NET调用存储过程示例代码">&laquo; ASP.NET调用存储过程示例代码</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/12/20/Linq+to+SQL+Like+Operator/" title="Next Post: Linq to SQL Like Operator">Linq to SQL Like Operator &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="我的Octopress配置"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

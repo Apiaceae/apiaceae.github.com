@@ -1,0 +1,40 @@
+---
+layout: post
+title: AJAX大量XML数据动态加载TreeView
+date: 2009-10-18 01:39:59
+comments: true
+sharing: true
+categories: linux
+tags: 
+---
+
+<p>
+介绍如何利用WebService来实现对其较大量数据(XML文件格式)动态加载TreeView节点。 
+</p>
+<p>
+操作步骤如下： 
+</p>
+<p>
+1、在VS下新建网站TreeViewDemo,文件夹结构如下图： 
+</p>
+<p>
+<a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=20091017_225613.png"><img style="display: inline; border: 0px" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=20091017_225613_thumb.png" border="0" alt="2009-10-17_225613" title="2009-10-17_225613" width="260" height="484" /></a> 
+</p>
+<p>
+TreeView.aspx的代码： 
+</p>
+<pre class="code">
+<span style="background: #ffee62">&lt;%</span><span style="color: blue">@ </span><span style="color: #a31515">Page </span><span style="color: red">Language</span><span style="color: blue">=&quot;C#&quot; </span><span style="background: #ffee62">%&gt;&lt;%</span>  <span style="color: green">// TreeView.aspx  // Tree View AJAX Control sample page.  // Copyright (c) by Matthias Hertel, http://www.mathertel.de  // This work is licensed under a BSD style license. See http://www.mathertel.de/License.aspx  // -----   // 02.01.2006 created by Matthias Hertel  // 30.09.2006 xhtml compatibility</span><span style="background: #ffee62">%&gt;</span><span style="color: blue">&lt;!</span><span style="color: #a31515">DOCTYPE </span><span style="color: red">html PUBLIC </span><span style="color: blue">&quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;&lt;</span><span style="color: #a31515">html </span><span style="color: red">xmlns</span><span style="color: blue">=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;</span><span style="color: #a31515">head </span><span style="color: red">runat</span><span style="color: blue">=&quot;server&quot;&gt;  &lt;</span><span style="color: #a31515">title</span><span style="color: blue">&gt;</span>Tree View AJAX Control sample page<span style="color: blue">&lt;/</span><span style="color: #a31515">title</span><span style="color: blue">&gt;  &lt;</span><span style="color: #a31515">link </span><span style="color: red">href</span><span style="color: blue">=&quot;../mathertel.css&quot; </span><span style="color: red">rel</span><span style="color: blue">=&quot;stylesheet&quot; </span><span style="color: red">type</span><span style="color: blue">=&quot;text/css&quot; /&gt;  &lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">=&quot;text/javascript&quot; </span><span style="color: red">src</span><span style="color: blue">=&quot;../ajaxcore/ajax.js&quot;&gt;&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;  &lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">=&quot;text/javascript&quot; </span><span style="color: red">src</span><span style="color: blue">=&quot;../ajaxcore/GetJavaScriptProxy.aspx?service=</span>
+</pre>
+<pre class="code">
+<span style="color: blue">../S03_AJAXControls/TreeView.asmx&quot;&gt;&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;&lt;/</span><span style="color: #a31515">head</span><span style="color: blue">&gt;&lt;</span><span style="color: #a31515">body</span><span style="color: blue">&gt;  &lt;</span><span style="color: #a31515">mh</span><span style="color: blue">:</span><span style="color: #a31515">Title </span><span style="color: red">ID</span><span style="color: blue">=&quot;Title&quot; </span><span style="color: red">runat</span><span style="color: blue">=&quot;server&quot; /&gt;  &lt;</span><span style="color: #a31515">a </span><span style="color: red">href</span><span style="color: blue">=&quot;../ViewSrc.aspx&quot; </span><span style="color: red">style</span><span style="color: blue">=&quot;</span><span style="color: red">position</span>: <span style="color: blue">absolute</span>; <span style="color: red">right</span>: <span style="color: blue">10px</span>; <span style="color: red">top</span>: <span style="color: blue">10px&quot;&gt;</span>View    Source<span style="color: blue">&lt;/</span><span style="color: #a31515">a</span><span style="color: blue">&gt;  &lt;</span><span style="color: #a31515">hr </span><span style="color: blue">/&gt;  &lt;</span><span style="color: #a31515">ajax</span><span style="color: blue">:</span><span style="color: #a31515">TreeView </span><span style="color: red">runat</span><span style="color: blue">=&quot;server&quot; </span><span style="color: red">service</span><span style="color: blue">=&quot;proxies.TreeView.GetSubNodes&quot;</span>
+</pre>
+<pre class="code">
+<span style="color: blue"> </span><span style="color: red">title</span><span style="color: blue">=&quot;Cities in the USA&quot; /&gt;  &lt;</span><span style="color: #a31515">mh</span><span style="color: blue">:</span><span style="color: #a31515">Footer </span><span style="color: red">ID</span><span style="color: blue">=&quot;foot&quot; </span><span style="color: red">runat</span><span style="color: blue">=&quot;server&quot; /&gt;&lt;/</span><span style="color: #a31515">body</span><span style="color: blue">&gt;&lt;/</span><span style="color: #a31515">html</span><span style="color: blue">&gt;</span>
+</pre>
+<a href="http://11011.net/software/vspaste"></a>
+<p>
+WebService文件TreeView.asmx的代码： 
+</p>
+<pre class="code">
+<span style="background: #ffee62">&lt;%</span><span style="color: blue">@ </span><span style="color: #a31515">WebService </span><span style="color: red">Language</span><span style="color: blue">=&quot;C#&quot; </span><span style="color: red">Class</span><span style="color: blue">=&quot;TreeView&quot; </span><span style="background: #ffee62">%&gt;</span><span style="color: green">// TreeView.asmx// WebService serving data for a AJAX TreeView Control.// Copyright by Matthias Hertel, http://www.mathertel.de// This work is licensed under a Creative Commons Attribution 2.0 Germany License.// See http://creativecommons.org/licenses/by/2.0/de/// ----- // 02.01.2006 created by Matthias Hertel</span><span style="color: blue">using </span><span style="color: #010001">System</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Text</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Caching</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Services</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Services</span>.<span style="color: #010001">Protocols</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Services</span>.<span style="color: #010001">Description</span>;<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Xml</span>;[<span style="color: #2b91af">WebService</span>(<span style="color: #010001">Namespace </span>= <span style="color: #2b91af">TreeView</span>.<span style="color: #010001">LOCALNAMESPACE</span>,  <span style="color: #010001">Description </span>= <span style="color: #a31515">&quot;A WebService for getting hierarchical data for the AJAX Tree Control.&quot;</span>)][<span style="color: #2b91af">WebServiceBinding</span>(<span style="color: #010001">ConformsTo </span>= <span style="color: #2b91af">WsiProfiles</span>.<span style="color: #010001">BasicProfile1_1</span>)]<span style="color: blue">public class </span><span style="color: #2b91af">TreeView </span>: <span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="colo

@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux常见问题和操作命令 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="Linux一句话精彩问答&mdash;&mdash;Linux初学者必读(全) &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;网络无关篇&mdash &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2009/09/24/Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%92%8C%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Linux常见问题和操作命令</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-24T08:03:06+08:00" pubdate data-updated="true">Sep 24<span>th</span>, 2009</time>
+        
+        
+                 | <a href="#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Linux一句话精彩问答&mdash;&mdash;Linux初学者必读(全)</h2>
+
+
+<p><div id="postmessage_413272" class="t_msgfont">
+<br />
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;网络无关篇&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;<br />
+0001 <font color="#ff0000">修改主机名(陈绪)</font><br />
+vi
+/etc/sysconfig/network，修改HOSTNAME一行为&quot;HOSTNAME=主机名&quot;(没有这行？那就添加这一行吧)，然后运行命
+令&quot; hostname 主机名&quot;。一般还要修改/etc/hosts文件中的主机名。这样，无论你是否重启，主机名都修改成功。<br />
+<br />
+0002 <font color="#ff0000">Red Hat <span class="t_tag">Linux</span>启动到文字界面(不启动xwindow)(陈绪)</font><br />
+vi /etc/inittab<br />
+id:x:initdefault:<br />
+x=3:文本方式 x=5:图形方式<br />
+<br />
+0003 <font color="#ff0000">linux的自动升级更新问题(hutuworm，NetDC，陈绪)</font><br />
+对于redhat，在<a href="http://www.redhat.com/corp/support/errata/" target="_blank">www.redhat.com/corp/support/errata/</a>找到补丁，6.1以后的版本带有一个工具up2date，它能够测定哪些rpm包需要升级，然后自动从redhat的站点下载并完成安装。<br />
+升级除kernel外的rpm: up2date -u<br />
+升级包括kernel在内的rpm: up2date -u -f<br />
+<br />
+Gentoo升级方法<br />
+更新portage tree：&nbsp;&nbsp;emerge &mdash;sync<br />
+更新/安装软件包： emerge [软件包名] （如安装vim:&nbsp;&nbsp;emerge vim）<br />
+<br />
+Debian跟别的发行版还是有很大的差别的，用Debian做<span class="t_tag">服务器</span>维护更加方便；红帽的升级其实挺麻烦的，当然，如果你交钱给红帽的话，服务是会不一样的。<br />
+Debian下升级软件：<br />
+apt-get update<br />
+apt-get upgrade<br />
+前提：配置好网络和/etc/apt/sources.list，也可以用apt-setup设置。<br />
+<br />
+0004 <font color="#ff0000">windows下看linux分区的软件(陈绪，hutuworm)</font><br />
+Paragon.Ext2FS.Anywhere.2.5.rar和explore2fs-1.00-pre4.zip<br />
+现在不少Linux发行版安装时缺省基于LVM建分区，所以explore2fs也与时俱进地开始支持LVM2：<br />
+<a href="http://www.chrysocome.net/downloads/explore2fs-1.08beta9.zip" target="_blank"><a href="http://www.chrysocome.net/downloads/explore2fs-1.08beta9.zip">http://www.chrysocome.net/downloads/explore2fs-1.08beta9.zip</a></a><br />
+<a href="http://club.topsage.com/thread-158305-1-1.html#" title="迅雷专用高速下载" onclick="return OnDownloadClick_Simple(this,2)"><font color="red" style="font-size: 9pt">迅雷专用下载</font></a>&nbsp;&nbsp;<br />
+<br />
+0005 <font color="#ff0000">mount用法(sakulagi，sxsfxx，aptkevin)</font><br />
+fat32的分区 mount -o codepage=936,iocharset=cp936 /dev/hda7 /mnt/cdrom<br />
+ntfs的分区 mount -o iocharset=cp936 /dev/hda7 /mnt/cdrom<br />
+iso文件 mount -o loop /abc.iso /mnt/cdrom<br />
+软盘 mount /dev/fd0 /mnt/floppy<br />
+USB闪存 mount /dev/sda1 /mnt/cdrom<br />
+在有scsi硬盘的计算机上，如果用上面的命令挂载usb闪存，则会mount到/boot分区。这种情况，应该先用fdisk -l /dev/sd? 来看看到底usb闪存盘是在哪个设备下(通常会是sdb或者sdc)。比如某台机器上，就是在sdc1上面。<br />
+所有/etc/fstab内容 mount -a<br />
+可以指定文件格式&quot;-t 格式&quot;, 格式可以为vfat, ext2, ext3等.<br />
+访问DVD mount -t iso9660 /dev/dvd /mnt/cdrom或mount -t udf /dev/dvd /mnt/cdrom<br />
+注意：dvd的格式一般为iso9660或udf之一<br />
+<br />
+0006 <font color="#ff0000">在vmware的LINUX中使用本地硬盘的FAT分区(陈绪)</font><br />
+将本地的FAT分区共享，然后在VMWARE中使用SMBFS挂上。可以将如下的行放到/etc/fstab中：<br />
+//win_ip/D$ /mnt/d smbfs defaults,auto,username=win_name,password=win_pass,codepage=936,iocharest=gb2312 0 0<br />
+其中win_ip是你的windows的IP地址；<br />
+D$是你的windows里面共享的D盘的共享名；<br />
+/mnt/d是要将该分区mount到linux的目录；<br />
+win_name和win_pass是你的WINDOWS里面可以读取该分区的用户，比如你的管理员名和密码。<br />
+如果你运行了/etc/rc.d/init.d/netfs，那么在启动的时候就会自动挂载这个分区。<br />
+<br />
+0007.a <font color="#ff0000">删除名为-a的文件(陈绪)</font><br />
+rm ./-a<br />
+rm &mdash; -a&nbsp;&nbsp;告诉rm这是最后一个选项，参见getopt<br />
+ls -i 列出inum，然后用find . -inum inum_of_thisfile -exec rm &#39;{}&#39; \;<br />
+<br />
+0007.b <font color="#ff0000">删除名为\a的文件(陈绪)</font><br />
+rm \a<br />
+<br />
+0007.c <font color="#ff0000">删除名字带的/和&lsquo;\0&#39;文件(陈绪)</font><br />
+这些字符是正常文件<span class="t_tag">系统</span>所不允许的字符，但可能在文件名中产生，如unix下的NFS文件系统在Mac系统上使用<br />
+1.解决的方法，把NFS文件系统在挂到不过滤&#39;/&#39;字符的系统下删除含特殊文件名的文件。<br />
+2.也可将错误文件名的目录其它文件移走，ls -id 显示含该文件目录的inum，umount 文件系统， <br />
+clri清除该目录的inum，fsck，mount，check your lost+found，rename the file in it.<br />
+最好是通过WINDOWS FTP过去就可以删除任何文件名的文件了!<br />
+<br />
+0007.d <font color="#ff0000">删除名字带不可见字符的文件(陈绪)</font><br />
+列出文件名并转储到文件：ls -l&nbsp;&nbsp;&gt;aaa<br />
+然后编辑文件的内容加入rm命令使其内容成为删除上述文件的格式：<br />
+vi aaa<br />
+[rm -r <em><em>*****<br />
+]<br />
+把文件加上执行权限 chmod +x aaa<br />
+执行 $aaa<br />
+<br />
+0007.e <font color="#ff0000">删除文件大小为零的文件(陈绪)</font><br />
+rm -i <code>find ./ -size 0</code><br />
+find ./ -size 0 -exec rm {} \;<br />
+或<br />
+find ./&nbsp;&nbsp;-size 0 | xargs rm -f &amp;<br />
+或<br />
+for file in </em>&nbsp; &nbsp;#自己定义需要删除的文件类型<br />
+do<br />
+&nbsp; &nbsp; if [ ! -s ${file} ]<br />
+&nbsp; &nbsp; then<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;rm ${file}<br />
+<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;echo &quot;rm $file Success!&quot;<br />
+&nbsp; &nbsp; fi<br />
+done<br />
+<br />
+0008 <font color="#ff0000">redhat设置滚轮鼠标(mc1011)</font><br />
+进入X后，选择鼠标的配置，选择wheel mouse(ps/2)就可以了，<br />
+如果鼠标表现异常，重启计算机即可。<br />
+(或者su, vi /etc/X11/XF86Config, 把PS/2 改成 ImPS/2) <br />
+<br />
+0009 <font color="#ff0000">加装xwindow(陈绪)</font><br />
+用linux光盘启动，选择升级，然后单独选择包，安装即可<br />
+<br />
+0010 <font color="#ff0000">删除linux分区(陈绪)</font><br />
+做一张partition magic的启动软盘,启动后删除. 或者用win2000的启动光盘启动,然后删除.<br />
+<br />
+0011 <font color="#ff0000">如何退出man(陈绪)</font><br />
+q<br />
+<br />
+0012 <font color="#ff0000">不编译内核，mount ntfs分区(陈绪,hutuworm,qintel)</font><br />
+原装rh8，未升级或编译内核<br />
+1. 上<span class="t_tag">google</span>.com搜索并下载 kernel-ntfs-2.4.18-14.i686.rpm<br />
+2. rpm -ivh kernel-ntfs-2.4.18-14.i686.rpm<br />
+3. mkdir /mnt/c<br />
+4. mount -t ntfs /dev/hda1 /mnt/c<br />
+或<br />
+Read only: <a href="http://www.linux-ntfs.org/" target="_blank"><a href="http://www.linux-ntfs.org/">http://www.linux-ntfs.org/</a></a><br />
+Read/Write: <a href="http://www.jankratochvil.net/project/captive/" target="_blank"><a href="http://www.jankratochvil.net/project/captive/">http://www.jankratochvil.net/project/captive/</a></a><br />
+<br />
+0013 <font color="#ff0000">tar 分卷压缩和合并(WongMokin，Waker)</font><br />
+以每卷500M为例<br />
+tar分卷压缩：tar cvzpf &ndash; somedir | split -d -b 500m<br />
+tar多卷合并：cat x</em> &gt; mytarfile.tar.gz<br />
+<br />
+0014 <font color="#ff0000">使用lilo/grub时找回忘记了的root口令(陈绪)</font><br />
+三种办法：<br />
+1.在系统进入单用户状态，直接用passwd root去更改<br />
+2.用安装光盘引导系统，进行linux rescue状态，将原来/分区挂接上来,作法如下：<br />
+cd /mnt<br />
+mkdir hd<br />
+mount -t auto /dev/hdaX(原来/分区所在的分区号） hd<br />
+cd hd<br />
+chroot ./<br />
+<br />
+passwd root<br />
+这样可以搞定<br />
+3.将本机的硬盘拿下来，挂到其他的linux系统上，采用的办法与第二种相同<br />
+rh8中<br />
+一. lilo<br />
+&nbsp; &nbsp;1. 在出现 lilo: 提示时键入 linux single<br />
+&nbsp; &nbsp;&nbsp; &nbsp;画面显示 lilo:&nbsp;&nbsp;linux single<br />
+&nbsp; &nbsp;2. 回车可直接进入linux命令行<br />
+&nbsp; &nbsp;3. #vi /etc/shadow<br />
+&nbsp; &nbsp;&nbsp; &nbsp;将第一行，即以root开头的一行中root:后和下一个:前的内容删除，<br />
+&nbsp; &nbsp;&nbsp; &nbsp;第一行将类似于<br />
+&nbsp; &nbsp;&nbsp; &nbsp;root::&hellip;&hellip;<br />
+&nbsp; &nbsp;&nbsp; &nbsp;保存<br />
+&nbsp; &nbsp;4. #reboot重启，root密码为空<br />
+二. grub<br />
+&nbsp; &nbsp;1. 在出现grub画面时，用上下键选中你平时启动linux的那一项(别选dos哟)，然后按e键<br />
+&nbsp; &nbsp;2. 再次用上下键选中你平时启动linux的那一项(类似于kernel /boot/vmlinuz-2.4.18-14 ro root=LAB<p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/09/24/Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%92%8C%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/'&gt;http://Apiaceae.github.io/blog/2009/09/24/Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%92%8C%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-24T08:03:06+08:00" pubdate data-updated="true">Sep 24<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tsina">新浪微博</a>
+      <a class="jiathis_button_googleplus">Google+</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_qzone">QQ空间</a>
+      <a class="jiathis_button_tqq">腾讯微博</a>
+      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+  
+  
+  <!-- AddThis Button BEGIN -->
+  <!-- <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52445f441d3a06fc"></script> -->
+  <!-- AddThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2009/09/24/Ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AERuby+On+Rails%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Previous Post: Ubuntu服务器配置Ruby On Rails开发环境">&laquo; Ubuntu服务器配置Ruby On Rails开发环境</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/09/24/JIRA+%2B+MySQL+%2B+Confluence+%E5%AE%89%E8%A3%85/" title="Next Post: JIRA + MySQL + Confluence 安装">JIRA + MySQL + Confluence 安装 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="我的Octopress配置"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

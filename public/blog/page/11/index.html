@@ -1,0 +1,1579 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="1. man 对你熟悉或不熟悉的命令提供帮助解释 eg:man ls 就可以查看ls相关的用法，注：按q键或者ctrl+c退出，在linux下可以使用ctrl+c终止当前程序运行。 2. ls 查看目录或者文件的属*，列举出任一目录下面的文件 eg: ls /usr/man； ls -l a. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/page/11/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/24/%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/">常用Linux命令</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-24T07:14:35+08:00" pubdate data-updated="true">Sep 24<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/24/%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<span class="a14c">1. man 对你熟悉或不熟悉的命令提供帮助解释 
+eg:man ls 就可以查看ls相关的用法，注：按q键或者ctrl+c退出，在linux下可以使用ctrl+c终止当前程序运行。<br />
+<br />
+2. ls 查看目录或者文件的属*，列举出任一目录下面的文件 eg: ls /usr/man； ls -l<br />
+<br />
+a.d表示目录(directory)，如果是一个&quot;-&quot;表示是文件，如果是l则表示是一个连接文件(link)<br />
+<br />
+b.表示文件或者目录许可权限.分别用可读(r)，可写(w)，可运行(x)。<br />
+<br />
+3. cp 拷贝文件<br />
+<br />
+eg: cp filename1 filename2 //把filename1拷贝成filename2 <br />
+<br />
+cp 1.c netseek/2.c //将1.c拷到netseek目录下命名为2.c <br />
+<br />
+4. rm 删除文件和目录<br />
+<br />
+eg: rm 1.c //将1.c这个文件删除<br />
+<br />
+5. mv 移走目录或者改文件名<br />
+<br />
+eg: mv filename1 filename2 //将filename1 改名为filename2<br />
+<br />
+mv qib.tgz ../qib.tgz //移到上一级目录<br />
+<br />
+6. cd 改变当前目录 pwd 查看当前所在目录完整路径<br />
+<br />
+eg: pwd //查看当前所在目录路径<br />
+<br />
+cd netseek //进入netseek这个目录<br />
+<br />
+cd //退出当前目录<br />
+<br />
+7. cat，more命令<br />
+<br />
+将某个文件的内容显示出来。两个命令所不同的是:cat把文件内容一直打印出来，而 more则分屏显示<br />
+<br />
+eg; cat&gt;1.c //就可以把代码粘帖到1.c文件里，按ctrl+d 保存代码。<br />
+<br />
+cat 1.c 或more 1.c //都可以查看里面的内容。<br />
+<br />
+gcc -o 1 1.c //将1.c编译成.exe文件，我们可以用此命编译出代码。<br />
+<br />
+8.chmod 命令 权限修改 用法：chmod 一位8进制数 filename。<br />
+<br />
+eg: chmod u+x filenmame //只想给自己运行，别人只能读<br />
+<br />
+//u表示文件主人， g 表示文件文件所在组。 o 表示其他人 ;r 表可读，w 表可写，x 
+表可以运行<br />
+<br />
+chmod g+x filename //同组的人来执行<br />
+<br />
+9. clear，date命令<br />
+<br />
+clear:清屏，相当与DOS下的cls;date:显示当前时间。<br />
+<br />
+10. mount 加载一个硬件设备<br />
+<br />
+用法:mount [参数] 要加载的设备 载入点<br />
+<br />
+eg: mount /dev/cdrom<br />
+<br />
+cd /mnt/cdrom //进入光盘目录<br />
+<br />
+11. su 在不退出登陆的情况下，切换到另外一个人的身份<br />
+<br />
+用法: su -l 用户名(如果用户名缺省，则切换到root状态)<br />
+<br />
+eg:su -l netseek (切换到netseek这个用户，将提示输入密码)<br />
+<br />
+12.whoami，whereis，which，id<br />
+<br />
+//whoami:确认自己身份<br />
+<br />
+//whereis:查询命令所在目录以及帮助文档所在目录<br />
+<br />
+//which:查询该命令所在目录(类似whereis)<br />
+<br />
+//id:打印出自己的UID以及GID。(UID:用户身份唯一标识。GID:用户组身份唯一标识。每
+一个用户只能有一个唯一的UID和 GID)<br />
+<br />
+eg: whoami //显示你自已登陆的用户名<br />
+<br />
+whereis bin 显示bin所在的目录，将显示为：/usr/local/bin <br />
+<br />
+which bin <br />
+<br />
+13. grep，find<br />
+<br />
+grep:文本内容搜索;find:文件或者目录名以及权限属主等匹配搜索<br />
+<br />
+eg: grep success * 　　
+/*查找当前目录下面所有文件里面含有success字符的文件<br />
+<br />
+14. kill 可以杀死某个正在进行或者已经是dest状态的进程<br />
+<br />
+eg; ps ax<br />
+<br />
+15. passwd 可以设置口令<br />
+<br />
+16. history 用户用过的命令<br />
+<br />
+eg: history //可以显示用户过去使用的命令<br />
+<br />
+17. !! 执行最近一次的命令<br />
+<br />
+18. mkdir命令<br />
+<br />
+eg: mkdir netseek //创建netseek这个目录<br />
+<br />
+19. tar 解压命令<br />
+<br />
+eg: tar -zxvf nmap-3.45.tgz //将这个解压到nmap-3.45这个目录里<br />
+<br />
+20. finger 可以让使用者查询一些其他使用者的资料 <br />
+<br />
+eg: finger //查看所用用户的使用资料<br />
+<br />
+finger root //查看root的资料</span>
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p>
+##########################
+</p>
+
+
+<p>
+这是一个linux常见命令的列表。<br />
+那些有&bull; 标记的条目，你可以直接拷贝到终端上而不需要任何修改，因此你最好开一个终端边读边<a href="http://www.pixelbeat.org/docs/xclipboard.html">剪切&amp;拷贝</a>。<br />
+所有的命令已在Fedora和Ubuntu下做了测试<br />
+<br />
+</p>
+
+
+<p><table border="0" class="pixelbeat"></p>
+
+<pre><code>&lt;tbody&gt;
+    &lt;tr id="misc" class="pbtitle"&gt;
+        &lt;td colspan="2"&gt;命令&lt;/td&gt;
+        &lt;td&gt;描述&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;apropos whatis&lt;/td&gt;
+        &lt;td&gt;显示和word相关的命令。 参见&lt;a href="http://www.pixelbeat.org/scripts/threadsafe"&gt;线程安全&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;&lt;a href="http://www.pixelbeat.org/lkdb/less.html"&gt;man&lt;/a&gt; -t man | ps2pdf - &amp;gt; man.pdf&lt;/td&gt;
+        &lt;td&gt;生成一个PDF格式的帮助文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;which command&lt;/td&gt;
+        &lt;td&gt;显示命令的完整路径名&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;time command&lt;/td&gt;
+        &lt;td&gt;计算命令运行的时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;time cat&lt;/td&gt;
+        &lt;td&gt;开始计时. Ctrl-d停止。参见&lt;a href="http://www.pixelbeat.org/scripts/sw"&gt;sw&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;nice &lt;a href="http://www.pixelbeat.org/lkdb/info.html"&gt;info&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;运行一个低优先级命令（这里是info）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;renice 19 -p $$&lt;/td&gt;
+        &lt;td&gt;使脚本运行于低优先级。用于非交互任务。&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="dirs" class="pbtitle"&gt;
+        &lt;td colspan="3"&gt;目录操作&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;cd -&lt;/td&gt;
+        &lt;td&gt;回到前一目录&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;cd&lt;/td&gt;
+        &lt;td&gt;回到用户目录&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;(cd dir &amp;amp;&amp;amp; command)&lt;/td&gt;
+        &lt;td&gt;进入目录dir，执行命令command然后回到当前目录&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;pushd &lt;strong&gt;.&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;将当前目录压入栈，以后你可以使用popd回到此目录&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="file_search" class="pbtitle"&gt;
+        &lt;td colspan="3"&gt;文件搜索&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;&lt;a href="http://www.pixelbeat.org/settings/.bashrc"&gt;alias&lt;/a&gt; l=&amp;#39;ls -l --color=auto&amp;#39;&lt;/td&gt;
+        &lt;td&gt;单字符文件列表命令&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;ls -lrt&lt;/td&gt;
+        &lt;td&gt;按日期显示文件. 参见&lt;a href="http://www.pixelbeat.org/scripts/newest"&gt;newest&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;ls /usr/bin | pr -T9 -W$COLUMNS&lt;/td&gt;
+        &lt;td&gt;在当前终端宽度上打印9列输出&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -name &amp;#39;*.[ch]&amp;#39; | xargs grep -E &amp;#39;expr&amp;#39;&lt;/td&gt;
+        &lt;td&gt;在当前目录及其子目录下所有.c和.h文件中寻找&amp;#39;expr&amp;#39;. 参见&lt;a href="http://www.pixelbeat.org/scripts/findrepo"&gt;findrepo&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -type f -print0 | xargs -r0 grep -F &amp;#39;example&amp;#39;&lt;/td&gt;
+        &lt;td&gt;在当前目录及其子目录中的常规文件中查找字符串&amp;#39;example&amp;#39;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -maxdepth 1 -type f | xargs grep -F &amp;#39;example&amp;#39;&lt;/td&gt;
+        &lt;td&gt;在当前目录下查找字符串&amp;#39;example&amp;#39;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -maxdepth 1 -type d | while &lt;a href="http://www.pixelbeat.org/programming/readline/"&gt;read&lt;/a&gt; dir; do echo $dir; echo cmd2; done&lt;/td&gt;
+        &lt;td&gt;对每一个找到的文件执行多个命令(使用while循环)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -type f ! -perm -444&lt;/td&gt;
+        &lt;td&gt;寻找所有不可读的文件(对网站有用)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;find -type d ! -perm -111&lt;/td&gt;
+        &lt;td&gt;寻找不可访问的目录(对网站有用)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;locate -r &amp;#39;file[^/]*\.txt&amp;#39;&lt;/td&gt;
+        &lt;td&gt;使用locate 查找所有符合*file*.txt的文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;look reference&lt;/td&gt;
+        &lt;td&gt;在（有序）字典中快速查找&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;bull;&lt;/td&gt;
+        &lt;td class="nw"&gt;grep &lt;a href="http://www.pixelbeat.org/settings/.bashrc"&gt;--color&lt;/a&gt; reference /usr/share/dict/words&lt;/td&gt;
+        &lt;td&gt;使字典中匹配的正则表达式高亮&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="archives" class="pbtitle"&gt;
+        &lt;td colspan="3"&gt;归档 and compression&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;gpg -c file&lt;/td&gt;
+        &lt;td&gt;文件加密&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td class="nw"&gt;gpg fil&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/09/24/%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/'&gt;http://Apiaceae.github.io/blog/2009/09/24/%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/23/%E4%BD%BF%E7%94%A8Macports%E5%9C%A8Mac%E6%9C%BA%E5%99%A8%E4%B8%8A%E9%85%8D%E7%BD%AERuby+on+Rails%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">使用Macports在Mac机器上配置Ruby on Rails开发环境</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-23T12:50:18+08:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/23/%E4%BD%BF%E7%94%A8Macports%E5%9C%A8Mac%E6%9C%BA%E5%99%A8%E4%B8%8A%E9%85%8D%E7%BD%AERuby+on+Rails%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<strong>MacPorts</strong>
+</p>
+
+
+<p>
+You might already have your Rails environment set up using <a href="http://www.macports.org/">MacPorts</a>.
+If that&rsquo;s the case, why not just use that? Even if you are like me with
+a fresh installed Leopard, MacPorts still has its advantages. For
+example, you can use MacPorts to upgrade ruby in the future.
+</p>
+
+
+<p>
+I used MacPorts to set up my Rails environment based on these other great articles:
+</p>
+
+
+<ul>
+    <li><a href="http://teabass.com/super-simple-ruby-on-rails-install-with-macports-for-leopard/">Teabass</a></li>
+    <li><a href="http://www.robbyonrails.com/articles/2007/06/19/installing-ruby-on-rails-and-postgresql-on-os-x-second-edition">Robby on Rails</a></li>
+    <li><a href="http://michael.biven.org/2006/12/22/starting-mongrel-or-memcached-with-launchd/">Michael Biven</a></li>
+    <li><a href="http://gorn.ch/archive/2007/01/22/start-memcached-with-launchd.html"> Tobias Ebn&amp;Atilde;?&amp;Acirc;&para;ther</a></li>
+</ul>
+
+
+<p>
+1. Install the latest Xcode version for Leopard.  <a href="http://developer.apple.com/tools/download/">Download</a> from the Apple website.
+</p>
+
+
+<p>
+2. Install the latest MacPorts version for Leopard.  <a href="http://www.macports.org/">Download</a> from the MacPorts website.
+</p>
+
+
+<p>
+Run this to update MacPorts:
+</p>
+
+
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace">
+<span style="color: #c20cb9; font-weight: bold">sudo</span> port selfupdate
+</pre>
+</div>
+</div>
+
+
+<p>
+3. Install Ruby, RubyGems, and Rails.
+</p>
+
+
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace">
+<span style="color: #c20cb9; font-weight: bold">sudo</span> port <span style="color: #c20cb9; font-weight: bold">install</span> ruby
+<span style="color: #c20cb9; font-weight: bold">sudo</span> port <span style="color: #c20cb9; font-weight: bold">install</span> rb-rubygems
+<span style="color: #c20cb9; font-weight: bold">sudo</span> gem update <span style="color: #660033">--system</span>
+<span style="color: #c20cb9; font-weight: bold">sudo</span> gem <span style="color: #c20cb9; font-weight: bold">install</span> rails <span style="color: #660033">-y</span>
+</pre>
+</div>
+</div>
+
+
+<p>
+4. Install MySQL (directly from Andrew Nesbitt, shown here for completeness).
+</p>
+
+
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace">
+<span style="color: #c20cb9; font-weight: bold">sudo</span> port <span style="color: #c20cb9; font-weight: bold">install</span> mysql5 +server
+<span style="color: #c20cb9; font-weight: bold">sudo</span> launchctl load <span style="color: #660033">-w</span> <span style="color: #000000; font-weight: bold">/</span>Library<span style="color: #000000; font-weight: bold">/</span>LaunchDaemons<span style="color: #000000; font-weight: bold">/</span>org.macports.mysql5.plist
+<span style="color: #c20cb9; font-weight: bold">sudo</span> <span style="color: #660033">-u</span> mysql mysql_install_db5
+<span style="color: #7a0874; font-weight: bold">cd</span> <span style="color: #000000; font-weight: bold">/</span>opt<span style="color: #000000; font-weight: bold">/</span><span style="color: #7a0874; font-weight: bold">local</span> ; <span style="color: #c20cb9; font-weight: bold">sudo</span> <span style="color: #000000; font-weight: bold">/</span>opt<span style="color: #000000; font-weight: bold">/</span>local<span style="color: #000000; font-weight: bold">/</span>lib<span style="color: #000000; font-weight: bold">/</span>mysql5<span style="color: #000000; font-weight: bold">/</span>bin<span style="color: #000000; font-weight: bold">/</span>mysqld_safe <span style="color: #000000; font-weight: bold">&amp;</span>
+<span style="color: #c20cb9; font-weight: bold">sudo</span> <span style="color: #c20cb9; font-weight: bold">ln</span> <span style="color: #660033">-s</span> <span style="color: #000000; font-weight: bold">/</span>opt<span style="color: #000000; font-weight: bold">/</span>local<span style="color: #000000; font-weight: bold">/</span>var<span style="color: #000000; font-weight: bold">/</span>run<span style="color: #000000; font-weight: bold">/</span>mysql5<span style="color: #000000; font-weight: bold">/</span>mysqld.sock <span style="color: #000000; font-weight: bold">/</span>tmp<span style="color: #000000; font-weight: bold">/</span>mysql.sock
+</pre>
+</div>
+</div>
+
+
+<p>
+5. Install mongrel and mongrel_cluster.
+</p>
+
+
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace">
+<span style="color: #c20cb9; font-weight: bold">sudo</span> gem <span style="color: #c20cb9; font-weight: bold">install</span> mongrel
+<span style="color: #c20cb9; font-weight: bold">sudo</span> gem <span style="color: #c20cb9; font-weight: bold">install</span> mongrel_cluster
+</pre>
+</div>
+</div>
+
+
+<p>
+6. Install memcached.
+</p>
+
+
+<div class="wp_syntax">
+<div class="code">
+<pre class="bash" style="font-family: monospace">
+<span style="color: #c20cb9; font-weight: bold">sudo</span> port <span style="color: #c20cb9; font-weight: bold">install</span> memcached
+<span style="color: #c20cb9; font-weight: bold">sudo</span> gem <span style="color: #c20cb9; font-weight: bold">install</span> memcache-client
+</pre>
+</div>
+</div>
+
+
+<p>
+Create a file called /Library/LaunchDaemons/com.danga.memcached.plist, and insert the following:
+</p>
+
+
+<p><div class="wp_syntax">
+<div class="code">
+<pre class="xml" style="font-family: monospace">
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;?xml</span> <span style="color: #000066">version</span>=<span style="color: #ff0000">&quot;1.0&quot;</span> <span style="color: #000066">encoding</span>=<span style="color: #ff0000">&quot;UTF-8&quot;</span><span style="color: #000000; font-weight: bold">?&gt;</span></span>
+<span style="color: #00bbdd">&lt;!DOCTYPE plist PUBLIC &quot;&ndash;//Apple//DTD PLIST 1.0//EN&quot; &quot;<a href="http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;">http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;</a></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;plist</span> <span style="color: #000066">version</span>=<span style="color: #ff0000">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold">&gt;</span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;dict<span style="color: #000000; font-weight: bold">&gt;</span></span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>Label<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;/key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;string<span style="color: #000000; font-weight: bold">&gt;</span></span></span>com.danga.memcached<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;/string<span style="color: #000000; font-weight: bold">&gt;</span></span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>OnDemand<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;/key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;false</span><span style="color: #000000; font-weight: bold">/&gt;</span></span>
+<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>ProgramArguments<span style="color: #009900"><span style="color: #000000; font-weight: bold">&lt;/key<span style="color: #000000; font-weight: bold">&gt;</span></span></span>
+<span style="color: #009900"><span s<p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/09/23/%E4%BD%BF%E7%94%A8Macports%E5%9C%A8Mac%E6%9C%BA%E5%99%A8%E4%B8%8A%E9%85%8D%E7%BD%AERuby+on+Rails%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/'&gt;http://Apiaceae.github.io/blog/2009/09/23/%E4%BD%BF%E7%94%A8Macports%E5%9C%A8Mac%E6%9C%BA%E5%99%A8%E4%B8%8A%E9%85%8D%E7%BD%AERuby+on+Rails%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/21/%E5%9C%A8Mac%E4%B8%8A%E8%BF%90%E8%A1%8CWindows%E7%9C%9F%E7%9A%84%E6%98%AF%E5%BE%88%E4%B8%8D%E4%B8%80%E6%A0%B7/">在Mac上运行Windows真的是很不一样</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-21T03:21:41+08:00" pubdate data-updated="true">Sep 21<span>st</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/21/%E5%9C%A8Mac%E4%B8%8A%E8%BF%90%E8%A1%8CWindows%E7%9C%9F%E7%9A%84%E6%98%AF%E5%BE%88%E4%B8%8D%E4%B8%80%E6%A0%B7/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+好了，什么也说了，翠花上酸菜！
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p><img src="/Blogs/image.axd?picture=2009%2f9%2f2009-09-20_1916.png" alt="" width="616" height="383" /><br /></p>
+
+<br />
+
+
+<p>这就我最新买的MacBook Air， 呵呵，真得很不错噢！</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/21/%E5%9C%A8Mac%E4%B8%8A%E8%BF%90%E8%A1%8CWindows%E7%9C%9F%E7%9A%84%E6%98%AF%E5%BE%88%E4%B8%8D%E4%B8%80%E6%A0%B7/'>http://Apiaceae.github.io/blog/2009/09/21/%E5%9C%A8Mac%E4%B8%8A%E8%BF%90%E8%A1%8CWindows%E7%9C%9F%E7%9A%84%E6%98%AF%E5%BE%88%E4%B8%8D%E4%B8%80%E6%A0%B7/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/%E8%AD%A6%E9%98%B2%E8%BF%91%E6%9C%9FSkype%E4%B8%AD%E5%A5%96%E7%9A%84%E9%AA%97%E5%B1%80/">警防近期Skype中奖的骗局</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T22:40:55+08:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/20/%E8%AD%A6%E9%98%B2%E8%BF%91%E6%9C%9FSkype%E4%B8%AD%E5%A5%96%E7%9A%84%E9%AA%97%E5%B1%80/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<img src="/Blogs/image.axd?picture=2009%2f9%2f2009-09-20_1232.png" alt="" width="664" height="396" />
+</p>
+
+
+<p>
+大家注意了，最近Skype老是提醒你中奖了，看看这些页面做的还真是那么回事。而且说实在的这个中国Skype官方网站居然能让这种虚假的信息关在主页听之任之。是脑子进水了还是有意的啊？？？
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p><img src="/Blogs/image.axd?picture=2009%2f9%2f2009-09-20_1246.png" alt="" width="596" height="390" /><br />
+<img src="/Blogs/image.axd?picture=2009%2f9%2f2009-09-20_1247.png" alt="" width="595" height="336" /><br /></p>
+
+<br />
+
+
+<p>这些家伙到底对用户负责任吗？一个网页上的一点烂代码的搞不定，是不是故意钓鱼，从中谋求利润啊。很火。差点上当。</p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/20/%E8%AD%A6%E9%98%B2%E8%BF%91%E6%9C%9FSkype%E4%B8%AD%E5%A5%96%E7%9A%84%E9%AA%97%E5%B1%80/'>http://Apiaceae.github.io/blog/2009/09/20/%E8%AD%A6%E9%98%B2%E8%BF%91%E6%9C%9FSkype%E4%B8%AD%E5%A5%96%E7%9A%84%E9%AA%97%E5%B1%80/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/20/EOL%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E4%B8%80/">EOL系统测试问题一</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-20T17:56:44+08:00" pubdate data-updated="true">Sep 20<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/20/EOL%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E4%B8%80/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<img src="/Blogs/image.axd?picture=2009%2f9%2f2009-09-20_0950.png" alt="" />
+</p>
+
+
+<p>
+真不知道到底是什么问题啊，只要运行 db:create:all就会出错。
+</p>
+
+
+<p>
+下面是可能存在的问题和解释：
+</p>
+
+
+<div id="solution_14910" class="solution">
+<div>
+貌似是数据库字符集的问题：
+</div>
+<div class="info">
+<a href="http://jones.javaeye.com/" target="_blank"><br />
+</a><a href="http://javaeye-admin.group.javaeye.com/group/new_topic" target="_blank" title="在站务论坛发帖举报该用户的作弊行为"></a>
+</div>
+</div>
+
+
+<div id="solution_15178" class="solution">
+<div>
+如果你没有启动MySQL服务，报的就是这个错。
+</div>
+<div class="info">
+<a href="http://foxgst.javaeye.com/" target="_blank"><br />
+</a><a href="http://javaeye-admin.group.javaeye.com/group/new_topic" target="_blank" title="在站务论坛发帖举报该用户的作弊行为"></a>
+</div>
+</div>
+
+
+<div id="solution_15316" class="solution">
+<div>
+不知你是否在新機器上。你的application是用rails 2.2.1開嗎？
+<br />
+<br />
+你確定裝了mysql adapter嗎？
+<br />
+<br />
+sudo gem install mysql
+<br />
+<br />
+另外，rails 2.2.1，一定會有要更新gem。
+<br />
+<br />
+你的gem是1.3.1嗎？
+<br />
+<br />
+試用gem -v或gem &#8211;version找出來
+<br />
+<br />
+若然不是，便要更新。
+</div>
+<div class="info">
+<a href="http://omnibus.javaeye.com/" target="_blank"><br />
+</a><a href="http://javaeye-admin.group.javaeye.com/group/new_topic" target="_blank" title="在站务论坛发帖举报该用户的作弊行为"></a>
+</div>
+</div>
+
+
+<div id="solution_15321" class="solution">
+<div>
+我也碰到过，gem install mysql 就好了
+</div>
+<div class="info">
+<a href="http://1985.javaeye.com/" target="_blank"><br />
+</a><a href="http://javaeye-admin.group.javaeye.com/group/new_topic" target="_blank" title="在站务论坛发帖举报该用户的作弊行为"></a>
+</div>
+</div>
+
+
+<div id="solution_15326" class="solution">
+<div>
+你能否確定database.yml內，username與password都是正確無誤嗎？
+<br />
+<br />
+錯誤都username及password，都會導致此error
+</div>
+<div class="info">
+<a href="http://omnibus.javaeye.com/" target="_blank"><br />
+</a><a href="http://javaeye-admin.group.javaeye.com/group/new_topic" target="_blank" title="在站务论坛发帖举报该用户的作弊行为"></a>
+</div>
+</div>
+
+
+<div>
+你把其中 的localhost改成127.0.0.1试试。
+<br />
+另外，说说你的环境和平台之类的。
+</div>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/20/EOL%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E4%B8%80/'>http://Apiaceae.github.io/blog/2009/09/20/EOL%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E4%B8%80/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/19/17%E6%AC%BEMySQL%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%BB%BC%E8%BF%B0/">17款MySQL管理与开发工具综述</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-19T15:52:49+08:00" pubdate data-updated="true">Sep 19<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/19/17%E6%AC%BEMySQL%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%BB%BC%E8%BF%B0/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1 class="post-title">17款MySQL管理与开发工具综述</h1>
+
+
+<p></p>
+
+<p><div id="post-content"></p>
+
+<p><p>
+MySQL
+是一款目前最流行的开源数据库，快速，可靠以及易于上手。MySQL的一个主要特性就是它的跨平台支持，他几乎可以在任何操作系统中运行，包括
+Windows, OSX,
+Linux以及其他许多许多。因此，MySQL是最好的一款数据库，我们都在使用它。目前的问题就是最好的MySQL管理与开发工具是什么呢？
+</p>
+<p>
+本文将向你介绍一些适用于初学者及专业人士的，可在Mac,
+Windows以及Linux上运行的，最实用且最流行的MySQL管理与开发工具。在这些工具中，我们认为最有特色的是phpMyAdmin,
+MySQL Workbench, HeidiSQL以及 SequelPro。
+</p>
+<h3>MySQL Workbench (Win, Linux, Mac)</h3>
+<p>
+<a href="http://dev.mysql.com/workbench/">MySQL Workbench</a><br />
+该软件是一款全能的，具有可视化数据设计的数据库软件，包括与MySQL数据库系统集成的数据库设计，建模，创建及维护功能。免费版属于公众版本，几乎可以满足你的所有需求。如果你觉得免费版使用起来不安全的话，可以使用它的商业版（标准版）。
+</p>
+<p>
+<img class="alignnone size-full wp-image-1179" src="http://4ebstudio.com/wp-content/uploads/2009/04/mysqlscreen1.jpg" alt="mysqlscreen1" title="mysqlscreen1" />
+</p>
+<p>
+<span></span>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://dev.mysql.com/workbench/?page_id=10"&gt;MySQL Workbench帮助&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://dev.mysql.com/downloads/workbench/5.1.html"&gt;选择你要下载的版本&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>HeidiSQL &ndash; MySQL made easy (Win, Linux)</h3>
+<p>
+<a href="http://www.heidisql.com/?&amp;">Heidi SQL</a><br />
+Heidi
+SQL是一款轻量级的，具有灵活界面的软件。它允许你浏览和编辑你的数据库，管理数据表，查看和编辑记录，管理用户权限，从文本文件导入数据，运行SQL
+查询，在两个数据库之间进行数据表同步，导出 指定的数据表到其它的数据库或SQL脚本，所有的这些功能都集成在一个直观的Windows界面中。
+</p>
+<p>
+<a href="http://www.heidisql.com/?&amp;"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/mysqlscreen2.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.heidisql.com/support.php"&gt;Heidi SQL 论坛&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.heidisql.com/jheidi/"&gt;jHeidi Alpha 4&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<p>
+你也可以在iPhone上下载一个名为jHeidi Mobi版的小软件，它仅提供Oracle以及MySQL的访问功能。
+</p>
+<p>
+<a href="http://www.heidisql.com/jheidi/">jHeidi Mobi下载页面</a>
+</p>
+<h3>Aqua Data Studio (Win, Linux, OS X, Solaris)</h3>
+<p>
+<a href="http://www.aquafold.com/">Aqua Data Studio</a>
+</p>
+<p>
+这是一款完整的IDE，具有4个主要功能区：数据读取以及管理工具；数据库比较工具，源控以及文件系统；为Subversion (SVN) 以及CVS集成的源控；以及一个强大的数据库模型制造工具。Studio具有一个简单统一的界面，允许开发人员同时执行多项任务。
+</p>
+<p>
+<a href="http://www.aquafold.com/"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/mysqlscreen3.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.aquafold.com/support.html"&gt;Aqua Data Studio支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.aquafold.com/downloads.html"&gt;Aqua Data Studio下载页面&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>phpMyAdmin</h3>
+<p>
+<a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a>
+</p>
+<p>
+这是一款非常流行，功能丰富的免费工具，使用PHP开发，可以完整管理MySQL。它可以创建及删除数据库，创建/删除/改变数据表，删除/编辑
+/添加字段，执行任何SQL语句，管理用户及许可权限，以及管理字段的值。这款神奇的工具有一个非常独特的功能就是你可以下载和改变主题（虽然不是一个具
+有里程碑意义的功能，但是的确很独特），你可以从这里下载主题：<a href="http://www.phpmyadmin.net/home_page/themes.php">phpMyAdmin Themes</a>。
+</p>
+<p>
+<a href="http://www.phpmyadmin.net/home_page/index.php"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/phpmy.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.phpmyadmin.net/home_page/support.php"&gt;phpMyAdmin支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文档&lt;br /&gt;
+&lt;a href="http://www.phpmyadmin.net/home_page/docs.php"&gt;phpMyAdmin文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.phpmyadmin.net/home_page/downloads.php"&gt;phpMyAdmin下载页面&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>SQLyog MySQL GUI (Win)</h3>
+<p>
+<a href="http://www.webyog.com/en/index.php">SQLyog</a>
+</p>
+<p>
+SQLyog是另外一款非常流行的SQL管理工具，具有一系列实用功能，包括可视化模型设计工具，可视化读取创建工具，智能代码完成以及一个数据/
+结构同步工具。它支持HTTP / HTTPs /
+SSH数据封装以及SSL连接。你也可以指定一个工作管理，预设数据库备份时间表以及使用通知服务来提醒你工作的完成状态。该软件提供一个免费的公众版本
+以及一个付费的企业版本。你也可以使用<a href="http://www.webyog.com/en/screenshots_monyog.php">MONyog</a>，一个MySQL监视及指导工具。
+</p>
+<p>
+<a href="http://www.webyog.com/en/index.php"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/yog.gif" alt="SQLyog MySQL GUI Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.webyog.com/forums/"&gt;SQLyogl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;问题解答&lt;br /&gt;
+&lt;a href="http://www.webyog.com/faq/"&gt;SQLyog FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.webyog.com/en/downloads.php#sqlyog"&gt;SQLyog下载&lt;/a&gt;页面&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>MySQL-Front (Win)</h3>
+<p>
+<a href="http://www.mysqlfront.de/">MYSQL Front</a>
+</p>
+<p>
+这款软件为MySQL数据库提供了图解式的图形用户界面，是一款&ldquo;真正&rdquo;的应用工具。它可以提供比系统内置的更为精细的用户界面，响应迅速，可以毫
+无延迟的加载HTML页面。如果你的服务商允许的话，你可以直接连接到你的数据库。否则，你需要在你的网站上安装一个小的脚本。登录信息存储在你的硬盘
+上，因此无需再重新登录到不同的页面。
+</p>
+<p>
+<a href="http://www.mysqlfront.de/"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/mysqlscreen6.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.mysqlfront.de/forum/"&gt;MYSQL Frontl论坛&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download&lt;br /&gt;
+&lt;a href="http://www.mysqlfront.de/download.html"&gt;MYSQL Front下载页面&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>Sequel Pro (Mac OS X)</h3>
+<p>
+<a href="http://www.sequelpro.com/">Sequel Pro</a>
+</p>
+<p>
+这款MAC OSX下的数据库管理软件可以让你直接读取本地或者远程服务器上的数据库，提供了多种格式的文件导入导出功能，包括SQL,
+CSV以及XML。Sequel Pro是开源CocoaMySQL项目的一款派生程序。它自称为&ldquo;Mac OS
+X下外观最好看的MySQL数据库管理程序&rdquo;，看看下面的屏幕截图的确没错，界面非常漂亮也极酷。
+</p>
+<p>
+<a href="http://www.sequelpro.com/"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/sequel.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助与支持&lt;br /&gt;
+&lt;a href="http://www.sequelpro.com/support.html"&gt;Sequel Pro支持页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.sequelpro.com/download.html"&gt;Sequel Pro下载页面&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>SQL Buddy (Web-App)</h3>
+<p>
+<a href="http://www.sqlbuddy.com/">SQL Buddy</a>
+</p>
+<p>
+这款超酷的轻量级ajax数据库管理工具是一款令人震惊的工具。安装非常非常简单，解压文件包到你的服务器即可。如果需要升级的话，删除旧版本然后
+替换成新的版本。由于是基于Ajax的，因此对浏览器非常友好，可以使用标准的浏览器功能比如&ldquo;书签&rdquo;，&ldquo;返回&rdquo;以及&ldquo;刷新&rdquo;。该工具还提供一些有用的快
+捷键，你可以查看这里：<a href="http://www.sqlbuddy.com/help/">SQL Buddy Keyboard Sh快捷键</a>。
+</p>
+<p>
+<a href="http://www.sqlbuddy.com/"><img src="http://4ebstudio.com/wp-content/uploads/2009/04/mysqlscreen8.jpg" alt="MySql Tools Screenshot" /></a>
+</p>
+<ul></p>
+
+<pre><code>&lt;li&gt;帮助和支持&lt;br /&gt;
+&lt;a href="http://www.sqlbuddy.com/help/"&gt;SQL Buddy Support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;br /&gt;
+&lt;a href="http://www.sqlbuddy.com/download/"&gt;SQL Buddy下载页面&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+
+<p></ul>
+<h3>EMS SQL Manager (Win)</h3>
+<p>
+<a href="http://www.sqlmanager.net/en/products/mysql/manager">EMS SQL Manager</a>
+</p>
+<p>
+EMS SQL
+Manager是一款高性能的数据库管理和开发工具。特性包括MySQL切换，查看，储存进程及功能，InnoDB外键（foreign
+key），允许你创建/编辑所有的MySQL数据库对象，设计数据库视觉样式，运行SQL脚本，导入和导出数据库数据，管理用户及权限以及其他的用户属
+性。该软件是一款是商业软件，不过他的免费版本已经足够强大了，可以提供很多特性。
+</p>
+<p>
+<a href="http://www.sqlmanager.net/en/products/mysql/<p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/09/19/17%E6%AC%BEMySQL%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%BB%BC%E8%BF%B0/'&gt;http://Apiaceae.github.io/blog/2009/09/19/17%E6%AC%BEMySQL%E7%AE%A1%E7%90%86%E4%B8%8E%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%BB%BC%E8%BF%B0/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/17/Woods+Hole%E4%B9%8B%E8%A1%8C%E8%A7%81%E9%97%BB/">Woods Hole之行见闻</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-17T01:47:40+08:00" pubdate data-updated="true">Sep 17<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/17/Woods+Hole%E4%B9%8B%E8%A1%8C%E8%A7%81%E9%97%BB/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这里就是我们住宿的地方</p>
+
+
+<p><br />
+<img src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=Picture 2.png" width="480" height="332" alt="Picture 2.png" /></p>
+
+
+<p>详细的位置</p>
+
+
+<p><br />
+<img src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=CM Capture 2.png" width="480" height="313" alt="CM Capture 2.png" /></p>
+
+
+
+
+<div class="posttagsblock"><a href="http://technorati.com/tag/%E6%97%85%E8%A1%8C%20%E8%A7%81%E9%97%BB" rel="tag">旅行 见闻</a></div>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/17/Woods+Hole%E4%B9%8B%E8%A1%8C%E8%A7%81%E9%97%BB/'>http://Apiaceae.github.io/blog/2009/09/17/Woods+Hole%E4%B9%8B%E8%A1%8C%E8%A7%81%E9%97%BB/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/17/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99Webrick%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%AD%A5/">如何编写Webrick服务器脚步</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-17T01:05:40+08:00" pubdate data-updated="true">Sep 17<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/17/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99Webrick%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%AD%A5/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="font-family: Helvetica; font-size: 10px;">打开编辑器，编写以下脚本</span></p>
+
+
+<p style="font: 10.0px Helvetica; min-height: 12.0px"></p>
+
+
+<p style="font: 10.0px Helvetica">require &#8220;webrick&#8221;</p>
+
+
+<p style="font: 10.0px Helvetica; min-height: 12.0px"></p>
+
+
+<p style="font: 10.0px Helvetica">httpd = WEBrick::HTTPServer.new(</p>
+
+
+<p style="font: 10.0px Helvetica">:DocumentRoot =&gt;Dir::pwd + &#8220;/ruby&#8221;,</p>
+
+
+<p style="font: 10.0px Helvetica">:Port =&gt; 80</p>
+
+
+<p style="font: 10.0px Helvetica">)</p>
+
+
+<p style="font: 10.0px Helvetica">trap(:INT){ httpd.shutdown }</p>
+
+
+<p style="font: 10.0px Helvetica">httpd.start</p>
+
+
+<p style="font: 10.0px Helvetica"><br /></p>
+
+
+<p style="font: 10.0px Helvetica"></p>
+
+
+<p style="font: 10.0px Helvetica">然后保存到 c:\server.rb 下，双击 server.rb , 一个最简单的 http server 就运行了，它将</p>
+
+
+<p style="font: 10.0px Helvetica">c:\ruby 目录作为服务器文档根目录。</p>
+
+
+<p style="font: 10.0px Helvetica"><br /></p>
+
+
+<p style="font: 10.0px Helvetica"></p>
+
+
+<p style="font: 10.0px Helvetica">在浏览器窗口打开 http://127.0.0.1/</p>
+
+
+<p style="font: 10.0px Helvetica; min-height: 12.0px"></p>
+
+
+<p style="font: 10.0px Helvetica">你将会看到 c:/ruby 目录的内容，我们的 ８ 行 ruby 代码就生成了一个简单 http 服务器。</p>
+
+
+<p style="font: 10.0px Helvetica">你不光可以定制文档根目录，你还可以象编写 java servlet 那样，为 webrick 编写 ruby</p>
+
+
+<p style="font: 10.0px Helvetica">servlet 代码。具体详细信息参看 www.webrick.org</p>
+
+
+<p style="font: 12.0px Helvetica; min-height: 14.0px"><br /></p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/17/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99Webrick%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%AD%A5/'>http://Apiaceae.github.io/blog/2009/09/17/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99Webrick%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%84%9A%E6%AD%A5/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/15/%E9%9D%A2%E5%90%91%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%92%8CTextMate%E7%B2%89%E4%B8%9D%E7%9A%84vim%E9%85%8D%E7%BD%AE/">面向前端开发者和TextMate粉丝的vim配置</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T08:36:55+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/15/%E9%9D%A2%E5%90%91%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%92%8CTextMate%E7%B2%89%E4%B8%9D%E7%9A%84vim%E9%85%8D%E7%BD%AE/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif; line-height: 20px;"><a href="http://www.limboy.com/2009/05/30/vim-setting/vim-editor-icon1png/" rel="attachment wp-att-235" title="vim-editor-icon1.png" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #FF6600; text-decoration: none;"><img src="http://www.limboy.com/wp-content/uploads/2009/05/vim-editor-icon1.png" alt="vim-editor-icon1.png" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 10px; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; float: left; border-style: initial; border-color: initial;" /></a><a href="http://www.limboy.com/wp-content/uploads/2009/05/textmate.png" title="textmate.png" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #0099FF; text-decoration: none;"><img src="http://www.limboy.com/wp-content/uploads/2009/05/textmate.png" alt="textmate.png" style="margin-top: 0px; margin-right: 10px; margin-bottom: 0px; margin-left: 0px; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; float: left; border-style: initial; border-color: initial;" /></a></span><br /></p>
+
+
+<p><span style="font-family: 'Lucida Grande', Verdana, Arial, sans-serif; color: #444444; line-height: 20px;">vim是编辑器中的神器，但是因为学习曲线比较陡，界面也仿佛从石器时代穿越，广大fashion的前端工作者们难免对其有距离感。其实vim最大的萌点有两个，其一是百科全书般的文本编辑功能，其二是可以随意定制，满足任何与编辑器相关的需求和偏好，比如下面这张便是我在macbook pro上运行vim的截图，不仅语法高亮可以冒充<a href="http://macromates.com/" target="_blank" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #0099FF; text-decoration: none;">TextMate</a>，功能也几乎一致。</span></p>
+
+
+<p style="margin-top: 1.2em; margin-right: 0px; margin-bottom: 1.2em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 20px;"><span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif;"><a id="more-230" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #0099FF; text-decoration: none;" name="more-230"></a></span></p>
+
+
+<p style="margin-top: 1.2em; margin-right: 0px; margin-bottom: 1.2em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 20px;"><span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif;"><a href="http://www.limboy.com/wp-content/uploads/2009/05/picture-4.png" title="picture-4.png" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: #0099FF; text-decoration: none;"><img src="http://www.limboy.com/wp-content/uploads/2009/05/picture-4.png" alt="picture-4.png" style="margin-top: 5px; margin-right: 0px; margin-bottom: 5px; margin-left: 0px; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; border-style: initial; border-color: initial; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(206, 212, 202); border-right-color: rgb(206, 212, 202); border-bottom-color: rgb(206, 212, 202); border-left-color: rgb(206, 212, 202); width: 400px;" /></a></span></p>
+
+
+<p style="margin-top: 1.2em; margin-right: 0px; margin-bottom: 1.2em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 20px;"><span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif;">首先是做一个初始化配置脚本，在我的OSX10.5里是是~/.vimrc文件，这里只列出一些需要补充进去的设置：</span></p>
+
+
+<p><div class="hl-surround" style="margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-color: #F9FBFC; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(195, 206, 217); border-right-color: rgb(195, 206, 217); border-bottom-color: rgb(195, 206, 217); border-left-color: rgb(195, 206, 217); width: auto; height: auto; overflow-x: auto; overflow-y: auto; text-align: left; font-family: Fixedsys, 'BitStream Vera Sans Mono', 'Courier New', Courier, monospace;">
+  <ol class="hl-main ln-show" title="Double click to hide line number." ondblclick="linenumber(this)" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 10px; padding-top: 0px; padding-right: 12px; padding-bottom: 0px; padding-left: 10px; background-image: url(http://www.limboy.com/wp-content/themes/yyinlimbo/images/hide.gif); list-style-type: decimal !important; list-style-position: outside !important; list-style-image: initial !important; background-color: transparent; background-repeat: no-repeat; background-position: 5px 5px;"></p>
+
+<pre><code>&lt;li class="hl-firstline" style="margin-top: 0px !important; margin-right: 0px !important; margin-bottom: 10px; margin-left: 0px !important; padding-top: 0px !important; padding-right: 0px !important; padding-bottom: 0px !important; padding-left: 12px !important; list-style-type: decimal !important; list-style-position: outside !important; list-style-image: initial !important; border-top-width: 1px; border-top-style: solid; border-top-color: #E3EEF9 !important; display: list-item !important; font-size: 12px !important; line-height: 20px !important; border-left-width: 1px; border-left-style: solid; border-left-color: rgb(195, 206, 217); background-color: rgb(249, 251, 252) !important;"&gt;&lt;span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif;"&gt;"设置语法高亮的配色，在GUI界面里使用我自定义的yytextmate.vim&lt;/span&gt;&lt;/li&gt;
+
+&lt;li style="margin-top: 0px !important; margin-right: 0px !important; margin-bottom: 10px; margin-left: 0px !important; padding-top: 0px !important; padding-right: 0px !important; padding-bottom: 0px !important; padding-left: 12px !important; list-style-type: decimal !important; list-style-position: outside !important; list-style-image: initial !important; display: list-item !important; font-size: 12px !important; line-height: 20px !important; border-left-width: 1px; border-left-style: solid; border-left-color: #C3CED9; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(227, 238, 249) !important; background-color: rgb(249, 251, 252) !important;"&gt;&lt;span style="color: #444444; font-family: 'Lucida Grande', Verdana, Arial, sans-serif;"&gt;if has("gui_running")&lt;/span&gt;&lt;/li&gt;
+
+&lt;li style="margin-top: 0px !important; margin-right: 0px !important; margin-bottom: 10px; margin-left: 0px !important; padding-top: 0px !important; padding-right: 0px !important; padding-bottom: 0px !important; padding-left: 12px !important; list-style-type: decimal !important; list-style-position: outside !important; list-style-image: initial&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/09/15/%E9%9D%A2%E5%90%91%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%92%8CTextMate%E7%B2%89%E4%B8%9D%E7%9A%84vim%E9%85%8D%E7%BD%AE/'&gt;http://Apiaceae.github.io/blog/2009/09/15/%E9%9D%A2%E5%90%91%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%80%85%E5%92%8CTextMate%E7%B2%89%E4%B8%9D%E7%9A%84vim%E9%85%8D%E7%BD%AE/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/09/15/%E5%A6%82%E4%BD%95%E7%94%A8TextMate%E6%B5%8B%E8%AF%95Ruby%E4%BB%A3%E7%A0%81/">如何用TextMate测试Ruby代码</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T07:57:57+08:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/09/15/%E5%A6%82%E4%BD%95%E7%94%A8TextMate%E6%B5%8B%E8%AF%95Ruby%E4%BB%A3%E7%A0%81/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=Picture 1.png" width="538" height="365" alt="Picture 1.png" class="TextMate" /></p>
+
+
+<p>如上图，这就是在Mac机器上使用TextMate软件进行Ruby代码测试的效果，呵呵。</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/09/15/%E5%A6%82%E4%BD%95%E7%94%A8TextMate%E6%B5%8B%E8%AF%95Ruby%E4%BB%A3%E7%A0%81/'>http://Apiaceae.github.io/blog/2009/09/15/%E5%A6%82%E4%BD%95%E7%94%A8TextMate%E6%B5%8B%E8%AF%95Ruby%E4%BB%A3%E7%A0%81/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/12/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/10/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
