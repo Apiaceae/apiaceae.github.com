@@ -9,7 +9,13 @@
   <meta name="author" content="Hooker">
 
   
-  <meta name="description" content="Biochore classification and nomenclature in paleobiogeography: an attempt at order Gerd E.G. Westermann Abstract: Paleobiogeographic terminology has &hellip;">
+  <meta name="description" content="using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,7 +89,7 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/29/biogography-units-config/">生物地理学空间单元的分类</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/12/18/ASP.NET%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/">ASP.NET调用存储过程示例代码</a></h1>
       
     
     
@@ -100,37 +106,369 @@
   
 
 
-<time datetime="2009-03-29T00:00:00+08:00" pubdate data-updated="true">Mar 29<span>th</span>, 2009</time>
+<time datetime="2009-12-18T02:30:43+08:00" pubdate data-updated="true">Dec 18<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/29/biogography-units-config/#comments">Comments</a>
+                 | <a href="/blog/2009/12/18/ASP.NET%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/9780521360401.jpg" alt="生物地理学单元" /></p>
+  <div class="entry-content"><pre class="code"><span style="color: blue">using </span><span style="color: #010001">System</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Collections</span>.<span style="color: #010001">Generic</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Linq</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">UI</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">UI</span>.<span style="color: #010001">WebControls</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Data</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Data</span>.<span style="color: #010001">SqlClient</span>;
 
-<p><strong>Biochore classification and nomenclature in paleobiogeography: an attempt at order</strong></p>
+<span style="color: blue">namespace </span><span style="color: #010001">CNPC
+</span>{
+    <span style="color: blue">public partial class </span><span style="color: #2b91af">WebForm1 </span>: <span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">UI</span>.<span style="color: #2b91af">Page
+    </span>{
+        <span style="color: blue">protected void </span><span style="color: #010001">Page_Load</span>(<span style="color: blue">object </span><span style="color: #010001">sender</span>, <span style="color: #2b91af">EventArgs </span><span style="color: #010001">e</span>)
+        {
+            <span style="color: blue">if </span>(<span style="color: #010001">IsPostBack</span>)
+            {
+                <span style="color: blue">string </span><span style="color: #010001">whereCondition </span>= <span style="color: #a31515">&quot;name_string like '%&quot; </span>+ <span style="color: #010001">txtName</span>.<span style="color: #010001">Text</span>.<span style="color: #010001">ToString</span>() + <span style="color: #a31515">&quot;%'&quot;</span>;
 
-<p>Gerd E.G. Westermann</p>
 
-<p>Abstract: Paleobiogeographic terminology has increased dramatically in recent decades, but the absence of ‘rules’ or even a guide has resulted in confusion and misunderstanding. The Friends of Paleobiogeography are attempting to solve problems related to classification, definition and nomenclature of the biogeographic units (biochores), in conjunction with neobiogeographers. Historic and current developments are discussed. Biochores are highly dynamic units that not only expand and shrink in range, but also change in rank (tier) through time. They should be based on as many higher taxa as possible representing the biota, but from a single major biome, e.g. pelagic versus benthic; different biomes may need distinct sets of biochores. The following tentative ‘rules’ are proposed for a prospective guide for the distinction, ranking and naming of biochores, with emphasis on stability.</p>
+                <span style="color: blue">string </span><span style="color: #010001">connString </span>= <span style="color: #a31515">&quot;data source=.;initial catalog=northwind;integrated security=true&quot;</span>;
+                <span style="color: #2b91af">DataSet </span><span style="color: #010001">ds </span>= <span style="color: blue">new </span><span style="color: #2b91af">DataSet</span>();
+                <span style="color: #2b91af">SqlDataAdapter </span><span style="color: #010001">adapter </span>= <span style="color: blue">new </span><span style="color: #2b91af">SqlDataAdapter</span>();
+                <span style="color: #2b91af">SqlConnection </span><span style="color: #010001">conn </span>= <span style="color: blue">new </span><span style="color: #2b91af">SqlConnection</span>(<span style="color: #010001">connString</span>);
+                <span style="color: blue">if </span>(<span style="color: #010001">conn</span>.<span style="color: #010001">State </span>!= <span style="color: #2b91af">ConnectionState</span>.<span style="color: #010001">Open</span>)
+                {
+                    <span style="color: #010001">conn</span>.<span style="color: #010001">Open</span>();
+                }
+                <span style="color: #2b91af">SqlCommand </span><span style="color: #010001">cmd </span>= <span style="color: blue">new </span><span style="color: #2b91af">SqlCommand</span>(<span style="color: #a31515">&quot;usp_SelectNamesDynamic&quot;</span>, <span style="color: #010001">conn</span>);
+                <span style="color: #010001">cmd</span>.<span style="color: #010001">CommandType </span>= <span style="color: #2b91af">CommandType</span>.<span style="color: #010001">StoredProcedure</span>;
 
-<p>Definition: a biochore is defined by the overall endemism of its biota (not particular taxa) within a geographic envelope around a core area, whereas biochore boundaries are defined by the temporary range limits of their constituent endemic taxa.</p>
+                <span style="color: #010001">cmd</span>.<span style="color: #010001">Parameters</span>.<span style="color: #010001">Add</span>(<span style="color: #a31515">&quot;@whereCondition&quot;</span>, <span style="color: #2b91af">SqlDbType</span>.<span style="color: #010001">NVarChar</span>);
+                <span style="color: #010001">cmd</span>.<span style="color: #010001">Parameters</span>[<span style="color: #a31515">&quot;@whereCondition&quot;</span>].<span style="color: #010001">Value </span>= <span style="color: #010001">whereCondition</span>;
+                
+                <span style="color: #010001">cmd</span>.<span style="color: #010001">ExecuteNonQuery</span>();
+                <span style="color: #010001">adapter</span>.<span style="color: #010001">SelectCommand </span>= <span style="color: #010001">cmd</span>;
 
-<p>Ranks (tiers): the biochores ranks are, with ‘bold’ for obligatory use and an additional tentative rank for exceptional conditions in brackets: [Superrealm], Realm, Subrealm, Province, Subprovince; ‘region’ is for informal use. Ranks scale with the degree of endemism as well as duration and biota distribution (range).</p>
+                <span style="color: blue">if </span>(<span style="color: #010001">ds </span>!= <span style="color: blue">null</span>)
+                {
+                    <span style="color: #010001">adapter</span>.<span style="color: #010001">Fill</span>(<span style="color: #010001">ds</span>, <span style="color: #a31515">&quot;Names&quot;</span>);
+                }
+                
+                <span style="color: #010001">grdName</span>.<span style="color: #010001">DataSource </span>= <span style="color: #010001">ds</span>;
+                <span style="color: #010001">grdName</span>.<span style="color: #010001">DataBind</span>();
 
-<p>A typical region or chorotype and a typical stage (age) or chronotype are designated for each biochore.</p>
+                <span style="color: blue">if </span>(<span style="color: #010001">conn</span>.<span style="color: #010001">State </span>== <span style="color: #2b91af">ConnectionState</span>.<span style="color: #010001">Open</span>)
+                {
+                    <span style="color: #010001">conn</span>.<span style="color: #010001">Close</span>();
+                }
+            }
+        }
+    }
+}</pre>
 
-<p>Nomenclature: biochore names are geographic and related terms, not taxa-based. Nomenclatural priority begins with Uhlig [Mitt. Geol. Ges. Wien 4 (3) (1911) 229–448]. ‘Rules of Homology’ and ‘Synonymy’ apply in guide form only, e.g. long-term disuse of name or poor definition of biota invalidates synonym or homonym even if senior.</p>
 
-<p><em>Keywords: biogeography; classification; nomenclature; paleobiogeography; terminology</em></p>
+<p><a href="http://11011.net/software/vspaste"></a><p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/18/ASP.NET%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/'&gt;http://Apiaceae.github.io/blog/2009/12/18/ASP.NET%E8%B0%83%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/12/13/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E5%90%89%E4%BB%96%E6%9B%B2/">一些经典的吉他曲</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-13T04:04:27+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/12/13/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E5%90%89%E4%BB%96%E6%9B%B2/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>蒙古人</h1>
+
+
+<p>  <p><embed src="http://www.56.com/n_v156_/c40_/23_/19_/liulongjita_/121967286888_/232520_/0_/37617868.swf" type="application/x-shockwave-flash" width="480" height="395"></embed></p>  <h1>草原上升起不落的太阳</h1>  <p><embed src="http://www.56.com/n_v165_/c34_/27_/15_/liulongjita_/zhajm_120850563920_/204000_/0_/33049851.swf" type="application/x-shockwave-flash" width="480" height="395"></embed></p>  <h1>老人与海</h1>  <p><embed src="http://www.56.com/n_v165_/c34_/0_/28_/liulongjita_/zhajm_120827441122_/192000_/0_/32883982.swf" type="application/x-shockwave-flash" width="480" height="395"></embed></p>  <h1>天堂</h1>  <p><embed src="http://www.56.com/n_v139_/c36_/18_/22_/liulongjita_/124334192725_/277240_/0_/43646131.swf" type="application/x-shockwave-flash" width="480" height="395"></embed></p><p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/13/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E5%90%89%E4%BB%96%E6%9B%B2/'&gt;http://Apiaceae.github.io/blog/2009/12/13/%E4%B8%80%E4%BA%9B%E7%BB%8F%E5%85%B8%E7%9A%84%E5%90%89%E4%BB%96%E6%9B%B2/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/12/05/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86-Darwin+Core/">生物多样性信息学数据标准-Darwin Core</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-05T21:47:33+08:00" pubdate data-updated="true">Dec 5<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/12/05/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86-Darwin+Core/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>过去的10年里，信息技术的发展（包括：大容量电子存储媒介、因特网、分布式数据库技术）和开放性数据共享政策（大范围的数字化工作、数据对公共普通用户的开放性使用）为生物多样性信息的产生、维持、传播和使用带来了革命性的发展(Bisby, 2000; Bisby et al., 2002; Causey et al., 2004; Edwards et al., 2000; Krishtalka and Humphrey, 2000; Krishtalka et al., 2002; Oliver et al., 2000; Smith et al., 2000)，产生了生物多样性信息学(Biodiversity Informatics)这一非常活跃的研究领域，并且保持着相当乐观的发展前景(Godfray, 2002; Godfray, 2007; Godfray et al., 2007; Graham et al., 2004)。生物多样性信息学指利用IT技术，对生物有机体基础数据(Primary data)的管理、算法的探究、分析和解释，尤其是在物种水平上的应用(Berendsohn and Geoffroy, 2007; Johnson, 2007; Soberon and Peterson, 2004)。因此，它涉及到对信息的捕获、存储、提交、回溯和分析，它主要关注单个有机体、居群和分类群以及它们的相互关系。它的信息内容覆盖了系统学、进化生物学、居群生物学、行为科学，以及从传粉生物学到寄生病和植物社会学等的大生态等领域。目前生物多样性信息学最重要的研究和活动目标是为生物多样性和全球变化研究提供一个合理的信息管理的下层建筑。</p>
+
+
+<p>  <p>对生物学数据的信息模型和标准的研究在过去几十年是一个非常重要的主题(Berendsohn, 1997; Le Renard, 2000; Pullan et al., 2000; Ytow et al., 2001; Zhong et al., 1996)。IUBS(International Union of Biological Sciences)分类学数据委员会有专门的任务和论坛来讨论相关的信息交换标准。但是，过去的数据标准实践和应用的失败表明，我们对这些问题的复制性缺乏足够的估计，需要更多专门的研究人员和相互地交流来解决它们(Berendsohn and Geoffroy, 2007)。</p>  <p>达尔文核心(Darwin Core：简称DwC)(纪力强 et al., 2005)是生物多样性信息学中目前应用最为广泛，也是非常重要的标准之一。它是一套用于描述生物有机体分布及其相关采集信息的规范。这个规范由一个预先定义的词汇集组成。其中包括了描述生物有机体的学名、分布的地点、标本采集事件(包括采集人、采集时间和地点)等信息。这个标准提出主要是促进不同研究机构和数据库间有效地交换生物有机体分布和相关的采集信息。</p>  <p>然而，由于这一标准所涉及到的生物学信息存在复杂性，并且在形成过程中中又常以不同形式的“修订版”或“扩展版”出现，从而使该标准出现多个版本并存，给我们认识和理解DwC，以及在实践中如何有效地应用带来困难。因此，本文的目是对DwC这个标准的来源、历史变化过程、内涵和实践应用进行较为详细的讨论，以期为从事生物多样性信息学及相关领域的研究人员提供一个参考。</p>  <h4>一、 什么是Darwin Core?</h4>  <p>DwC的提出是基于科学家和信息技术人员一个非常简单的想法。我们可以想象一下如下的情形。有两个研究组织通过数据库管理着同样一份采集的多个复份标本。这两个组织会在它们各自的数据库中存储非常相似或者几乎完全相同的信息，但是这些信息可能以不同的格式进行存储。以采集人为例：其中一个研究机构的数据库中给这个数据项定义取名为“Gatherer”，而另外一个研究机构的数据库则把同样的数据项处理为“Collector”(极端的情况是某些中文环境运行的数据库把该数据项处理为“Caijiren”)。当这种情况发生在成千上万的研究项目和数据库的时候，任何人都很难去处理这些数据库中的细微差别，我们也不难想象在数据交换和信息共享过程中将会面临的巨大困难。DwC提出的基本目的就是来解决这些相同数据项或信息内容在不同研究机构的数据库中应用不同表达方式的问题。</p>  <p>这些机构自身的数据库可能包括许多不同数据格式和类型的信息，以及为了满足机构管理所需要的特定信息内容。而DwC标准的价值在于它仅仅包括生物学数据库中最“核心”(Core)的信息成分，也就信息元素中共有和相同的内容，来促进这些研究机构间对“核心”生物学采集信息的交换。因为无论是一份动物标本还是一份植物标本，每一个自然历史采集都有它的采集地点、采集时间来反映这一生物体在一定时期的地理分布情况。每个采集都带有标签，可能是手写的，或打印的。它记载着这份采集特有的信息。尽管采集及其它们的标签千差万别，但是几乎所有的生物采集和观察数据在内容上都有共同点，能够通过一些类似或共有的指令在不同的数据集中进行搜集和回溯。DwC试图提供一些标识反映这些共同点，而不是考虑存储这些记录内容的具体形式。对这些标本所共有信息在数据库信息交换过程中表达方式的规范化和统一性就是DwC标准的具体内容。</p>  <p>通过以上的描述，我们对DwC的定义做如下的归纳：<b>Darwin Core</b><b>是设计用来促进数据库间有效交换生物有机体</b><b>在自然界的分布信息</b><b>的数据共享标准</b>。这个标准是通过定义一系列表达特定数据信息的词汇(Concepts/Terms)来实现。它以分类群(Taxon)为最基本的信息单位。有机体的分布信息又体现在各种形式的数据上，例如：观察记录(Observation records)，标本(Specimens)以及其它野外调查的样品(Living Collection)等。DwC所定义的这些词汇在一些计算机技术环境下，常常有被称为属性(Properties)、成分(Elements)、字段(Fields)或者类(Class)。在数据库环境下，这些词汇常常是与数据项一一对应。</p>  <p>因此DwC标准形成的基础就是任何自然历史采集和观察数据信息的共同属性，这个标准的目的就是为这些信息的共享和交换机制提供一个指南性原则。它提供的是一个关于数据概念的描述规范，支持针对原始数据的检索和集成，是描述自然历史标本和观察数据特性的最小集合(纪力强 et al., 2005)。</p>  <h4>二、DwC的发展历史</h4>  <p>DwC最初来源于美国国家自然基金资助的研究项目：生物学采集和分类学数据信息检索协议测试项目(An Experimental Z39.50 Information Retrieval Protocol Test Bed for Biological Collection and Taxonomic Data)。该项目的主要目的是示范在生物标本和权威物种数据信息化过程中采用相关数据标准的实际效果。从而使用户可以通过互联网查询多个标本馆的标本，促进分类学研究和对生物多样性基础数据的科普和研究应用。但是当时还没有使用Darwin Core这个数据项，而是使用的“Z39.50 profile“。后来，由Allen Allison于1998年在美国堪萨斯大学(University of Kansas)举办的ZBIG (Z39.50 Biology Implementers Group)会议上提出。也就是我们所说的DwC原型概念(prototypical Darwin Core)。这个会议上，科学家们讨论了Z39.50在自然历史采集数据中的信息成分问题，以及应用“Darwin Core Profile”和以前存在的都柏林核心元数据(Dublin Core Metadata：简称DC)在概念上和应用上的相似性。因此，DwC是基于都柏林核心元数据标准，它应该被看做是都柏林核心元数据标准在生物多样性信息应用上的扩展。但是它减少了在不同技术实现条件下，比如XML (eXtensible Markup Language)，RDF(Resource Description Framework)，或者是简单的CSV(Comma Separated Values)文本文件，数据项在语义上的耦合性。</p>  <p>此后，堪萨斯大学自然历史历史博物馆的生物多样性研究小组发起了物种分析者项目(Species Analyst project)。该项目的目标就是开发一些促进世界自然历史采集和观察信息共享的工具和标准。DwC比较完整的体系和概念正是在通过这个项目形成。</p>  <p>DwC正式向外发布的版本是与分布式信息检索协议项目(Distributed Generic Information Retrieval protocol: 简称DiGIR)(目前已被TDWG Access Protocol for Information Retrieval : 简称TAPIR替代)合作形成的，就是现在的DwC1.2。在DiGIR项目中，研究人员把DwC表达为XML模式(XML Schema)的形式，也就是我们后来所称的达尔文核心模式(Darwin Core Schema)。达尔文核心模式向使用者推荐了一个规范，可以用来组织自然历史标本和观察数据库。它也提供了一个从支持达尔文核心的信息服务器中获取数据内容、结构和格式的指南(纪力强 et al., 2005)。</p>  <p>最早正式使用DwC标准的生物多样性信息系统是UC Berkeley的哺乳动物网络信息系统项目(Mammal Networked Information System Project: 简称<a href="http://manisnet.org/">MaNIS</a>）。MaNIS项目的研究人员在DwC1.2的基础上进行了改善，形成了后来的DwC1.21。在这个版本中已经包括了地理空间和标本管理扩展的部分，形成了后来所说的达尔文核心扩展(Darwin Core Extension)。</p>  <p>DwC的最新版本是DwC1.4。目前由生物多样性信息标准TDWG(Biodiversity Information Standards: TDWG)来维护和管理。该组织是专门致力于生物多样性信息标准的建立、推广和应用。并且有专门的网站和信息系统用于这些标准及其相关电子资源的管理。其中有专门的DwC任务组(Darwin Core Task Group)，以及专门的网页（<a href="http://www.tdwg.org/standards/450/"><a href="http://www.tdwg.org/standards/450/">http://www.tdwg.org/standards/450/</a></a> ）来记录该标准形成的过程，与它相关的电子资源、文件、用户的评论、对标准的修改意见等。DwC无论从开始的1.2版还是到现在的1.4版一直是被TDWG当做一个草案标准(Draft standard)来推行，这意味着专家们认为它尚不完全成熟，还需要在实践过程中不断的修正。可喜的是在经过将近10余年的讨论和不断完善后，DwC被TDWG在2009年10月9号批准为正式标准(表1)。</p>  <p><b>表</b><b>1. </b><b>达尔文核心的发展历史</b><b></b></p>  <p><b>Table 1. History of the Darwin Core</b>    <table cellspacing="0" cellpadding="0" border="1"><tbody>       <tr>         <td valign="top" width="123">           <p><b>名称</b><b></b></p>            <p><b>Name</b></p>         </td>          <td valign="top" width="219">           <p><b>命名空间</b><b></b></p>            <p><b>Namespace</b></p>         <p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/05/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86-Darwin+Core/'&gt;http://Apiaceae.github.io/blog/2009/12/05/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86-Darwin+Core/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/12/04/%E5%9C%A8UBUNTU%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85rails%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/">在UBUNTU下自动安装rails运行环境</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-04T07:30:11+08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/12/04/%E5%9C%A8UBUNTU%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85rails%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>if [ &quot;$(whoami)&quot; != &quot;root&quot; ]; then   <br />echo &quot;You need to be root to run this!&quot;    <br />exit 2    <br />fi    <br />VERSION=&quot;1.2&quot;    <br />REEV=&quot;<a href="http://rubyforge.org/frs/download.php/51100/ruby-enterprise-1.8.6-20090201.tar.gz">http://rubyforge.org/frs/download.php/51100/ruby-enterprise-1.8.6-20090201.tar.gz</a>&quot;    <br />REEF=&quot;ruby-enterprise-1.8.6-20090201.tar.gz&quot;    <br />REEFF=${REEF%&quot;.tar.gz&quot;}    <br />PASSENGER=&quot;2.1.2&quot;    <br />export PASSENGER    <br />echo &quot;#####################################&quot;    <br />echo &quot;Welcome, let&#8217;s get this party rollin&#8217;&quot;    <br />echo &quot;#####################################&quot;    <br />echo &quot;Updating Aptitude&quot;    <br />apt-get update    <br />echo &quot;Installing build essentials&quot;    <br />apt-get install build-essential zlib1g-dev libssl-dev wget libreadline5-dev -y    <br />echo &quot;Installing GIT&quot;    <br />apt-get install -y git-core    <br />echo &quot;Installing apache&quot;    <br />apt-get install -y apache2    <br />echo &quot;Installing apache headers&quot;    <br />apt-get install -y apache2-prefork-dev    <br />echo &quot;Installing Ruby Enterprise from following url&quot;    <br />echo $REEV    <br />wget $REEV    <br />if [ -e $REEF ]    <br />then    <br />echo &quot;File downloaded succesful&quot;    <br />else    <br />echo &quot;Error, file wasn&#8217;t downloaded!&quot;    <br />exit    <br />fi    <br />tar -zxvf $REEF    <br /># possible options perhaps for checker    <br /># &#8211;extra rails &#8211;no-tcmalloc    <br />if [ -d ./$REEFF ]    <br />then    <br />&#160;&#160;&#160; ./$REEFF/installer &#8211;auto /opt/ruby    <br />echo &quot;Dir test&quot;    <br />else    <br />echo &quot;Dir not found, exiting..&quot;    <br />exit    <br />fi    <br />echo &quot;Creating ruby symlinks&quot;    <br />ln -s /opt/ruby/bin/ruby /usr/bin/ruby    <br />ln -s /opt/ruby/bin/gem /usr/bin/gem    <br />ln -s /opt/ruby/bin/rake /usr/bin/rake    <br />ln -s /opt/ruby/bin/rails /usr/bin/rails    <br />echo &quot;Installing other gems&quot;    <br />gem install rails    <br />gem install will_paginate    <br />gem install shoulda    <br />gem install mysql    <br />echo &quot;Installing passenger&quot;    <br />gem install passenger -v=$PASSENGER    <br />echo &quot;Config passenger&quot;    <br />yes &#8221; | /opt/ruby/bin/passenger-install-apache2-module    <br />echo &quot;Copying passenger files&quot;    <br />touch /etc/apache2/mods-available/passenger.load    <br />touch /etc/apache2/mods-available/passenger.conf    <br />echo &quot;LoadModule passenger_module /opt/ruby/lib/ruby/gems/1.8/gems/passenger-$PASSENGER/ext/apache2/mod_passenger.so&quot; &gt;&gt; /etc/apache2/mods-available/passenger.load    <br />echo &quot;PassengerRoot /opt/ruby/lib/ruby/gems/1.8/gems/passenger-$PASSENGER     <br />PassengerRuby /opt/ruby/bin/ruby&quot; &gt;&gt; /etc/apache2/mods-available/passenger.conf    <br />echo &quot;Enabling passenger module&quot;    <br />a2enmod passenger    <br />echo &quot;Reloading apache&quot;    <br />/etc/init.d/apache2 reload    <br />echo &quot;##########################&quot;    <br />echo &quot;# Installation Complete&quot;    <br />echo &quot;##########################&quot;    <br />sleep 2    <br />echo &quot;##########################&quot;    <br />echo &quot;# Installed Ruby Version #&quot;    <br />echo &quot;##########################&quot;    <br />ruby -v    <br />echo &quot;##########################&quot;    <br />echo &quot;# Installed Gems Version #&quot;    <br />echo &quot;##########################&quot;    <br />gem -v    <br />/opt/ruby/bin/passenger-status</p>
+
+
+<p>  <p>转至:<a href="http://gist.github.com/37213">http://gist.github.com/37213</a></p><p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/04/%E5%9C%A8UBUNTU%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85rails%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/'&gt;http://Apiaceae.github.io/blog/2009/12/04/%E5%9C%A8UBUNTU%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85rails%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/11/28/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/">如何创建弹出式登录页面</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-28T17:26:05+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/11/28/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+1、创建一个网站；
+</p>
+
+
+<p>
+2、添加母板页MasterPage.master;
+</p>
+
+
+<p>
+3、WebConfig文件添加如下配置：
+</p>
+
+
+<pre class="code">
+<span style="color: blue">&lt;</span><span style="color: #a31515">authentication </span><span style="color: red">mode</span><span style="color: blue">=</span>&quot;<span style="color: blue">Forms</span>&quot;<span style="color: blue">/&gt;
+&lt;</span><span style="color: #a31515">authorization</span><span style="color: blue">&gt;
+&lt;</span><span style="color: #a31515">deny </span><span style="color: red">users</span><span style="color: blue">=</span>&quot;<span style="color: blue">?</span>&quot;<span style="color: blue">/&gt;
+&lt;</span><span style="color: #a31515">allow </span><span style="color: red">users</span><span style="color: blue">=</span>&quot;<span style="color: blue">*</span>&quot;<span style="color: blue">/&gt;
+&lt;/</span><span style="color: #a31515">authorization</span><span style="color: blue">&gt;</span>
+</pre>
+
+
+<pre class="code">
+<span style="color: blue">4、MaterPage.master.cs代码</span>
+</pre>
+
+
+<pre class="code">
+<span style="color: blue">using </span>System;
+<span style="color: blue">using </span>System.Web.UI.WebControls;
+<span style="color: blue">using </span>System.Web.Security;
+<span style="color: blue">public partial class </span><span style="color: #2b91af">MasterPage </span>: System.Web.UI.<span style="color: #2b91af">MasterPage
+</span>{
+<span style="color: blue">protected void </span>Page_Load(<span style="color: blue">object </span>sender, <span style="color: #2b91af">EventArgs </span>e)
+{
+<span style="color: green">// Popup dialog won&#39;t fire if user is already in.
+</span><span style="color: blue">if </span>(Request.IsAuthenticated)
+{
+LoginStatus1_ModalPopupExtender.Enabled = <span style="color: blue">false</span>;
+}
+<span style="color: blue">else
+</span>{
+LoginStatus1_ModalPopupExtender.Enabled = <span style="color: blue">true</span>;
+}
+}
+<span style="color: green">// When Login button clicked, authenticate user&#39;s crendential.
+</span><span style="color: blue">protected void </span>Login1_Authenticate(<span style="color: blue">object </span>sender, <span style="color: #2b91af">AuthenticateEventArgs </span>e)
+{
+<span style="color: green">// You can add authentication logic here.
+</span>e.Authenticated = ((Login1.UserName == <span style="color: #a31515">&quot;test&quot;</span>) &amp;&amp; (Login1.Password == <span style="color: #a31515">&quot;test&quot;</span>)) ? <span style="color: blue">true </span>: <span style="color: blue">false</span>;
+<span style="color: green">// If login failed, continue showing the popup dialog and failure text.
+</span><span style="color: blue">if </span>(!e.Authenticated)
+{
+LoginStatus1_ModalPopupExtender.Show();
+}
+}
+<span style="color: green">// When Cancel button clicked, hide the popup dialog.
+</span><span style="color: blue">protected void </span>btnCancel_Click(<span style="color: blue">object </span>sender, <span style="color: #2b91af">EventArgs </span>e)
+{
+LoginStatus1_ModalPopupExtender.Hide();
+}
+}
+</pre>
+
+
+<p><a href="http://11011.net/software/vspaste"></a></p>
+
+<p>
+网站文件夹结构如下图：
+</p>
+
+
+<p>
+<a href="/Blogs/image.axd?picture=WindowsLiveWriter/74f11c5e719d/1D93CEE8/20091128_092013.png"><img style="border: 0px none ; display: inline" src="/Blogs/image.axd?picture=WindowsLiveWriter/74f11c5e719d/78960E6E/20091128_092013_thumb.png" border="0" alt="2009-11-28_092013" title="2009-11-28_092013" width="318" height="484" /></a> 
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p>
+文章链接：<a href="http://aspalliance.com/1882_How_to_Create_an__ASPNET_Modal_Popup_Login.all" title="http://aspalliance.com/1882_How_to_Create_an__ASPNET_Modal_Popup_Login.all">http://aspalliance.com/1882_How_to_Create_an__ASPNET_Modal_Popup_Login.all</a>
+</p>
+
+
+<p>
+<a href="/Blogs/file.axd?file=2009%2f11%2fModalPopupLogin.rar">代码下载：ModalPopupLogin.rar (781.89 kb)</a>
+</p>
+
 
 <p class='post-footer'>
        original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/29/biogography-units-config/'>http://Apiaceae.github.io/blog/2009/03/29/biogography-units-config/</a><br/>
+       <a href='http://Apiaceae.github.io/blog/2009/11/28/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/'>http://Apiaceae.github.io/blog/2009/11/28/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%B9%E5%87%BA%E5%BC%8F%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/</a><br/>
        &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
        &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
        </p>
@@ -148,7 +486,7 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/28/progress-conservation-biogeography/">保护生物地理学研究进展</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/11/14/ASP.NET%E4%BD%BF%E7%94%A8MySql+connector5.2.7%E5%B0%8F%E9%97%AE%E9%A2%98/">ASP.NET使用MySql connector5.2.7小问题</a></h1>
       
     
     
@@ -165,43 +503,28 @@
   
 
 
-<time datetime="2009-03-28T00:00:00+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2009</time>
+<time datetime="2009-11-14T02:08:46+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/28/progress-conservation-biogeography/#comments">Comments</a>
+                 | <a href="/blog/2009/11/14/ASP.NET%E4%BD%BF%E7%94%A8MySql+connector5.2.7%E5%B0%8F%E9%97%AE%E9%A2%98/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/condore.jpg" alt="保护生物地理学" /></p>
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/60F8BC56/20091113_180235.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-11-13_180235" border="0" alt="2009-11-13_180235" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/6BB613AB/20091113_180235_thumb.png" width="644" height="190" /></a> </p>
 
-<p><strong>Biogeography: assessment and prospect</strong></p>
 
-<p>There is general agreement among scientists that biodiversity is under assault on a global basis and that species are being lost at a greatly enhanced rate. This article examines the role played by biogeographical science in the emergence of conservation guidance and makes the case for the recognition ofConservation Biogeography as a key subfield of conservation biology delimited as: the application of biogeographical principles, theories, and analyses, being those concerned with the distributional dynamics of taxa individually and collectively, to problems concerning the conservation of biodiversity.</p>
+<p>  <p>MySQL提供了一个在ASP.NET下连接MySQL数据库的连接器。下载地址在：<a title="http://dev.mysql.com/downloads/connector/net/5.2.html" href="http://dev.mysql.com/downloads/connector/net/5.2.html"><a href="http://dev.mysql.com/downloads/connector/net/5.2.html">http://dev.mysql.com/downloads/connector/net/5.2.html</a></a></p>  <p>但在具体使用过程中有一个小问题需要注意，例如使用GridView及默认的SqlDataSource连接mySql数据库，运行会出现错误，经过检查发现在产生的SQL语句中，默认都会给字段名加上中括号[]，直接去掉这些中括号就行了。</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/329F36A9/20091113_180533.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-11-13_180533" border="0" alt="2009-11-13_180533" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/4B9B06EE/20091113_180533_thumb.png" width="644" height="297" /></a> </p>  <pre class="code"><span style="color: blue"><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/40717CA4/20091113_180841.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-11-13_180841" border="0" alt="2009-11-13_180841" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMySqlconnector5.2.7/20566FE7/20091113_180841_thumb.png" width="644" height="314" /></a> </span></pre>
+<a href="http://11011.net/software/vspaste"></a><p class='post-footer'></p>
 
-<p>Conservation biogeography thus encompasses both a substantial body of theory and analysis, and some of the most prominent planning works used in conservation. Considerable advances in conservation guidelines have been made over the last few decades by applying biogeographical methods and principles. Herein we provide a critical review focussed on the sensitivity to assumptions inherent in the applications we examine.</p>
-
-<p>In particular, we focus on four inter-related factors:</p>
-
-<p>(i) scale dependency (both spatial and temporal);
-(ii) inadequacies in taxonomic and distributional data (the so-called Linnean and Wallacean shortfalls);
-(iii) effects of model structure and parameterisation; and
-(iv) inadequacies of theory.
-These generic problems are illustrated by reference to studies ranging from the application of historical biogeography, through island biogeography, and complementarity analyses to bioclimatic envelope modelling. There is a great deal of uncertainty inherent in predictive analyses in conservation biogeography and this area in particular presents considerable challenges.</p>
-
-<p>Protected area planning works and their resulting map outputs are amongst the most powerful and influential applications within conservation biogeography, and at the global scale are characterised by the production, by a small number of prominent NGOs, of bespoke schemes, which serve both to mobilise funds and channel efforts in a highly targeted fashion. We provide a simple typology of protected area planning works, with particular reference to the global scale, and provide a brief critique of some of their strengths and weaknesses. Finally, we discuss the importance, especially at regional scales, of developing more responsive analyses and models that integrate pattern (the compositionalist approach) and processes (the alist approach) such as range collapse and climate change, again noting the sensitivity of outcomes to starting assumptions. We make the case for the greater engagement of the biogeographical community in a programme of evaluation and refinement of all such schemes to test their robustness and their sensitivity to alternative conservation priorities and goals.</p>
-
-<p>Keywords: Conservation biogeography, models, protected area works, scale, sensitivity analysis, uncertainty.</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/28/progress-conservation-biogeography/'>http://Apiaceae.github.io/blog/2009/03/28/progress-conservation-biogeography/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/11/14/ASP.NET%E4%BD%BF%E7%94%A8MySql+connector5.2.7%E5%B0%8F%E9%97%AE%E9%A2%98/'&gt;http://Apiaceae.github.io/blog/2009/11/14/ASP.NET%E4%BD%BF%E7%94%A8MySql+connector5.2.7%E5%B0%8F%E9%97%AE%E9%A2%98/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -215,7 +538,7 @@ These generic problems are illustrated by reference to studies ranging from the 
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/27/phylogeography/">企鹅的谱系生物地理学</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/11/13/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84qq%E7%AD%BE%E5%90%8D/">有意思的qq签名</a></h1>
       
     
     
@@ -232,41 +555,27 @@ These generic problems are illustrated by reference to studies ranging from the 
   
 
 
-<time datetime="2009-03-27T00:00:00+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+<time datetime="2009-11-13T22:46:25+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/27/phylogeography/#comments">Comments</a>
+                 | <a href="/blog/2009/11/13/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84qq%E7%AD%BE%E5%90%8D/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/35.jpg" alt="谱系地理1" /></p>
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/qq/4CD5347A/062335241502.jpg"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="062335241502" border="0" alt="062335241502" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/qq/4C690185/062335241502_thumb.jpg" width="644" height="327" /></a> </p>
 
-<p><img src="/images/2009/3/33.jpg" alt="谱系地理1" /></p>
 
-<p>Multiple gene evidence for expansion of extant penguins out of Antarctica due to global cooling.</p>
+<p>  <p>1.无理取闹,必有所图！    <br />2.幸福是个比较级,要有东西垫底才感觉得到。     <br />3.一句“拿着”胜过两句“我会给你的”。     <br />4.问候不一定郑重其事，但一定要真诚感人。     <br />5.做与不做的最大区别是：后者拥有对前者的评论权。     <br />6.当男人遇见女人，从此只有纪念日，没有独立日。     <br />7.闭上眼睛，我看到了我的前途&hellip;&hellip;     <br />8.路见不平一声吼，吼完继续往前走。     <br />9.当裤子失去皮带，才懂得什麽叫做依赖。     <br />10.人生有时就像<a href="http://www.x-beta.cn/qq/qq-qianming-20091113.html">电脑</a>，说死机就死机，没得商量。     <br />11.海阔凭鱼跃，破鼓任人捶。     <br />12.有钱的捧个钱场，没钱的回家取点钱来捧个钱场。     <br />13.能够说出的委屈，便不算委屈；能够抢走的爱人，便不算爱人。     <br />14.烟不听话，所以我们“抽烟”。     <br />15.人长得漂亮不如活得漂亮！     <br />16.不能自拔的，除了爱情，还有别人地里的萝卜。     <br />17.我以为“隐身”别人就找不到我了，没用的，像我这样的人，无论在哪里都像漆黑夜里的萤火虫，够鲜明够出众。     <br />18.有些事，明知是错的也要去坚持，因为不甘心；有些人，明知是爱的也要去放弃，因为没结局；有时候，明知路没了却还在前行，因为习惯了。     <br />19.钻石恒久远，一颗就破产！     <br />20.铁公鸡还会留点铁锈呢，你根本就是个不锈钢公鸡    <br />21.还没来得及区沾花惹草，就被人拔光了。     <br />22.女为悦己者容，男为悦己者穷。     <br />23.每个人出生的时候都是原创，可悲的是，很多人渐渐都成了盗版！     <br />24.不要说别人脑子有病，脑子有病的前提是必须有个脑子。     <br />25.在哪里摔倒就在哪里躺下。     <br />26.“浪漫”是一袭美丽的晚礼服，但你不能一天到晚都穿着它。     <br />27.把一切平凡的事做好即不平凡，把一切简单的事做对即不简单。     <br />28.我又不是王子，为什莫女孩遇见我总认为自己应该成为公主！     <br />29.情侣间最矛盾的地方就是幻想彼此的未来，却惦记着对方的过去。     <br />30.所谓缘分，就是爱情成功时的理由，失败时的借口；所谓婚礼，就是有情人终成“家属”的仪式；所谓分手，就是女人说了一百次也未必能做到，而男人说一次就能实现的事。    <br />31.逆风的方向，更适合飞翔。我不怕万人阻挡，只怕自己投降。     <br />32.你发怒一分钟，便失去60秒的幸福。     <br />33.快乐要懂得分享，才能加倍快乐。     <br />34.忙碌是一种<a href="http://www.x-beta.cn/qq/qq-qianming-20091113.html">幸福</a>，让我们没时间体会痛苦；奔波是一种快乐，让我们真实的感受生活；疲惫是一种享受，让我们无暇空虚。     <br />35.生活就像“呼吸”，“呼”是为了出一口气，“吸”是为了争一口气。     <br />36.我问过烦恼了，他根本不爱你，让我转告你不要自作多情；健康让我带封情书给你：他对你一生不变！     <br />37.知识就像内裤，看不见但很重要。     <br />38.爱一个人好难，爱两个人好玩，爱三个人好烦，爱四个人翻船，爱五个人彻底玩儿完。     <br />39.女人吻男人是一种幸福，男人吻女人是一种口福。     <br />40.结婚就是给自由穿件棉衣，活动起来不方便，但会很温暖。    <br />41.英雄难过美人关，我不是英雄，美人让我过了关。     <br />42.玩命：要在有命的情况下才能玩，命都没了，拿什末玩啊！     <br />43.别人一夸我，我就担心，担心别人夸得不够。     <br />44.爱情永远比婚姻圣洁，婚姻永远比爱情实惠。     <br />45.探索的旅程不在于发现新大陆，而在于培养新视角。     <br />46.本无意与众不同，怎奈何品味出众。     <br />47.一个人能走多远，要看他与谁同行；一个人有多优秀，要看他有谁指点；一个人有多成功，要看他有谁相伴。     <br />48.叹气是最浪费时间的事情，哭泣是最浪费力气的行径。     <br />49.男人的大脑喜欢女人的内心，但是眼睛喜欢女人的外表。     <br />50.有钱就败家，没钱就拜神。     <br />51.当初结婚是看上眼了，后来离婚是看走眼了。     <br />52.咸鱼翻身，还是咸鱼。     <br />53.我可以选择放弃，但不能放弃选择。     <br />54.作为失败的典型，你实在是太成功了。     <br />55.不是人人都能活的低调，可以低调的基础是随时都能高调。     <br />56.女人喜欢长得坏坏的男人,不是喜欢长坏了的男人.     <br />57.古人说:“女为悦己者容”,其实应该是“女为己悦者容”.     <br />58.我们的爱情在这天夭折了,只为了让彼此有重生的机会.     <br />59.老板用你的时候你就是人才,不用你的时候就变成裁人!     <br />60.一个成功的男人就是能够挣到比妻子花的钱更多的钱,一个成功的女人就是能够找到这样一个男人.    <br />61.跌倒了,爬起来再哭.     <br />62.婚姻的杀手有时不是外遇,而是时间.     <br />63.一个月亮一个你,两个影子我和你,三生有幸认识你,四个西施不如你.     <br />64.绝口不提不是因为忘记,而是因为铭记.     <br />65.有人说爱情是上辈子欠下的情债这辈子来还,我上辈子一定俗不可耐,所以今生无债可还!     <br />66.让未来到来,让过去过去.     <br />67.微小的幸福就在身边,容易满足就是天堂.     <br />68.个头大就一定厉害吗？恐龙不是照样灭绝了！     <br />69.善意的谎言：就是给自己的欺骗找一个很好的借口。     <br />70.父母忽悠孩子叫教育；孩子忽悠父母叫欺骗；互相忽悠叫代沟。    <br />71.孤单是一个人的狂欢，狂欢是一群人的孤单。     <br />72.别跟我谈感情，谈感情伤钱。     <br />73.幽默就是一个人想哭的时候还有笑的兴致。     <br />74.感觉不到痛苦的<a href="http://www.x-beta.cn/qq/qq-qianming-20091113.html">爱情</a>不是真正的爱情，感觉不到幸福的婚姻必是悲哀的婚姻。     <br />75.一道幸福之门关闭时，另一道就会打开。我们经常盯着关闭的门，对开启的门却视若无睹。     <br />76.咖啡苦与甜，不在于怎末搅拌，而在于是否放糖；一段伤痛，不在于怎末忘记，而在于是否有勇气重新开始。     <br />77.人之所以活的累，是因为放不下架子、撕不开面子、解不开情结。     <br />78.爱是费尽心力地全身投入，然后再百转千回地抽身而出！     <br />79.我自横刀向天笑，笑完之后去睡觉!     <br />80.人生最精彩的不是实现梦想的瞬间,而是坚持梦想的过程!     <br />81.老婆和老妈掉进了河里，我先救老妈，因为是老妈给了我生命，我找不到任何理由丢下她不管。老婆如果没救上来，我可以再给她陪葬，在墓里继续我们的爱情     <br />82.某天，我弟弟去某小学打篮球，听到一低年级女生问一个低年级男生：“你到底爱不爱我？？？”那男生无奈道：“我妈一天给我3元钱，其中两块五都让你拿去买零食了，你说我爱不爱你！！！”     <br />83.USYD=U Sleep You Die UNSW=U Never Sleep Well     <br />84.去趟珠江路，一共有3个人和我搭讪，一个是查我省份证的pol.ice叔叔，再来两个是卖毛片的 &hellip;&hellip;&hellip;.     <br />85.SARS，，，是病毒名字？还是汽水名字？（亚洲汽水）     <br />86.除了萝莉，还是御姐     <br />87.&quot;早睡&quot;和&quot;早起&quot;并不总是一一映射的关系&hellip;..</p>  <p></p>  <p><a title="http://www.x-beta.cn/qq/qq-qianming-20091113.html" href="http://www.x-beta.cn/qq/qq-qianming-20091113.html"><a href="http://www.x-beta.cn/qq/qq-qianming-20091113.html">http://www.x-beta.cn/qq/qq-qianming-20091113.html</a></a></p><p class='post-footer'></p>
 
-<p>Classic problems in historical biogeography are <strong>where did penguins originate, and why are such mobile birds restricted to the Southern Hemisphere?</strong></p>
-
-<p>Competing hypotheses posit they arose in tropical–warm temperate waters, species-diverse cool temperate regions, or in Gondwanaland w100 mya when it was further north.</p>
-
-<p>To test these hypotheses we constructed a strongly supported phylogeny of extant penguins from 5851 bp of mitochondrial and nuclear DNA. Using Bayesian inference of ancestral areas we show that an Antarctic origin of extant taxa is highly likely, and that more derived taxa occur in lower latitudes. Molecular dating estimated penguins originated about 71 million years ago in Gondwanaland when it was further south and cooler.</p>
-
-<p>Moreover, extant taxa are inferred to have originated in the Eocene, coincident with the extinction of the larger-bodied fossil taxa as global climate cooled. We hypothesize that, as Antarctica became ice-encrusted, modern penguins expanded via the circumpolar current to oceanic islands within the Antarctic Convergence, and later to the southern continents.</p>
-
-<p>Thus, global cooling has had a major impact on penguin evolution, as it has on vertebrates generally. Penguins only reached cooler tropical waters in the Galapagos about 4 mya, and have not crossed the equatorial thermal barrier.</p>
-
-<p><strong>Keywords: penguins; divergence time; biogeography; nuclear DNA; mitochondrial DNA</strong></p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/27/phylogeography/'>http://Apiaceae.github.io/blog/2009/03/27/phylogeography/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/11/13/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84qq%E7%AD%BE%E5%90%8D/'&gt;http://Apiaceae.github.io/blog/2009/11/13/%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84qq%E7%AD%BE%E5%90%8D/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -280,7 +589,7 @@ These generic problems are illustrated by reference to studies ranging from the 
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/26/biogeograph-ldd/">极地植物的长距离散布</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/11/09/%E6%88%91%E4%BB%AC%E7%9A%84%E5%9C%B0%E7%90%83%E2%80%94%E6%9D%B0%E5%85%8B%E9%80%8A%E5%A6%82%E6%AD%A4%E8%AF%B4/">我们的地球—杰克逊如此说</a></h1>
       
     
     
@@ -297,27 +606,24 @@ These generic problems are illustrated by reference to studies ranging from the 
   
 
 
-<time datetime="2009-03-26T12:56:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2009</time>
+<time datetime="2009-11-09T22:28:46+08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/26/biogeograph-ldd/#comments">Comments</a>
+                 | <a href="/blog/2009/11/09/%E6%88%91%E4%BB%AC%E7%9A%84%E5%9C%B0%E7%90%83%E2%80%94%E6%9D%B0%E5%85%8B%E9%80%8A%E5%A6%82%E6%AD%A4%E8%AF%B4/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/barringl.gif" alt="LDD" /></p>
+  <div class="entry-content"><p><embed src="http://player.youku.com/player.php/sid/XMzg4Mzg3Ng==/v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash"></embed>  <p>看看杰克逊的这个MV真的感觉很震撼！</p><p class='post-footer'></p>
 
-<p>由于缺乏对植物物种<strong>长距离散布</strong>频度好的量化估计，我们对它们的分布在气候变化条件下的响应情况的理解受到很大限制。通过分析分布与北极岛屿和Svalbard及其邻近地区的9个有花植物种的超过4000个取样的遗传变异分析，Alsos等的研究表明，自从最后大大冰期以来，在Svalbard岛屿居群的建立过程中，长距离散布的种类来源于多个地区。<strong>因此，长距离散布现象比我们所通常认为的那样要普遍的多，这反过来也表明这些种类分布范围的向北转移可能在全球变暖后发生地相当快速。</strong></p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/26/biogeograph-ldd/'>http://Apiaceae.github.io/blog/2009/03/26/biogeograph-ldd/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/11/09/%E6%88%91%E4%BB%AC%E7%9A%84%E5%9C%B0%E7%90%83%E2%80%94%E6%9D%B0%E5%85%8B%E9%80%8A%E5%A6%82%E6%AD%A4%E8%AF%B4/'&gt;http://Apiaceae.github.io/blog/2009/11/09/%E6%88%91%E4%BB%AC%E7%9A%84%E5%9C%B0%E7%90%83%E2%80%94%E6%9D%B0%E5%85%8B%E9%80%8A%E5%A6%82%E6%AD%A4%E8%AF%B4/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -331,7 +637,7 @@ These generic problems are illustrated by reference to studies ranging from the 
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/25/-nature-network/">有关自然网络体系 Nature Network</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/11/03/%E8%AE%A9%E4%BD%A0%E4%B8%80%E7%94%9F%E9%83%BD%E5%8F%97%E7%94%A8%E7%9A%8485%E5%8F%A5%E8%AF%9D/">让你一生都受用的85句话</a></h1>
       
     
     
@@ -348,29 +654,27 @@ These generic problems are illustrated by reference to studies ranging from the 
   
 
 
-<time datetime="2009-03-25T00:00:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2009</time>
+<time datetime="2009-11-03T23:26:46+08:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/25/-nature-network/#comments">Comments</a>
+                 | <a href="/blog/2009/11/03/%E8%AE%A9%E4%BD%A0%E4%B8%80%E7%94%9F%E9%83%BD%E5%8F%97%E7%94%A8%E7%9A%8485%E5%8F%A5%E8%AF%9D/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/vtheme90.jpg" alt="Nature Network" /></p>
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/85/20CD6E63/DSC_0037.jpg"><img title="DSC_0037" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="432" alt="DSC_0037" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/85/10C1305D/DSC_0037_thumb.jpg" width="644" border="0" /></a> </p>
 
-<p><strong>Nature network</strong>是一个致力与让世界科学家通过互联网在全球和地区水平上就共同关心和感兴趣问题进行讨论的网站。</p>
 
-<p>科学家通过相互的交流和讨论能够从中获得有价值的信息。网站有一些比较有趣的讨论和话题，比如：对如何成为一个好的研究生导师。</p>
+<p>  <p>１、别低估任何人。</p>  <p>2、你没那么多观众，别那么累。</p>  <p>3、温和对人对事。不要随意发脾气，谁都不欠你的。</p>  <p>4、现在很痛苦，等过阵子回头看看，会发现其实那都不算事。</p>  <p>5、和对自己有恶意的人绝交。人有绝交，才有至交。<a href="http://bwqcw.cn/2009/10/rang-ni-yi-sheng-du-shou-yong-di-85-ju-hua/u2286p20t47d104166f776dt20080127210142/">     <br /></a></p>  <p>6、学会<a href="http://www.x-beta.cn/qq/qq-qianming-2009112.html">宽容</a>伤害自己的人，因为他们很可怜，各人都有自己的难处，大家都不容易。 </p>  <p>7、学会放弃，拽的越紧，痛苦的是自己。</p>  <p>8、低调，取舍间，必有得失。</p>  <p>9、不要试图给自己找任何借口，错误面前没人爱听那些借口。</p>  <p>10、慎言，独立，学会妥协的同时，也要坚持自己最基本的原则。</p>  <p>11、付出并不一定有结果。坚持可能会导致失去更多。</p>  <p>12、过去的事情可以不忘记，但一定要放下。</p>  <p>13、活得轻松，任何事都作一个最好的打算和最坏的打算。</p>  <p>14、做一个简单的人，踏实而务实。不沉溺幻想。不庸人自扰。</p>  <p>15、不说谎话，因为总有被拆穿的一天。</p>  <p>16、别人光鲜的背后或者有着太多不为人知的痛苦</p>  <p>17、尽量充实自己。不要停止学习。不管学习什么，语言，厨艺，各种技能。</p>  <p>18、注意自己的修养，你就是孩子的第一位老师。</p>  <p>19、孝顺父母。不只是嘴上说说，即使多打几个电话也是很好的。</p>  <p>20、爱父母，因为他们给了你生命，同时也是爱你爱的最无私的人。</p>  <p>21、偶尔也要现实和虚伪一点，因为不那样做的话，很难混。</p>  <p>22、收敛自己的脾气，偶尔要刻意沉默，因为冲动会做下让自己无法挽回的事情。</p>  <p>23、无论什么时候，做什么事情，要思考。</p>  <p>24、永远不要给背叛过自己的朋友第二次的背叛的机会。</p>  <p>25、无论是谁，都有自己的限度。特别是信任。</p>  <p>26、懂得倾听别人的忠告。</p>  <p>27、别人说的记在脑袋里，而自己的，则放在心里。</p>  <p>28、尽量不要讲同事朋友的八卦。</p>  <p>29、信佛，信因果，在真正的因果面前，人的力量是微不足道的。</p>  <p>30、坦然接受生活给你的馈赠吧，不管是好的还是坏的。</p>  <p>31、真正了解无常的含义，当你痛苦时，你要想这痛苦不是永恒的，当你快乐时，你要想这快乐也不是永恒的。</p>  <p>32、要快乐，要开朗，要坚韧，要温暖，对人要真诚。</p>  <p>33、空虚无聊的时候就读书，但一定得有自己的生活目标和计划。</p>  <p>34、对人性的弱点有清醒的认识，但要相信真诚的爱情，对爱情永远怀有单纯的向往。</p>  <p>35、不要太过依赖除自己以外的人，因为只有自己不会抛弃自己。</p>  <p>36、永远对生活充满希望，对于困境与磨难，微笑面对。</p>  <p>37、多看书，看好书。</p>  <p>38、少吃点，吃好的。</p>  <p>39、古龙说过，爱笑的女孩子，运气不会太差。</p>  <p>40、多交朋友，交好的朋友。女人一定要有闺密。</p>  <p>41、请记得，好朋友的定义是：你混的好，她打心眼里为你开心；你混的不好，她由衷的为你着急。</p>  <p>42、要有<a href="http://www.x-beta.cn/qq/qq-qianming-2009112.html">梦想</a>，即使遥远。</p>  <p>43、努力爱一个人。付出，不一定会有收获；不付出，却一定不会有收获，不要奢望出现奇迹。</p>  <p>44、承诺是一件美好的事情，但美好的东西往往不会变为现实。</p>  <p>45、每个人都有自己鲜明的主张和个性，不要识途去改变他人，同样，也不要被他人所改变。改了，就不是自己了。</p>  <p>46、没有十全十美的东西，没有十全十美的人，关键是清楚到底想要什么。得到想要的，肯定会失去另外一部分。如果什么都想要，只会什么都得不到。</p>  <p>47、这个世界最脆弱的是生命，身体健康，很重要。</p>  <p>48、老天爷对每个人都是公平的。</p>  <p>49、不要试图控制别人，不要要求别人理解你</p>  <p>50、活在当下，别在怀念过去或者憧憬未来中浪费掉你现在的生活</p>  <p>51、不要忘本，任何时候，任何事情</p>  <p>52、要诚恳，要坦然，要慷慨，要宽容，要有平常心</p>  <p>53、学会忘记, 善忘是一件好事</p>  <p>54、要乐观，要积极，多笑，多照镜子</p>  <p>55、相信他说的话，但不要当真。</p>  <p>56、凡事多长心眼。</p>  <p>57、不要自作聪明。</p>  <p>58、做自己的决定。然后准备好承担后果。从一开始就提醒自己，世上没有后悔药吃。</p>  <p>59、自己不喜欢的人，可以报之以沉默微笑；自己喜欢的人，那就随便怎么样了，因为你的喜爱会挡也挡不住地流露出来。</p>  <p>60、相信因果报应！相信轮回！</p>  <p>61、要学会忍耐与坚持！</p>  <p>62这个世界上没有真正的爱情……时间可以冲淡一切</p>  <p>63、不要做刺猬 能不与人结仇就不与人结仇，谁也不跟谁一辈子，有些事情没必要记在心上</p>  <p>64、有时要学会听取身边人的意见，更多时候这样才不会让自己受到伤害。</p>  <p>65、忘记过去才能有新的开始。</p>  <p>66、这个世界很不公平。</p>  <p>67、不要太依赖<a href="http://www.x-beta.cn/qq/qq-qianming-2009112.html">朋友</a>，人性基本都有恶的一面。</p>  <p>68、爱情很美好，相信爱情。如果连爱情都不相信那人生岂不太苦了？</p>  <p>69、想得到一样一定会失去另一件东西。</p>  <p>70、痛苦让人成长，是你进步的一个机会，一个挑战。别害怕痛苦的事情，它有另一面积极的作用。</p>  <p>71、人就是孤独的，缓解它带来的痛苦的唯一方式就是平静的接受它。</p>  <p>72、没有经历过的，永远不能理解这些道理，但听听也是好的。</p>  <p>73、可以不美丽，可以不可爱，可以不温柔，但是一定要诚实和善良。</p>  <p>74、喜爱一切美好的事物，赞美并享受它们所带来的美好。</p>  <p>75、当困难来临时，用微笑去面对，用智慧去解决。</p>  <p>76、要勇于承认自己所犯的错误，并承担其带来的责任。</p>  <p>77、爱家人，爱朋友，爱伴侣，爱孩子，然而，要真正为自己活。</p>  <p>78、永远不要为已发生的和未发生的事忧虑。已经发生既成事实忧虑也于事无补，未发生的凭主观臆测，无法推断事情的走向，徒增烦恼而已。</p>  <p>79、不要老在别人面前倾诉你的困境袒露你的脆弱。</p>  <p>80、不要想着依靠别人，要有目标有<a href="http://www.x-beta.cn/qq/qq-qianming-2009112.html">追求</a>，这与年龄无关。</p>  <p>81、做一个简单的人，踏实而务实。不沉溺幻想。不庸人自扰。</p>  <p>82、学会思考，头脑清晰，明白自己的渺小，切忌自我陶醉。炮打出头鸟，凡事不要强出头，因为并没有想象中的强！</p>  <p>83、每个人都是独立的个体，真的没有谁离开谁就活不下去！</p>  <p>84、不要太高估自己在集体中的力量，因为当你选择离开时，就会发现即使没有你，太阳照常升起！</p>  <p>85、社会是有等级的，很多事不公平。别抱怨，因为没有用。</p><p class='post-footer'></p>
 
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/25/-nature-network/'>http://Apiaceae.github.io/blog/2009/03/25/-nature-network/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/11/03/%E8%AE%A9%E4%BD%A0%E4%B8%80%E7%94%9F%E9%83%BD%E5%8F%97%E7%94%A8%E7%9A%8485%E5%8F%A5%E8%AF%9D/'&gt;http://Apiaceae.github.io/blog/2009/11/03/%E8%AE%A9%E4%BD%A0%E4%B8%80%E7%94%9F%E9%83%BD%E5%8F%97%E7%94%A8%E7%9A%8485%E5%8F%A5%E8%AF%9D/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -384,7 +688,7 @@ These generic problems are illustrated by reference to studies ranging from the 
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/24/power-tools-navicatce-for-mysql/">Navicat超强的数据格式转换和处理能力</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/11/01/ASP.NET+MVC%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%28%E4%B8%80%29/">ASP.NET MVC模式学习笔记(一)</a></h1>
       
     
     
@@ -401,281 +705,129 @@ These generic problems are illustrated by reference to studies ranging from the 
   
 
 
-<time datetime="2009-03-24T20:15:00+08:00" pubdate data-updated="true">Mar 24<span>th</span>, 2009</time>
+<time datetime="2009-11-01T19:03:30+08:00" pubdate data-updated="true">Nov 1<span>st</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/24/power-tools-navicatce-for-mysql/#comments">Comments</a>
+                 | <a href="/blog/2009/11/01/ASP.NET+MVC%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%28%E4%B8%80%29/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=2009%2f3%2f2009-03-24_174232.png" alt="" /></p>
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/5D2050FA/20091030_223622.png"><img title="2009-10-30_223622" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="383" alt="2009-10-30_223622" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/2C8F63F3/20091030_223622_thumb.png" width="644" border="0" /></a> </p>
 
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/24/power-tools-navicatce-for-mysql/'>http://Apiaceae.github.io/blog/2009/03/24/power-tools-navicatce-for-mysql/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
 
-</div>
-  
-  
+<p>  <p>在一对多的关系中(如上图),Dinner类有一个强类型的RSVP集合；而RSVP类有一个强类型的Dinner属性。这样两个类间通过这关系进行相互的数据访问</p>  <h1>模型(Model)</h1>  <p>NerdDinnerDataContext Class</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/08441A57/20091030_225046.png"><img title="2009-10-30_225046" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="366" alt="2009-10-30_225046" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/74B2F272/20091030_225046_thumb.png" width="644" border="0" /></a> </p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/24954647/20091030_231313.png"><img title="2009-10-30_231313" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="379" alt="2009-10-30_231313" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/1D0C678B/20091030_231313_thumb.png" width="644" border="0" /></a></p>  <p>&#160;</p>  <p>&#160;</p>  <p>DinnerRepository dinnerRepository = new DinnerRepository();    <br />// Retrieve specific dinner by its DinnerID     <br />Dinner dinner = dinnerRepository.GetDinner(5);     <br />// Mark dinner to be deleted</p>  <pre>DinnerRepository dinnerRepository = <span style="color: #0000ff">new</span> DinnerRepository();
+<span style="color: #008000">// Retrieve specific dinner by its DinnerID</span>
+Dinner dinner = dinnerRepository.GetDinner(5);
+<span style="color: #008000">// Mark dinner to be deleted</span>
+dinnerRepository.Delete(dinner);
+<span style="color: #008000">// Persist changes</span>
+dinnerRepository.Save();</pre></p>
 
+<p>
+  <br />dinnerRepository.Delete(dinner); 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/24/-cybertaxonomy/">什么是Cybertaxonomy/etaxonomy</a></h1>
-      
-    
-    
-      <p class="meta">
-        
+  <br />// Persist changes 
 
+  <br />dinnerRepository.Save();</p>
 
 
 
 
+<h1>控制器和视图</h1>
 
 
 
-  
 
+<p>传统的网络应用框架，比如ASP, PHP, ASP.NET表单程序都是将传入的Url对应到磁盘上的文件。例如：Products.aspx或者Products.php。MVC框架则是把Url对应到一个类的方法上。</p>
 
-<time datetime="2009-03-24T00:00:00+08:00" pubdate data-updated="true">Mar 24<span>th</span>, 2009</time>
-        
-        
-                 | <a href="/blog/2009/03/24/-cybertaxonomy/#comments">Comments</a>
-                
-      </p>
-    
-  </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/vtheme111.jpg" alt="What is Cybertaxonomy" /></p>
 
-<p><strong>Cybertaxonomy(taxonomy)</strong>: The fusion of taxonomy with cyberinfrastructure will transform descriptive taxonomy, creating a modern, efficient science to confront the biodiversity crisis. <em>Cybertaxonomy</em> will enable international teams of taxon experts, museums and herbaria to create and test taxonomic knowledge to assure humanity’s access to reliable information about earth’s species. The IISE and its partners are forging <em>cybertaxonomy</em> as the next logical link in a chain of scholarship unbroken since the <em>time of Linnaeus</em>.</p>
+<p>With traditional web frameworks (classic ASP, PHP, ASP.NET Web Forms, etc), incoming URLs are 
+  <br />typically mapped to files on disk. For example: a request for a URL like &quot;/Products.aspx&quot; or 
 
-<p>The challenge is immense: discovering and describing millions of unknown species while at the same time continually critically testing 1.8 million already named species. International “knowledge communities,” each focused on a major taxon, will assemble and continually improve and expand all that is known of our world’s species.</p>
+  <br />&quot;/Products.php” might be processed by a “Products.aspx” or “Products.php” file. 
 
-<p>We are conceiving a taxonomy-specific cyberinfrastructure that will become a worldwide “species observatory” capable of opening access to museum specimens, archived literature, collection data, digital instrumentation and colleagues to vastly expedite descriptive taxonomy. Resultant taxon “knowledge banks” will be the 21st century equivalent of revisions and monographs… the “high throughput” species testing mechanisms of the past. Digital tools, instruments and robots can ease constraints on nearly every phase of taxonomy from collecting and preparing specimens to sharing what is known through user-defined portals such as the Encyclopedia of Life (www.eol.org).</p>
+  <br />Web-based MVC frameworks map URLs to server code in a slightly different way. Instead of mapping 
 
-<p>Knowing earth’s species and their myriad characters are fundamental to both evolutionary and environmental biology. The costs of building this new taxonomy are insignificant by comparison to the costs of ignorance as we face the biodiversity crisis.</p>
+  <br />incoming URLs to files, they instead map URLs to methods on classes. These classes are called 
 
-<p>The IISE will focus on four inter-related areas:</p>
+  <br />“Controllers” and they are responsible for processing incoming HTTP requests, handling user input, 
 
-<p><strong>(1) Species Inventories and Collection Development; </strong></p>
+  <br />retrieving and saving data, and determining the response to send back to the client (display HTML, 
 
-<p><strong>(2) Revisionary Taxonomy and Monography; </strong></p>
+  <br />download a file, redirect to a different URL, etc).</p>
 
-<p><strong>(3) Cyberinfrastructure; and</strong></p>
 
-<p><strong>(4) the History and Philosophy of Taxonomy</strong></p>
 
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/24/-cybertaxonomy/'>http://Apiaceae.github.io/blog/2009/03/24/-cybertaxonomy/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
 
-</div>
-  
-  
+<h4>理解ASP.NET MVC路由(Understanding ASP.NET MVC Routing)</h4>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/23/geomapping-of-life-/">Geomapping of Life 我们需要它？</a></h1>
-      
-    
-    
-      <p class="meta">
-        
 
 
+<p>路由规则保存在Global.asax文件中，如下所示：</p>
 
 
 
 
+<pre class="code"><span style="color: blue">using </span><span style="color: #010001">System</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Collections</span>.<span style="color: #010001">Generic</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Linq</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Mvc</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Routing</span>;
 
+<span style="color: blue">namespace </span><span style="color: #010001">NerdDinner
+</span>{
+    <span style="color: green">// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // visit http://go.microsoft.com/?LinkId=9394801
 
-  
+    </span><span style="color: blue">public class </span><span style="color: #2b91af">MvcApplication </span>: <span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #2b91af">HttpApplication
+    </span>{
+        <span style="color: blue">public static void </span><span style="color: #010001">RegisterRoutes</span>(<span style="color: #2b91af">RouteCollection </span><span style="color: #010001">routes</span>)
+        {
+            <span style="color: #010001">routes</span>.<span style="color: #010001">IgnoreRoute</span>(<span style="color: #a31515">&quot;{resource}.axd/{*pathInfo}&quot;</span>);
 
+            <span style="color: #010001">routes</span>.<span style="color: #010001">MapRoute</span>(
+                <span style="color: #a31515">&quot;Default&quot;</span>,                                              <span style="color: green">// Route name
+                </span><span style="color: #a31515">&quot;{controller}/{action}/{id}&quot;</span>,                           <span style="color: green">// URL with parameters
+                </span><span style="color: blue">new </span>{ <span style="color: #010001">controller </span>= <span style="color: #a31515">&quot;Home&quot;</span>, <span style="color: #010001">action </span>= <span style="color: #a31515">&quot;Index&quot;</span>, <span style="color: #010001">id </span>= <span style="color: #a31515">&quot;&quot; </span>}  <span style="color: green">// Parameter defaults
+            </span>);
 
-<time datetime="2009-03-23T00:00:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2009</time>
-        
-        
-                 | <a href="/blog/2009/03/23/geomapping-of-life-/#comments">Comments</a>
-                
-      </p>
-    
-  </header>
+        }
 
+        <span style="color: blue">protected void </span><span style="color: #010001">Application_Start</span>()
+        {
+            <span style="color: #010001">RegisterRoutes</span>(<span style="color: #2b91af">RouteTable</span>.<span style="color: #010001">Routes</span>);
+        }
+    }
+}</pre>
 
-  <div class="entry-content"><p><img src="/images/2009/3/vtheme12.jpg" alt="COL首页" /></p>
 
-<ul>
-<li>Catalogue of Life</li>
-</ul>
+<p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/093F325D/20091031_180343.png"><img title="2009-10-31_180343" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="284" alt="2009-10-31_180343" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/175D5FB3/20091031_180343_thumb.png" width="644" border="0" /></a> <a href="http://11011.net/software/vspaste"></a></p>
 
+<pre><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/379D17C5/20091031_223007.png"><img title="2009-10-31_223007" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="140" alt="2009-10-31_223007" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/75BF1379/20091031_223007_thumb.png" width="644" border="0" /></a> </pre>
 
-<p><img src="/images/2009/3/vtheme10.jpg" alt="TOL首页" /></p>
 
-<ul>
-<li>Tree of Life</li>
-</ul>
 
 
-<p><img src="/images/2009/3/vtheme11.jpg" alt="CBOL首页" /></p>
+<p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/28FFAC9E/20091031_223729.png"><img title="2009-10-31_223729" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="129" alt="2009-10-31_223729" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/47D8C4FA/20091031_223729_thumb.png" width="644" border="0" /></a> </p>
 
-<ul>
-<li>Barcoding of Life</li>
-</ul>
 
 
-<p><img src="/images/2009/3/vtheme9.jpg" alt="EOL首页" /></p>
 
-<ul>
-<li>Encyclopedia of Life</li>
-</ul>
+<p><pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">p</span><span style=<p class='post-footer'></p>
 
-
-<p><strong>Geomapping of Life</strong></p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/'>http://Apiaceae.github.io/blog/2009/03/23/geomapping-of-life-/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/22/new-book-sdm/">生态位模型预测新书上架</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-22T00:00:00+08:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2009</time>
-        
-        
-                 | <a href="/blog/2009/03/22/new-book-sdm/#comments">Comments</a>
-                
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/2009/3/111.jpg" alt="书籍的封面" /></p>
-
-<p><strong>Book Description</strong>: Using theory, applications, and examples of inferences, <strong>Niche Modeling</strong>: Predictions from Statistical Distributions demonstrates how to conduct and evaluate niche modeling projects in any area of application.</p>
-
-<p>It features a series of theoretical and practical exercises for developing and evaluating niche models using the R statistics language. The author discusses applications of predictive modeling methods with reference to valid inferences from assumptions. He elucidates varied and simplified examples with rigor and completeness. Topics include geographic information systems, multivariate modeling, artificial intelligence methods, data handling, and information infrastructure.</p>
-
-<p>Above all, successful niche modeling requires a deep understanding of the process of creating and using probability. Off-the-shelf statistical packages are tailored exactly to applications but can hide problematic complexities. Recipe book implementations fail to educate users in the details, assumptions, and pitfalls of analysis, but may be able to adapt to the specific needs of each study. Examining the sources of errors such as autocorrelation, bias, long term persistence, nonlinearity, circularity, and fraud, this seminal reference provides an understanding of the limitations and potential pitfalls of prediction, emphasizing the importance of avoiding errors.</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/22/new-book-sdm/'>http://Apiaceae.github.io/blog/2009/03/22/new-book-sdm/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/21/-lsid/">什么是生命科学识别码 LSID</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-21T00:00:00+08:00" pubdate data-updated="true">Mar 21<span>st</span>, 2009</time>
-        
-        
-                 | <a href="/blog/2009/03/21/-lsid/#comments">Comments</a>
-                
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/2009/3/vtheme6.jpg" alt="LSID首页" /></p>
-
-<p><strong>Life Science Identifiers (LSIDs)</strong> are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources including species names, concepts, occurrences, genes or proteins, or data objects that encode information about them. To put it simply, LSIDs are a way to identify and locate pieces of biological information on the web.</p>
-
-<p>The <em>LSID</em> concept introduces a straightforward approach to naming and identifying data resources stored in multiple, distributed data stores in a manner that overcomes the limitations of naming schemes in use today. Almost every public, internal, or department-level data store today has its own way of naming individual data resources, making integration between different data sources a tedious, never-ending chore for informatics developers and researchers.</p>
-
-<p>By defining a simple, common way to identify and access biologically significant data, whether that data is stored in files, relational databases, in applications, or in internal or public data sources, LSID provides a naming standard underpinning for wide-area science and interoperability.</p>
-
-<p>The Life Sciences Identifier is an <a href="http://www.omg.org/">Object Management Group (OMG)</a> Final Adopted Specification developed by the <a href="http://www.omg.org/lsr/">Life Sciences Research (LSR)</a>.</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/21/-lsid/'>http://Apiaceae.github.io/blog/2009/03/21/-lsid/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/11/01/ASP.NET+MVC%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%28%E4%B8%80%29/'&gt;http://Apiaceae.github.io/blog/2009/11/01/ASP.NET+MVC%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%28%E4%B8%80%29/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -759,8 +911,9 @@ These generic problems are illustrated by reference to studies ranging from the 
 <li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
 <li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
 <li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
@@ -787,7 +940,7 @@ These generic problems are illustrated by reference to studies ranging from the 
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
-<a style="font-size: 70%" href="/tags/darwin/">darwin</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>

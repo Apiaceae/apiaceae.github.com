@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="Web applications are dynamic- many requiring unique content and interfaces for each user. There are a myriad of ways to take user content out of a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/page/21/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/">网络应用程序界面快速创建</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T08:01:46+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+Web applications are dynamic- many requiring unique content and interfaces for each user. There are a myriad of ways to take user content out of a database and present it in a browser. This article focuses on the different ways it can be done in the Microsoft world (specifically in ASP.NET), why we chose XSLT for our own product, and finally a look at our technical implementation. 
+</p>
+
+
+<h2>Planning for Dynamic Content</h2>
+
+
+<p>
+Whether you are in the process of building a new business web application or planning to build one, you most likely need to address how your web application will handle displaying different content for different users. 
+</p>
+
+
+<h3>Considerations</h3>
+
+
+<p>
+When considering the different options for displaying dynamic content you generally need to take into account the following aspects: 
+</p>
+
+
+<ul>
+    <li>Usability 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Usability might be one of the most critical aspects in the success (or lack thereof) of your application. 
+    </div>
+    </li>
+    <li>Development Time 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    This includes the total amount of development time involved in satisfying your current application requirements. 
+    </div>
+    </li>
+    <li>Flexibility 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Regardless of how comprehensive your current requirements are, applications tend to evolve over time. It&rsquo;s important to evaluate the development effort and skill sets required to accommodate changes. 
+    </div>
+    </li>
+    <li>Support, Maintenance &amp; Ongoing Enhancements 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Commonly ignored by many when planning new development projects, it is generally responsible for a good chunk of the total cost of an application over the span of its life. This includes bug fixes, client customizations, minor application enhancements and of course, QA and testing. 
+    </div>
+    </li>
+</ul>
+
+
+<h3>The Options in ASP.NET</h3>
+
+
+<p>
+Generally web applications that use ASP.NET have two main options for displaying dynamic content: 
+</p>
+
+
+<ul>
+    <li>Server Controls 
+    <ul>
+        <li>With Binding &ndash; retrieving the relevant data and binding it to the appropriate ASP.Net server controls on a web form </li>
+        <li>In Code &ndash; populating the appropriate ASP.Net server controls in code </li>
+    </ul>
+    </li>
+    <li>HTML 
+    <ul>
+        <li>In Code &ndash; constructing the HTML to display in code based on the information retrieved from the database </li>
+        <li>With XSLT &ndash; retrieving the database information in XML format and then transforming it into HTML with XSLT </li>
+    </ul>
+    </li>
+</ul>
+
+
+<p>
+A third option is Silverlight, a new technology introduced as an option for web applications by Microsoft about a year ago. Silverlight provides a very rich GUI with the power of the .Net platform (a subset, actually) and tools that make web application development similar to the XAML interfaces found in the latest Windows application development. Silverlight is outside the scope of this particular article though. 
+</p>
+
+
+<h3>Comparing the Different Options</h3>
+
+
+<p>
+Before you decide on the best route to take to display dynamic content you need to evaluate the impact of each approach on your application. You might find the table below helpful when making this decision. 
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<table border="0" class="comparison" style="width: 100%">
+    <tbody>
+        <tr>
+            <td style="width: 8em">Approach</td>
+            <td>Pros&nbsp; &amp; Cons</td>
+            <td>When to Use</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>Server Controls</strong></td>
+        </tr>
+        <tr>
+            <td style="text-align: right">With Binding</td>
+            <td>The quickest approach in terms of development time but also the least flexible.</td>
+            <td>Best suited for applications with low data complexity and that are not expected to change often.</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">In Code</td>
+            <td>Hooking up the controls in code takes longer in terms of development but is much more flexible than binding. This approach also requires a higher level of support and maintenance.</td>
+            <td>Best suited for applications with high data complexity and that are not expected to change often.</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>HTML</strong></td>
+        </tr>
+        <tr>
+            <td style="text-align: right">In Code</td>
+            <td>Constructing HTML in code gives a good deal of flexibility over the markup that&rsquo;s created but is time-consuming and extraordinarily brittle. This approach requires extensive testing and support.</td>
+            <td>I wouldn&rsquo;t recommend this to be used as a general strategy for web applications but at times this might be used for particular sections depending on a unique set of requirements.</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">Using XSLT</td>
+            <td>Offers high flexibility and the least amount of ongoing maintenance and testing. The development time might be longer depending on your team&rsquo;s skill set.</td>
+            <td>Best suited for applications with high data complexity and ones that are expected to change significantly and frequently. In addition, this allows for a lot of room for creativity as far as interface design goes.</td>
+        </tr>
+        <tr>
+            <td><strong>Silverlight</strong></td>
+            <td>Provides the richest GUI possibilities and the complete separation of interface and code. The time to develop, test and support are currently higher than other options.</td>
+            <td>Best suited for applications that require very rich user interfaces, and for development teams that primarily focus on Windows development.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<h3>Real-World Use Case: Scopings</h3>
+
+
+<p>
+When we started evaluating the requirements for <a href="http://www.scopings.com/">Scopings</a>, our homegrown recruiting platform, we needed a way to present complex content with a unique look and feel, a high level of usability, an infrastructure that can easily adapt to frequent and substantial changes, and built-in capabilities for globalization. 
+</p>
+
+
+<p>
+Very quickly we realized that although we can use ASP.Net server controls to build the first revision of Scopings in a relatively short period of time, this wouldn&rsquo;t adapt well to the frequent changes we expected to be an inevitable part of the product lifecycle. This option would substantially increase our total cost of ownership. 
+</p>
+
+
+<p>
+After much analysis and many discussions, it became clear to us that designing our own infrastructure for constructing HTML using XML and XSLT would satisfy all of our requirements. We sat down and started to design an infrastructure that has ultimately been used for more than 80% of the functionality on Scopings. 
+</p>
+
+
+<h3>Constructing the HTML</h3>
+
+
+<p>
+The idea behind the Scopings infrastructure was to allow us to make substantial changes to our user interface, while eliminating the need for any code changes and development staff involvement, and substantially decreasing the amount of QA required following any changes to the user interface. 
+</p>
+
+
+<p>
+To accommodate these requirements the Scopings infrastructure was built to be completely indifferent to the information retrieved from our database and to the way the information is ultimately displayed. 
+</p>
+
+
+<p>
+To achieve this we designed the infrastructure as follows: 
+</p>
+
+
+<p><ul></p>
+
+<pre><code>&lt;li&gt;A separate stored procedure was built against each web content page to be displayed, and was designed to only return XML back to the calling code. &lt;/li&gt;
+&lt;li&gt;Upon loading a web page, the code behind would load the XML for the current user. The XSLT would then transform the XML to an HTML interface for the user. &lt;/li&gt;
+&lt;li&gt;The web page would be responsible for all functionality,&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/'&gt;http://Apiaceae.github.io/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/%E5%90%8E%E5%88%86%E7%B1%BB%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%B6%E4%BB%A3/">后分类学家的时代</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T07:08:16+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/%E5%90%8E%E5%88%86%E7%B1%BB%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%B6%E4%BB%A3/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div dir="ltr">
+<img src="/Blogs/image.axd?picture=2009%2f3%2fposttaxonomists.bmp" alt="" width="177" height="100" />
+</div>
+
+
+<div dir="ltr">
+萨拉Kemmitt和同事在大英图书馆刚刚发布了一个播客棒网页的最近谈论&#39;姓名有什么意义？ -分类在危机&#39; 。这是图书馆优秀TalkScience系列。播客仅限于棒的初步介绍，但大多数的行动发生在随后的讨论中，并在随后的酒吧。我有点失望的是，生物分类灯具观众无法拿出一个更强有力的国防分类。反复出现的一个主题讨论的是&#39;后的分类学者&#39;的时代，以及我们如何对待挑战的分类和系统在一段时间内如果没有更多的专业人士。这是空气中的必然性有关这一时期，任何人在观众甚至质疑这一构想。的确，对于许多分类组别这不是我们的未来远景，但反映了本。为越来越多的分类根本没有分类学家提供专业级别的报道，我知道等机构自然历史博物馆必须考虑非常战略有关如何填补空出的职位退休分类学家。我没有听到太多的投诉，更广泛的科学界对缺乏专业分类学家。但是，由于生物分类学是一个长尾巴的科学（即半衰期分类引文是衡量几十年来，有时几个世纪，这是公正的分类信息，正式引用！ ） ，我不会期望投诉量成为发声的人，可能做一些事情他们（即出资） ，直到它远远为时已晚。 <br />
+<br />
+所有这些讨论使我觉得我更多的个人与非专业分类社会和我的作用，更好地调动他们的努力。缺乏资金的分类内容（即做分类）的手段，我根本无法辩解的传统分类学博物馆管理员，除了高度魅力的分类，或在我的分类是一个明确的目的的手段，而不是目的本身。我在高兴的立场，我的研究项目是合理的多样化，大部分工作（如基础设施项目，如Scratchpads ，或工作的加拉帕戈斯鸟虱子）符合这些标准。但我也意识到，我的许多同事都没有在这幸福的立场，我可以不再甚至我的分类社会（工作的人的演变寄生虱子- Phthiraptera ） ，以同样的水平，我利用至。显然，最有效地利用我现在的时间是在更广泛的社区动员的努力（特别是&#39;亲业余社会&#39; ，谁的工作，以一个专业的标准，但没有报酬的工作） 。如果有任何罗德的谈话和随后的讨论中，我更加确信我个人的战略，处理后的分类学家&#39;时代，但这种讨论不会离开我高兴的是，它应该有来此。 <br />
+<br />
+题目涉及棒的讨论包括： <br />
+&bull;为什么生物分类的问题？ <br />
+&bull;为什么生物分类学家不满，是它的部分自己的错吗？ <br />
+&bull;我们不知道究竟有多少物种仍然undescribed但这个问题？ <br />
+&bull; Cybertaxonomy和&#39;舞倡议&#39; -是更多的钱的答案吗？ <br />
+&bull;米老鼠和分类-我们如何处理版权和其他障碍，共享数据？ <br />
+&bull;谁会希望成为一个分类学家在21世纪？ <br />
+<br />
+继续讨论这些问题，看看论坛的性质分类网络。 
+</div>
+
+
+<div dir="ltr">
+原文链接：<a href="http://vsmith.info/The-Post-Taxonomist-Era">http://vsmith.info/The-Post-Taxonomist-Era</a> 
+</div>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/27/%E5%90%8E%E5%88%86%E7%B1%BB%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%B6%E4%BB%A3/'>http://Apiaceae.github.io/blog/2009/03/27/%E5%90%8E%E5%88%86%E7%B1%BB%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%B6%E4%BB%A3/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/XML%E6%98%BE%E7%A4%BA%E5%87%BA%E9%94%99/">XML显示出错</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T06:51:49+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/XML%E6%98%BE%E7%A4%BA%E5%87%BA%E9%94%99/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<img src="/Blogs/image.axd?picture=2009%2f3%2f2009-03-26_00014.png" alt="" width="638" height="113" /> 
+</p>
+
+
+<p>
+今天编译一些学习处理XML文档的代码，结果调试出现上图的错误。网络搜索的解决方案如下： 
+</p>
+
+
+<p>
+解决的方法是在命令行窗口(开始&#8211;运行&#8211;cmd)中输入&ldquo;C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_regiis.exe -i&rdquo;。这样问题就解决了。发现，在原先在IIS&gt;默认网站&gt;属性&gt;主目录&gt;配置&gt;映射应用程序映射中，比原先多出了许多扩展名，如我就需要运行了.aspx等，这样，在IIS中就注册完成了。<br />
+或者点开始&#8211;程序&#8211;Microsoft Visual Studio .net 2005&#8211;Visual Studio Tools&#8211;Visual Studio 命令提示行<br />
+在里面写aspnet_regiis.exe -i<br />
+重新注册IIS 
+</p>
+
+
+<p>
+不管用 
+</p>
+
+
+<p>
+&nbsp;示例代码如下： 
+</p>
+
+
+<p>
+using System;<br />
+using System.Collections.Generic;<br />
+using System.Web;<br />
+using System.Web.UI;<br />
+using System.Web.UI.WebControls;<br />
+using System.Xml;<br />
+using System.Xml.XPath; 
+</p>
+
+
+<p>
+public partial class UpdateXML : System.Web.UI.Page<br />
+{<br />
+&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Response.ContentType = &quot;txt/xml&quot;;//错误的问题就出在这里，注释掉就好了。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string xmlPath = Request.PhysicalApplicationPath + @&quot;App_Data\Books.xml&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument document = new XmlDocument();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.Load(xmlPath);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XPathNavigator navigator = document.CreateNavigator();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count = navigator.Select(&quot;/bookstore/book&quot;).Count;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToChild(&quot;bookstore&quot;, &quot;&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToChild(&quot;book&quot;, &quot;&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; count; i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToChild(&quot;price&quot;, &quot;&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double discount = navigator.ValueAsDouble * (.1);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.CreateAttribute(&quot;&quot;,&quot;discount&quot;,&quot;&quot;,discount.ToString());<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToParent();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToNext();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; navigator.MoveToRoot();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Response.Write(navigator.OuterXml);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+} 
+</p>
+
+
+<p>
+另外一段代码如下：
+</p>
+
+
+<p>
+using System;<br />
+using System.Collections.Generic;<br />
+using System.Linq;<br />
+using System.Web;<br />
+using System.Web.UI;<br />
+using System.Web.UI.WebControls;<br />
+using System.Xml;<br />
+using System.Xml.Schema;<br />
+using System.IO;
+</p>
+
+
+<p>
+public partial class Default3 : System.Web.UI.Page<br />
+{<br />
+&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Response.ContentType = &quot;text/xml&quot;;//<strong><em>注释掉也不管用，还是出现老问题<br />
+</em></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string xmlFilePath = Request.PhysicalApplicationPath + @&quot;App_Data\Authors.xml&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlReader reader = XmlReader.Create(xmlFilePath);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlSchemaSet schemaSet = new XmlSchemaSet();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlSchemaInference schema = new XmlSchemaInference();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; schemaSet = schema.InferSchema(reader);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (XmlSchema schemaObj in schemaSet.Schemas())<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; schemaObj.Write(Response.Output);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }<br />
+}
+</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/27/XML%E6%98%BE%E7%A4%BA%E5%87%BA%E9%94%99/'>http://Apiaceae.github.io/blog/2009/03/27/XML%E6%98%BE%E7%A4%BA%E5%87%BA%E9%94%99/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/%E8%B0%83%E7%94%A8XPath%E6%98%BE%E7%A4%BAXML%E6%96%87%E6%A1%A3/">调用XPath显示XML文档</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T02:46:10+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/%E8%B0%83%E7%94%A8XPath%E6%98%BE%E7%A4%BAXML%E6%96%87%E6%A1%A3/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+using System;<br />
+using System.Collections.Generic;<br />
+using System.Linq;<br />
+using System.Web;<br />
+using System.Web.UI;<br />
+using System.Web.UI.WebControls;<br />
+using System.Xml;<br />
+using System.Xml.Schema;
+</p>
+
+
+<p>
+public partial class ShowXpath : System.Web.UI.Page<br />
+{<br />
+&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;<br />
+&nbsp;&nbsp;&nbsp; /// Handles the Load event of the Page control.<br />
+&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;<br />
+&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;The source of the event.&lt;/param&gt;<br />
+&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;The &lt;see cref=&quot;System.EventArgs&quot;/&gt; instance containing the event data.&lt;/param&gt;<br />
+&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!IsPostBack)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book/title&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book/[@genre=&#39;novel&#39;]/title&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book/author/first-name&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book/[@genre=&#39;philosophy&#39;]/title&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book/price&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.Items.Add(&quot;//book[3]/title&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ddlExpressions.SelectedIndex = 0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateDisplay();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;<br />
+&nbsp;&nbsp;&nbsp; /// Handles the SelectedIndexChanged event of the ddlExpressions control.<br />
+&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;<br />
+&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;sender&quot;&gt;The source of the event.&lt;/param&gt;<br />
+&nbsp;&nbsp;&nbsp; /// &lt;param name=&quot;e&quot;&gt;The &lt;see cref=&quot;System.EventArgs&quot;/&gt; instance containing the event data.&lt;/param&gt;<br />
+&nbsp;&nbsp;&nbsp; protected void ddlExpressions_SelectedIndexChanged(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UpdateDisplay();<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; /// &lt;summary&gt;<br />
+&nbsp;&nbsp;&nbsp; /// Updates the display.<br />
+&nbsp;&nbsp;&nbsp; /// &lt;/summary&gt;<br />
+&nbsp;&nbsp;&nbsp; void UpdateDisplay()<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lstOutput.Items.Clear();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string xmlFilePath = Request.PhysicalApplicationPath + @&quot;App_Data\Books.xml&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument doc = new XmlDocument();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.Load(xmlFilePath);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNodeList nodeList = doc.DocumentElement.SelectNodes(ddlExpressions.SelectedItem.Text);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (XmlNode child in nodeList)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lstOutput.Items.Add(&quot;Node name: &quot; + child.Name);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lstOutput.Items.Add(&quot;Node value: &quot; + child.FirstChild.Value);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+}
+</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/27/%E8%B0%83%E7%94%A8XPath%E6%98%BE%E7%A4%BAXML%E6%96%87%E6%A1%A3/'>http://Apiaceae.github.io/blog/2009/03/27/%E8%B0%83%E7%94%A8XPath%E6%98%BE%E7%A4%BAXML%E6%96%87%E6%A1%A3/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/%E5%88%9B%E5%BB%BAXML%E6%96%87%E6%A1%A3/">创建XML文档</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T02:26:53+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/%E5%88%9B%E5%BB%BAXML%E6%96%87%E6%A1%A3/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+using System;<br />
+using System.Collections.Generic;<br />
+using System.Linq;<br />
+using System.Web;<br />
+using System.Web.UI;<br />
+using System.Web.UI.WebControls;<br />
+using System.Xml;<br />
+using System.IO; 
+</p>
+
+
+<p>
+public partial class CreateXML : System.Web.UI.Page<br />
+{<br />
+&nbsp;&nbsp;&nbsp; protected void Page_Load(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; { 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; protected void btnSave_Click(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string xmlFilePath = Request.PhysicalApplicationPath + @&quot;\App_Data\NewBooks.xml&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument doc = new XmlDocument();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (File.Exists(xmlFilePath))<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.Load(xmlFilePath);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode bookNode = CreateBookNode(doc);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode bookStoreNode = doc.SelectSingleNode(&quot;bookstore&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookStoreNode.AppendChild(bookNode);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lblResult.Text = &quot;文件写入成功！&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode declarationNode = doc.CreateXmlDeclaration(&quot;1.0&quot;, &quot;&quot;, &quot;&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.AppendChild(declarationNode);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlComment comment = doc.CreateComment(&quot;这是一个测试性XML文档&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.AppendChild(comment); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode bookStoreNode = doc.CreateElement(&quot;bookstore&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode bookNode = CreateBookNode(doc); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookStoreNode.AppendChild(bookNode);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.AppendChild(bookStoreNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lblResult.Text = &quot;文件成功写入！&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doc.Save(xmlFilePath);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; XmlNode CreateBookNode(XmlDocument doc)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode bookNode = doc.CreateElement(&quot;book&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlAttribute genreAttribute = doc.CreateAttribute(&quot;genre&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; genreAttribute.Value = txtGenre.Text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookNode.Attributes.Append(genreAttribute); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode titleNode = doc.CreateElement(&quot;title&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; titleNode.InnerText = txtTitle.Text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookNode.AppendChild(titleNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode authorNode = doc.CreateElement(&quot;author&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode firstNameNode = doc.CreateElement(&quot;first-name&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; firstNameNode.InnerText = txtFirstName.Text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; authorNode.AppendChild(firstNameNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode lastNameNode = doc.CreateElement(&quot;last-name&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastNameNode.InnerText = txtLastName.Text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; authorNode.AppendChild(lastNameNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookNode.AppendChild(authorNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode priceNode = doc.CreateElement(&quot;price&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; priceNode.InnerText = txtPrice.Text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bookNode.AppendChild(priceNode); 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return bookNode;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; XmlNode CreateBookNodeFragment(XmlDocument doc)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocumentFragment docFragment = doc.CreateDocumentFragment();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; docFragment.InnerXml = &quot;&lt;book genre=&#39;&quot; + txtGenre.Text + &quot;&#39;&gt;&quot; + &quot;&lt;title&gt;&quot; + txtTitle.Text + &quot;&lt;/title&gt;&quot; + &quot;&lt;author&gt;&lt;first-name&gt;&quot; + txtFirstName.Text + &quot;&lt;/first-name&gt;&quot; + &quot;&lt;last-name&gt;&quot; + txtLastName.Text + &quot;&lt;/last-name&gt;&lt;/author&gt;&quot; + &quot;&lt;price&gt;&quot; + txtPrice.Text + &quot;&lt;/price&gt;&lt;/book&gt;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return docFragment; 
+</p>
+
+
+<p>
+&nbsp;&nbsp;&nbsp; }<br />
+}
+</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/27/%E5%88%9B%E5%BB%BAXML%E6%96%87%E6%A1%A3/'>http://Apiaceae.github.io/blog/2009/03/27/%E5%88%9B%E5%BB%BAXML%E6%96%87%E6%A1%A3/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/27/phylogeography/">企鹅的谱系生物地理学</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T00:00:00+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/27/phylogeography/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/2009/3/35.jpg" alt="谱系地理1" /></p>
+
+<p><img src="/images/2009/3/33.jpg" alt="谱系地理1" /></p>
+
+<p>Multiple gene evidence for expansion of extant penguins out of Antarctica due to global cooling.</p>
+
+<p>Classic problems in historical biogeography are <strong>where did penguins originate, and why are such mobile birds restricted to the Southern Hemisphere?</strong></p>
+
+<p>Competing hypotheses posit they arose in tropical–warm temperate waters, species-diverse cool temperate regions, or in Gondwanaland w100 mya when it was further north.</p>
+
+<p>To test these hypotheses we constructed a strongly supported phylogeny of extant penguins from 5851 bp of mitochondrial and nuclear DNA. Using Bayesian inference of ancestral areas we show that an Antarctic origin of extant taxa is highly likely, and that more derived taxa occur in lower latitudes. Molecular dating estimated penguins originated about 71 million years ago in Gondwanaland when it was further south and cooler.</p>
+
+<p>Moreover, extant taxa are inferred to have originated in the Eocene, coincident with the extinction of the larger-bodied fossil taxa as global climate cooled. We hypothesize that, as Antarctica became ice-encrusted, modern penguins expanded via the circumpolar current to oceanic islands within the Antarctic Convergence, and later to the southern continents.</p>
+
+<p>Thus, global cooling has had a major impact on penguin evolution, as it has on vertebrates generally. Penguins only reached cooler tropical waters in the Galapagos about 4 mya, and have not crossed the equatorial thermal barrier.</p>
+
+<p><strong>Keywords: penguins; divergence time; biogeography; nuclear DNA; mitochondrial DNA</strong></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/27/phylogeography/'>http://Apiaceae.github.io/blog/2009/03/27/phylogeography/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/26/biogeograph-ldd/">极地植物的长距离散布</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T12:56:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/26/biogeograph-ldd/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/2009/3/barringl.gif" alt="LDD" /></p>
+
+<p>由于缺乏对植物物种<strong>长距离散布</strong>频度好的量化估计，我们对它们的分布在气候变化条件下的响应情况的理解受到很大限制。通过分析分布与北极岛屿和Svalbard及其邻近地区的9个有花植物种的超过4000个取样的遗传变异分析，Alsos等的研究表明，自从最后大大冰期以来，在Svalbard岛屿居群的建立过程中，长距离散布的种类来源于多个地区。<strong>因此，长距离散布现象比我们所通常认为的那样要普遍的多，这反过来也表明这些种类分布范围的向北转移可能在全球变暖后发生地相当快速。</strong></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/26/biogeograph-ldd/'>http://Apiaceae.github.io/blog/2009/03/26/biogeograph-ldd/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/26/ASP.NET+WebPart%E6%8E%A7%E4%BB%B6%E4%BB%8B%E7%BB%8D/">ASP.NET WebPart控件介绍</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-26T07:04:19+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/26/ASP.NET+WebPart%E6%8E%A7%E4%BB%B6%E4%BB%8B%E7%BB%8D/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+<img style="width: 219px; height: 297px" src="/Blogs/image.axd?picture=2009%2f3%2f2009-03-25_125558.png" alt="" width="219" height="297" /><img src="/Blogs/image.axd?picture=2009%2f3%2f2009-03-25_00013.png" alt="" width="392" height="502" /> 
+</p>
+
+
+<p>
+本来以为这也是经典的红皮书系列，但是当你真真读几章后会有种大失所望的感觉。主要原因是作者的叙述和写书的风格实在不敢恭维。太啰嗦，不该讲的讲了一大堆，当该仔细的讲代码的时候却又简略的让人有些晕，不知道实际如何动手。完全就是一本&ldquo;纸上谈兵&rdquo;的书，比较空洞。看起来花的时间和收获实在不能成正比啊。 
+</p>
+
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/26/ASP.NET+WebPart%E6%8E%A7%E4%BB%B6%E4%BB%8B%E7%BB%8D/'>http://Apiaceae.github.io/blog/2009/03/26/ASP.NET+WebPart%E6%8E%A7%E4%BB%B6%E4%BB%8B%E7%BB%8D/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/25/ASP.NET%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/">ASP.NET网站管理工具的使用</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-25T07:54:20+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/25/ASP.NET%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/Blogs/image.axd?picture=2009%2f3%2f2009-03-24_00012.png" alt="" /><p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/03/25/ASP.NET%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/'&gt;http://Apiaceae.github.io/blog/2009/03/25/ASP.NET%E7%BD%91%E7%AB%99%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2009/03/25/Navicat%E8%B6%85%E5%BC%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/">Navicat超强的数据格式转换和处理能力</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-25T01:36:53+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2009</time>
+        
+        
+                 | <a href="/blog/2009/03/25/Navicat%E8%B6%85%E5%BC%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/Blogs/image.axd?picture=2009%2f3%2f2009-03-24_174232.png" alt="" width="669" height="601" /></p>
+
+<p class='post-footer'>
+       original link:
+       <a href='http://Apiaceae.github.io/blog/2009/03/25/Navicat%E8%B6%85%E5%BC%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/'>http://Apiaceae.github.io/blog/2009/03/25/Navicat%E8%B6%85%E5%BC%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B/</a><br/>
+       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
+       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
+       </p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/22/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/20/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

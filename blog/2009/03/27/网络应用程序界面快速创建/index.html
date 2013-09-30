@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>网络应用程序界面快速创建 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="Web applications are dynamic- many requiring unique content and interfaces for each user. There are a myriad of ways to take user content out of a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">网络应用程序界面快速创建</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T08:01:46+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+        
+        
+                 | <a href="#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+Web applications are dynamic- many requiring unique content and interfaces for each user. There are a myriad of ways to take user content out of a database and present it in a browser. This article focuses on the different ways it can be done in the Microsoft world (specifically in ASP.NET), why we chose XSLT for our own product, and finally a look at our technical implementation. 
+</p>
+
+
+<h2>Planning for Dynamic Content</h2>
+
+
+<p>
+Whether you are in the process of building a new business web application or planning to build one, you most likely need to address how your web application will handle displaying different content for different users. 
+</p>
+
+
+<h3>Considerations</h3>
+
+
+<p>
+When considering the different options for displaying dynamic content you generally need to take into account the following aspects: 
+</p>
+
+
+<ul>
+    <li>Usability 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Usability might be one of the most critical aspects in the success (or lack thereof) of your application. 
+    </div>
+    </li>
+    <li>Development Time 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    This includes the total amount of development time involved in satisfying your current application requirements. 
+    </div>
+    </li>
+    <li>Flexibility 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Regardless of how comprehensive your current requirements are, applications tend to evolve over time. It&rsquo;s important to evaluate the development effort and skill sets required to accommodate changes. 
+    </div>
+    </li>
+    <li>Support, Maintenance &amp; Ongoing Enhancements 
+    <div style="padding-right: 0px; padding-left: 3em; padding-bottom: 1em; padding-top: 5px">
+    Commonly ignored by many when planning new development projects, it is generally responsible for a good chunk of the total cost of an application over the span of its life. This includes bug fixes, client customizations, minor application enhancements and of course, QA and testing. 
+    </div>
+    </li>
+</ul>
+
+
+<h3>The Options in ASP.NET</h3>
+
+
+<p>
+Generally web applications that use ASP.NET have two main options for displaying dynamic content: 
+</p>
+
+
+<ul>
+    <li>Server Controls 
+    <ul>
+        <li>With Binding &ndash; retrieving the relevant data and binding it to the appropriate ASP.Net server controls on a web form </li>
+        <li>In Code &ndash; populating the appropriate ASP.Net server controls in code </li>
+    </ul>
+    </li>
+    <li>HTML 
+    <ul>
+        <li>In Code &ndash; constructing the HTML to display in code based on the information retrieved from the database </li>
+        <li>With XSLT &ndash; retrieving the database information in XML format and then transforming it into HTML with XSLT </li>
+    </ul>
+    </li>
+</ul>
+
+
+<p>
+A third option is Silverlight, a new technology introduced as an option for web applications by Microsoft about a year ago. Silverlight provides a very rich GUI with the power of the .Net platform (a subset, actually) and tools that make web application development similar to the XAML interfaces found in the latest Windows application development. Silverlight is outside the scope of this particular article though. 
+</p>
+
+
+<h3>Comparing the Different Options</h3>
+
+
+<p>
+Before you decide on the best route to take to display dynamic content you need to evaluate the impact of each approach on your application. You might find the table below helpful when making this decision. 
+</p>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<table border="0" class="comparison" style="width: 100%">
+    <tbody>
+        <tr>
+            <td style="width: 8em">Approach</td>
+            <td>Pros&nbsp; &amp; Cons</td>
+            <td>When to Use</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>Server Controls</strong></td>
+        </tr>
+        <tr>
+            <td style="text-align: right">With Binding</td>
+            <td>The quickest approach in terms of development time but also the least flexible.</td>
+            <td>Best suited for applications with low data complexity and that are not expected to change often.</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">In Code</td>
+            <td>Hooking up the controls in code takes longer in terms of development but is much more flexible than binding. This approach also requires a higher level of support and maintenance.</td>
+            <td>Best suited for applications with high data complexity and that are not expected to change often.</td>
+        </tr>
+        <tr>
+            <td colspan="3"><strong>HTML</strong></td>
+        </tr>
+        <tr>
+            <td style="text-align: right">In Code</td>
+            <td>Constructing HTML in code gives a good deal of flexibility over the markup that&rsquo;s created but is time-consuming and extraordinarily brittle. This approach requires extensive testing and support.</td>
+            <td>I wouldn&rsquo;t recommend this to be used as a general strategy for web applications but at times this might be used for particular sections depending on a unique set of requirements.</td>
+        </tr>
+        <tr>
+            <td style="text-align: right">Using XSLT</td>
+            <td>Offers high flexibility and the least amount of ongoing maintenance and testing. The development time might be longer depending on your team&rsquo;s skill set.</td>
+            <td>Best suited for applications with high data complexity and ones that are expected to change significantly and frequently. In addition, this allows for a lot of room for creativity as far as interface design goes.</td>
+        </tr>
+        <tr>
+            <td><strong>Silverlight</strong></td>
+            <td>Provides the richest GUI possibilities and the complete separation of interface and code. The time to develop, test and support are currently higher than other options.</td>
+            <td>Best suited for applications that require very rich user interfaces, and for development teams that primarily focus on Windows development.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<h3>Real-World Use Case: Scopings</h3>
+
+
+<p>
+When we started evaluating the requirements for <a href="http://www.scopings.com/">Scopings</a>, our homegrown recruiting platform, we needed a way to present complex content with a unique look and feel, a high level of usability, an infrastructure that can easily adapt to frequent and substantial changes, and built-in capabilities for globalization. 
+</p>
+
+
+<p>
+Very quickly we realized that although we can use ASP.Net server controls to build the first revision of Scopings in a relatively short period of time, this wouldn&rsquo;t adapt well to the frequent changes we expected to be an inevitable part of the product lifecycle. This option would substantially increase our total cost of ownership. 
+</p>
+
+
+<p>
+After much analysis and many discussions, it became clear to us that designing our own infrastructure for constructing HTML using XML and XSLT would satisfy all of our requirements. We sat down and started to design an infrastructure that has ultimately been used for more than 80% of the functionality on Scopings. 
+</p>
+
+
+<h3>Constructing the HTML</h3>
+
+
+<p>
+The idea behind the Scopings infrastructure was to allow us to make substantial changes to our user interface, while eliminating the need for any code changes and development staff involvement, and substantially decreasing the amount of QA required following any changes to the user interface. 
+</p>
+
+
+<p>
+To accommodate these requirements the Scopings infrastructure was built to be completely indifferent to the information retrieved from our database and to the way the information is ultimately displayed. 
+</p>
+
+
+<p>
+To achieve this we designed the infrastructure as follows: 
+</p>
+
+
+<p><ul></p>
+
+<pre><code>&lt;li&gt;A separate stored procedure was built against each web content page to be displayed, and was designed to only return XML back to the calling code. &lt;/li&gt;
+&lt;li&gt;Upon loading a web page, the code behind would load the XML for the current user. The XSLT would then transform the XML to an HTML interface for the user. &lt;/li&gt;
+&lt;li&gt;The web page would be responsible for all functionality,&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/'&gt;http://Apiaceae.github.io/blog/2009/03/27/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-27T08:01:46+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tsina">新浪微博</a>
+      <a class="jiathis_button_googleplus">Google+</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_qzone">QQ空间</a>
+      <a class="jiathis_button_tqq">腾讯微博</a>
+      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+  
+  
+  <!-- AddThis Button BEGIN -->
+  <!-- <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52445f441d3a06fc"></script> -->
+  <!-- AddThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2009/03/27/%E5%90%8E%E5%88%86%E7%B1%BB%E5%AD%A6%E5%AE%B6%E7%9A%84%E6%97%B6%E4%BB%A3/" title="Previous Post: 后分类学家的时代">&laquo; 后分类学家的时代</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/03/28/progress-conservation-biogeography/" title="Next Post: 保护生物地理学研究进展">保护生物地理学研究进展 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="我的Octopress配置"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

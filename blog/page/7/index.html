@@ -420,7 +420,7 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/10/12/introduction-for-eolv1/">EOL网络生命大百科系统介绍</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/12/21/Open+Flash+Chart+in+ASP.NET+MVC/">Open Flash Chart in ASP.NET MVC</a></h1>
       
     
     
@@ -437,70 +437,27 @@
   
 
 
-<time datetime="2009-10-12T16:30:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2009</time>
+<time datetime="2009-12-21T00:04:49+08:00" pubdate data-updated="true">Dec 21<span>st</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/10/12/introduction-for-eolv1/#comments">Comments</a>
+                 | <a href="/blog/2009/12/21/Open+Flash+Chart+in+ASP.NET+MVC/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3>前言</h3>
+  <div class="entry-content"><p>If you’ve ever developed an application of any type, you know that the business function of that application is only half the story. Most business applications also have to take into mind that your business user is going to want reporting. As a developer I find reporting the most boring part of the development process, but it is becoming less and less painful for me as a developer to implement it into my applications. Within the last year Microsoft has released a charting addition to the .Net framework based on the Dundas charts package, but they only output static images. In most cases this is ok, but it doesn’t make for a very compelling experience. Open Flash Chart is one alternative to the .Net charting; it is interactive and dynamic, which can help you build those compelling interfaces that your clients look for. So the point of this walkthrough is to show you how to implement Open Flash Chart into your MVC application.</p>
 
-<p>网络生命大百科全书（Encyclopedia of
-Life: <a href="http://www.eol.org/">http://www.eol.org</a>，简称EOL
-）是史无前例的科学研究群体和公众共同合作的网络信息共享平台。其目标是为所有人提供完全免费获取的有关世界生物有机体的知识。任何人都可以通过登记注册成为EOL的成员，向其提供生物物种的文本、图片、多媒体、评论或标签等信息。EOL专门的专家管理系统来保证从各个研究项目、个人所提供数据的质量。目前已经有超过40多个研究组织加入了EOL系统。为了加强EOL信息从类群和生境方面的覆盖度和深度，最近它们又发起了海洋生物物种专题项目，目标是在未来的5年内完成世界海洋生物物种80%的信息和数据。通过研究人员和公众的共同努力，我们有理由相信它将会成为世界上最好和最有影响力的生物多样性信息系统。EOL是一个完全开放和共享性的生物多样性信息系统。</p>
 
-<p>EOL承诺以最小的限制条件提供给用户完全自由使用的信息。这是通过知识共享许可协议（creative
-commons
-license）来实现（简称：CC协议）。知识共享协议的含义是，比如：当一个网友把他的原创作品上传到EOL的图片管理中心，他就可以在一个自由内容许可协议下实现对其作品的自由而广泛地传播，其他网友可以自由的复制、传播、进行再创作、演绎该作品，但使用者必须按照作者指定的方式对作品进行署名，且在传播该作品时向他人清楚地展示许可协议条款。采用知识共享许可协议，在让作者得以自由安排作品的著作权利的同时，将促进作品的合法分享、演绎、合法再使用（share,
-remix,
-reuse-legally），这不会排斥，反而有利于作者的作品得到著作权法以及其他相关法律的更好的保护。同时，EOL也承诺在其门户上展示的所有数据都必须清楚的标明所有信息和数据的来源，并且鼓励和要求使用者引用这些信息和数据的原始来源。</p>
+<p>  <p><a href="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image6.png"><img title="image" border="0" alt="image" src="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image_thumb2.png" width="618" height="405" /></a></p>  <h5>Step 1 – Download the Open Flash Chart package</h5>  <p>Obviously you’ll need Open Flash Chart, you can download it from <a href="http://teethgrinder.co.uk/open-flash-chart-2/downloads.php">the Official Open Flash Chart.</a> When you download it there is going to be a lot of files, but don’t worry about it I’ll tell you which ones you need.</p>  <h5>Step 2 – Import The Files You Need</h5>  <p>You are going to need two files at a minimum. There is a .Net library in the package but I’ll show you, you don’t need it. The first file is the open-flash-chart.swf. This file is the major component of the open flash chart package. I transferred this file directly into my content folder in my ASP.NET MVC project.</p>  <p><a href="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image7.png"><img title="image" border="0" alt="image" src="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image_thumb3.png" width="570" height="44" /></a></p>  <p><a href="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image8.png"><img title="image" border="0" alt="image" src="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image_thumb4.png" width="215" height="140" /></a></p>  <p>The next file you’ll need is the swfobject.js file, this will make placing your charts on the page much cleaner and simpler. Transfer this file into your scripts folder.</p>  <p><a href="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image9.png"><img title="image" border="0" alt="image" src="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image_thumb5.png" width="514" height="30" /></a></p>  <p><a href="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image10.png"><img title="image" border="0" alt="image" src="http://blog.aquabirdconsulting.com/wp-content/uploads/2009/12/image_thumb6.png" width="264" height="232" /></a></p>  <h5>Step 3 – Integrating Open Flash Chart into your View</h5>  <p>There are a couple things that I do to get Open Flash Chart into my view. I first modify my master page and add a new ContentPlaceHolder called “Scripts”. This allows me to inject custom scripts per view if necessary. My head tag in the master page looks like the following.</p>  <p><a href="http://blog.aquabirdconsulting.com/#viewSource">view source</a></p>  <p><a href="http://blog.aquabirdconsulting.com/#printSource">print</a><a href="http://blog.aquabirdconsulting.com/#about">?</a></p>  <p><code>1</code>    <br /><code>&lt;</code><code>head</code> <code>runat</code><code>=</code><code>&quot;server&quot;</code><code>&gt; </code></p>  <p><code>2</code>    <br /><code></code><code>&lt;</code><code>title</code><code>&gt;&lt;</code><code>asp:ContentPlaceHolder</code> <code>ID</code><code>=</code><code>&quot;TitleContent&quot;</code> <code>runat</code><code>=</code><code>&quot;server&quot;</code> <code>/&gt;&lt;/</code><code>title</code><code>&gt; </code></p>  <p><code>3</code>    <br /><code></code><code>&lt;</code><code>link</code> <code>href</code><code>=</code><code>&quot;/Content/Site.css&quot;</code> <code>rel</code><code>=</code><code>&quot;stylesheet&quot;</code> <code>type</code><code>=</code><code>&quot;text/css&quot;</code> <code>/&gt; </code></p>  <p><code>4</code>    <br /><code></code><code>&lt;</code><code>script</code> <code>src</code><code>=</code><code>&quot;/Scripts/swfobject.js&quot;</code> <code>type</code><code>=</code><code>&quot;text/javascript&quot;</code><code>&gt;&lt;/</code><code>script</code><code>&gt; </code></p>  <p><code>5</code>    <br /><code></code><code>&lt;</code><code>asp:ContentPlaceHolder</code> <code>ID</code><code>=</code><code>&quot;Scripts&quot;</code> <code>runat</code><code>=</code><code>&quot;server&quot;</code> <code>/&gt; </code></p>  <p><code>6</code>    <br /><code>&lt;/</code><code>head</code><code>&gt;</code></p>  <p>The next step is to inject the Chart into the page. The following code does that.</p>  <p><a href="http://blog.aquabirdconsulting.com/#viewSource">view source</a></p>  <p><a href="http://blog.aquabirdconsulting.com/#printSource">print</a><a href="http://blog.aquabirdconsulting.com/#about">?</a></p>  <p><code>1</code>    <br /><code>&lt;</code><code>asp:Content</code> <code>ContentPlaceHolderID</code><code>=</code><code>&quot;Scripts&quot;</code> <code>runat</code><code>=</code><code>&quot;server&quot;</code><code>&gt; </code></p>  <p><code>2</code>    <br /><code></code><code>&lt;</code><code>script</code> <code>type</code><code>=</code><code>&quot;text/javascript&quot;</code><code>&gt; </code></p>  <p><code>3</code>    <br /><code></code><code>swfobject.embedSWF( </code></p>  <p><code>4</code>    <br /><code></code><code>&quot;/Content/open-flash-chart.swf&quot;, &quot;my_chart&quot;, &quot;550&quot;, &quot;200&quot;, </code></p>  <p><code>5</code>    <br /><code></code><code>&quot;9.0.0&quot;, &quot;expressInstall.swf&quot;, </code></p>  <p><code>6</code>    <br /><code></code><code>{ &quot;data-file&quot;: &quot;Home/GetData&quot; } </code></p>  <p><code>7</code>    <br /><code></code><code>); </code></p>  <p><code>8</code>    <br /><code></code><code>&lt;/</code><code>script</code><code>&gt; </code></p>  <p><code>9</code>    <br /><code>&lt;/</code><code>asp:Content</code><code>&gt; </code></p>  <p>Notice what is done here. You first point to the open-flash-chart.swf in your content folder. Next you specify the div you would like to inject the chart into. Thirdly, you specify the size. Right after that is about the flash version and the install if your client is missing flash on their machine. Lastly, the most important thing, the location of your data. Notice that it points to a controller action. I’ll show you how to code that next.</p>  <h5>Step 4 – Data, Data, Data</h5>  <p>A chart wouldn’t be a chart without data. This is where we will leverage the power of the newest .Net frameworks with anonymous types. Open Flash Chart uses JSON objects to create you chart, but we don’t want to spend hours creating a library or adding references to assemblies we don’t need. So I went ahead and created an action relating to the one seen above. The code looks like this.</p>  <p><a href="http://blog.aquabirdconsulting.com/#viewSource">view source</a></p>  <p><a href="http://blog.aquabirdconsulting.com/#printSource">print</a><a href="http://blog.aquabirdconsulting.com/#about">?</a></p>  <p><code>01</code>    <br /><code>public</code> <code>JsonResult GetData() </code></p>  <p><code>02</code>    <br /><code>{ </code></p>  <p><code>03</code>    <br /><code></code><code>var data = </code><code>new</code></p>  <p><code>04</code>    <br /><code></code><code>{ </code></p>  <p><code>05</code>    <br /><code></code><code>title = </code><code>new</code> <code>{ text = </code><code>&quot;M<p class='post-footer'></p>
 
-<p>EOL项目的生物多样性信息学小组(Biodiversity Informatics
-Group)负责EOL网站和相关信息工具的开发和维护。这个小组与数据提供者保证紧密合作，无缝集成大量网站的物种信息到EOL的物种页面。他们也正在开发一些新的信息工具来捕获、组织和以新的方式展现生物多样性知识。EOL门户的原型系统在2008年1月发布后，EOL项目组重新改善了系统运行的软硬件环境。并在2009年2月发布了增强的系统。通过与欧洲分布式分类学协会开放的的Scratchpad合作，EOL还设计了一个供专家使用的在线数据管理工具-LifeDesk。LifeDesk能够加速专家知识的搜集和科学管理。通过点击物种各项数据的版权信息和自动提交数据工具。EOL还致力与语义环境下全球名称体系的建立。其目的是促进机器与机器间对物种名称信息相关联的识别和信息交换。这个小组的第一个项目全球名称索引将促进名称按照命名学和分类学目的规范使用，更重要的是它能够使我们有效的组织和管理有机体的其他信息。</p>
-
-<h3>一、数据来源和审核 {style=&ldquo;font-size: 16px&rdquo; align=&ldquo;left&rdquo;}</h3>
-
-<p>EOL门户的物种数据是通过(物种)内容合作伙伴(Content
-partner)的形式，由个人、组织或研究机构来提供的。通过签署相关协议，合作伙伴与EOL的具体工作小组保持紧密联系，提供有明确的数据来源和授权使用协议的的物种信息，由EOL门户网站来展示相关物种信息。合作伙伴所提供的数据可以是在线的数据库系统，也可以是像文本、电子表格等的平面文件。在提交数据前，合作伙伴需要通过EOL门户进行注册登记，完成注册成员的审核后，EOL将提供给注册用户相应的权限来提交、管理自己的数据。</p>
-
-<p>EOL的数据目前来自43个合作伙伴，内容覆盖了物种名录、数字化标本、图片、物种的保护信息、生活史甚至电子期刊等多个方面(表1)。这些合作伙伴都有它们自身的网站和数据库系统，EOL并没有收集这些网站上的所有内容。而是根据EOL物种内容架构(Content
-Schema)标准从这些网站“定制”所需要的物种信息，并周期性的从这些合作伙伴的系统更新相应的物种信息。</p>
-
-<p><strong>表</strong><strong>1. EOL</strong><strong>目前的合作伙伴</strong><strong>(Contentpartners)</strong></p>
-
-<p><img src="http://pic002.cnblogs.com/img/Apiaceae/201002/2010021116524514.png" alt="" /></p>
-
-<p>对于加入了EOL合作伙伴的信息系统来说，你只需要做的工作就是在其门户网站进行注册。在EOL门户注册作为合作伙伴后，你就可以通过在线方式提供你的数据。注册过程必须要填写的是合作伙伴的名称和联系人。这样EOL的小组联系人可以联系你商讨进一步详细的数据提交和合作内容。另外，作为合作伙伴，你并不需要提供你所有的数据信息，而是按照EOL的内容架构来整理已有数据的格式。但作为合作伙伴，你必须遵守知识共享协议的要求。</p>
-
-<p>EOL门户提供了一套比较完整的机制来处理来自个人、组织和研究项目的物种数据。它通过对注册用户的分级管理，实现对数据来源、数据质量和是否适合发表等信息状态进行控制，用不同的颜色背景来标记不同审核状态、数据质量的单个信息内容。</p>
-
-<p>EOL门户上的物种数据包括四种主要数据类型：1、动态图像(Moving
-Image)：例如动画、电影、电视节目等动态；2、声音(Sound)；3、静态图像(Still
-Image)：例如绘画、素描、平面设计图、地图等；4、文本(Text)。因此，任何用户都可以向EOL提交物种这几种格式的数据。</p>
-
-<p>如果你是一个个人用户，希望提供某种生物的文本描述某些物种信息，你可以通过的通过点击EOL门户上物种页面的添加按钮，或者在物种信息列表栏左下角的添加链接(图1)。新添加的文本开始都会被黄颜色的背景标记(图1)，这表明这些信息还没有得到专家的审核。在你提交数据后，物种页面管理员(专家)将对你所提交的信息进行审核，并且根据你所提供内容的情况确认其质量及其是否适合正式发布。</p>
-
-<p><img src="http://pic002.cnblogs.com/img/Apiaceae/201002/2010021116530395.png" alt="" /></p>
-
-<p> </p>
-
-<p><strong>图</strong><strong>1. </strong><strong>向物种页面添加信息按钮和链接，物种信息没有得到专家审核的状态</strong><strong> </strong></p>
-
-<p>EOL欢迎所有提供图像和多媒体信息的提供者。最简单的方法是把你的图片和多媒体数据提交到Flickr网站的EOL图片组Encyclopedia
-of Life
-Images。需要注意的是向Flickr提交的图片必须是你自己拥有的，而不是从其他网站或其他地方获得的。EOL门户的数据采集程序将定期检查图片小组上的数据，并且更新EOL门户上的数据。近来，EOL门户也开始从<a href="http://commons.wikimedia.org/wiki/Main_Page">WikimediaCommons</a>采集图片信息。因此，用户也可以向WikimediaCommon</p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/10/12/introduction-for-eolv1/'>http://Apiaceae.github.io/blog/2009/10/12/introduction-for-eolv1/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/21/Open+Flash+Chart+in+ASP.NET+MVC/'&gt;http://Apiaceae.github.io/blog/2009/12/21/Open+Flash+Chart+in+ASP.NET+MVC/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -514,7 +471,7 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/04/01/the-early-biogeography-map/">最早的生物地理学地图</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/12/20/Linq+to+SQL+Like+Operator/">Linq to SQL Like Operator</a></h1>
       
     
     
@@ -531,31 +488,27 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
   
 
 
-<time datetime="2009-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2009</time>
+<time datetime="2009-12-20T04:59:10+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/04/01/the-early-biogeography-map/#comments">Comments</a>
+                 | <a href="/blog/2009/12/20/Linq+to+SQL+Like+Operator/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/2009/3/vtheme999.jpg" alt="最早的生物地理学地图" /></p>
+  <div class="entry-content"><p>As a response for customer&#8217;s question, I decided to write about using Like Operator in Linq to SQL queries.</p>
 
-<p><strong>The first biogeographical map</strong></p>
 
-<p>The first biogeographical map was published in the third edition of the Flore franc竌ise by Lamarck and Candolle in 1805, the same year in which Humboldt’s famous Essai sur la Geographie appeared. Lamarck and Candolle’s map marks the beginning of a deive or classificatory biogeography focusing on the study of biota rather than on the distributional pathways of taxa. The map is relevant because it heralds the beginning of the creation of biogeographical maps popularized by zoogeographers in the mid- to late nineteenth century together with the study of biogeographical regions.</p>
+<p>  <p>Starting from a simple query from Northwind Database;</p>  <p>var query = from c in ctx.Customers</p>  <p>where c.City == &quot;London&quot;</p>  <p>select c;</p>  <p>The query that will be sent to the database will be:</p>  <p>SELECT CustomerID, CompanyName, &hellip;   <br />FROM&#160;&#160;&#160; dbo.Customers     <br />WHERE&#160; City = [London]</p>  <p>There are some ways to write a Linq query that reaults in using Like Operator in the SQL statement:</p>  <h4>1. Using String.StartsWith or String.Endswith</h4>  <p>Writing the following query:</p>  <p>var query = from c in ctx.Customers</p>  <p>where c.City.StartsWith(&quot;Lo&quot;)</p>  <p>select c;</p>  <p>will generate this SQL statement:</p>  <p>SELECT CustomerID, CompanyName, &hellip;   <br />FROM&#160;&#160;&#160; dbo.Customers     <br />WHERE&#160; City LIKE [Lo%] </p>  <p>which is exactly what we wanted. Same goes with String.EndsWith.</p>  <p>But, what is we want to query the customer with city name like &quot;L_n%&quot;? (starts with a Capital &lsquo;L&rsquo;, than some character, than &lsquo;n&rsquo; and than the rest of the name). Using the query</p>  <p>var query = from c in ctx.Customers</p>  <p>where c.City.StartsWith(&quot;L&quot;) &amp;&amp; c.City.Contains(&quot;n&quot;)</p>  <p>select c;</p>  <p>generates the statement: </p>  <p>SELECT CustomerID, CompanyName, &hellip;   <br />FROM&#160;&#160;&#160; dbo.Customers     <br />WHERE&#160; City LIKE [L%]     <br />AND&#160;&#160;&#160;&#160;&#160; City LIKE [%n%] </p>  <p>which is not exactly what we wanted, and a little more complicated as well.</p>  <h4>2. Using SqlMethods.Like method</h4>  <p>Digging into <strong>System.Data.Linq.SqlClient</strong> namespace, I found a little helper class called <strong>SqlMethods</strong>, which can be very usefull in such scenarios. SqlMethods has a method called Like, that can be used in a Linq to SQL query:</p>  <p>var query = from c in ctx.Customers</p>  <p>where SqlMethods.Like(c.City, &quot;L_n%&quot;)</p>  <p>select c;</p>  <p>This method gets the string expression to check (the customer&rsquo;s city in this example) and the patterns to test against which is provided in the same way you&rsquo;d write a LIKE clause in SQL.</p>  <p>Using the above query generated the required SQL statement:</p>  <p>SELECT CustomerID, CompanyName, &hellip;   <br />FROM&#160;&#160;&#160; dbo.Customers     <br />WHERE&#160; City LIKE [L_n%]</p>  <p>Enjoy!</p>  <p><b>原文地址</b> <a href="http://blogs.microsoft.co.il/blogs/bursteg/archive/2007/10/16/linq-to-sql-like-operator.aspx"><a href="http://blogs.microsoft.co.il/blogs/bursteg/archive/2007/10/16/linq-to-sql-like-operator.aspx">http://blogs.microsoft.co.il/blogs/bursteg/archive/2007/10/16/linq-to-sql-like-operator.aspx</a></a></p><p class='post-footer'></p>
 
-<p>see more details on <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2699.2006.01477.x/full">Journal of Biogeography</a></p>
-
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/04/01/the-early-biogeography-map/'>http://Apiaceae.github.io/blog/2009/04/01/the-early-biogeography-map/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
-
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/20/Linq+to+SQL+Like+Operator/'&gt;http://Apiaceae.github.io/blog/2009/12/20/Linq+to+SQL+Like+Operator/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -569,7 +522,7 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2009/03/30/taxonomy-for-biodiversity/">分类学是生物多样性研究的基础</a></h1>
+        <h1 class="entry-title"><a href="/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/">如何创建强类型的ASP.NET MVC视图</a></h1>
       
     
     
@@ -586,41 +539,89 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
   
 
 
-<time datetime="2009-03-30T00:00:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2009</time>
+<time datetime="2009-12-20T04:40:41+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2009</time>
         
         
-                 | <a href="/blog/2009/03/30/taxonomy-for-biodiversity/#comments">Comments</a>
+                 | <a href="/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/#comments">Comments</a>
                 
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/2009/3/vtheme4.jpg" alt="分类学和生物多样性" /></p>
+  <div class="entry-content"><p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/392FD326/20091219_201740.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_201740" border="0" alt="2009-12-19_201740" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/68ED7BA5/20091219_201740_thumb.png" width="269" height="288" /></a> </p>
 
-<p><strong>Biodiversity Update–Progress in Taxonomy</strong></p>
 
-<p>Taxonomy and systematic biology responded to the “biodiversity crisis” and the Convention on Biological Diversity (CBD) by defining three major challenges: completing the inventory of life, discovering evolutionary relationships through phylogenetic analysis, and providing information via the Internet (2). Progress in reconstructing the “Tree of Life” (3, 4) is effective and well coordinated, with phylogenetics increasingly integrated into ecology, biogeography, and developmental biology (5).</p>
+<p>  <p>1.在你的MVC应用程序根目录添加新文件夹，取名为<strong>CodeSmith</strong></p>  <p>2.添加CodeSmith模板文件<strong>StrongTypedViews.cst.</strong></p>  <p>3.右键点击CodeSmith文件夹，选择添加一个新的CodeSmith Project，取名为<strong>CodeSmith.csp</strong>.</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/41B5C321/20091219_202243.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202243" border="0" alt="2009-12-19_202243" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/49CF8027/20091219_202243_thumb.png" width="682" height="371" /></a> </p>  <p>4.右键点击刚生成的<strong>CodeSmith.csp</strong>文件在弹出的右键菜单选择Manager Output</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/06899969/20091219_202635.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202635" border="0" alt="2009-12-19_202635" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/339E8637/20091219_202635_thumb.png" width="318" height="340" /></a> </p>  <p>5.在弹出的对话框菜单做如下的设置</p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/558C796C/20091219_202821.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_202821" border="0" alt="2009-12-19_202821" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/14EA2CFD/20091219_202821_thumb.png" width="551" height="339" /></a> </p>  <p></p>  <p><a href="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/087E9A85/20091219_203037.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="2009-12-19_203037" border="0" alt="2009-12-19_203037" src="http://blog.cnpc.ac.cn/Blogs/image.axd?picture=WindowsLiveWriter/ASP.NETMVC/0644A27A/20091219_203037_thumb.png" width="547" height="374" /></a> </p>  <p>6.右键<strong>CodeSmith.csp</strong>选择Generate Output生成<strong>CotrollerBase.cs</strong></p>  <p><a href="http://blog.rthand.com/image.axd?picture=WindowsLiveWriter/StrongtypingASP.NETMVC/595713E9/stv4.png"><img title="stv4" border="0" alt="stv4" src="http://blog.rthand.com/image.axd?picture=WindowsLiveWriter/StrongtypingASP.NETMVC/595713E9/stv4_thumb.png" width="234" height="346" /></a></p>  <p>ControllerBase.cs文件</p>  <pre class="code"><span style="color: blue">namespace </span><span style="color: #010001">CNPC</span>.<span style="color: #010001">Controllers
+</span>{</p>
 
-<p>However, we are far from placing each species in its phylogenetic context, because the inventory itself lags behind. Out of a minimum of 4 million species, about 1.7 million (6) have so far been recognized through comparative studies of preserved specimens in reference collections. Information technology can accelerate this work (7), but the core of the discipline will remain. Specimens will be needed to confer repeatability on the hypothesis that a particular element of biodiversity constitutes a species and for taxonomists to identify new species and unfamiliar organisms.</p>
+<pre><code>&lt;span style="color: blue"&gt;public partial class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ControllerBase&lt;/span&gt;: &lt;span style="color: #2b91af"&gt;Controller
+&lt;/span&gt;{
+    &lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewFolderBase
+    &lt;/span&gt;{
+        &lt;span style="color: blue"&gt;protected readonly &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;;
 
-<p>As the World Conference on Sustainable Development (8) convenes, do we know enough either to conserve biodiversity or to make the best use of it? The Global Biodiversity Information Facility (GBIF) is a vital step toward accessible species-level information (9, 10). It establishes an informatic architecture for synthesizing knowledge, capable of uniting taxonomic initiatives such as Species 2000 (11) with regional databases (12, 13). If information that exists only in biological collections can also be computerized, users everywhere will share the benefits (14). Retrospective digitization of collections requires most investment, after which data capture and stewardship can be linked to ongoing curatorial work. Access to images of the type specimens that define species is one of the highest priorities, and the All Species Foundation’s proposal to digitize 50% of them in 5 years (15) poses no technical challenges once funding is secured. Surprisingly, digitizing collections is a contentious topic where the priorities of conservationists and taxonomists differ. The former tend to favor biodiversity conservation databases (16) based on field observations of the status of species. The latter recognize the importance of such efforts that build on the traditions of biological recording but point out that they are only practicable for groups where taxonomic work has progressed to provide detailed species level information.</p>
+        &lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #010001"&gt;ViewFolderBase&lt;/span&gt;(&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;)
+        { &lt;span style="color: blue"&gt;this&lt;/span&gt;.&lt;span style="color: #010001"&gt;controllerBase &lt;/span&gt;= &lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;; }
+    }
 
-<p>Otherwise, what can be observed and recorded? This, together with the availability of skillful amateurs equipped with excellent field guides, is why birds are useful indicators of trends in biodiversity, but microalgae, although suitably widespread, abundant, and sensitive to change, are not. Historical data from collections already play a powerful role in planning and development in Mexico (17) and could do so universally. Biological collections may represent an inadequate sample of past and present biota, but they are the only identified and authenticated sample we have. Biological recording and collections are complementary, not competing, sources of knowledge about the world, with the latter enabling repeatable observations and entirely new kinds of investigation. Prospects are not good for the first and most fundamental challenge: a global inventory of life on Earth.</p>
+    &lt;span style="color: blue"&gt;public new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewResult &lt;/span&gt;&lt;span style="color: #010001"&gt;View&lt;/span&gt;(&lt;span style="color: blue"&gt;string &lt;/span&gt;&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: blue"&gt;object &lt;/span&gt;&lt;span style="color: #010001"&gt;model&lt;/span&gt;)
+    {
+        &lt;span style="color: blue"&gt;return base&lt;/span&gt;.&lt;span style="color: #010001"&gt;View&lt;/span&gt;(&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: #010001"&gt;model&lt;/span&gt;);
+    }
 
-<p>E.O.Wilson diagnosed the problem as the limited capacity of collections institutions and the shortage of taxonomists (18), conclusions shared by a recent UK review (19). Wilson estimated the cost at around $5 billion, about the same as the Human Genome Project. Success would require increased taxonomic capacity, in terms of people and collections, around the world. These are the goals of the Global Taxonomy Initiative (20), for which developing countries can receive resources from the Global Environment Facility (GEF) (21).</p>
+    &lt;span style="color: blue"&gt;public new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;PartialViewResult &lt;/span&gt;&lt;span style="color: #010001"&gt;PartialView&lt;/span&gt;(&lt;span style="color: blue"&gt;string &lt;/span&gt;&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: blue"&gt;object &lt;/span&gt;&lt;span style="color: #010001"&gt;model&lt;/span&gt;)
+    {
+        &lt;span style="color: blue"&gt;return base&lt;/span&gt;.&lt;span style="color: #010001"&gt;PartialView&lt;/span&gt;(&lt;span style="color: #010001"&gt;path&lt;/span&gt;, &lt;span style="color: #010001"&gt;model&lt;/span&gt;);
+    }
 
-<p>The All Species Foundation also aspires to complete the global inventory within “a single human generation” but focuses on developing sources of private funding. Redirection of existing resources might be more effective. Developed countries mainly contribute to the international objectives of the CBD through the GEF, which has so far committed $3.86 billion to biodiversity projects, especially in protected areas. They might achieve more by targeting a significant proportion of the resources that go to the GEF directly to their own taxonomic institutions, enabling them to reap the benefits of the long-term investment that created them. There can be little doubt that such resources could be deployed rapidly and effectively. The National Science Foundation has shown how quickly taxonomic expertise can be generated even in groups where it was scarce (22). Strategic plans, and the networks to implement them, have been established in many regions (23-25) with a few countries alrea***mitted to national inventories (26, 27). The documentation of life on Earth, on which our own well-being ultimately depends, surely deserves to be among our most urgent priorities for investment.</p>
+    &lt;span style="color: blue"&gt;protected &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder &lt;/span&gt;&lt;span style="color: #010001"&gt;Views
+    &lt;/span&gt;{ &lt;span style="color: blue"&gt;get &lt;/span&gt;{ &lt;span style="color: blue"&gt;return new &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder&lt;/span&gt;(&lt;span style="color: blue"&gt;this&lt;/span&gt;); } }
 
-<p><strong>Science 11 October 2002: Vol. 298. no. 5592, p. 365 DOI: 10.1126/science.1075026</strong></p>
 
-<p class='post-footer'>
-       original link:
-       <a href='http://Apiaceae.github.io/blog/2009/03/30/taxonomy-for-biodiversity/'>http://Apiaceae.github.io/blog/2009/03/30/taxonomy-for-biodiversity/</a><br/>
-       &nbsp;written by <a href='http://Apiaceae.github.io'>Hooker</a>
-       &nbsp;posted at <a href='http://Apiaceae.github.io'>http://Apiaceae.github.io</a>
-       </p>
+&lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ViewsFolder&lt;/span&gt;: &lt;span style="color: #2b91af"&gt;ViewFolderBase
+&lt;/span&gt;{
+    &lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #010001"&gt;ViewsFolder&lt;/span&gt;(&lt;span style="color: #2b91af"&gt;ControllerBase &lt;/span&gt;&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;): &lt;span style="color: blue"&gt;base&lt;/span&gt;(&lt;span style="color: #010001"&gt;controllerBase&lt;/span&gt;) { }
+    &lt;/pre&gt;
+</code></pre>
 
+<p><a href="http://11011.net/software/vspaste"></a></p>
+
+<p>7.最好需要修改你的控制器类从ControllerBase继承，如下</p>
+
+
+
+
+<p>&#160;</p>
+
+
+
+
+<p><pre class="code"><span style="color: blue">using </span><span style="color: #010001">System</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Collections</span>.<span style="color: #010001">Generic</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Linq</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Mvc</span>;
+<span style="color: blue">using </span><span style="color: #010001">System</span>.<span style="color: #010001">Web</span>.<span style="color: #010001">Mvc</span>.<span style="color: #010001">Ajax</span>;</p>
+
+<p><span style="color: blue">namespace </span><span style="color: #010001">CNPC</span>.<span style="color: #010001">Controllers
+</span>{</p>
+
+<pre><code>&lt;span style="color: blue"&gt;public class &lt;/span&gt;&lt;span style="color: #2b91af"&gt;SearchController &lt;/span&gt;: &lt;span style="color: #2b91af"&gt;ControllerBase//&lt;font color="#ff0000"&gt;继承类&lt;/font&gt;
+&lt;/span&gt;{
+    &lt;span style="color: #010001"&gt;Models&lt;/span&gt;.&lt;span style="color: #2b91af"&gt;cnpcDataContext &lt;/span&gt;&lt;span style="color: #010001"&gt;cnpc &lt;/span&gt;= &lt;span style="color: blue"&gt;new &lt;/span&gt;&lt;span style="color: #010001"&gt;CNPC&lt;/span&gt;.&lt;span style="color: #010001"&gt;Models&lt;/span&gt;.&lt;span style="color: #2b91af"&gt;cnpcDataContext&lt;/span&gt;();
+
+    &lt;span style="color: green"&gt;//Example Url: /Search
+    //
+    &lt;/span&gt;&lt;span style="color: blue"&gt;public &lt;/span&gt;&lt;span style="color: #2b91af"&gt;ActionResult &lt;/span&gt;&lt;span style="color: #010001"&gt;Index&lt;/span&gt;()
+    {
+        &lt;span style="color: blue"&gt;return &lt;/span&gt;&lt;span style="color: #010001"&gt;Views&lt;/span&gt;.&lt;span style="color: #010001"&gt;Search&lt;/span&gt;.&lt;span style="color: #010001"&gt;Index&lt;/s&lt;p class='post-footer'&gt;
+   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/'&gt;http://Apiaceae.github.io/blog/2009/12/20/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%BC%BA%E7%B1%BB%E5%9E%8B%E7%9A%84ASP.NET+MVC%E8%A7%86%E5%9B%BE/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
 </div>
   
   
@@ -704,8 +705,9 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 <li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
 <li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
 <li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
 <li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
 <li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
@@ -732,7 +734,7 @@ Images。需要注意的是向Flickr提交的图片必须是你自己拥有的�
 <a style="font-size: 125%" href="/tags/linux/">Linux</a>
 <a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
 <a style="font-size: 70%" href="/tags/sdm/">SDM</a>
-<a style="font-size: 70%" href="/tags/darwin/">darwin</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
 <a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
 <a style="font-size: 125%" href="/tags/sed/">sed</a>
 <a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>

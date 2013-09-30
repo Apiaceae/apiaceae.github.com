@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ASP.NET的一些基本概念和术语-ASP.NET如何工作 - 虎克的博客</title>
+  <meta name="author" content="Hooker">
+
+  
+  <meta name="description" content="目录 ASP.NET的事件模式(ASP.NET Event Model) 事件处理器(event handler):event handler 用来决定当一个事件被激发是的处理方式，比如当用户点击鼠标或者是用户从一个下拉列表中选中某个选项等等。 在.NET Framework中, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://Apiaceae.github.io/blog/2009/05/15/ASP.NET%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD-ASP.NET%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="虎克的博客" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">虎克的博客</a></h1>
+  
+    <h2>Enthusiasm Biogeography-Biodiversity Informatics-Data Sciences</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:Apiaceae.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/tag-cloud">Tags</a></li>
+  <li><a href="/about">About me</a></li>
+  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">ASP.NET的一些基本概念和术语-ASP.NET如何工作</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-15T06:11:22+08:00" pubdate data-updated="true">May 15<span>th</span>, 2009</time>
+        
+        
+                 | <a href="#comments">Comments</a>
+                
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>目录</h2>
+
+
+<div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:4bc0799e-3bfb-436a-afd8-38b51ee845f7" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/141E5BED/20090514_1933558x6.jpg" title="Core ASP.NET 2.0 Chapter 2"><img src="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/3CBF58A5/20090514_193355.png" border="0" alt="" width="417" height="449" /></a>
+</div>
+
+
+<h2>ASP.NET的事件模式(ASP.NET Event Model)</h2>
+
+
+<p>
+事件处理器(<a href="http://en.wikipedia.org/wiki/Event_Handler:" target="_blank">event handler):</a><a href="http://en.wikipedia.org/wiki/Event_Handler_" target="_blank">event handler </a>用来决定当一个事件被激发是的处理方式，比如当用户点击鼠标或者是用户从一个下拉列表中选中某个选项等等。
+</p>
+
+
+<p>
+在.NET Framework中, 所有的事件处理器都有一个特定的方法签名(<a href="http://en.wikipedia.org/wiki/Method_Signature" target="_blank">method signature</a>)&mdash;也就是说方法的返回类型(<a href="http://en.wikipedia.org/wiki/Return_Type" target="_blank">return type</a>)和参数(<a href="http://en.wikipedia.org/wiki/Parameters" target="_blank">parameters</a>)。事件处理器都是void方法，它接收两个参数：一个对象参数(object parameter)和事件声明参数(EventArgs parameter)。对象参数指激发事件的对象。例如：如果你在不同的控件使用相同的event handler，对象参数将用来判断是哪个控件激发了该事件。EventArgs parameter包含说明特定事件的信息。例如：ImageClickEventArgs parameter包含用户点击某个图片的位置信息(x和y坐标)。ASP.NET的事件处理过程不同于一般Windows应用程序在于事件的激发是发生在客户端，然后传输到服务器端进行处理。
+</p>
+
+
+<div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:524fd81e-1cce-4fe1-b671-836e9583a675" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/2D416838/20090512_2115378x6.jpg" title="ASP.NET event system"><img src="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/35C75833/20090512_211537.png" border="0" alt="" width="335" height="335" /></a>
+</div>
+
+
+<h2>回传(Postback)</h2>
+
+
+<p>
+<strong><a href="http://en.wikipedia.org/wiki/Postback" target="_blank">postback</a>： </strong>is the process by which the browser posts information <br />
+back to itself (i.e., posts information back to the server by requesting the same page). Postback in ASP.NET only occurs within Web Forms (i.e., within a form element with runat=server), and only server controls postback information to the server. Each cycle in which information is displayed and then posted back to the server is sometimes also called a <strong><a href="http://en.wikipedia.org/wiki/Round_Trip" target="_blank">round trip</a></strong>.
+</p>
+
+
+<div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:06730a6c-6e08-43c4-bf18-755eaf2ac557" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/396803C1/20090512_2121538x6.jpg" title="Postback flow"><img src="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/4181C0C7/20090512_212153.png" border="0" alt="" width="316" height="364" /></a>
+</div>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<h2>Page and Control Events</h2>
+
+
+<h2><a href="http://en.wikipedia.org/wiki/View_State_" target="_blank">View State </a>and Control State</h2>
+
+
+<p>
+It is a specially encoded string that is used to retain page and form information between requests and is stored within a hidden HTML &lt;input&gt; element. All page elements not posted back via the standard HTTP POST mechanism are stored within this string. 
+</p>
+
+
+<h2><a href="http://en.wikipedia.org/wiki/Page_Lifecycle_" target="_blank">Page Lifecycle </a></h2>
+
+
+<p>
+Page and control events occur in a certain order, which is called the page lifecycle.
+</p>
+
+
+<h2>Cross-Page Posting</h2>
+
+
+<h2>ASP.NET Code Compilation</h2>
+
+
+<h2>The Page Class</h2>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Request" target="_blank">Request</a>: The Request property of the Page class returns an HttpRequest object. This HttpRequest represents the HTTP values sent by the browser with its request. It contains members for retrieving query string or form parameters, cookie data, as well as information about the requesting browser.
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Httprequest" target="_blank">HttpRequest</a> class
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Response" target="_blank">Response</a>: The HttpResponse class represents the server&rsquo;s HTTP response to the current request.
+</p>
+
+
+<p>
+HttpResponse
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Server" target="_blank">Server</a>: The Server property of the Page class returns an HttpServerUtility object.
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Httpserverutility" target="_blank">HttpServerUtility</a> class
+</p>
+
+
+<p>
+Response.Redirect Versus Server.Transfer
+</p>
+
+
+<p>
+两种方法都是重新定向到指定的页面，前者要形成一个客户端到服务器的响应Round trip，因此客户端的浏览器地址栏会出现更新；后者允许较快，因为它是直接加载请求的页面，因此不存在浏览器地址栏的更新，
+</p>
+
+
+<h2>ASP.NET Application Lifecycle</h2>
+
+
+<div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:b9a61a0a-ff57-4edb-b350-b5ffadd46171" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/15675487/20090514_2040378x6.jpg" title="Key steps in the ASP.NET application lifecycle"><img src="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/36E914C7/20090514_204037.png" border="0" alt="" width="420" height="411" /></a>
+</div>
+
+
+<h3>1、User Requests ASP.NET Resource from Server</h3>
+
+
+<p>
+An <strong><a href="http://en.wikipedia.org/wiki/Isapi_Extension_" target="_blank">ISAPI extension </a></strong>is a Windows DLL that can be directly invoked by <br />
+a URL and that interacts and works with a request to a Web server; for ASP.NET, <br />
+the extension is aspnet_isapi.dll. An <strong><a href="http://en.wikipedia.org/wiki/Isapi_Filter" target="_blank">ISAPI filter</a></strong>, on the other hand, is a 
+</p>
+
+
+<p>
+Windows DLL that modifies the incoming and outgoing data stream to and from <br />
+IIS; for ASP.NET, the filter is aspnet_filter.dll, and is used only to preprocess <br />
+cookieless session state.
+</p>
+
+
+<div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:486170c8-3b1d-4277-aeed-81d3bc9fd68d" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/2A114F5A/20090514_2031338x6.jpg" title="ASP.NET and the IIS 5 processing model"><img src="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/098CA059/20090514_203133.png" border="0" alt="" width="420" height="430" /></a>
+</div>
+
+
+<p>
+&nbsp;
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Asp.net_Worker_Process" target="_blank">ASP.NET worker process</a> (aspnet_wp.exe), which then takes over and controls the execution of the request. This worker process is a small Win32 executable that loads and hosts the CLR. Generally, there is only one instance of this process running on the machine; that is, all future requests are routed through this one worker process (see Figure 2.15). However, if there are multiple CPUs on the Web server, each CPU can run a separate single worker process. 
+</p>
+
+
+<p>
+IIS 6 generic worker process (named w3wp.exe) 
+</p>
+
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Iis_Application_Pool" target="_blank">IIS application pool</a>
+</p>
+
+
+<p><div id="scid:8747F07C-CDE8-481f-B0DF-C6CFD074BF67:f1c6c37b-2f3d-4bc1-b36c-3049765b3b58" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px">
+<a rel="thumbnail" href="/Blogs/image.axd?picture=WindowsLiveWriter/APS.NET/0203C19D/20090514_2037458x6.jpg" title="<p class='post-footer'></p>
+
+<pre><code>   original link:
+   &lt;a href='http://Apiaceae.github.io/blog/2009/05/15/ASP.NET%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD-ASP.NET%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C/'&gt;http://Apiaceae.github.io/blog/2009/05/15/ASP.NET%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD-ASP.NET%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C/&lt;/a&gt;&lt;br/&gt;
+   &amp;nbsp;written by &lt;a href='http://Apiaceae.github.io'&gt;Hooker&lt;/a&gt;
+   &amp;nbsp;posted at &lt;a href='http://Apiaceae.github.io'&gt;http://Apiaceae.github.io&lt;/a&gt;
+   &lt;/p&gt;
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Hooker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-15T06:11:22+08:00" pubdate data-updated="true">May 15<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+  
+  
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+      <span class="jiathis_txt">分享到：</span>
+      <a class="jiathis_button_tsina">新浪微博</a>
+      <a class="jiathis_button_googleplus">Google+</a>
+      <a class="jiathis_button_renren">人人网</a>
+      <a class="jiathis_button_qzone">QQ空间</a>
+      <a class="jiathis_button_tqq">腾讯微博</a>
+      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1334720487296344" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+  
+  
+  <!-- AddThis Button BEGIN -->
+  <!-- <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52445f441d3a06fc"></script> -->
+  <!-- AddThis Button END -->
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2009/05/15/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" title="Previous Post: 生物多样性信息学参考文献">&laquo; 生物多样性信息学参考文献</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2009/05/17/ASP.NET%E7%9A%84%E6%A0%87%E5%87%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%A7%E4%BB%B6-%E5%BA%94%E7%94%A8%28%E4%BA%8C%29/" title="Next Post: ASP.NET的标准服务器控件-应用(二)">ASP.NET的标准服务器控件-应用(二) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="我的Octopress配置"></div>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"apiaceaegit"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+<!-- Duoshuo Comment END -->
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <img src="/images/profile.jpg" alt=""><br />
+  <p>City: Beijing</p>
+</section>
+<section>
+  <h2>What did I read</h2>
+  <div>
+    <script type="text/javascript" src="http://www.douban.com/service/badge/57046744/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;cat=book" ></script>
+    </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/cutom-table-css-from-sql-database/">读取数据库数据到HTMLTable 并加入一些漂亮的CSS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/fifty-best-sites-build-on-ruby-on-rails/">最好的50个用Ruby on Rails开发的网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/26/why-we-live-in-big-city/">我？你？他？身处大城市的十大尴尬</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/23/pry-relace-rails-console/">使用PRY代替RAILS CONSOLE</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/03/nginx/">Nginx内核参数相关的优化设定说明</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+<h1>Recent Comments</h1>
+<ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="0" data-excerpt-length="18"></ul>
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/asp-net/'>ASP.NET (4)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity/'>Biodiversity (1)</a></li>
+<li class='category'><a href='/blog/categories/biodiversity-informatics/'>Biodiversity Informatics (5)</a></li>
+<li class='category'><a href='/blog/categories/git/'>Git (1)</a></li>
+<li class='category'><a href='/blog/categories/informatics/'>Informatics (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (8)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>Ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/xml/'>XML (1)</a></li>
+<li class='category'><a href='/blog/categories/data/'>data (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (191)</a></li>
+<li class='category'><a href='/blog/categories/ruby/'>ruby (1)</a></li>
+<li class='category'><a href='/blog/categories/sciences/'>sciences (1)</a></li>
+<li class='category'><a href='/blog/categories/web/'>web (1)</a></li>
+<li class='category'><a href='/blog/categories/伞形科/'>伞形科 (1)</a></li>
+<li class='category'><a href='/blog/categories/分类学/'>分类学 (5)</a></li>
+<li class='category'><a href='/blog/categories/工具/'>工具 (1)</a></li>
+<li class='category'><a href='/blog/categories/技巧/'>技巧 (1)</a></li>
+<li class='category'><a href='/blog/categories/数据库/'>数据库 (1)</a></li>
+<li class='category'><a href='/blog/categories/物种分布模型/'>物种分布模型 (1)</a></li>
+<li class='category'><a href='/blog/categories/生物地理/'>生物地理 (2)</a></li>
+<li class='category'><a href='/blog/categories/生物地理学/'>生物地理学 (3)</a></li>
+<li class='category'><a href='/blog/categories/生物多样性信息学/'>生物多样性信息学 (7)</a></li>
+<li class='category'><a href='/blog/categories/科学社会网络/'>科学社会网络 (1)</a></li>
+<li class='category'><a href='/blog/categories/随笔/'>随笔 (4)</a></li>
+
+  </ul>
+</section>
+<section>
+  <h1>Tags</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 125%" href="/tags/asp-dot-net/">ASP.NET</a>
+<a style="font-size: 180%" href="/tags/biodiversity-informatics/">Biodiversity Informatics</a>
+<a style="font-size: 70%" href="/tags/lsid/">LSID</a>
+<a style="font-size: 125%" href="/tags/linux/">Linux</a>
+<a style="font-size: 70%" href="/tags/mapping/">Mapping</a>
+<a style="font-size: 70%" href="/tags/sdm/">SDM</a>
+<a style="font-size: 70%" href="/tags/concepts/">concepts</a>
+<a style="font-size: 70%" href="/tags/etaxonomy/">etaxonomy</a>
+<a style="font-size: 125%" href="/tags/sed/">sed</a>
+<a style="font-size: 125%" href="/tags/taxonomy/">taxonomy</a>
+<a style="font-size: 180%" href="/tags/ubuntu/">ubuntu</a>
+<a style="font-size: 157%" href="/tags/xin-qing/">心情</a>
+<a style="font-size: 157%" href="/tags/sheng-huo/">生活</a>
+<a style="font-size: 180%" href="/tags/sheng-wu-duo-yang-xing-xin-xi-xue/">生物多样性信息学</a>
+<a style="font-size: 157%" href="/tags/sui-bi/">随笔</a>
+
+  </ul>
+</section><section>
+  
+  <h1>Visitors</h1>
+    <div id="clustrmaps-widget"></div><script type="text/javascript">
+var _clustrmaps = {'url' : 'http://apiaceae.github.io', 'user' : 1114201, 'server' : '2', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2013-09-25', 'lang' : 'en', 'corners' : 'square' };
+    (function ()
+    { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www2.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();
+    </script><noscript><a href="http://www2.clustrmaps.com/user/195110059"><img src="http://www2.clustrmaps.com/stats/maps-no_clusters/apiaceae.github.io-thumb.jpg" alt="Locations of visitors to this page"></a></noscript>
+
+    <a href="http://info.flagcounter.com/wAs5"><img src="http://s07.flagcounter.com/count/wAs5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/" alt="Flag Counter" border="0"></a>
+
+
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Hooker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
